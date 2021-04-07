@@ -1,9 +1,8 @@
 <?php
-    // require_once 'bootstrap.php';
+    
+    use PhpOffice\PhpWord\PhpWord;
 
-use PhpOffice\PhpWord\PhpWord;
-
-require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/vendor/autoload.php';
 
     // Variables
 
@@ -533,7 +532,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Client Focused', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('-	Red Team Partners aim is to advise you according to best standard security practices, any advise provided will be in the best interest of the customer experience. Red Team Partners will work with you to ensure the experience of our team is provided throughout your service, with multiple qualifications and out of the box thinking we will use our expertise to you provide the best quality test available.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('Red Team Partners aim is to advise you according to best standard security practices, any advise provided will be in the best interest of the customer experience. Red Team Partners will work with you to ensure the experience of our team is provided throughout your service, with multiple qualifications and out of the box thinking we will use our expertise to you provide the best quality test available.',0 ,null, array('format'=>'bullet'));
     $whatMakesUsDifferentPage->addTextBreak();
 
     // QUOTABLE QUOTES
@@ -589,6 +588,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     // BODY PART
     $statementOfWorksPage->addText('Red Team Partners will provide the services described in this scope. A final Statement of Works will be provided by the delivery team once the proposal has been accepted.');
     $statementOfWorksPage->addText('Understanding the Hamilton’s environment is key to performing the correct assessment. This section will contain the type of assessment requested.');
+    $statementOfWorksPage->addTextBreak(2);
 
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
 
@@ -778,8 +778,6 @@ require_once __DIR__ . '/vendor/autoload.php';
     $testersQualificationsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END OUR TESTERS QUALIFICATIONS PAGE ###############################    
-    
-
 
     // // Saving the document as OOXML file...
     // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
