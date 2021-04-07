@@ -163,6 +163,8 @@ require_once __DIR__ . '/vendor/autoload.php';
         'alignment'=>'right'
     );
 
+    $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
+
     //############################### COVER PAGE ###############################
 
     $cellRowSpan = array('vMerge' => 'restart', 'valign' => 'center', 'bgColor' => $paletteRed);
@@ -291,7 +293,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $introPage->addText('Red Team Partners will help you in this everchanging landscape. With a world-wide team of cyber security experts combined with the latest technology and processes, Red Team Partners will partner with you to make sure your digital assets are protected. We understand how hackers and external threats can harm your organisation; Red Team Partner looks to provide you with an insight into how these risks can be remediated.', $defaultFontStyle);
 
     $introPageFooter = $introPage->addFooter();
-    $introPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $introPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $introPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END INTRO PAGE ###############################
@@ -321,7 +323,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $TOCPage->addTextBreak(2);
 
     $TOCPageFooter = $TOCPage->addFooter();
-    $TOCPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $TOCPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $TOCPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END TABLE OF CONTENTS PAGE ###############################
@@ -423,7 +425,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
     // FOOTER PART
     $proposalDetailsPageFooter = $proposalDetailsPage->addFooter();
-    $proposalDetailsPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $proposalDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $proposalDetailsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END PROPOSAL DETAILS PAGE ###############################
@@ -449,7 +451,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
     // FOOTER PART
     $projectSummaryPageFooter = $projectSummaryPage->addFooter();
-    $projectSummaryPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $projectSummaryPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $projectSummaryPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END PROJECT SUMMARY PAGE ###############################
@@ -496,7 +498,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
     $ourApproachPageFooter = $ourApproachPage->addFooter();
-    $ourApproachPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $ourApproachPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $ourApproachPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END OUR APPROACH PAGE ###############################
@@ -568,7 +570,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     
     // FOOTER PART
     $whatMakesUsDifferentPageFooter = $whatMakesUsDifferentPage->addFooter();
-    $whatMakesUsDifferentPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $whatMakesUsDifferentPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $whatMakesUsDifferentPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END WHAT MAKES US DIFFERENT PAGE ###############################
@@ -647,10 +649,8 @@ require_once __DIR__ . '/vendor/autoload.php';
     $statementOfWorksPage->addTitle('Assessment', 2);
     $statementOfWorksPage->addTitle('Post-Test', 2);
 
-
-
     $statementOfWorksPageFooter = $statementOfWorksPage->addFooter();
-    $statementOfWorksPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $statementOfWorksPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $statementOfWorksPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
 
     //############################### END STATEMENT OF WORKS PAGE ###############################
@@ -666,7 +666,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $typeOfServicePage->addTextBreak();
 
     $typeOfServicePageFooter = $typeOfServicePage->addFooter();
-    $typeOfServicePageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $typeOfServicePageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $typeOfServicePageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END TYPE OF SERVICE PAGE ###############################
@@ -681,7 +681,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $costingPage->addTextBreak();
 
     $costingPageFooter = $costingPage->addFooter();
-    $costingPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $costingPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END COSTING PAGE ###############################
@@ -696,7 +696,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $methodologiesPage->addTextBreak();
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();
-    $methodologiesPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $methodologiesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $methodologiesPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END METHODOLOGIES PAGE ###############################
@@ -711,7 +711,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $reportingPage->addTextBreak();
 
     $reportingPageFooter = $reportingPage->addFooter();
-    $reportingPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $reportingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $reportingPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END REPORTING PAGE ###############################
@@ -726,7 +726,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $deliveryStepsPage->addTextBreak();
 
     $deliveryStepsPageFooter = $deliveryStepsPage->addFooter();
-    $deliveryStepsPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $deliveryStepsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $deliveryStepsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END DELIVERY STEPS PAGE ############################### 
@@ -742,7 +742,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $timescalesPage->addTextBreak();
 
     $timescalesPageFooter = $timescalesPage->addFooter();
-    $timescalesPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $timescalesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $timescalesPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END TIMESCALES PAGE ###############################     
@@ -758,7 +758,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $whyChooseRTPPage->addTextBreak();
 
     $whyChooseRTPPageFooter = $whyChooseRTPPage->addFooter();
-    $whyChooseRTPPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $whyChooseRTPPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $whyChooseRTPPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END WHY CHOOSE RTP PAGE ###############################     
@@ -774,7 +774,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     $testersQualificationsPage->addTextBreak();
 
     $testersQualificationsPageFooter = $testersQualificationsPage->addFooter();
-    $testersQualificationsPageFooter->addTextRun()->addText('Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk', $footerTextStyle);
+    $testersQualificationsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $testersQualificationsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END OUR TESTERS QUALIFICATIONS PAGE ###############################    
