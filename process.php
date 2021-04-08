@@ -155,11 +155,14 @@
     );
 
     $quoteFontStyle = array(
-        'italic'=> true
+        'italic'=> true,
+        'color'=> '696969',
+        'size'=>12
     );
 
     $quoteParagraphStyle = array(
-        'alignment'=>'right'
+        'alignment'=>'right',
+        'size'=>12
     );
 
     $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
@@ -619,8 +622,7 @@
     $detailsOfScopeTable->addCell(3000)->addText($numberOfDays);
 
 
-
-    $statementOfWorksPage->addText('(SCOPE LIST HERE');
+    $statementOfWorksPage->addText('(SCOPE LIST HERE)');
 
     $statementOfWorksPage->addPageBreak();
     $statementOfWorksPage->addText('Red Team Partners will use the following stages to undertake the service requested.', array('bold'=>true));
@@ -643,11 +645,66 @@
 
     $statementOfWorksPage->addTitle('Pre-Test', 2);
     $statementOfWorksPage->addText('Our delivery team will help schedule your test by providing the following:');
-    // $listOne = $statementOfWorksPage->addListItem();
-    // $listOne
+    
+    $preTestListItemRunOne = $statementOfWorksPage->addListItemRun();
+    $preTestListItemRunOne->addText('Scheduled Test Plan', array('bold' => true));
+    $preTestListItemRunOne->addText(' – When requested we are able to provide scheduled test plans, these include critical requirements, credentials and test setup.');
+    
+    $preTestListItemRunTwo = $statementOfWorksPage->addListItemRun();
+    $preTestListItemRunTwo->addText('Personnel Vetting', array('bold' => true));
+    $preTestListItemRunTwo->addText(' – Our tester aligns with CREST and OSCP standards, background checks are regularly conducted by Red Team Partners.');
+    
+    $preTestListItemRunThree = $statementOfWorksPage->addListItemRun();
+    $preTestListItemRunThree->addText('Third Party', array('bold' => true));
+    $preTestListItemRunThree->addText(' – All third parties that are affected must be informed prior to test.');
+    
+    $preTestListItemRunFour = $statementOfWorksPage->addListItemRun();
+    $preTestListItemRunFour->addText('Confirmation Dates', array('bold' => true));
+    $preTestListItemRunFour->addText(' – Dates of test will be confirmed within the Statement of Works.');
+    
+    $preTestListItemRunFive = $statementOfWorksPage->addListItemRun();
+    $preTestListItemRunFive->addText('Point of Contact', array('bold' => true));
+    $preTestListItemRunFive->addText(' - Point of contact – A designated point of contact will be required to deal with any issues that arise. Your project manager will be your point of contact for Red Team Partners.');
+
 
     $statementOfWorksPage->addTitle('Assessment', 2);
+    // $statementOfWorksPage->addPageBreak();
+
+    $assessmentListItemRunOne = $statementOfWorksPage->addListItemRun();
+    $assessmentListItemRunOne->addText('Test Environment', array('bold'=>true));
+    $assessmentListItemRunOne->addText(' - Red Team Partners is careful to ensure performance of systems when cyber testing, we understand that systems are vital for the company and ensure measures to keep these systems operating during the testing window.');
+
+    $assessmentListItemRunTwo = $statementOfWorksPage->addListItemRun();
+    $assessmentListItemRunTwo->addText('Live Communication', array('bold'=>true));
+    $assessmentListItemRunTwo->addText(' – We recognise that during your testing window that communication is key, our 24/7 communication platform allows you to contact your security expert for additional updates and related questions.');
+
+    $assessmentListItemRunThree = $statementOfWorksPage->addListItemRun();
+    $assessmentListItemRunThree->addText('Notifications of Vulnerabilities', array('bold'=>true));
+    $assessmentListItemRunThree->addText(' – During the testing window if a critical vulnerability is found notifications will be sent to your point of contact through our communication platform to ensure remediation action.');
+
+    $assessmentListItemRunFour = $statementOfWorksPage->addListItemRun();
+    $assessmentListItemRunFour->addText('Data Handling', array('bold'=>true));
+    $assessmentListItemRunFour->addText(' – All testing is performed in a secure laboratory adhering to ISO27001 requirements, only our testing personnel will have access to critical information.');
+
+
     $statementOfWorksPage->addTitle('Post-Test', 2);
+
+    $postTestListItemRunOne = $statementOfWorksPage->addListItemRun();
+    $postTestListItemRunOne->addText('Report Delivery', array('bold'=>true));
+    $postTestListItemRunOne->addText(' - All reports are encrypted from source and are send to your registered point of contact, passwords are sent via SMS to ensure maximum security controls.');
+
+    $postTestListItemRunTwo = $statementOfWorksPage->addListItemRun();
+    $postTestListItemRunTwo->addText('Report Results', array('bold'=>true));
+    $postTestListItemRunTwo->addText(' - Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment.');
+
+    $postTestListItemRunThree = $statementOfWorksPage->addListItemRun();
+    $postTestListItemRunThree->addText('Data Removal', array('bold'=>true));
+    $postTestListItemRunThree->addText(' - Once your test has been completed, we dispose of all information using CREST approved procedures and handling methods.');
+
+    $postTestListItemRunFour = $statementOfWorksPage->addListItemRun();
+    $postTestListItemRunFour->addText('Debrief', array('bold'=>true));
+    $postTestListItemRunFour->addText(' - Red Team Partner encourages a debrief call with our tester to discuss any risk and remediation steps following the result of the report.');
+
 
     $statementOfWorksPageFooter = $statementOfWorksPage->addFooter();
     $statementOfWorksPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -665,6 +722,8 @@
     $typeOfServicePage->addTitle('Type of Service(s)', 1); // TOC Bookmark 
     $typeOfServicePage->addTextBreak();
 
+
+
     $typeOfServicePageFooter = $typeOfServicePage->addFooter();
     $typeOfServicePageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $typeOfServicePageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
@@ -679,6 +738,53 @@
 
     $costingPage->addTitle('Costing', 1); // TOC Bookmark 
     $costingPage->addTextBreak();
+
+    $costingPage->addText('Day Rate:', array('bold'=>true));
+    $costingPage->addTextBreak();
+    $costingPage->addText('Summary', array('bold'=>true));
+    $costingPageTable = $costingPage->addTable(array(
+        'width' => 5000,
+        'unit' => 'pct',
+        'bgColor' => '9966CC',
+        'cellSpacing' => 0,
+        'bgColor'=>'494849',
+        'borderSize'=>0,
+        'cellMargin' => 100
+    ));
+    $costingPageTable->addRow();
+    $costingPageTable->addCell()->addText('Phase 1', null, array('alignment'=>'center'));
+    $costingPageTable->addCell()->addText('Activity', null, array('alignment'=>'center'));
+    $costingPageTable->addCell()->addText('Days', null, array('alignment'=>'center'));
+    $costingPageTable->addCell()->addText('Price', null, array('alignment'=>'center'));
+
+    $costingPageTable->addRow();
+    $costingPageTable->addCell();
+    $costingPageTable->addCell();
+    $costingPageTable->addCell();
+    $costingPageTable->addCell();
+
+    $costingPageTable->addRow();
+    $costingPageTable->addCell()->addText('TOTAL', null, array('alignment'=>'center'));
+    $costingPageTable->addCell();
+    $costingPageTable->addCell();
+    $costingPageTable->addCell();
+
+    $costingPage->addTextBreak();
+
+    $costingPage->addText('Pricing Notes:', array('bold'=>true, ));
+
+    
+    $costingPage->addListItem('Red Team Partners retains the right to charge for lost income in the event of postponed or cancelled work as mentioned in our Terms and Conditions.', 0);
+    $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0);
+    $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0);
+    $costingPage->addListItem('If the scope of this project chances, change requested and updated purchase order will be required.', 0);
+    $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0);
+    $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0);
+    $costingPage->addPageBreak();
+
+
+    $costingPage->addText('Our Approach', array('bold'=> true));
+    $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
 
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -695,6 +801,8 @@
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
 
+    // DYNAMIC CONTENT
+
     $methodologiesPageFooter = $methodologiesPage->addFooter();
     $methodologiesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $methodologiesPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
@@ -709,6 +817,26 @@
 
     $reportingPage->addTitle('Reporting', 1); // TOC Bookmark 
     $reportingPage->addTextBreak();
+
+    $reportingPage->addText('After the assessment has been completed Red Team Partners will evaluate any vulnerabilities detected and evaluate their risk rating. These vulnerabilities will be formulated and presented with next step actions to mitigate the risks linked to the final report.');
+
+    $reportingPageTable = $reportingPage->addTable(array(
+            'width' => 5000,
+            'unit' => 'pct',
+            'bgColor' => '9966CC',
+            'cellSpacing' => 0,
+            'bgColor'=>'494849',
+            'borderSize'=>0,
+            'cellMargin' => 100
+        )
+    );
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Colour', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Risk Rating', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('CVSSv2 Score', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Explanation', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
+
 
     $reportingPageFooter = $reportingPage->addFooter();
     $reportingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
