@@ -106,18 +106,52 @@
 
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
+    // force update to reflect correct page number in TOC.
+    $phpWord->getSettings()->setUpdateFields(true);
 
     //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 
+    // SETTING THE META DATA OF THE DOCUMENT
+    // $properties = $phpWord->getDocInfo();
+    // $properties->setCreator( get_ebook_author() );
+    // $properties->setCompany( get_ebook_author() );
+    // $properties->setTitle( get_ebook_title() );
+    // $properties->setDescription( get_ebook_description() );
+    // $properties->setCreated( get_ebook_date_created() );
+    // $properties->setModified( time() );
+
+
+    // GENERAL SETTINGS
+    $phpWord->setDefaultFontName( 'Calibri' );
+    $phpWord->setDefaultFontSize( 12 );
+    $phpWord->setDefaultParagraphStyle( array(
+       'lineHeight' => 1.3,
+    ) );
+
+    $phpWord->addNumberingStyle(
+        'hNum',
+        array(
+           'type'   => 'multilevel',
+           'levels' => array(
+                array('pStyle' => 'Heading1', 'format' => 'decimal', 'text' => '%1'),
+                array('pStyle' => 'Heading2', 'format' => 'decimal', 'text' => '%1.%2'),
+                array('pStyle' => 'Heading3', 'format' => 'decimal', 'text' => '%1.%2.%3'),
+           )
+        )
+     );
+
+
     // adding the necessary font styles
-    $phpWord->addTitleStyle(null, array('size' => 22, 'bold' => true));
-    $phpWord->addTitleStyle(1, array('size' => 20, 'color' => '333333', 'bold' => true));
-    $phpWord->addTitleStyle(2, array('size' => 16, 'color' => '666666'));
-    $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
-    $phpWord->addTitleStyle(4, array('size' => 12));
+    // Define styles
+    $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
+    $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
+    $phpWord->addTitleStyle(1, array('size' => 24, 'color' => '000000', 'bold' => true));
+    $phpWord->addTitleStyle(2, array('size' => 20, 'color' => '333333', 'italic'=>true));
+    // $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
+    // $phpWord->addTitleStyle(4, array('size' => 12));
     
     //adding the necessary header/title styles
-    $phpWord->addTitleStyle(1, array('name'=>'HelveticaNeueLT Std Med', 'size'=>16, 'color'=>'990000')); //h1
+    // $phpWord->addTitleStyle(1, array('name'=>'HelveticaNeueLT Std Med', 'size'=>16, 'color'=>'red')); //h1
     // $phpWord->addTitleStyle(2, "font_h2"); //h2
     // $phpWord->addTitleStyle(3, "font_h3"); //h3
 
@@ -126,8 +160,8 @@
     
 
     // General Settings
-    $phpWord->setDefaultFontName('Times New Roman');
-    $phpWord->setDefaultFontSize(14);
+    // $phpWord->setDefaultFontName('Times New Roman');
+    // $phpWord->setDefaultFontSize(14);
 
 
     // template colors
@@ -164,6 +198,17 @@
         'alignment'=>'right',
         'size'=>12
     );
+
+    $servicesFontStyle = array(
+        'color'=>'D4173D',
+        'italic'=>true,
+    );
+
+    $servicesParagraphStyle = array(
+        'alignment'=>'center'
+    );
+
+    $coverCreatedCellStyle = array('bgColor'=>'494849');
 
     $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
 
@@ -203,8 +248,8 @@
     $cell2->addImage(
         'assets/images/rtp-logo.png',
         array(
-            'width'         => 218,
-            'height'        => 52,
+            'width'         => 200,
+            // 'height'        => 52,
             'marginTop'     => 2,
             'marginLeft'    => -1,
             'wrappingStyle' => 'behind',
@@ -222,7 +267,7 @@
     $confidentialityTable = $coverPage->addTable(
         array(
             'cellMarginTop'  => 300,
-            'cellMarginBottom' => 500,
+            'cellMarginBottom' => 300,
             'cellMarginLeft' => 200,
             'cellMarginRight' => 200,
             'alignment'   => 'center',
@@ -247,7 +292,7 @@
 
     $coverPage->addTextBreak(2);
     
-    $createdTable = $coverPage->addTable(
+    $coverCreatedByTable = $coverPage->addTable(
         array(
             'width' => 5000,
             'unit' => 'pct',
@@ -255,27 +300,38 @@
             'cellSpacing' => 0,
             'bgColor'=>'494849',
             'borderSize'=>0,
-            'cellMargin' => 100
+            'borderColor'=>'494849',
+            'cellMarginTop' => 110,
+            'cellMarginLeft' => 125
         )
     );
 
-    $createdTable->addRow();
-    $createdTable->addCell(2250, array('bgColor'=>'494849', 'borderSize'=>0 ))->addText('Created By:', array('color'=>'FFFFFF', 'bold'=>true, 'size'=>14));
-    $createdTable->addCell(2250, array('bgColor'=>'494849', 'borderSize'=>0 ))->addText('Created For:', array('color'=>'FFFFFF', 'bold'=>true, 'size'=>14));
+    $coverCreatedVariableFontStyle = array(
+        'color'=>'FFFFFF',
+        'size'=>12,
+    );
 
-    $createdTable->addRow();
-    $createdTable->addCell(2250)->addText($accountManagerName);
-    $createdTable->addCell(2250)->addText($accountManagerEmail);
+    $coverCreatedVariableParagraphStyle = array(
+        'indent'=>1
+    );
 
-    $createdTable->addRow();
-    $createdTable->addCell(2250)->addText('Red Team Partners');
-    $createdTable->addCell(2250)->addText($companyName);
+    $coverCreatedByTable->addRow();
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText('Created By:', array('color'=>'FFFFFF', 'bold'=>true, 'size'=>14), array('indent'=>0.5));
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText('Created For:', array('color'=>'FFFFFF', 'bold'=>true, 'size'=>14), array('indent'=>0.5));
+
+    $coverCreatedByTable->addRow();
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($accountManagerName, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($accountManagerEmail, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
+
+    $coverCreatedByTable->addRow();
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText('Red Team Partners', $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($companyName, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
 
     $coverPage->addTextBreak(3);
 
-    $table4 = $coverPage->addTable($defaultTableStyle);
-    $table4->addRow();
-    $cell4 = $table4->addCell(6000, $cellRowSpan);
+    $coverFillerTable = $coverPage->addTable($defaultTableStyle);
+    $coverFillerTable->addRow();
+    $coverFillerTable->addCell(6000, $cellRowSpan);
 
 
     //############################### END COVER PAGE ###############################
@@ -307,21 +363,16 @@
     $TOCPagePageHeader = $TOCPage->addHeader();
     $TOCPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
-    // Define styles
-    $fontStyle12 = array('spaceAfter' => 60, 'size' => 12);
-    $fontStyle10 = array('size' => 10);
-    $phpWord->addTitleStyle(null, array('size' => 22, 'bold' => true));
-    $phpWord->addTitleStyle(1, array('size' => 20, 'color' => '333333', 'bold' => true));
-    $phpWord->addTitleStyle(2, array('size' => 16, 'color' => '666666'));
-    $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
-    $phpWord->addTitleStyle(4, array('size' => 12));
-
     // Add text elements
     $TOCPage->addTitle('Table of Contents', 0);
-    $TOCPage->addTextBreak(2);
+    $TOCPage->addTextBreak();
 
     // Add TOC #1
-    $toc = $TOCPage->addTOC($fontStyle12);
+    $toc = $TOCPage->addTOC($TOCFontStyle);
+    
+    $toc->setMinDepth( 1 );
+    $toc->setMaxDepth( 2 );
+
     $TOCPage->addTextBreak(2);
 
     $TOCPageFooter = $TOCPage->addFooter();
@@ -495,6 +546,7 @@
     $ourApproachPage->addTextBreak(2);
 
     // QUOTABLE QUOTES
+    $ourApproachPage->addTextBreak();
     $ourApproachPage->addText('“Red Team Partners have been an integral part of validating and testing our InfoSec strategy. Flexible, agile and always ready to provide insights on the latest industry threats and attack vectors, Red Team Partners provide a personalised service that continues to evolve and adapt to our company\'s rapid growth.”', $quoteFontStyle, $quoteParagraphStyle);
     $ourApproachPage->addText('- Oil and Gas Industry Client', array('bold'=>true, 'italic'=>true), $quoteParagraphStyle);
 
@@ -513,13 +565,13 @@
     $whatMakesUsDifferentPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $whatMakesUsDifferentPage->addTitle('What Makes Us Different?', 1); // TOC Bookmark 
-    $whatMakesUsDifferentPage->addTextBreak();
+    // $whatMakesUsDifferentPage->addTextBreak();
 
-    $whatMakesUsDifferentPage->addText('With other provider offering services, why choose us?', array('italic'=>true, 'bold'=>true));
+    $whatMakesUsDifferentPage->addText('With other provider offering services, why choose us?', array('italic'=>true, 'bold'=>true, 'size'=>14));
     $whatMakesUsDifferentPage->addTextBreak();
     
     $whatMakesUsDifferentPage->addText('Deeper Customer Experience', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('We understand that conducting a (Service) can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy to understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('We understand that conducting a (Service) can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy-to-understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.',0 ,null, array('format'=>'bullet'));
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Better Availability and Capabilities', array('bold'=>true));
@@ -539,6 +591,7 @@
     $whatMakesUsDifferentPage->addTextBreak();
 
     // QUOTABLE QUOTES
+    $whatMakesUsDifferentPage->addTextBreak();
     $whatMakesUsDifferentPage->addText('"I’ve been in the industry for more than 20 years and I am not impressed easily, but my client support experience with RTP has made a positive and lasting impression. They are attentive to my questions, even the ones I may have asked last month, always helpful and never rush the conversation. I’m sure that’s all part of the job description but RTP truly exemplifies commitment when it comes to helping me and my organization."', $quoteFontStyle, $quoteParagraphStyle);
     $whatMakesUsDifferentPage->addText('- Financial Services Customer', array('bold'=>true, 'italic'=>true), $quoteParagraphStyle);
     $whatMakesUsDifferentPage->addTextBreak(3);
@@ -585,13 +638,11 @@
     $statementOfWorksPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $statementOfWorksPage->addTitle('Statement of Works', 1); // TOC Bookmark 
-    $statementOfWorksPage->addTextBreak();
-
-
+    
     // BODY PART
     $statementOfWorksPage->addText('Red Team Partners will provide the services described in this scope. A final Statement of Works will be provided by the delivery team once the proposal has been accepted.');
     $statementOfWorksPage->addText('Understanding the Hamilton’s environment is key to performing the correct assessment. This section will contain the type of assessment requested.');
-    $statementOfWorksPage->addTextBreak(2);
+    $statementOfWorksPage->addTextBreak();
 
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
 
@@ -720,7 +771,7 @@
     $typeOfServicePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $typeOfServicePage->addTitle('Type of Service(s)', 1); // TOC Bookmark 
-    $typeOfServicePage->addTextBreak();
+    // $typeOfServicePage->addTextBreak();
 
 
 
@@ -737,7 +788,7 @@
     $costingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $costingPage->addTitle('Costing', 1); // TOC Bookmark 
-    $costingPage->addTextBreak();
+    // $costingPage->addTextBreak();
 
     $costingPage->addText('Day Rate:', array('bold'=>true));
     $costingPage->addTextBreak();
@@ -799,7 +850,7 @@
     $methodologiesPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
-    $methodologiesPage->addTextBreak();
+    // $methodologiesPage->addTextBreak();
 
     // DYNAMIC CONTENT
 
@@ -816,14 +867,15 @@
     $reportingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $reportingPage->addTitle('Reporting', 1); // TOC Bookmark 
-    $reportingPage->addTextBreak();
+    // $reportingPage->addTextBreak();
 
     $reportingPage->addText('After the assessment has been completed Red Team Partners will evaluate any vulnerabilities detected and evaluate their risk rating. These vulnerabilities will be formulated and presented with next step actions to mitigate the risks linked to the final report.');
+    $reportingPage->addTextBreak();
 
     $reportingPageTable = $reportingPage->addTable(array(
             'width' => 5000,
             'unit' => 'pct',
-            'bgColor' => '9966CC',
+            'borderColor' => 'FFFFFF',
             'cellSpacing' => 0,
             'bgColor'=>'494849',
             'borderSize'=>0,
@@ -832,10 +884,102 @@
     );
 
     $reportingPageTable->addRow();
-    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Colour', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
-    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Risk Rating', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
-    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('CVSSv2 Score', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
-    $reportingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Explanation', array('bold'=>true, 'color'=>'white'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(500, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Colour', array('bold'=>true, 'color'=>'FFFFFF', 'italic'=>true), array('alignment'=>'center') );
+    $reportingPageTable->addCell(1000, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Risk Rating', array('bold'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(1000, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('CVSSv2 Score', array('bold'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center') );
+    $reportingPageTable->addCell(2500, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Explanation', array('bold'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center') );
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(500, array('bgColor'=>'7030A0', 'valign'=>'center'))->addText('Purple', array('italic'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'E6CEEE', 'valign'=>'center'))->addText('Critical', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'E6CEEE', 'valign'=>'center'))->addText('9.0-10.0', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(2500, array('bgColor'=>'E6CEEE', 'valign'=>'center'))->addText('This requires resolution as quickly as possible.', null, array('alignment'=>'center'));
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(500, array('bgColor'=>'FF0000', 'valign'=>'center'))->addText('Red', array('italic'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'FADAD2', 'valign'=>'center'))->addText('High', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'FADAD2', 'valign'=>'center'))->addText('7.0-8.9', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(2500, array('bgColor'=>'FADAD2', 'valign'=>'center'))->addText('This requires resolution in the near future.', null, array('alignment'=>'center'));
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(500, array('bgColor'=>'FFC000', 'valign'=>'center'))->addText('Orange', array('italic'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'FFE4B5', 'valign'=>'center'))->addText('Medium', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'FFE4B5', 'valign'=>'center'))->addText('4.0-6.9', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(2500, array('bgColor'=>'FFE4B5', 'valign'=>'center'))->addText('This requires resolution in the medium term.', null, array('alignment'=>'center'));
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(500, array('bgColor'=>'00B0F0', 'valign'=>'center'))->addText('Blue', array('italic'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'C5F0FF', 'valign'=>'center'))->addText('Low', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'C5F0FF', 'valign'=>'center'))->addText('1.0-3.9', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(2500, array('bgColor'=>'C5F0FF', 'valign'=>'center'))->addText('This requires resolution as part as routine maintenance.', null, array('alignment'=>'center'));
+
+    $reportingPageTable->addRow();
+    $reportingPageTable->addCell(500, array('bgColor'=>'00B050', 'valign'=>'center'))->addText('Green', array('italic'=>true, 'color'=>'FFFFFF'), array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'C3F9CD', 'valign'=>'center'))->addText('Informational', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(1000, array('bgColor'=>'C3F9CD', 'valign'=>'center'))->addText('0-0.9', null, array('alignment'=>'center'));
+    $reportingPageTable->addCell(2500, array('bgColor'=>'C3F9CD', 'valign'=>'center'))->addText('This requires resolution to be in line with best practices.', null, array('alignment'=>'center'));
+
+    $reportingPage->addTextBreak();
+    $reportingPage->addText('Our reports our presented for management and technical personal');
+
+    $reportingPage->addPageBreak();
+
+    $managementSummaryTextRun = $reportingPage->addTextRun();
+    $managementSummaryTextRun->addText('Management Summary', array('bold'=>true));
+    $managementSummaryTextRun->addText(' – a high level summary of results including recommendations and overall security posture. This summary is simple and easy to understand it included critical issues found and allows non-technical executives to understand the issues.');
+
+    $reportingPage->addImage(
+        'assets/images/management-summary.jpg',
+        array(
+            'width'         => 300,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+
+    $reportingPage->addTextBreak(2);
+
+    $technicalFindingsTextRun = $reportingPage->addTextRun();
+    $technicalFindingsTextRun->addText('Technical Findings', array('bold'=>true));
+    $technicalFindingsTextRun->addText(' – breakdown of vulnerabilities found during testing phase including exploitation probability, technical fix and risk mitigation advice. Prioritised risks are provided to deal with most actionable suggestions.');
+
+    $reportingPage->addImage(
+        'assets/images/technical-findings.jpg',
+        array(
+            'width'         => 300,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+
+    $reportingPage->addTextBreak(2);
+
+    $evidenceTextRun = $reportingPage->addTextRun();
+    $evidenceTextRun->addText('Evidence', array('bold'=>true));
+    $evidenceTextRun->addText('– Evidence of vulnerabilities will be provided within the report, this will include findings of critical flaws and high-risk vulnerabilities. Vulnerabilities are reported in detail showing the depth of our testing, screenshots and examples are provided.');
+
+    $reportingPage->addTextBreak(2);
+    
+    $recommendationsRemediationsTextRun = $reportingPage->addTextRun();
+    $recommendationsRemediationsTextRun->addText('Recommendations and Remediations', array('bold'=>true));
+    $recommendationsRemediationsTextRun->addText(' – Based on findings discovered, our cyber experts provide an in-depth remediation summary based on industry best practice. Samples and screenshots will also be provided within your report.');
+
+    $reportingPage->addImage(
+        'assets/images/summary-of-findings.jpg',
+        array(
+            'width'         => 300,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+
+    // $reportingPage->addTextBreak(2);
 
 
     $reportingPageFooter = $reportingPage->addFooter();
@@ -851,7 +995,16 @@
     $deliveryStepsPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $deliveryStepsPage->addTitle('Delivery Steps', 1); // TOC Bookmark 
-    $deliveryStepsPage->addTextBreak();
+    // $deliveryStepsPage->addTextBreak();
+
+    $deliveryStepsPage->addText('Red Team Partners delivery team will require the following information before testing is conducted:', 0);
+    $deliveryStepsPage->addListItem('Technical point of contact who can help resolve or escalate and access or performance issues', 0);
+    $deliveryStepsPage->addListItem('Access to testing environment through credentials and change requests', 0);
+    $deliveryStepsPage->addListItem('Third parties have consented and been made aware of testing', 0);
+    $deliveryStepsPage->addListItem('IP addresses of devices', 0);
+    $deliveryStepsPage->addListItem('Delivery Team may ask for details during testing phase', 0);
+
+
 
     $deliveryStepsPageFooter = $deliveryStepsPage->addFooter();
     $deliveryStepsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -867,7 +1020,15 @@
     $timescalesPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $timescalesPage->addTitle('Timescales', 1); // TOC Bookmark 
+    // $timescalesPage->addTextBreak();
+
+    $timescalesPage->addText('Once dates have been confirmed by our delivery team and a full Statement of Works has been issued, we are able to start conducting testing.');
+    $timescalesPage->addText('You will be allocated a project manager as your project point of contact in addition to this you will also have access to your project lead consultant through our communication platform throughout your testing window. They will be responsible for successfully managing and controlling your project. They will help manage any project issues and track the progress of your project, the delivery team is accountable for the delivery of the full project and will ensure that the project is completed to the expected standard and agreed timescales. All reports are internally reviewed and quality assessed before being released.');
+
+    // QUOTABLE QUOTES
     $timescalesPage->addTextBreak();
+    $timescalesPage->addText('"RTP has become an important part of our team for all things Information and Cyber Security. They are a trusted vendor for External/Internal Penetration and Vulnerability Testing.  We have found their process to be easy to follow and their testing to be very thorough.”', $quoteFontStyle, $quoteParagraphStyle);
+    $timescalesPage->addText('- Legal Customer', array('bold'=>true, 'italic'=>true), $quoteParagraphStyle);
 
     $timescalesPageFooter = $timescalesPage->addFooter();
     $timescalesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -883,7 +1044,32 @@
     $whyChooseRTPPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $whyChooseRTPPage->addTitle('Why Choose Red Team Partners', 1); // TOC Bookmark 
-    $whyChooseRTPPage->addTextBreak();
+    // $whyChooseRTPPage->addTextBreak();
+
+    $whyChooseRTPPage->addText('Red Team Partners Experience', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Red Team Partners has provided cyber security services on a global scale from small-medium business to enterprise clients. Our speed, quality and customer experience have been a major factor of successful growth and continued success.', 0);
+
+    $whyChooseRTPPage->addText('Red Team Partners Strength', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Within the cyber security industry, we have a reputation for fast delivery, excellent quality of service and affordable pricing around the world. Our team consists of highly renowned experts in the field of cyber security and hold a vast amount of experience by working with cyber strategic intelligence services. Our customers noticeably experience Red Team Partners values in our service.', 0);
+
+    $whyChooseRTPPage->addText('Vulnerability Detection', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Our teams research through new methods and technologies to identify the most accurate vulnerabilities within your security posture. These accurate findings will provide quantified data to allow actions against findings.', 0);
+
+    $whyChooseRTPPage->addText('Manual Testing', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Our tests are conducted manually rather than using automated scanning tools, these techniques are specialised and can often outperform hackers’ techniques. Using manual testing eradicates false positive which are common in scanning tools.', 0);
+
+    $whyChooseRTPPage->addText('Remediations', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Our recommendations are provided by cyber experts who can identify real actionable results, our customers trust these recommendations and are assured these are for the best benefits of the client’s security posture.', 0);
+
+    $whyChooseRTPPage->addText('Scalable', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('We have the capacity to deliver from small to enterprises business worldwide and respond to immediate time scales.', 0);
+
+    $whyChooseRTPPage->addText('Experts in the Field', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('Our team consists of best cyber experts from around the world, all are dedicated to helping customers stay secure with years of practical experience in the field. Our Team includes experts with CREST, OSCP, CISSP and GWAPT and CISM. Our certified testers ensure quality of testing and continually research new techniques and technologies.', 0);
+
+    $whyChooseRTPPage->addText('Long Term Vision', array('bold'=>true));
+    $whyChooseRTPPage->addListItem('One of our main pillars of Red Team Partners is understanding the long-term partnership with organisations. Our purpose is to provide an outstanding service to develop a long-term relationship with our customers. Our customers are confident in our ability to deliver their requirements and very often use us for future projects.', 0);
+
 
     $whyChooseRTPPageFooter = $whyChooseRTPPage->addFooter();
     $whyChooseRTPPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -899,7 +1085,7 @@
     $testersQualificationsPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
-    $testersQualificationsPage->addTextBreak();
+    // $testersQualificationsPage->addTextBreak();
 
     $testersQualificationsPageFooter = $testersQualificationsPage->addFooter();
     $testersQualificationsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -907,14 +1093,53 @@
     
     //############################### END OUR TESTERS QUALIFICATIONS PAGE ###############################    
 
+    //############################### SERVICES PAGE ###############################
+
+    $servicesPage = $phpWord->addSection();
+    $servicesPagePageHeader = $servicesPage->addHeader();
+    $servicesPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+
+    // $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
+    // $testersQualificationsPage->addTextBreak();
+
+
+
+    $servicesPage->addText('SERVICES', array('size'=>26, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
+    $servicesPage->addText('Red Team Partners Offers the Following Services:', array('size'=>16, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
+    $servicesPage->addTextBreak();
+    $servicesPage->addText('Web Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Red Team Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Vulnerability Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Infrastructure Testing (Internal and External)', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('API Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Mobile iOS and Android Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Phishing Simulation', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Documentation Review', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Firewall Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cloud Based Configuration Review', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Wireless Network Audit', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('VPN Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Build Review', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('PCI DSS Compliance Audit', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Secure Code Review', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cyber Security Training (Engineers and Awareness/Management)', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Forensics and Investigations', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Dark Web Cyber Intelligence Monitoring', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Performance Stress Testing/Load Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('IoT Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    
+
+    $servicesPageFooter = $servicesPage->addFooter();
+    $servicesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
+    $servicesPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
+    
+    //############################### END SERVICES PAGE ###############################   
+
     // // Saving the document as OOXML file...
     // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
     // $objWriter->save('helloWorld.docx');
 
     // echo 'Generating Word File... Please wait.';
-
-    // force update to reflect correct page number in TOC.
-    $phpWord->getSettings()->setUpdateFields(true);
 
     // if you want to download the file instead.
     $file = str_replace(' ', '', $companyName) . '-'. date("Y/m/d") .'.docx';
