@@ -89,12 +89,12 @@
 
                         
 
-                        <div class="col-xs-12 col-lg-12">
+                        <!-- <div class="col-xs-12 col-lg-12">
                             <div class="form-group">
                             <textarea class="form-control" name="test-reason" id="test-reason" rows="3" aria-label="Reason for Testing" placeholder="Reason for Testing"></textarea>
                             <small id="test-reason-help" class="form-text text-muted">What's the reason for testing?</small>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -155,6 +155,16 @@
                                 
                             </div>
                         </div>
+
+                        <div class="col-xs-12 col-lg-12">
+                            <div class="form-group">
+                                <div class="list-service-wrapper" id="list-service-wrapper">
+                            
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <div class="col-xs-12 col-lg-12">
                             <div class="form-group">
                                 <input type="text"
@@ -171,8 +181,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
             <div class="row">
                 <div class="col-lg-12">

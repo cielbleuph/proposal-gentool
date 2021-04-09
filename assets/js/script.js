@@ -1,5 +1,18 @@
 $(document).ready(function(){
-	$('#test-date').datepicker({
+	  // var services = [];
+   
+  // $.each($(".service-type option:selected"), function(){            
+  //     services.push($(this).val());
+  // });
+  // // alert("You have selected the services - " + services.join(", "));
+
+  // $('.list-service-wrapper').html(services);
+  
+  // $('.service-type').select(function(){
+  //   alert( 'test' );
+  // });
+  
+  $('#test-date').datepicker({
 		minDate: 0
 	});
 
@@ -39,7 +52,6 @@ $(document).ready(function(){
           else{
             console.log('AJAX return data error.');
           }
-
           
         },
         error: function( xhr, textStatus, errorThrown ) {
@@ -48,6 +60,7 @@ $(document).ready(function(){
     });
 	});
 }); // document
+
 
 function dateToday(){
   var today = new Date();

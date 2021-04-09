@@ -525,7 +525,7 @@
     $projectSummaryPage->addTextBreak();
     
     // BODY PART
-    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'.  Currently, '.$companyName.' requires ' .$reasonForTesting.'. Part of this project includes '.$serviceDescription.' to these tests are performed to ensure best security practices. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle);
+    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle);
     $projectSummaryPage->addText('Red Team Partners has a specialist team that has a wealth of experience assessing security postures and finding vulnerabilities in organisations that are driving a cyber security strategy. Red Team Partners world class team focus exclusively on some of most important cyber security movements within an organisation involving implementation, systems, infrastructure and applications.', $defaultFontStyle);
     $projectSummaryPage->addText('Red Team Partners are positioned as a partner of '.$companyName.' to help work together in assisting the security maturity of the organisation. Our world-wide specialist team allow us to work within timeframes that best suit you, including a 24-hour turnaround time for those immediate scenarios.', $defaultFontStyle);
     $projectSummaryPage->addText('For '.$companyName.' we understand the security of your assets is a vital process in your business. A breach can have a catastrophic impact on your brand reputation and overall revenue. Red Team Partners has been approached to conduct the following services - '.$serviceDescription.' which allow '.$companyName.' to understand vulnerabilities and risks including concise actions and how to address them.', $defaultFontStyle);
@@ -697,7 +697,7 @@
     $detailsOfScopeTable->addRow();
     $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
     $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
-    $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE'); // Azsandra!
+    $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
     
     // foreach ($typeOfService as $key) {
     //     $detailsOfScopeTableCell->addListItem($key);
