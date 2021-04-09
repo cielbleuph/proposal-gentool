@@ -1225,6 +1225,310 @@
     $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
     // $testersQualificationsPage->addTextBreak();
 
+    
+    $testersQualificationsTable = $testersQualificationsPage->addTable(
+        array(
+            'cellSpacing'=>$converter->pixelToTwip(10),
+            'alignment'=>'center'
+        )
+    );
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/oscp-logo.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell()->addText('Offensive Security Certified Professional');
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/CCT-logo.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Cisco Certified Technician (CCT)');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/GIAC-Web-Application-Penetration-Tester.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('GIAC Web Application Penetration Tester');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/GIAC-Advisory-Board-Certification.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('GIAC Advisory Board Certification');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/GIAC-Exploit-Researcher-Advances-Penetration-Tester.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('GIAC Exploit Researcher and Advances Penetration Tester');
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Certified-Information-Systems.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Information Systems');
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/CREST.jpg',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('CREST');
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/ECIH.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Incident Handler (ECIH)');
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Certified-Information-Security-Manager.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Information Security Manager');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Google-Associate-Cloud-Engineer.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('GCP| Google Associate Cloud Engineer');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/CCNA.jpg',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Cisco - Certified Network Associate (CCNA)');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Nexpose-Advanced-Certified-Administrator.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Nexpose Advanced Certified Administrator');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/International-Software-Testing-Qualifications-Board.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('International Software Testing Qualifications Board');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Certified-Cloud-Security-Professional.jpg',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Cloud Security Professional');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/CompTIA-Pentest.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('CompTIA Pentest+');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Certified-Penetration-Testing-Consultant.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Penetration Testing Consultant');
+
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/OSCP-OSWE.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('OSCP - Offensive Security Web Exploitation (OSWE AVAE)');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Certified-Ethical-Hacker.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Certified Ethical Hacker');
+
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/Fortinet-Network-Security-Associate.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('Fortinet - Network Security Associate');
+
+
+    $testersQualificationsTable->addRow();
+    $testersQualificationsTable->addCell(100)->addImage(
+        'assets/images/logos/AZ-900-MS-Azure-Fundamentals.png',
+        array(
+            'width'         => 100,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
+    $testersQualificationsTable->addCell(null, array('valign'=>'center'))->addText('AZ-900| Microsoft Azure Fundamentals');
+
+
 
 
     $testersQualificationsPageFooter = $testersQualificationsPage->addFooter();
