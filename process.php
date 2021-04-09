@@ -1,20 +1,28 @@
 <?php
     
     use PhpOffice\PhpWord\PhpWord;
+    use PhpOffice\PhpWord\Shared\Converter;
 
     require_once __DIR__ . '/vendor/autoload.php';
 
     // Variables
 
     if ( isset($_POST) ) {
+
+        // var_dump($_POST);
+        // die();
         // var_dump($_POST);
 
         if ( isset($_POST['account-manager']) && $_POST['account-manager'] != '' ){
             $accountManagerName = $_POST['account-manager'];
         }
 
-         if ( isset($_POST['account-manager-email']) && $_POST['account-manager-email'] != '' ){
+        if ( isset($_POST['account-manager-email']) && $_POST['account-manager-email'] != '' ){
             $accountManagerEmail = $_POST['account-manager-email'];
+        }
+
+        if ( isset($_POST['account-manager-contact']) && $_POST['account-manager-contact'] != '' ){
+            $accountManagerNumber = $_POST['account-manager-contact'];
         }
 
         if ( isset($_POST['company-description']) && $_POST['company-description'] != '' ){
@@ -30,7 +38,7 @@
         }
 
         if ( isset($_POST['client-contact']) && $_POST['client-contact'] != '' ){
-            $clientNumber = $_POST['client-contact'];
+            $clientContactNumber = $_POST['client-contact'];
         }
 
         if ( isset($_POST['client-email']) && $_POST['client-email'] != '' ){
@@ -45,9 +53,9 @@
             $startDate = $_POST['test-date'];
         }
 
-        if ( isset($_POST['service-description']) && $_POST['service-description'] != '' ){
-            $serviceDescription = $_POST['service-description'];
-        }
+        // if ( isset($_POST['service-description']) && $_POST['service-description'] != '' ){
+        //     $serviceDescription = $_POST['service-description'];
+        // }
 
         if ( isset($_POST['number-of-days']) && $_POST['number-of-days'] != '' ){
             $numberOfDays = $_POST['number-of-days'];
@@ -61,42 +69,47 @@
             $typeOfService = $_POST['service-type'];
         }
 
-        if ( isset($_POST['methodologies']) && $_POST['methodologies'] != '' ){
-            $methodologies = $_POST['methodologies'];
-        }
+        // if ( isset($_POST['methodologies']) && $_POST['methodologies'] != '' ){
+        //     $methodologies = $_POST['methodologies'];
+        // }
 
-        if ( isset($_POST['assessment-type']) && $_POST['assessment-type'] != '' ){
-            $typeofAssessments = $_POST['assessment-type'];
-        }
+        // if ( isset($_POST['assessment-type']) && $_POST['assessment-type'] != '' ){
+        //     $typeofAssessments = $_POST['assessment-type'];
+        // }
     }
 
     // die();
 
     // FIXED 
+
+    
+    $serviceDescription = str_replace(",", ", ",implode(",", $typeOfService));
+
     $accountManagerNumber = "020 3951 0299"; // FIXED
 
-    $accountManagerName = "Mr Account Manager";
-    $accountManagerEmail = "accountsmanager@rtp.co";
-    $companyDescription = 'Lorem Impsum Dolor Amet';
-    $reasonForTesting = 'This is some sample reason for testing for the purpose of testing only.';
-    $clientContactName = "Mr Client ABC";
-    $companyName = 'Company XYZ';
-    $startDate = '12/12/2021';
-    $serviceDescription = 'Service 007';
-    $numberOfDays = '10';
+    // $accountManagerName = "Mr Account Manager";
+    // $accountManagerEmail = "accountsmanager@rtp.co";
+    // $accountManagerNumber = '';
+    // $companyDescription = 'Lorem Impsum Dolor Amet';
+    // $reasonForTesting = 'This is some sample reason for testing for the purpose of testing only.';
+    // $clientContactName = "Mr Client ABC";
+    // $companyName = 'Company XYZ';
+    // $startDate = '12/12/2021';
+    // $serviceDescription = 'Service 007';
+    // $numberOfDays = '10';
 
-    $scopeOfService = '';
-    $typeOfService = '';
-    $methodologies = '';
+    // $scopeOfService = '';
+    // // $typeOfService = '';
+    // $methodologies = '';
 
 
-    // NOT IN FORM
-    $typeofAssessments = 'Sample Type of Assessment'; // could this be type of services in form?
-    $clientContactNumber = "092457851452";
-    $clientContactEmail = "mrclientabc@testcompany.co";
-    $rtpRepName = "Mr. Expert Test";
-    $rtpRepNumber = "1234567890";
-    $rtpRepEmail = "rtp@test.co";
+    // // NOT IN FORM
+    // $typeofAssessments = 'Sample Type of Assessment'; // could this be type of services in form?
+    // $clientContactNumber = "092457851452";
+    // $clientContactEmail = "mrclientabc@testcompany.co";
+    // $rtpRepName = "Mr. Expert Test";
+    // $rtpRepNumber = "1234567890";
+    // $rtpRepEmail = "rtp@test.co";
 
     // foreach( $_POST as $stuff => $val) {
     //     echo '<br />' . $stuff . ': ' . $val . '<br />';
@@ -106,6 +119,8 @@
 
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
+    // helper 
+    $converter = new \PhpOffice\PhpWord\Shared\Converter();
     // force update to reflect correct page number in TOC.
     $phpWord->getSettings()->setUpdateFields(true);
 
@@ -122,7 +137,7 @@
 
 
     // GENERAL SETTINGS
-    $phpWord->setDefaultFontName( 'Calibri' );
+    $phpWord->setDefaultFontName( 'Times New Roman' );
     $phpWord->setDefaultFontSize( 12 );
     $phpWord->setDefaultParagraphStyle( array(
        'lineHeight' => 1.3,
@@ -169,6 +184,8 @@
     $defaultTableStyle = array(
         'unit'=>'pct', 
         'width' => 5000,
+        'alignment' => 'center',
+        'borderSize'=>0
     );
     
     $defaultFontStyle = array(
@@ -321,7 +338,7 @@
 
     $coverCreatedByTable->addRow();
     $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($accountManagerName, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
-    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($accountManagerEmail, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
+    $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText($clientContactName, $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
 
     $coverCreatedByTable->addRow();
     $coverCreatedByTable->addCell(2250, $coverCreatedCellStyle)->addText('Red Team Partners', $coverCreatedVariableFontStyle, $coverCreatedVariableParagraphStyle );
@@ -401,13 +418,26 @@
             'cellMargin' => 100
         )
     );
-    $typeAssessmentTable->addRow();
-    $typeAssessmentTable->addCell(1500)->addText('Type of Assessment(s):');
-    $typeAssessmentTable->addCell(3500);
+
+
+    // $typeOfServiceString = implode(",", $typeOfService);
+    // var_dump($typeOfServiceString);
+    // var_dump(gettype($typeOfService));
+
+    
+    // die();
 
     $typeAssessmentTable->addRow();
-    $typeAssessmentTable->addCell(1500)->addText('Recommended Start Date:');
-    $typeAssessmentTable->addCell(3500);
+    $typeAssessmentTable->addCell(1500, array('bgColor'=>'CE4E4E'))->addText('Type of Assessment(s):', array('color'=>'FFFFFF'));
+    $typeAssessmentCell = $typeAssessmentTable->addCell(3500, array('bgColor'=>'F5B7A6'));
+    foreach ($typeOfService as $key) {
+        $typeAssessmentCell->addListItem($key, 0);
+    }
+    // $typeAssessmentCell->addListItem();
+
+    $typeAssessmentTable->addRow();
+    $typeAssessmentTable->addCell(1500, array('bgColor'=>'CE4E4E'))->addText('Recommended Start Date:', array('color'=>'FFFFFF'));
+    $typeAssessmentTable->addCell(3500, array('bgColor'=>'F5B7A6'))->addText($startDate);
 
     $proposalDetailsPage->addTextBreak(2);
 
@@ -424,19 +454,19 @@
     );
 
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(5000, array('gridSpan'=> 2))->addText('Red Team Partners', array() , array('align'=>'center') );
+    $RTPfillUpFormTable->addCell(5000, array('gridSpan'=> 2, 'bgColor'=>'CE4E4E'))->addText('Red Team Partners', array('color'=>'FFFFFF', 'bold'=>true) , array('align'=>'center') );
     
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000)->addText('Contact Name:');
-    $RTPfillUpFormTable->addCell(4000);
+    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
+    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerName);
     
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000)->addText('Number:');
-    $RTPfillUpFormTable->addCell(4000);
+    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Number:');
+    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerNumber);
 
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000)->addText('Email:');
-    $RTPfillUpFormTable->addCell(4000);
+    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Email:');
+    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerEmail);
 
 
     $proposalDetailsPage->addTextBreak();
@@ -455,19 +485,19 @@
 
 
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(5000, array('gridSpan'=> 2))->addText($companyName, array() , array('align'=>'center') );
+    $companyfillUpFormTable->addCell(5000, array('gridSpan'=> 2, 'bgColor'=>'CE4E4E'))->addText($companyName, array('color'=>'FFFFFF', 'bold'=>true) , array('align'=>'center') );
     
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000)->addText('Contact Name:');
-    $companyfillUpFormTable->addCell(4000);
+    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
+    $companyfillUpFormTable->addCell(4000)->addText($clientContactName);
     
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000)->addText('Number:');
-    $companyfillUpFormTable->addCell(4000);
+    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Number:');
+    $companyfillUpFormTable->addCell(4000)->addText($clientContactNumber);
 
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000)->addText('Email:');
-    $companyfillUpFormTable->addCell(4000);
+    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Email:');
+    $companyfillUpFormTable->addCell(4000)->addText($clientContactEmail);
 
     $proposalDetailsPage->addTextBreak();
 
@@ -495,10 +525,10 @@
     $projectSummaryPage->addTextBreak();
     
     // BODY PART
-    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'.  Currently, '.$companyName.' requires $reasonForTesting. Part of this project includes '.$serviceDescription.' to these tests are performed to ensure best security practices. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle);
+    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'.  Currently, '.$companyName.' requires ' .$reasonForTesting.'. Part of this project includes '.$serviceDescription.' to these tests are performed to ensure best security practices. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle);
     $projectSummaryPage->addText('Red Team Partners has a specialist team that has a wealth of experience assessing security postures and finding vulnerabilities in organisations that are driving a cyber security strategy. Red Team Partners world class team focus exclusively on some of most important cyber security movements within an organisation involving implementation, systems, infrastructure and applications.', $defaultFontStyle);
     $projectSummaryPage->addText('Red Team Partners are positioned as a partner of '.$companyName.' to help work together in assisting the security maturity of the organisation. Our world-wide specialist team allow us to work within timeframes that best suit you, including a 24-hour turnaround time for those immediate scenarios.', $defaultFontStyle);
-    $projectSummaryPage->addText('For '.$companyName.' we understand the security of your assets is a vital process in your business. A breach can have a catastrophic impact on your brand reputation and overall revenue. Red Team Partners has been approached to conduct '.$serviceDescription.' which allow '.$companyName.' to understand vulnerabilities and risks including concise actions and how to address them.', $defaultFontStyle);
+    $projectSummaryPage->addText('For '.$companyName.' we understand the security of your assets is a vital process in your business. A breach can have a catastrophic impact on your brand reputation and overall revenue. Red Team Partners has been approached to conduct the following services - '.$serviceDescription.' which allow '.$companyName.' to understand vulnerabilities and risks including concise actions and how to address them.', $defaultFontStyle);
     $projectSummaryPage->addText('Red Team Partners will act as your partner (It’s in the name). Our team of world-class experts will provide a custom test based on your requirements and deliver a clear roadmap of recommendations for change. We confidently update our world class methodologies and technologies to combat new threats.', $defaultFontStyle);
     
 
@@ -565,7 +595,7 @@
     $whatMakesUsDifferentPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $whatMakesUsDifferentPage->addTitle('What Makes Us Different?', 1); // TOC Bookmark 
-    // $whatMakesUsDifferentPage->addTextBreak();
+    $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('With other provider offering services, why choose us?', array('italic'=>true, 'bold'=>true, 'size'=>14));
     $whatMakesUsDifferentPage->addTextBreak();
@@ -605,22 +635,23 @@
         'width' => 5000,
         'unit' => 'pct',
         'bgColor' => '9966CC',
-        'cellSpacing' => 0,
+        // 'cellSpacing' => 0,
         'bgColor'=>'494849',
         'borderSize'=>0,
-        'cellMargin' => 100
+        'cellMarginTop' => 100,
+        'cellMarginLeft' => 50
     ));
     $nextStepsTable->addRow();
-    $nextStepsTable->addCell(3000)->addText('Account Manager Name:');
-    $nextStepsTable->addCell(3000)->addText($accountManagerName);
+    $nextStepsTable->addCell(3000, array('bgColor'=>'CE4E4E'))->addText('Account Manager Name:', array('color'=>'FFFFFF'));
+    $nextStepsTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($accountManagerName);
 
     $nextStepsTable->addRow();
-    $nextStepsTable->addCell(3000)->addText('Account Manager Email:');
-    $nextStepsTable->addCell(3000)->addText($accountManagerEmail);    
+    $nextStepsTable->addCell(3000, array('bgColor'=>'CE4E4E'))->addText('Account Manager Email:', array('color'=>'FFFFFF'));
+    $nextStepsTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($accountManagerEmail);    
     
     $nextStepsTable->addRow();
-    $nextStepsTable->addCell(3000)->addText('Account Manager Number:');
-    $nextStepsTable->addCell(3000)->addText($accountManagerNumber);    
+    $nextStepsTable->addCell(3000, array('bgColor'=>'CE4E4E'))->addText('Account Manager Number:', array('color'=>'FFFFFF'));
+    $nextStepsTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($accountManagerNumber);    
     
     
     // FOOTER PART
@@ -652,7 +683,6 @@
     
     $statementOfWorksPage->addTitle('Details of Scope', 2);
     $statementOfWorksPage->addText('Company has identified the following parameters for the test:');
-    $statementOfWorksPage->addTextBreak();
 
     $detailsOfScopeTable = $statementOfWorksPage->addTable(array(
         'width' => 5000,
@@ -665,14 +695,21 @@
     ));
 
     $detailsOfScopeTable->addRow();
-    $detailsOfScopeTable->addCell(3000)->addText('Type of Test:');
-    $detailsOfScopeTable->addCell(3000)->addText('(SERVICE)');
+    $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
+    $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
+    $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE'); // Azsandra!
+    
+    // foreach ($typeOfService as $key) {
+    //     $detailsOfScopeTableCell->addListItem($key);
+    // }
+
+
 
     $detailsOfScopeTable->addRow();
-    $detailsOfScopeTable->addCell(3000)->addText('Number of Days:');
-    $detailsOfScopeTable->addCell(3000)->addText($numberOfDays);
+    $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
+    $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
 
-
+    $statementOfWorksPage->addTextBreak();
     $statementOfWorksPage->addText('(SCOPE LIST HERE)');
 
     $statementOfWorksPage->addPageBreak();
@@ -770,8 +807,15 @@
     $typeOfServicePageHeader = $typeOfServicePage->addHeader();
     $typeOfServicePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
-    $typeOfServicePage->addTitle('Type of Service(s)', 1); // TOC Bookmark 
+    $typeOfServicePage->addTitle('Type of Service(s):', 1); // TOC Bookmark 
     // $typeOfServicePage->addTextBreak();
+
+    
+    foreach ($typeOfService as $key) {
+        # code...
+        $typeOfServicePage->addListItem($key, 0);
+    }
+        
 
 
 
@@ -797,28 +841,37 @@
         'width' => 5000,
         'unit' => 'pct',
         'bgColor' => '9966CC',
-        'cellSpacing' => 0,
         'bgColor'=>'494849',
         'borderSize'=>0,
-        'cellMargin' => 100
+        // 'cellMarginTop' => $converter->inchToTwip(0),
+        // 'cellMarginBottom' => $converter->inchToTwip(0),
+        // 'cellMarginLeft' => $converter->inchToTwip(0.8),
+        // 'cellMarginRight' => $converter->inchToTwip(0.8)
     ));
-    $costingPageTable->addRow();
-    $costingPageTable->addCell()->addText('Phase 1', null, array('alignment'=>'center'));
-    $costingPageTable->addCell()->addText('Activity', null, array('alignment'=>'center'));
-    $costingPageTable->addCell()->addText('Days', null, array('alignment'=>'center'));
-    $costingPageTable->addCell()->addText('Price', null, array('alignment'=>'center'));
+
+
+    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
+    // $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
+
+    
 
     $costingPageTable->addRow();
-    $costingPageTable->addCell();
-    $costingPageTable->addCell();
-    $costingPageTable->addCell();
-    $costingPageTable->addCell();
+    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase 1', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
+    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText('Activity', null, array('alignment'=>'center', 'bold'=>true));
+    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText('Days', null, array('alignment'=>'center', 'bold'=>true));
+    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'))->addText('Price', null, array('alignment'=>'center', 'bold'=>true));
 
     $costingPageTable->addRow();
-    $costingPageTable->addCell()->addText('TOTAL', null, array('alignment'=>'center'));
-    $costingPageTable->addCell();
-    $costingPageTable->addCell();
-    $costingPageTable->addCell();
+    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'));
+    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'));
+    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'));
+    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
+
+    $costingPageTable->addRow();
+    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('TOTAL', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
+    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'));
+    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'));
+    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
 
     $costingPage->addTextBreak();
 
@@ -831,7 +884,7 @@
     $costingPage->addListItem('If the scope of this project chances, change requested and updated purchase order will be required.', 0);
     $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0);
     $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0);
-    $costingPage->addPageBreak();
+    $costingPage->addTextBreak();
 
 
     $costingPage->addText('Our Approach', array('bold'=> true));
@@ -853,6 +906,91 @@
     // $methodologiesPage->addTextBreak();
 
     // DYNAMIC CONTENT
+
+
+
+    foreach($typeOfService as $service) {
+
+        if ($service === 'Web Application Penetration Testing') {
+            $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
+        }
+
+        if ($service === 'Red Team Assessment') {
+            $methodologiesPage->addText('--- insert Red Team Assessment content ---');
+        }
+
+        if ($service === 'Vulnerability Assessment') {
+            $methodologiesPage->addText('--- insert Vulnerability Assessment content ---');
+        }
+
+        if ($service === 'Infrastructure Testing') {
+            $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
+        }
+
+        if ($service === 'API Testing') {
+            $methodologiesPage->addText('--- insert API Testing content ---');
+        }
+
+        if ($service === 'Mobile iOS and Android Testing') {
+            $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
+        }
+
+        if ($service === 'Phishing Simulation') {
+            $methodologiesPage->addText('--- insert Phishing Simulation content ---');
+        }
+
+        if ($service === 'Documentation Review') {
+            $methodologiesPage->addText('--- insert Documentation Review content ---');
+        }
+
+        if ($service === 'Firewall Assessment') {
+            $methodologiesPage->addText('--- insert Firewall Assessment content ---');
+        }
+
+        if ($service === 'Cloud Based Configuration Review') {
+            $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
+        }
+
+        if ($service === 'Wireless Network Audit') {
+            $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
+        }
+
+        if ($service === 'VPN Assessment') {
+            $methodologiesPage->addText('--- insert VPN Assessment content ---');
+        }
+
+        if ($service === 'Build Review') {
+            $methodologiesPage->addText('--- insert Build Review content ---');
+        }
+
+        if ($service === 'PCI DSS Compliance Audit') {
+            $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
+        }
+
+        if ($service === 'Secure Code Review') {
+            $methodologiesPage->addText('--- insert Secure Code Review content ---');
+        }
+
+        if ($service === 'Cyber Security Training') {
+            $methodologiesPage->addText('--- insert Cyber Security Training content ---');
+        }
+
+        if ($service === 'Forensics and Investigations') {
+            $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
+        }
+
+        if ($service === 'Dark Web Cyber Intelligence Monitoring') {
+            $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
+        }
+
+        if ($service === 'Performance Stress Testing/Load Testing') {
+            $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
+        }
+
+        if ($service === 'IoT Penetration Testing') {
+            $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+        }
+    }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();
     $methodologiesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -1087,6 +1225,8 @@
     $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
     // $testersQualificationsPage->addTextBreak();
 
+
+
     $testersQualificationsPageFooter = $testersQualificationsPage->addFooter();
     $testersQualificationsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $testersQualificationsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
@@ -1099,14 +1239,9 @@
     $servicesPagePageHeader = $servicesPage->addHeader();
     $servicesPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
-    // $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
-    // $testersQualificationsPage->addTextBreak();
-
-
-
     $servicesPage->addText('SERVICES', array('size'=>26, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
     $servicesPage->addText('Red Team Partners Offers the Following Services:', array('size'=>16, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
-    $servicesPage->addTextBreak();
+    // $servicesPage->addTextBreak();
     $servicesPage->addText('Web Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Red Team Assessment', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Vulnerability Assessment', $servicesFontStyle, $servicesParagraphStyle);
@@ -1128,6 +1263,28 @@
     $servicesPage->addText('Performance Stress Testing/Load Testing', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('IoT Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
     
+
+    // Web Application Penetration Testing
+    // Red Team Assessment
+    // Vulnerability Assessment
+    // Infrastructure Testing
+    // API Testing
+    // Mobile iOS and Android Testing
+    // Phishing Simulation
+    // Documentation Review
+    // Firewall Assessment
+    // Cloud Based Configuration Review
+    // Wireless Network Audit
+    // VPN Assessment
+    // Build Review
+    // PCI DSS Compliance Audit
+    // Secure Code Review
+    // Cyber Security Training
+    // Forensics and Investigations
+    // Dark Web Cyber Intelligence Monitoring
+    // Performance Stress Testing/Load Testing
+    // IoT Penetration Testing
+
 
     $servicesPageFooter = $servicesPage->addFooter();
     $servicesPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
