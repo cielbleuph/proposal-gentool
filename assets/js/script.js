@@ -9,19 +9,22 @@ $(document).ready(function(){
     // minimumInputLength: 2 // only start searching when the user has input 3 or more characters
   });
 
+  
+  
+  // 2. if service is removed from data variable, delete element in html.
+  
+  // 0. add each service type to variable data and create an element based on the data.
   var serviceTypesData = $('#service-type').select2('data');
 
-  $.each(serviceTypesData, function(key, value){
-    console.log(serviceTypesData[key].text);
-  });
-
+  // 1. check if there is new service entered in data variable, if there is, append new service to html form.
   $('#service-type').on('select2:select', function (e) {
     // Do something
     $.each(serviceTypesData, function(key, value){
-      console.log(serviceTypesData[key].text);
+      
     });
   });
 
+  
 	$('form#proposal-generator-form').on('submit', function(e){
 		e.preventDefault();
 
