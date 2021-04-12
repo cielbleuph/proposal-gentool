@@ -1,22 +1,26 @@
 $(document).ready(function(){
-	  // var services = [];
-   
-  // $.each($(".service-type option:selected"), function(){            
-  //     services.push($(this).val());
-  // });
-  // // alert("You have selected the services - " + services.join(", "));
-
-  // $('.list-service-wrapper').html(services);
-  
-  // $('.service-type').select(function(){
-  //   alert( 'test' );
-  // });
-  
   $('#test-date').datepicker({
 		minDate: 0
 	});
 
-  $('.js-example-basic-multiple').select2();
+  $('#service-type').select2({
+    // placeholder: 'This is my placeholder',
+    // allowClear: true
+    // minimumInputLength: 2 // only start searching when the user has input 3 or more characters
+  });
+
+  var serviceTypesData = $('#service-type').select2('data');
+
+  $.each(serviceTypesData, function(key, value){
+    console.log(serviceTypesData[key].text);
+  });
+
+  $('#service-type').on('select2:select', function (e) {
+    // Do something
+    $.each(serviceTypesData, function(key, value){
+      console.log(serviceTypesData[key].text);
+    });
+  });
 
 	$('form#proposal-generator-form').on('submit', function(e){
 		e.preventDefault();

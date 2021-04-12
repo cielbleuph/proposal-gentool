@@ -9,10 +9,6 @@
 
     if ( isset($_POST) ) {
 
-        // var_dump($_POST);
-        // die();
-        // var_dump($_POST);
-
         if ( isset($_POST['account-manager']) && $_POST['account-manager'] != '' ){
             $accountManagerName = $_POST['account-manager'];
         }
@@ -697,7 +693,13 @@
     $detailsOfScopeTable->addRow();
     $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
     $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
-    $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
+    // $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
+
+    foreach ($typeOfService as $key) {
+        # code...
+        $statementOfWorksPage->addListItem($key, 0);
+    }
+        
     
     // foreach ($typeOfService as $key) {
     //     $detailsOfScopeTableCell->addListItem($key);

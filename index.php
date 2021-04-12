@@ -32,6 +32,8 @@
         select{
             width: 100%;
         }
+
+
     </style>
   </head>
   <body>
@@ -46,7 +48,6 @@
             <strong>Under Development</strong>
         </div>
         <form method="post" action="process.php" id="proposal-generator-form" class="proposal-generator-form">
-            
             <div class="row">
                 <div class="col-md-6">
                     <h2>Client Information Sheet</h2>
@@ -85,17 +86,6 @@
                                 <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
                             </div>
                         </div>
-                        
-
-                        
-
-                        <!-- <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                            <textarea class="form-control" name="test-reason" id="test-reason" rows="3" aria-label="Reason for Testing" placeholder="Reason for Testing"></textarea>
-                            <small id="test-reason-help" class="form-text text-muted">What's the reason for testing?</small>
-                            </div>
-                        </div> -->
-
                     </div>
                 </div>
 
@@ -128,7 +118,7 @@
                             <div class="form-group">
                                 <!-- <input type="text"
                                     class="form-control" name="service-type" id="service-type" aria-label="Type of Service" aria-describedby="service-type-help" placeholder="Type of Service"> -->
-                                <select class="js-example-basic-multiple service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
+                                <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
                                     <option value="Web Application Penetration Testing">Web Application Penetration Testing</option>
                                     <option value="Red Team Assessment">Red Team Assessment</option>
                                     <option value="Vulnerability Assessment">Vulnerability Assessment</option>
@@ -182,48 +172,11 @@
                     </div>
                 </div>
             </div>
-
-
+            <hr />
             <div class="row">
                 <div class="col-lg-12">
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </div>
-            </div>
-
-            
-                
-                <!-- <div class="col-xs-12 col-lg-4">
-                    <div class="form-group">
-                        <input type="text"
-                            class="form-control" name="service-description" id="service-description" aria-label="Service Description" aria-describedby="service-help" placeholder="Service Description">
-                        <small id="service-description-help" class="form-text text-muted">Enter service description.</small>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="col-xs-12 col-lg-4">
-                    <div class="form-group">
-                        <input type="text"
-                            class="form-control" name="scope" id="scope" aria-label="Scope of Test/Service" aria-describedby="scope-help" placeholder="Scope of Test/Service">
-                        <small id="scope-help" class="form-text text-muted">Enter scope of services/tests included.</small>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="col-xs-12 col-lg-4">
-                    <div class="form-group">
-                        <input type="text"
-                            class="form-control" name="assessment-type" id="assessment-type" aria-label="Assessment Type" aria-describedby="assessment-type-help" placeholder="Assessment Type">
-                        <small id="assessment-type-help" class="form-text text-muted">What is the type of Assessment?</small>
-                    </div>
-                </div> -->
-                
-                
-                <!-- <div class="col-xs-12 col-lg-12">
-                    <div class="form-group">
-                        <textarea class="form-control" name="methodologies" id="methodologies" rows="3" aria-label="Methodologies" placeholder="Methodologies"></textarea>
-                        <small id="methodologies-help" class="form-text text-muted">What is the methodologies involved?</small>
-                    </div>
-                </div> -->
-               
             </div>
         </form>
     </div>
@@ -239,6 +192,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script src="assets/js/script.js?t=<?php echo time(); ?>"></script>
   </body>
 </html>
