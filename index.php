@@ -33,6 +33,9 @@
             width: 100%;
         }
 
+        #service-type-container{
+            /* display: none; */
+        }
 
     </style>
   </head>
@@ -143,6 +146,12 @@
                                 <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
                                 <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
                                 
+                            </div>
+                            <div class="form-group service-type-container" id="service-type-container">
+                                <p>Services Type Wrapper</p>
+                                <div class="services-type-wrapper" id="services-type-wrapper">
+                                    
+                                </div>
                             </div>
                         </div>
 
