@@ -148,9 +148,9 @@
                                 
                             </div>
                             <div class="form-group service-type-container" id="service-type-container">
-                                <p>Services Type Wrapper</p>
                                 <div class="services-type-wrapper" id="services-type-wrapper">
-                                    
+                                    <ul>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

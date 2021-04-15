@@ -1,3 +1,7 @@
+var serviceTypesData = [];
+var servicesWrapper = [];
+var serviceTypeDataLength = 0;
+
 $(document).ready(function(){
   $('#test-date').datepicker({
 		minDate: 0
@@ -14,14 +18,28 @@ $(document).ready(function(){
   // 2. if service is removed from data variable, delete element in html.
   
   // 0. add each service type to variable data and create an element based on the data.
-  var serviceTypesData = $('#service-type').select2('data');
+  
 
-  // 1. check if there is new service entered in data variable, if there is, append new service to html form.
-  $('#service-type').on('select2:select', function (e) {
-    // Do something
-    $.each(serviceTypesData, function(key, value){
+
+  $('#service-type').on('change', function (e) {
+    
+    serviceTypesData = $('#service-type').select2('data');
+    serviceTypeDataLength = serviceTypesData.length;
+
+    $.each(serviceTypesData, function(index, serviceDataObj){
+      // 1. check if there is new service entered in data variable, if there is, append new service to html form.      
       
+      servicesWrapper.indexOf(serviceDataObj.text) === -1 ? servicesWrapper.push(serviceDataObj.text) : console.log('this item already exists, skipping...');
+
+      var tmpVar = '.' + (serviceDataObj.text).replace(/\s+/g, "") +'_class';
+
+      console.log(tmpVar);
+
+      if ( $('#services-type-wrapper').has(tmpVar).length === 0 ) {
+        $('#services-type-wrapper').append( '<li class="'+ (serviceDataObj.text).replace(/\s+/g, "") +'_class">' + serviceDataObj.text + '</li>');
+      }
     });
+    // console.log(servicesWrapper);
   });
 
   
