@@ -37,6 +37,10 @@
             /* display: none; */
         }
 
+        .services-actions{
+            display: none;
+        }
+
     </style>
   </head>
   <body>
@@ -147,10 +151,21 @@
                                 <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
                                 
                             </div>
+                            
+
                             <div class="form-group service-type-container" id="service-type-container">
                                 <div class="services-type-wrapper" id="services-type-wrapper">
                                     <ul>
                                     </ul>
+                                </div>
+                            </div>
+
+                            <div class="services-actions row">
+                                <div class="col-md-6">
+                                    <button class="btn-success btn" id="add-days" disabled>Add Days</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn-danger btn" id="clear-services" disabled>Clear Selection</button>
                                 </div>
                             </div>
                         </div>

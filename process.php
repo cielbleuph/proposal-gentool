@@ -134,7 +134,7 @@
 
     // GENERAL SETTINGS
     $phpWord->setDefaultFontName( 'Times New Roman' );
-    $phpWord->setDefaultFontSize( 12 );
+    $phpWord->setDefaultFontSize( 14 );
     $phpWord->setDefaultParagraphStyle( array(
        'lineHeight' => 1.3,
     ) );
@@ -195,6 +195,11 @@
         'marginRight'    => -1,
         'wrappingStyle' => 'behind',
         'alignment' => 'right',
+    );
+
+    $paragraphHeadingStyle = array(
+        'bold' => true,
+        'size' => 16
     );
 
     $footerTextStyle = array(
@@ -834,7 +839,7 @@
     $costingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $costingPage->addTitle('Costing', 1); // TOC Bookmark 
-    // $costingPage->addTextBreak();
+    $costingPage->addTextBreak();
 
     $costingPage->addText('Day Rate:', array('bold'=>true));
     $costingPage->addTextBreak();
@@ -905,7 +910,7 @@
     $methodologiesPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
-    // $methodologiesPage->addTextBreak();
+    $methodologiesPage->addTextBreak();
 
     // DYNAMIC CONTENT
 
@@ -914,7 +919,8 @@
     foreach($typeOfService as $service) {
 
         if ($service === 'Web Application Penetration Testing') {
-            $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
+            // $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
+            include('inc/methodologies/web-application-pentest.php');
         }
 
         if ($service === 'Red Team Assessment') {
@@ -930,7 +936,8 @@
         }
 
         if ($service === 'API Testing') {
-            $methodologiesPage->addText('--- insert API Testing content ---');
+            // $methodologiesPage->addText('--- insert API Testing content ---');
+            include('inc/methodologies/api-testing.php');
         }
 
         if ($service === 'Mobile iOS and Android Testing') {
@@ -1007,7 +1014,7 @@
     $reportingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
     $reportingPage->addTitle('Reporting', 1); // TOC Bookmark 
-    // $reportingPage->addTextBreak();
+    $reportingPage->addTextBreak();
 
     $reportingPage->addText('After the assessment has been completed Red Team Partners will evaluate any vulnerabilities detected and evaluate their risk rating. These vulnerabilities will be formulated and presented with next step actions to mitigate the risks linked to the final report.');
     $reportingPage->addTextBreak();
