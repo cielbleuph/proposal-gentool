@@ -157,7 +157,7 @@
     $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
     $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
     $phpWord->addTitleStyle(1, array('size' => 24, 'color' => '000000', 'bold' => true));
-    $phpWord->addTitleStyle(2, array('size' => 20, 'color' => '333333', 'italic'=>true));
+    $phpWord->addTitleStyle(2, array('size' => 18, 'color' => '333333', 'bold' => true, 'underline'=>'single' ));
     // $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
     
@@ -177,6 +177,10 @@
 
     // template colors
     $paletteRed = 'D31439';
+    $darkRed = 'CE4E4E';
+    $lightRed = 'F5B7A6';
+
+
     $defaultTableStyle = array(
         'unit'=>'pct', 
         'width' => 5000,
@@ -969,7 +973,8 @@
         }
 
         if ($service === 'Build Review') {
-            $methodologiesPage->addText('--- insert Build Review content ---');
+            // $methodologiesPage->addText('--- insert Build Review content ---');
+            include('inc/methodologies/build-review.php');
         }
 
         if ($service === 'PCI DSS Compliance Audit') {
