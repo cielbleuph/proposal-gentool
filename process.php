@@ -961,7 +961,8 @@
         }
 
         if ($service === 'Cloud Based Configuration Review') {
-            $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
+            // $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
+            include('inc/methodologies/cloud-based-config-review.php');
         }
 
         if ($service === 'Wireless Network Audit') {
