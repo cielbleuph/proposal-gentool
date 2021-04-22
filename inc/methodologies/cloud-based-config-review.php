@@ -1,5 +1,15 @@
 <?php
 
+
+    $DarkRedCellStyle = array(
+        'bgColor' => $darkRed,
+        'valign'=> 'center',
+    );
+
+    $lightRedCellStyle = array(
+        'bgColor' => $lightRed
+    );
+
     $methodologiesPage->addTitle('Cloud Based Configuration', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle);
@@ -28,23 +38,23 @@
     
     $methodologyCloudBasedConfigTable->addRow();
     $methodologyCloudBasedConfigTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center') );
-    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Patch levels, both Operating System and Third-Party Management Services', null, array('indent'=>0.5));
+    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Ensure access controls are in place for individual users.', null, array('indent'=>0.5));
 
     $methodologyCloudBasedConfigTable->addRow();
     $methodologyCloudBasedConfigTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Trust relationships', null, array('indent'=>0.5));
+    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Ensure that logging features have been enabled.', null, array('indent'=>0.5));
 
     $methodologyCloudBasedConfigTable->addRow();
     $methodologyCloudBasedConfigTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Network shares and permissions', null, array('indent'=>0.5));
+    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Ensure password strength factors are implemented with sane settings.', null, array('indent'=>0.5));
 
     $methodologyCloudBasedConfigTable->addRow();
     $methodologyCloudBasedConfigTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Local shares and permissions', null, array('indent'=>0.5));
+    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Ensure that multi factor authentication is offered.', null, array('indent'=>0.5));
 
     $methodologyCloudBasedConfigTable->addRow();
     $methodologyCloudBasedConfigTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Password hashtag mechanisms', null, array('indent'=>0.5));
+    $methodologyCloudBasedConfigTable->addCell(null, $lightRedCellStyle)->addText('Best practise review of specific implementations such as OFS, Intune, AWS, etc. etc.', null, array('indent'=>0.5));
 
 
     $methodologiesPage->addPageBreak();

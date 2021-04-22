@@ -126,26 +126,37 @@
                                 <!-- <input type="text"
                                     class="form-control" name="service-type" id="service-type" aria-label="Type of Service" aria-describedby="service-type-help" placeholder="Type of Service"> -->
                                 <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
-                                    <option value="Web Application Penetration Testing">Web Application Penetration Testing</option>
-                                    <option value="Red Team Assessment">Red Team Assessment</option>
-                                    <option value="Vulnerability Assessment">Vulnerability Assessment</option>
-                                    <option value="Infrastructure Testing">Infrastructure Testing</option>
-                                    <option value="API Testing">API Testing</option>
-                                    <option value="Mobile iOS and Android Testing">Mobile iOS and Android Testing</option>
-                                    <option value="Phishing Simulation">Phishing Simulation</option>
-                                    <option value="Documentation Review">Documentation Review</option>
-                                    <option value="Firewall Assessment">Firewall Assessment</option>
-                                    <option value="Cloud Based Configuration Review">Cloud Based Configuration Review</option>
-                                    <option value="Wireless Network Audit">Wireless Network Audit</option>
-                                    <option value="VPN Assessment">VPN Assessment</option>
-                                    <option value="Build Review">Build Review</option>
-                                    <option value="PCI DSS Compliance Audit">PCI DSS Compliance Audit</option>
-                                    <option value="Secure Code Review">Secure Code Review</option>
-                                    <option value="Cyber Security Training">Cyber Security Training</option>
-                                    <option value="Forensics and Investigations">Forensics and Investigations</option>
-                                    <option value="Dark Web Cyber Intelligence Monitoring">Dark Web Cyber Intelligence Monitoring</option>
-                                    <option value="Performance Stress Testing/Load Testing">Performance Stress Testing/Load Testing</option>
-                                    <option value="IoT Penetration Testing">IoT Penetration Testing</option>
+                                    <?php 
+                                        $services = array(
+                                            'API Testing',
+                                            'Build Review',
+                                            'Cloud Based Configuration Review',
+                                            'Cyber Security Training',
+                                            'Dark Web Cyber Intelligence Monitoring',
+                                            'Documentation Review',
+                                            'Firewall Assessment',
+                                            'Forensics and Investigations',
+                                            'Infrastructure Testing',
+                                            'IoT Penetration Testing',
+                                            'Mobile iOS and Android Testing',
+                                            'PCI DSS Compliance Audit',
+                                            'Performance Stress Testing/Load Testing',
+                                            'Phishing Simulation',
+                                            'Red Team Assessment',
+                                            'Secure Code Review',
+                                            'VPN Assessment',
+                                            'Vulnerability Assessment',
+                                            'Web Application Penetration Testing',
+                                            'Wireless Network Audit',
+                                        );
+
+                                        sort($services);
+
+                                        foreach($services as $service)
+                                        echo '<option value="'.$service.'">'.$service.'</option>';
+                                    ?>
+
+
                                 </select>
                                 <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
                                 <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
