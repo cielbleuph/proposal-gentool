@@ -72,6 +72,8 @@
         // if ( isset($_POST['assessment-type']) && $_POST['assessment-type'] != '' ){
         //     $typeofAssessments = $_POST['assessment-type'];
         // }
+
+
     }
 
     // die();
@@ -203,7 +205,11 @@
 
     $paragraphHeadingStyle = array(
         'bold' => true,
-        'size' => 16
+        'size' => 18
+    );
+
+    $paragraphHeadingPStyle = array(
+        'lineHeight' => 2
     );
 
     $footerTextStyle = array(
@@ -462,16 +468,16 @@
     $RTPfillUpFormTable->addCell(5000, array('gridSpan'=> 2, 'bgColor'=>'CE4E4E'))->addText('Red Team Partners', array('color'=>'FFFFFF', 'bold'=>true) , array('align'=>'center') );
     
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
-    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerName);
+    $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
+    $RTPfillUpFormTable->addCell()->addText($accountManagerName);
     
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Number:');
-    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerNumber);
+    $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Number:');
+    $RTPfillUpFormTable->addCell()->addText($accountManagerNumber);
 
     $RTPfillUpFormTable->addRow();
-    $RTPfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Email:');
-    $RTPfillUpFormTable->addCell(4000)->addText($accountManagerEmail);
+    $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Email:');
+    $RTPfillUpFormTable->addCell()->addText($accountManagerEmail);
 
 
     $proposalDetailsPage->addTextBreak();
@@ -687,27 +693,60 @@
     $statementOfWorksPage->addTextBreak();
     
     $statementOfWorksPage->addTitle('Details of Scope', 2);
+    $statementOfWorksPage->addTextBreak();
     $statementOfWorksPage->addText('Company has identified the following parameters for the test:');
+    $statementOfWorksPage->addTextBreak();
 
     $detailsOfScopeTable = $statementOfWorksPage->addTable(array(
         'width' => 5000,
         'unit' => 'pct',
         'bgColor' => '9966CC',
-        'cellSpacing' => 0,
         'bgColor'=>'494849',
-        'borderSize'=>0,
-        'cellMargin' => 100
+        'borderSize'=>0
     ));
 
     $detailsOfScopeTable->addRow();
-    $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
-    $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
-    // $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
+    // $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase 1', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
+    $detailsOfScopeTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'CE4E4E'))->addText('Service(s)', array('color'=>'FFFFFF'), array('alignment'=>'center', 'bold'=>true));
+    $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Days', array('color'=>'FFFFFF'), array('alignment'=>'center', 'bold'=>true));
+    // $detailsOfScopeTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'))->addText('Price', null, array('alignment'=>'center', 'bold'=>true));
+
+    
 
     foreach ($typeOfService as $key) {
         # code...
-        $statementOfWorksPage->addListItem($key, 0);
+        // $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
+        // $statementOfWorksPage->addTextBreak();
+        // $statementOfWorksPage->addTextBreak();
+
+        $detailsOfScopeTable->addRow();
+        // $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E'));
+        $detailsOfScopeTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
+        $detailsOfScopeTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( $_POST[ str_replace(' ', '', $key) ] ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );;
+        // $detailsOfScopeTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
     }
+
+
+
+    // $detailsOfScopeTable = $statementOfWorksPage->addTable(array(
+    //     'width' => 5000,
+    //     'unit' => 'pct',
+    //     'bgColor' => '9966CC',
+    //     'cellSpacing' => 0,
+    //     'bgColor'=>'494849',
+    //     'borderSize'=>0,
+    //     'cellMargin' => 100
+    // ));
+
+    // $detailsOfScopeTable->addRow();
+    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
+    // $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
+    // // $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
+
+    // foreach ($typeOfService as $key) {
+    //     # code...
+    //     $detailsOfScopeTableCell->addListItem($key, 0);
+    // }
         
     
     // foreach ($typeOfService as $key) {
@@ -716,12 +755,20 @@
 
 
 
-    $detailsOfScopeTable->addRow();
-    $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
-    $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
+    // $detailsOfScopeTable->addRow();
+    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
+    // $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
 
     $statementOfWorksPage->addTextBreak();
-    $statementOfWorksPage->addText('(SCOPE LIST HERE)');
+    // $statementOfWorksPage->addText('(SCOPE LIST HERE)');
+
+
+    foreach ($typeOfService as $key) {
+        # code...
+        $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
+        $statementOfWorksPage->addTextBreak();
+        $statementOfWorksPage->addTextBreak();
+    }
 
     $statementOfWorksPage->addPageBreak();
     $statementOfWorksPage->addText('Red Team Partners will use the following stages to undertake the service requested.', array('bold'=>true));
@@ -853,30 +900,32 @@
         'unit' => 'pct',
         'bgColor' => '9966CC',
         'bgColor'=>'494849',
-        'borderSize'=>0,
-        // 'cellMarginTop' => $converter->inchToTwip(0),
-        // 'cellMarginBottom' => $converter->inchToTwip(0),
-        // 'cellMarginLeft' => $converter->inchToTwip(0.8),
-        // 'cellMarginRight' => $converter->inchToTwip(0.8)
+        'borderSize'=>0
     ));
-
-
-    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
-    // $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
-
-    
 
     $costingPageTable->addRow();
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase 1', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
-    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText('Activity', null, array('alignment'=>'center', 'bold'=>true));
-    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText('Days', null, array('alignment'=>'center', 'bold'=>true));
-    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'))->addText('Price', null, array('alignment'=>'center', 'bold'=>true));
+    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'CE4E4E'))->addText('Service(s)', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
+    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Days', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
+    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'CE4E4E'))->addText('Price', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
 
-    $costingPageTable->addRow();
-    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'));
-    $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'));
-    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'));
-    $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
+    
+
+    foreach ($typeOfService as $key) {
+        # code...
+        // $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
+        // $statementOfWorksPage->addTextBreak();
+        // $statementOfWorksPage->addTextBreak();
+
+        $costingPageTable->addRow();
+        $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'));
+        $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
+        $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( $_POST[ str_replace(' ', '', $key) ] ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );
+        $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
+    }
+
+
+    
 
     $costingPageTable->addRow();
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('TOTAL', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
@@ -916,10 +965,11 @@
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
 
+    
+    $methodologiesPage->addText('The process of how the mentioned assessment is conducted is explained in the below methodology(s).');
+    $methodologiesPage->addTextBreak();
+
     // DYNAMIC CONTENT
-
-
-
     foreach($typeOfService as $service) {
 
         if ($service === 'Web Application Penetration Testing') {
@@ -928,15 +978,18 @@
         }
 
         if ($service === 'Red Team Assessment') {
-            $methodologiesPage->addText('--- insert Red Team Assessment content ---');
+            // $methodologiesPage->addText('--- insert Red Team Assessment content ---');
+            include('inc/methodologies/red-team-assessment.php');
         }
 
         if ($service === 'Vulnerability Assessment') {
-            $methodologiesPage->addText('--- insert Vulnerability Assessment content ---');
+            // $methodologiesPage->addText('--- insert Vulnerability Assessment content ---');
+            include('inc/methodologies/vulnerability-assessment.php');
         }
 
         if ($service === 'Infrastructure Testing') {
-            $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
+            // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
+            include('inc/methodologies/infrastructure-testing.php');
         }
 
         if ($service === 'API Testing') {
@@ -945,19 +998,23 @@
         }
 
         if ($service === 'Mobile iOS and Android Testing') {
-            $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
+            // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
+            include('inc/methodologies/mobile-ios-android-testing.php');
         }
 
         if ($service === 'Phishing Simulation') {
-            $methodologiesPage->addText('--- insert Phishing Simulation content ---');
+            // $methodologiesPage->addText('--- insert Phishing Simulation content ---');
+            include('inc/methodologies/phishing-simulation.php');
         }
 
         if ($service === 'Documentation Review') {
-            $methodologiesPage->addText('--- insert Documentation Review content ---');
+            // $methodologiesPage->addText('--- insert Documentation Review content ---');
+            include('inc/methodologies/documentation-review.php');
         }
 
         if ($service === 'Firewall Assessment') {
-            $methodologiesPage->addText('--- insert Firewall Assessment content ---');
+            // $methodologiesPage->addText('--- insert Firewall Assessment content ---');
+            include('inc/methodologies/firewall-assessment.php');
         }
 
         if ($service === 'Cloud Based Configuration Review') {
@@ -966,11 +1023,13 @@
         }
 
         if ($service === 'Wireless Network Audit') {
-            $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
+            // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
+            include('inc/methodologies/wireless-network-audit.php');
         }
 
         if ($service === 'VPN Assessment') {
-            $methodologiesPage->addText('--- insert VPN Assessment content ---');
+            // $methodologiesPage->addText('--- insert VPN Assessment content ---');
+            include('inc/methodologies/vpn-assessment.php');
         }
 
         if ($service === 'Build Review') {
@@ -979,31 +1038,38 @@
         }
 
         if ($service === 'PCI DSS Compliance Audit') {
-            $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
+            // $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
+            include('inc/methodologies/pci-dss-compliance-audit.php');
         }
 
         if ($service === 'Secure Code Review') {
-            $methodologiesPage->addText('--- insert Secure Code Review content ---');
+            // $methodologiesPage->addText('--- insert Secure Code Review content ---');
+            include('inc/methodologies/secure-code-review.php');
         }
 
         if ($service === 'Cyber Security Training') {
-            $methodologiesPage->addText('--- insert Cyber Security Training content ---');
+            // $methodologiesPage->addText('--- insert Cyber Security Training content ---');
+            include('inc/methodologies/cyber-security-training.php');
         }
 
         if ($service === 'Forensics and Investigations') {
-            $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
+            // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
+            include('inc/methodologies/forensic-investigations.php');
         }
 
         if ($service === 'Dark Web Cyber Intelligence Monitoring') {
-            $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
+            // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
+            include('inc/methodologies/dark-web-cyber-intelligence-monitoring.php');
         }
 
         if ($service === 'Performance Stress Testing/Load Testing') {
-            $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
+            // $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
+            include('inc/methodologies/performance-stress-testing.php');
         }
 
         if ($service === 'IoT Penetration Testing') {
-            $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            include('inc/methodologies/iot-pentest.php');
         }
     }
 
