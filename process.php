@@ -861,25 +861,22 @@
 
     //############################### TYPE OF SERVICE PAGE ###############################
 
-    $typeOfServicePage = $phpWord->addSection();
-    $typeOfServicePageHeader = $typeOfServicePage->addHeader();
-    $typeOfServicePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    // $typeOfServicePage = $phpWord->addSection();
+    // $typeOfServicePageHeader = $typeOfServicePage->addHeader();
+    // $typeOfServicePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
 
-    $typeOfServicePage->addTitle('Type of Service(s):', 1); // TOC Bookmark 
-    // $typeOfServicePage->addTextBreak();
+    // $typeOfServicePage->addTitle('Type of Service(s):', 1); // TOC Bookmark 
+    // // $typeOfServicePage->addTextBreak();
 
     
-    foreach ($typeOfService as $key) {
-        # code...
-        $typeOfServicePage->addListItem($key, 0);
-    }
-        
+    // foreach ($typeOfService as $key) {
+    //     # code...
+    //     $typeOfServicePage->addListItem($key, 0);
+    // }
 
-
-
-    $typeOfServicePageFooter = $typeOfServicePage->addFooter();
-    $typeOfServicePageFooter->addTextRun()->addText($footerText, $footerTextStyle);
-    $typeOfServicePageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
+    // $typeOfServicePageFooter = $typeOfServicePage->addFooter();
+    // $typeOfServicePageFooter->addTextRun()->addText($footerText, $footerTextStyle);
+    // $typeOfServicePageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
     
     //############################### END TYPE OF SERVICE PAGE ###############################
 
