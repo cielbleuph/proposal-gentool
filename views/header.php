@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Redteam Partners System (RTPSys) </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/dashboard/">
 
