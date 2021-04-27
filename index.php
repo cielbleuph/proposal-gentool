@@ -1,233 +1,158 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
-    <meta http-equiv="pragma" content="no-cache" />
-    <title>Proposal Generator Tool</title>
-    <!-- Required meta tags -->
-   
+<?php include('views/header.php'); ?>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div class="container-fluid">
+      <div class="row">
+        
+        <?php include('views/sidebar-nav.php'); ?>
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    
-    <style>
-        body{
-            background-color: #d1ff0014;
-        }
-        textarea{
-            resize: none;
-        }
-        .btn{
-            width: 100%;
-        }
-        .btn:hover{
-            opacity: 0.7;
-        }
-        select{
-            width: 100%;
-        }
-
-        #service-type-container{
-            /* display: none; */
-        }
-
-        .services-actions{
-            display: none;
-        }
-
-    </style>
-  </head>
-  <body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>Proposal Generation Tool</h1>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                This week
+              </button>
             </div>
-        </div>
-        <div class="alert alert-info" role="alert">
-            <strong>Under Development</strong>
-        </div>
-        <form method="post" action="process.php" id="proposal-generator-form" class="proposal-generator-form">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Client Information Sheet</h2>
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help" placeholder="Company Name of Client">
-                                <small id="company-name-help" class="form-text text-muted">Enter client's company name.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                            <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3" placeholder="Description of Company"></textarea>
-                            <small id="company-description-help" class="form-text text-muted">What does your company offer - services/provides?</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help" placeholder="Client's Name">
-                                <small id="client-name-help" class="form-text text-muted">Enter client's full name.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="email"
-                                    class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help" placeholder="Client's Email Address">
-                                <small id="client-email-help" class="form-text text-muted">Enter client's Email Address</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help" placeholder="Client's Contact Number">
-                                <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
 
-                <div class="col-md-6">
-                    <h2>For RTP Personnel Only</h2>
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help" placeholder="Account Manager's Name">
-                                <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
-                            </div>  
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help" placeholder="Account Manager Contact Number">
-                                <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="email"
-                                    class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help" placeholder="Account Manager Email Address">
-                                <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <!-- <input type="text"
-                                    class="form-control" name="service-type" id="service-type" aria-label="Type of Service" aria-describedby="service-type-help" placeholder="Type of Service"> -->
-                                <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
-                                    <?php 
-                                        $services = array(
-                                            'API Testing',
-                                            'Build Review',
-                                            'Cloud Based Configuration Review',
-                                            'Cyber Security Training',
-                                            'Dark Web Cyber Intelligence Monitoring',
-                                            'Documentation Review',
-                                            'Firewall Assessment',
-                                            'Forensics and Investigations',
-                                            'Infrastructure Testing',
-                                            'IoT Penetration Testing',
-                                            'Mobile iOS and Android Testing',
-                                            'PCI DSS Compliance Audit',
-                                            'Performance Stress Testing/Load Testing',
-                                            'Phishing Simulation',
-                                            'Red Team Assessment',
-                                            'Secure Code Review',
-                                            'VPN Assessment',
-                                            'Vulnerability Assessment',
-                                            'Web Application Penetration Testing',
-                                            'Wireless Network Audit',
-                                        );
+          <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="2304" height="972" style="display: block; height: 486px; width: 1152px;"></canvas>
 
-                                        sort($services);
-
-                                        foreach($services as $service)
-                                        echo '<option value="'.$service.'">'.$service.'</option>';
-                                    ?>
-
-
-                                </select>
-                                <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
-                                <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
-                                
-                            </div>
-                            
-
-                            <div class="form-group service-type-container" id="service-type-container">
-                                <div class="services-type-wrapper" id="services-type-wrapper">
-                                    <ul>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="services-actions row">
-                                <div class="col-md-6">
-                                    <button class="btn-success btn" id="add-days" disabled>Add Days</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button class="btn-danger btn" id="clear-services" disabled>Clear Selection</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <div class="list-service-wrapper" id="list-service-wrapper">
-                            
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="test-date" id="test-date" aria-label="Testing Date" aria-describedby="test-date-help" placeholder="Date of Test">
-                                <small id="test-date-help" class="form-text text-muted">Enter testing date (MM/DD/YYYY).</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="number-of-days" id="number-of-days" aria-label="Number of Days to Complete" aria-describedby="number-of-days-help" placeholder="Number of Days">
-                                <small id="number-of-days-help" class="form-text text-muted">Total number of days to complete.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-12">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </div>
-            </div>
-        </form>
+          <h2>Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
     </div>
 
-
+    <?php include('views/footer.php'); 
     
-
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-    <script src="assets/js/script.js?t=<?php echo time(); ?>"></script>
-  </body>
-</html>

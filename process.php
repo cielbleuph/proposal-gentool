@@ -722,7 +722,7 @@
         $detailsOfScopeTable->addRow();
         // $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E'));
         $detailsOfScopeTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
-        $detailsOfScopeTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( $_POST[ str_replace(' ', '', $key) ] ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );;
+        $detailsOfScopeTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( isset($_POST[ str_replace(' ', '', $key) ]) ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );;
         // $detailsOfScopeTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
     }
 
@@ -906,7 +906,6 @@
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Days', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
     $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'CE4E4E'))->addText('Price', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
 
-    
 
     foreach ($typeOfService as $key) {
         # code...
@@ -914,10 +913,13 @@
         // $statementOfWorksPage->addTextBreak();
         // $statementOfWorksPage->addTextBreak();
 
+        
+        
+
         $costingPageTable->addRow();
         $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'));
         $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
-        $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( $_POST[ str_replace(' ', '', $key) ] ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );
+        $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( isset($_POST[ str_replace(' ', '', $key) ]) ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );
         $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
     }
 
