@@ -165,13 +165,13 @@
                                 <small id="test-date-help" class="form-text text-muted">Enter testing date (MM/DD/YYYY).</small>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-lg-12">
+                        <!-- <div class="col-xs-12 col-lg-12">
                             <div class="form-group">
                                 <input type="text"
                                     class="form-control" name="number-of-days" id="number-of-days" aria-label="Number of Days to Complete" aria-describedby="number-of-days-help" placeholder="Number of Days">
                                 <small id="number-of-days-help" class="form-text text-muted">Total number of days to complete.</small>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
