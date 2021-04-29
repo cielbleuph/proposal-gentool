@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 
   // prefilled data for testing
+  
   // $('#company-name').val('COMPANY XYZ');
   // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
   // $('#client-name').val('JOHN DOE');
