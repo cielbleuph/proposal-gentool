@@ -47,7 +47,7 @@ $(document).ready(function(){
     $.each(servicesWrapper, function(index, service){
       var elemService = (service).replace(/\s+/g, "");
       var classElem = '.' + elemService +'_class';
-      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'<input type="number" class="'+elemService+'" id="'+elemService+'" name="'+elemService+'" /></label>')
+      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'</label><input type="number" class="'+elemService+'" id="'+elemService+'" name="'+elemService+'" />')
     });
 
   });

@@ -20,168 +20,214 @@
             </div> -->
           </div>
 
-          <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="2304" height="972" style="display: block; height: 486px; width: 1152px;"></canvas> -->
-
-          <form method="post" action="process.php" id="proposal-generator-form" class="proposal-generator-form">
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- <h2>Client Information Sheet</h2> -->
+          <div class="card">
+              <div class="card-body card-padding palette-Grey-100 bg">
+                <form method="post" action="process.php" id="proposal-generator-form" class="proposal-generator-form form-columnar form" role="form">
                     <div class="row">
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help" placeholder="Company Name of Client">
-                                <small id="company-name-help" class="form-text text-muted">Enter client's company name.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                            <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3" placeholder="Description of Company"></textarea>
-                            <small id="company-description-help" class="form-text text-muted">What does your company offer - services/provides?</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help" placeholder="Client's Name">
-                                <small id="client-name-help" class="form-text text-muted">Enter client's full name.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="email"
-                                    class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help" placeholder="Client's Email Address">
-                                <small id="client-email-help" class="form-text text-muted">Enter client's Email Address</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help" placeholder="Client's Contact Number">
-                                <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <!-- <h2>For RTP Personnel Only</h2> -->
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help" placeholder="Account Manager's Name">
-                                <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
-                            </div>  
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help" placeholder="Account Manager Contact Number">
-                                <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="email"
-                                    class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help" placeholder="Account Manager Email Address">
-                                <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <!-- <input type="text"
-                                    class="form-control" name="service-type" id="service-type" aria-label="Type of Service" aria-describedby="service-type-help" placeholder="Type of Service"> -->
-                                <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
-                                    <?php 
-                                        $services = array(
-                                            'API Testing',
-                                            'Build Review',
-                                            'Cloud Based Configuration Review',
-                                            'Cyber Security Training',
-                                            'Dark Web Cyber Intelligence Monitoring',
-                                            'Documentation Review',
-                                            'Firewall Assessment',
-                                            'Forensics and Investigations',
-                                            'Infrastructure Testing',
-                                            'IoT Penetration Testing',
-                                            'Mobile iOS and Android Testing',
-                                            'PCI DSS Compliance Audit',
-                                            'Performance Stress Testing/Load Testing',
-                                            'Phishing Simulation',
-                                            'Red Team Assessment',
-                                            'Secure Code Review',
-                                            'VPN Assessment',
-                                            'Vulnerability Assessment',
-                                            'Web Application Penetration Testing',
-                                            'Wireless Network Audit',
-                                        );
-
-                                        sort($services);
-
-                                        foreach($services as $service)
-                                        echo '<option value="'.$service.'">'.$service.'</option>';
-                                    ?>
-
-
-                                </select>
-                                <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
-                                <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
+                        <div class="col-md-6">
+                            <!-- <h2>Client Information Sheet</h2> -->
+                            <div class="card">
+                                <div class="card-header palette-Light-Blue-800">
+                                    <h2 class="c-white"><i data-feather="info"></i> Client Information</h2>
+                                </div>
+                                <div class="card-body form-padding">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="company-name" class="control-label f-700">Company Name</label>
+                                                <input type="text"
+                                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help">
+                                                <small id="company-name-help" class="form-text text-muted">Enter client's company name.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="client-name" class="control-label f-700">Client's Name</label>
+                                                <input type="text"
+                                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help">
+                                            <small id="client-name-help" class="form-text text-muted">Enter client's full name.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                        <label for="company-description" class="control-label f-700">Company Description</label>
+                                        <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3"></textarea>
+                                        <small id="company-description-help" class="form-text text-muted">What does the company offer - services/provides?</small>
+                                        </div>
+                                    </div>    
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-email" class="control-label f-700">Client's Email Address</label>
+                                            <input type="email"
+                                                class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help">
+                                            <small id="client-email-help" class="form-text text-muted">Enter client's Email Address</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-contact" class="control-label f-700">Company Contact Number</label>
+                                            <input type="text"
+                                                class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help">
+                                            <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
+                                        </div>
+                                    </div>
+                                </div>
                                 
                             </div>
                             
-
-                            <div class="form-group service-type-container" id="service-type-container">
-                                <div class="services-type-wrapper" id="services-type-wrapper">
-                                    <ul>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="services-actions row">
-                                <div class="col-md-6">
-                                    <button class="btn-success btn" id="add-days" disabled>Add Days</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button class="btn-danger btn" id="clear-services" disabled>Clear Selection</button>
-                                </div>
-                            </div>
                         </div>
+                    </div>
 
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <div class="list-service-wrapper" id="list-service-wrapper">
+                    <div class="col-md-6">
+                        <!-- <h2>For RTP Personnel Only</h2> -->
+                        <div class="card">
+                            <div class="card-header palette-Red-300">
+                                <h2 class="c-white"><i data-feather="tool"></i> RTP Information</h2>
+                            </div>
+                            <div class="card-body form-padding">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="account-manager" class="control-label f-700">Account Manager Name</label>
+                                            <input type="text"
+                                                class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help">
+                                            <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="account-manager-contact" class="control-label f-700">Account Manager Contact Number</label>
+                                            <input type="text"
+                                                class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help">
+                                            <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-name" class="control-label f-700">Company Name</label>
+                                            <input type="email"
+                                                class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help">
+                                            <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="test-date" class="control-label f-700">Test Date</label>
+                                            <input type="text"
+                                                class="form-control" name="test-date" id="test-date" aria-label="Testing Date" aria-describedby="test-date-help">
+                                            <small id="test-date-help" class="form-text text-muted">Enter estimated start of testing.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="service-type" class="control-label f-700">Service Types</label>
+                                            <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
+                                                <?php 
+                                                    $services = array(
+                                                        'API Testing',
+                                                        'Build Review',
+                                                        'Cloud Based Configuration Review',
+                                                        'Cyber Security Training',
+                                                        'Dark Web Cyber Intelligence Monitoring',
+                                                        'Documentation Review',
+                                                        'Firewall Assessment',
+                                                        'Forensics and Investigations',
+                                                        'Infrastructure Testing',
+                                                        'IoT Penetration Testing',
+                                                        'Mobile iOS and Android Testing',
+                                                        'PCI DSS Compliance Audit',
+                                                        'Performance Stress Testing/Load Testing',
+                                                        'Phishing Simulation',
+                                                        'Red Team Assessment',
+                                                        'Secure Code Review',
+                                                        'VPN Assessment',
+                                                        'Vulnerability Assessment',
+                                                        'Web Application Penetration Testing',
+                                                        'Wireless Network Audit',
+                                                    );
+
+                                                    sort($services);
+
+                                                    foreach($services as $service)
+                                                    echo '<option value="'.$service.'">'.$service.'</option>';
+                                                ?>
+
+
+                                            </select>
+                                            <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
+                                            <!-- Infrastructure Penetration Test / Phishing Simulation / Vulnerability Scanning / Cyber Threat Intelligence -->
+                                            
+                                        </div>
+                                        
+
+                                        <div class="form-group service-type-container" id="service-type-container">
+                                            <div class="services-type-wrapper" id="services-type-wrapper">
+                                                <ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="services-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <button class="btn-success btn waves-effect" id="add-days" disabled>Add Days</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <button class="btn-danger btn waves-effect" id="clear-services" disabled>Clear Selection</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="list-service-wrapper" id="list-service-wrapper">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                
+                                <!-- <div class="col-xs-12 col-lg-12">
+                                    <div class="form-group">
+                                        <input type="text"
+                                            class="form-control" name="number-of-days" id="number-of-days" aria-label="Number of Days to Complete" aria-describedby="number-of-days-help" placeholder="Number of Days">
+                                        <small id="number-of-days-help" class="form-text text-muted">Total number of days to complete.</small>
+                                    </div>
+                                </div> -->
+                            </div>
                             
-                                </div>
-                            </div>
                         </div>
-
-                        
-                        <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="test-date" id="test-date" aria-label="Testing Date" aria-describedby="test-date-help" placeholder="Date of Test">
-                                <small id="test-date-help" class="form-text text-muted">Enter testing date (MM/DD/YYYY).</small>
-                            </div>
-                        </div>
-                        <!-- <div class="col-xs-12 col-lg-12">
-                            <div class="form-group">
-                                <input type="text"
-                                    class="form-control" name="number-of-days" id="number-of-days" aria-label="Number of Days to Complete" aria-describedby="number-of-days-help" placeholder="Number of Days">
-                                <small id="number-of-days-help" class="form-text text-muted">Total number of days to complete.</small>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-12">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success waves-effect">Generate</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+              </div>
+          </div>
+
+          <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="2304" height="972" style="display: block; height: 486px; width: 1152px;"></canvas> -->
+
+            
         </main>
       </div>
     </div>

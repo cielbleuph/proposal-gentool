@@ -102,3 +102,106 @@ body {
   .services-actions{
       display: none;
   }
+
+  .services-actions button{
+    width: 100%;
+  }
+
+  .services-actions>row{
+    display: flex;
+  }
+
+
+  .btn:not(.palette-White):not(.btn-default) {
+    color: #fff;
+  }
+
+  .btn:not(.btn-link) {
+    box-shadow: 0 2px 5px rgb(0 0 0 / 16%), 0 2px 10px rgb(0 0 0 / 12%);
+  }
+  
+  .btn:hover:not([disabled]) {
+    opacity: .9;
+  }
+
+  .form-columnar textarea{
+    resize: none;
+  }
+
+  .card {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+    border-radius: 2px;
+  }
+
+  .card-body.form-padding {
+    padding: 15px 25px;
+  }
+
+
+  .card-header {
+    padding: 15px;
+  }
+
+  .card-header>h2 {
+    font-size: 16px;
+    font-family: Oxygen,sans-serif;
+    font-weight: 700;
+    margin: 0 0 0 0.5rem;
+  }
+
+  .card-body.card-padding {
+    padding: 30px 33px;
+  }
+
+
+  .card-header {
+    position: relative;
+    /* padding: 30px; */
+    border-radius: 2px 2px 0 0;
+  }
+
+  .c-white{
+    color: white !important;
+  }
+
+  .palette-Light-Blue-800 {
+    background-color: #0277bd;
+  }
+
+  .palette-Light-Blue-600 {
+    background-color: #039be5;
+  }
+
+  .palette-Green-400 {
+    background-color: #66bb6a;
+  }
+
+  .palette-Blue-300 {
+    background-color: #64b5f6;
+  }
+
+  .palette-Red-300 {
+    background-color: #e57373;
+  }
+
+  .palette-Deep-Orange-300 {
+    background-color: #ff8a65;
+  }
+
+  .palette-Orange-300 {
+    background-color: #ffb74d;
+  }
+
+  .palette-Indigo-300 {
+    background-color: #7986cb;
+  }
+
+  .palette-Grey-100 {
+    background-color: #f5f5f5;
+  }
+
+  .f-700 {
+    font-weight: 700!important;
+  }
