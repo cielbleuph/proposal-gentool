@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="account-manager-contact" class="control-label f-700">Account Manager Contact Number</label>
+                                            <label for="account-manager-contact" class="control-label f-700">Account Manager's Contact Number</label>
                                             <input type="text"
                                                 class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help">
                                             <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
@@ -111,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="company-name" class="control-label f-700">Company Name</label>
+                                            <label for="company-name" class="control-label f-700">Account Manager's Email Address</label>
                                             <input type="email"
                                                 class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help">
                                             <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
