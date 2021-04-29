@@ -85,8 +85,8 @@
 
 
     // GENERAL SETTINGS
-    $phpWord->setDefaultFontName( 'Times New Roman' );
-    $phpWord->setDefaultFontSize( 14 );
+    $phpWord->setDefaultFontName( 'Proxima Nova' );
+    $phpWord->setDefaultFontSize( 12 );
     $phpWord->setDefaultParagraphStyle( array(
        'lineHeight' => 1.3,
     ) );
@@ -123,8 +123,8 @@
     
 
     // General Settings
-    $phpWord->setDefaultFontName('Times New Roman');
-    $phpWord->setDefaultFontSize(14);
+    // $phpWord->setDefaultFontName('Times New Roman');
+    // $phpWord->setDefaultFontSize(14);
 
     // template colors
     $paletteRed = 'D31439';
@@ -140,7 +140,7 @@
     );
     
     $defaultFontStyle = array(
-        'size' => 14,
+        // 'size' => 14,
     );
 
     $defaultParagraphStyle = array(
@@ -534,7 +534,7 @@
     $ourApproachPage->addListItem('Guidance on best practices for regulation', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('Exploitation of threats that could be exploited by a bad actor compromising '.$companyName.' systems and data.', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('Red Team Partners will focus on key weaknesses to evaluate the probability of an exploitation of each security vulnerability, then creating an action plan to reduce the risk and mitigate the vulnerability. ', 1, null, null, $defaultParagraphStyle );
-    $ourApproachPage->addTextBreak(2);
+
 
     // QUOTABLE QUOTES
     $ourApproachPage->addTextBreak();
