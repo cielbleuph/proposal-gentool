@@ -5,8 +5,6 @@
 
     require_once __DIR__ . '/vendor/autoload.php';
 
-    // Variables
-
     if ( isset($_POST) ) {
 
         if ( isset($_POST['account-manager']) && $_POST['account-manager'] != '' ){
@@ -49,10 +47,6 @@
             $startDate = $_POST['test-date'];
         }
 
-        // if ( isset($_POST['service-description']) && $_POST['service-description'] != '' ){
-        //     $serviceDescription = $_POST['service-description'];
-        // }
-
         if ( isset($_POST['number-of-days']) && $_POST['number-of-days'] != '' ){
             $numberOfDays = $_POST['number-of-days'];
         }
@@ -65,55 +59,11 @@
             $typeOfService = $_POST['service-type'];
         }
 
-        // if ( isset($_POST['methodologies']) && $_POST['methodologies'] != '' ){
-        //     $methodologies = $_POST['methodologies'];
-        // }
-
-        // if ( isset($_POST['assessment-type']) && $_POST['assessment-type'] != '' ){
-        //     $typeofAssessments = $_POST['assessment-type'];
-        // }
-
-
     }
 
-    // die();
-
-    // FIXED 
-
-    
     $serviceDescription = str_replace(",", ", ",implode(",", $typeOfService));
 
     $accountManagerNumber = "020 3951 0299"; // FIXED
-
-    // $accountManagerName = "Mr Account Manager";
-    // $accountManagerEmail = "accountsmanager@rtp.co";
-    // $accountManagerNumber = '';
-    // $companyDescription = 'Lorem Impsum Dolor Amet';
-    // $reasonForTesting = 'This is some sample reason for testing for the purpose of testing only.';
-    // $clientContactName = "Mr Client ABC";
-    // $companyName = 'Company XYZ';
-    // $startDate = '12/12/2021';
-    // $serviceDescription = 'Service 007';
-    // $numberOfDays = '10';
-
-    // $scopeOfService = '';
-    // // $typeOfService = '';
-    // $methodologies = '';
-
-
-    // // NOT IN FORM
-    // $typeofAssessments = 'Sample Type of Assessment'; // could this be type of services in form?
-    // $clientContactNumber = "092457851452";
-    // $clientContactEmail = "mrclientabc@testcompany.co";
-    // $rtpRepName = "Mr. Expert Test";
-    // $rtpRepNumber = "1234567890";
-    // $rtpRepEmail = "rtp@test.co";
-
-    // foreach( $_POST as $stuff => $val) {
-    //     echo '<br />' . $stuff . ': ' . $val . '<br />';
-    // }
-    // die();
-
 
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -173,9 +123,8 @@
     
 
     // General Settings
-    // $phpWord->setDefaultFontName('Times New Roman');
-    // $phpWord->setDefaultFontSize(14);
-
+    $phpWord->setDefaultFontName('Times New Roman');
+    $phpWord->setDefaultFontSize(14);
 
     // template colors
     $paletteRed = 'D31439';
@@ -192,6 +141,10 @@
     
     $defaultFontStyle = array(
         'size' => 14,
+    );
+
+    $defaultParagraphStyle = array(
+        'align'=>'both'
     );
 
     $headerImageStyle = array(
@@ -312,10 +265,7 @@
             'size'=>18,
         )
     );
-    $confidentialityTableCell->addText('All the material contained herein is considered a confidential trade secret of the proposal submitter. Therefore, the readers/reviewer shall take diligent steps to protect, store and safely review this material without disclosure to unauthorized third parties.', array(
-        'color'=>'FFFFFF',
-        'size'=>14,
-    ));
+    $confidentialityTableCell->addText('All the material contained herein is considered a confidential trade secret of the proposal submitter. Therefore, the readers/reviewer shall take diligent steps to protect, store and safely review this material without disclosure to unauthorized third parties.', array('color'=>'FFFFFF', 'size'=>14), $defaultParagraphStyle );
    
 
     $coverPage->addTextBreak(2);
@@ -375,8 +325,8 @@
 
     $introPage->addText($companyName, $defaultFontStyle);
     $introPage->addTextBreak();
-    $introPage->addText('The increase in cyber-attacks has driven companies to rethink their security strategy, some of your most valuable assets are online and need to be protected against external and internal threats.', $defaultFontStyle);
-    $introPage->addText('Red Team Partners will help you in this everchanging landscape. With a world-wide team of cyber security experts combined with the latest technology and processes, Red Team Partners will partner with you to make sure your digital assets are protected. We understand how hackers and external threats can harm your organisation; Red Team Partner looks to provide you with an insight into how these risks can be remediated.', $defaultFontStyle);
+    $introPage->addText('The increase in cyber-attacks has driven companies to rethink their security strategy, some of your most valuable assets are online and need to be protected against external and internal threats.', $defaultFontStyle, $defaultParagraphStyle );
+    $introPage->addText('Red Team Partners will help you in this everchanging landscape. With a world-wide team of cyber security experts combined with the latest technology and processes, Red Team Partners will partner with you to make sure your digital assets are protected. We understand how hackers and external threats can harm your organisation; Red Team Partner looks to provide you with an insight into how these risks can be remediated.', $defaultFontStyle, $defaultParagraphStyle );
 
     $introPageFooter = $introPage->addFooter();
     $introPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -513,9 +463,9 @@
     $proposalDetailsPage->addTextBreak();
 
 
-    $proposalDetailsPage->addText('This proposal has been prepared exclusively for ' .$companyName. ' and contains information that should be considered the confidential property of Red Team Partners.', $defaultFontStyle);
+    $proposalDetailsPage->addText('This proposal has been prepared exclusively for ' .$companyName. ' and contains information that should be considered the confidential property of Red Team Partners.', $defaultFontStyle, $defaultParagraphStyle );
 
-    $proposalDetailsPage->addText('Red Team Partners gives permission to internally and to any other body where ' .$companyName. ' is required to do so by applicable law or regulation. Other than as permitted by the foregoing, this proposal must not be disclosed to any third party.', $defaultFontStyle);
+    $proposalDetailsPage->addText('Red Team Partners gives permission to internally and to any other body where ' .$companyName. ' is required to do so by applicable law or regulation. Other than as permitted by the foregoing, this proposal must not be disclosed to any third party.', $defaultFontStyle, $defaultParagraphStyle );
 
     // FOOTER PART
     $proposalDetailsPageFooter = $proposalDetailsPage->addFooter();
@@ -536,11 +486,11 @@
     $projectSummaryPage->addTextBreak();
     
     // BODY PART
-    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle);
-    $projectSummaryPage->addText('Red Team Partners has a specialist team that has a wealth of experience assessing security postures and finding vulnerabilities in organisations that are driving a cyber security strategy. Red Team Partners world class team focus exclusively on some of most important cyber security movements within an organisation involving implementation, systems, infrastructure and applications.', $defaultFontStyle);
-    $projectSummaryPage->addText('Red Team Partners are positioned as a partner of '.$companyName.' to help work together in assisting the security maturity of the organisation. Our world-wide specialist team allow us to work within timeframes that best suit you, including a 24-hour turnaround time for those immediate scenarios.', $defaultFontStyle);
-    $projectSummaryPage->addText('For '.$companyName.' we understand the security of your assets is a vital process in your business. A breach can have a catastrophic impact on your brand reputation and overall revenue. Red Team Partners has been approached to conduct the following services - '.$serviceDescription.' which allow '.$companyName.' to understand vulnerabilities and risks including concise actions and how to address them.', $defaultFontStyle);
-    $projectSummaryPage->addText('Red Team Partners will act as your partner (It’s in the name). Our team of world-class experts will provide a custom test based on your requirements and deliver a clear roadmap of recommendations for change. We confidently update our world class methodologies and technologies to combat new threats.', $defaultFontStyle);
+    $projectSummaryPage->addText($companyName. ' provides '. $companyDescription .'. '.$companyName.' have requested Red Team Partners to conduct '.$serviceDescription.' to identify any potential risk and suggested remediations. ', $defaultFontStyle, $defaultParagraphStyle );
+    $projectSummaryPage->addText('Red Team Partners has a specialist team that has a wealth of experience assessing security postures and finding vulnerabilities in organisations that are driving a cyber security strategy. Red Team Partners world class team focus exclusively on some of most important cyber security movements within an organisation involving implementation, systems, infrastructure and applications.', $defaultFontStyle, $defaultParagraphStyle );
+    $projectSummaryPage->addText('Red Team Partners are positioned as a partner of '.$companyName.' to help work together in assisting the security maturity of the organisation. Our world-wide specialist team allow us to work within timeframes that best suit you, including a 24-hour turnaround time for those immediate scenarios.', $defaultFontStyle, $defaultParagraphStyle );
+    $projectSummaryPage->addText('For '.$companyName.' we understand the security of your assets is a vital process in your business. A breach can have a catastrophic impact on your brand reputation and overall revenue. Red Team Partners has been approached to conduct the following services - '.$serviceDescription.' which allow '.$companyName.' to understand vulnerabilities and risks including concise actions and how to address them.', $defaultFontStyle, $defaultParagraphStyle );
+    $projectSummaryPage->addText('Red Team Partners will act as your partner (It’s in the name). Our team of world-class experts will provide a custom test based on your requirements and deliver a clear roadmap of recommendations for change. We confidently update our world class methodologies and technologies to combat new threats.', $defaultFontStyle, $defaultParagraphStyle );
     
 
     // FOOTER PART
@@ -576,14 +526,14 @@
     $predefinedMultilevelStyle = array('listType' => \PhpOffice\PhpWord\Style\ListItem::TYPE_NUMBER_NESTED);
 
     $ourApproachPage->addText('Our key outcomes for this proposal are:');
-    $ourApproachPage->addListItem('Provide '.$companyName.' with an understanding of their security stage of their current environment.', 0);
-    $ourApproachPage->addListItem('Red Team Partners would like to propose a date of (Date of test – Month) to start conducting test, this date has been discussed with '.$clientContactName .'.', 0);
-    $ourApproachPage->addListItem('After testing has been conducted our world-class team will independently verify the report and provide security risks including:', 0);
-    $ourApproachPage->addListItem('That '.$companyName.' security posture is being met through policies, procedure and design ', 1);
-    $ourApproachPage->addListItem('Vulnerabilities facing '.$companyName.' are highlighted to understand the risk rating and measured to show the key areas to focus on with the organisation.', 1);
-    $ourApproachPage->addListItem('Guidance on best practices for regulation', 1);
-    $ourApproachPage->addListItem('Exploitation of threats that could be exploited by a bad actor compromising '.$companyName.' systems and data.', 1);
-    $ourApproachPage->addListItem('Red Team Partners will focus on key weaknesses to evaluate the probability of an exploitation of each security vulnerability, then creating an action plan to reduce the risk and mitigate the vulnerability. ', 1);
+    $ourApproachPage->addListItem('Provide '.$companyName.' with an understanding of their security stage of their current environment.', 0, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Red Team Partners would like to propose a date of (Date of test – Month) to start conducting test, this date has been discussed with '.$clientContactName .'.', 0, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('After testing has been conducted our world-class team will independently verify the report and provide security risks including:', 0, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('That '.$companyName.' security posture is being met through policies, procedure and design ', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Vulnerabilities facing '.$companyName.' are highlighted to understand the risk rating and measured to show the key areas to focus on with the organisation.', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Guidance on best practices for regulation', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Exploitation of threats that could be exploited by a bad actor compromising '.$companyName.' systems and data.', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Red Team Partners will focus on key weaknesses to evaluate the probability of an exploitation of each security vulnerability, then creating an action plan to reduce the risk and mitigate the vulnerability. ', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addTextBreak(2);
 
     // QUOTABLE QUOTES
@@ -608,27 +558,27 @@
     $whatMakesUsDifferentPage->addTitle('What Makes Us Different?', 1); // TOC Bookmark 
     $whatMakesUsDifferentPage->addTextBreak();
 
-    $whatMakesUsDifferentPage->addText('With other provider offering services, why choose us?', array('italic'=>true, 'bold'=>true, 'size'=>14));
+    $whatMakesUsDifferentPage->addText('With other provider offering services, why choose us?', array('italic'=>true, 'bold'=>true, 'size'=>16));
     $whatMakesUsDifferentPage->addTextBreak();
     
     $whatMakesUsDifferentPage->addText('Deeper Customer Experience', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('We understand that conducting a (Service) can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy-to-understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('We understand that conducting a (Service) can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy-to-understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.', 0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Better Availability and Capabilities', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('Experience in testing is a key differentiator, Red Team Partners has a worldwide based testing team that is engaged to update our methods using latest technologies and testing techniques. You can be sure that our experts are practised, accredited and professional with contributions to the cyber security.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('Experience in testing is a key differentiator, Red Team Partners has a worldwide based testing team that is engaged to update our methods using latest technologies and testing techniques. You can be sure that our experts are practised, accredited and professional with contributions to the cyber security.',0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Manual Testing', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('Most organisations offer automating scanning services, Red Team Partners offers 80% manual testing and 20% using tools. Our results produce a deeper in-depth report avoiding the risk of missing a crucial vulnerability. Using world leading research our methods of testing can be identified as methods of identified worldwide hacks.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('Most organisations offer automating scanning services, Red Team Partners offers 80% manual testing and 20% using tools. Our results produce a deeper in-depth report avoiding the risk of missing a crucial vulnerability. Using world leading research our methods of testing can be identified as methods of identified worldwide hacks.',0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Capacity', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('To our Worldwide customers and consultants, we can offer a 24 hour turn around service, ensuring that when you need us most, we are available to help. When you combine this with our cyber security experts and customer experience you can understand why 96% of companies use Red Team Partners again.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('To our Worldwide customers and consultants, we can offer a 24 hour turn around service, ensuring that when you need us most, we are available to help. When you combine this with our cyber security experts and customer experience you can understand why 96% of companies use Red Team Partners again.',0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Client Focused', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('Red Team Partners aim is to advise you according to best standard security practices, any advise provided will be in the best interest of the customer experience. Red Team Partners will work with you to ensure the experience of our team is provided throughout your service, with multiple qualifications and out of the box thinking we will use our expertise to you provide the best quality test available.',0 ,null, array('format'=>'bullet'));
+    $whatMakesUsDifferentPage->addListItem('Red Team Partners aim is to advise you according to best standard security practices, any advise provided will be in the best interest of the customer experience. Red Team Partners will work with you to ensure the experience of our team is provided throughout your service, with multiple qualifications and out of the box thinking we will use our expertise to you provide the best quality test available.',0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     // QUOTABLE QUOTES
@@ -682,21 +632,20 @@
     $statementOfWorksPage->addTitle('Statement of Works', 1); // TOC Bookmark 
     
     // BODY PART
-    $statementOfWorksPage->addText('Red Team Partners will provide the services described in this scope. A final Statement of Works will be provided by the delivery team once the proposal has been accepted.');
-    $statementOfWorksPage->addText('Understanding the Hamilton’s environment is key to performing the correct assessment. This section will contain the type of assessment requested.');
+    $statementOfWorksPage->addText('Red Team Partners will provide the services described in this scope. A final Statement of Works will be provided by the delivery team once the proposal has been accepted.', null, $defaultParagraphStyle);
+    $statementOfWorksPage->addText('Understanding the Hamilton’s environment is key to performing the correct assessment. This section will contain the type of assessment requested.', null, $defaultParagraphStyle);
     $statementOfWorksPage->addTextBreak();
 
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
 
     $statementOfWorksPage->addTitle('Scope', 2);
-    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their (service). Red Team Partners and '.$companyName.' have identified the need for (service). These services have been based on the discussion conducted with ' .$clientContactName);
+    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their (service). Red Team Partners and '.$companyName.' have identified the need for (service). These services have been based on the discussion conducted with ' .$clientContactName, null, $defaultParagraphStyle);
     $statementOfWorksPage->addTextBreak();
     
     $statementOfWorksPage->addTitle('Details of Scope', 2);
     $statementOfWorksPage->addTextBreak();
-    $statementOfWorksPage->addText('Company has identified the following parameters for the test:');
-    $statementOfWorksPage->addTextBreak();
-
+    $statementOfWorksPage->addText('Company has identified the following parameters for the test:', null, $defaultParagraphStyle);
+    
     $detailsOfScopeTable = $statementOfWorksPage->addTable(array(
         'width' => 5000,
         'unit' => 'pct',
@@ -706,63 +655,20 @@
     ));
 
     $detailsOfScopeTable->addRow();
-    // $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase 1', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
     $detailsOfScopeTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'CE4E4E'))->addText('Service(s)', array('color'=>'FFFFFF'), array('alignment'=>'center', 'bold'=>true));
     $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Days', array('color'=>'FFFFFF'), array('alignment'=>'center', 'bold'=>true));
-    // $detailsOfScopeTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'))->addText('Price', null, array('alignment'=>'center', 'bold'=>true));
-
-    
 
     foreach ($typeOfService as $key) {
-        # code...
-        // $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
-        // $statementOfWorksPage->addTextBreak();
-        // $statementOfWorksPage->addTextBreak();
 
         $detailsOfScopeTable->addRow();
-        // $detailsOfScopeTable->addCell(null, array('bgColor'=>'CE4E4E'));
+
         $detailsOfScopeTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
         $detailsOfScopeTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( isset($_POST[ str_replace(' ', '', $key) ]) ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );;
-        // $detailsOfScopeTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
     }
 
 
-
-    // $detailsOfScopeTable = $statementOfWorksPage->addTable(array(
-    //     'width' => 5000,
-    //     'unit' => 'pct',
-    //     'bgColor' => '9966CC',
-    //     'cellSpacing' => 0,
-    //     'bgColor'=>'494849',
-    //     'borderSize'=>0,
-    //     'cellMargin' => 100
-    // ));
-
-    // $detailsOfScopeTable->addRow();
-    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Type of Tests:', array('color'=>'FFFFFF'));
-    // $detailsOfScopeTableCell = $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'));
-    // // $detailsOfScopeTableCell->addText('(TYPE OF TESTS HERE)'); // ASK ZIA AT MEETING!
-
-    // foreach ($typeOfService as $key) {
-    //     # code...
-    //     $detailsOfScopeTableCell->addListItem($key, 0);
-    // }
-        
-    
-    // foreach ($typeOfService as $key) {
-    //     $detailsOfScopeTableCell->addListItem($key);
-    // }
-
-
-
-    // $detailsOfScopeTable->addRow();
-    // $detailsOfScopeTable->addCell(2000, array('bgColor'=>'CE4E4E'))->addText('Number of Days:', array('color'=>'FFFFFF'));
-    // $detailsOfScopeTable->addCell(3000, array('bgColor'=>'F5B7A6'))->addText($numberOfDays);
-
     $statementOfWorksPage->addTextBreak();
-    // $statementOfWorksPage->addText('(SCOPE LIST HERE)');
-
-
+    
     foreach ($typeOfService as $key) {
         # code...
         $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
@@ -784,72 +690,72 @@
         )
     );
 
-    $statementOfWorksPage->addTextBreak(2);
+    $statementOfWorksPage->addTextBreak();
     $statementOfWorksPage->addText('Our delivery team will work with you prior to the test to confirm scope and logistics of the service, rules of engagement will also be discussed at this stage.');
 
     $statementOfWorksPage->addPageBreak();
 
     $statementOfWorksPage->addTitle('Pre-Test', 2);
-    $statementOfWorksPage->addText('Our delivery team will help schedule your test by providing the following:');
+    $statementOfWorksPage->addText('Our delivery team will help schedule your test by providing the following:', null, $defaultParagraphStyle);
     
     $preTestListItemRunOne = $statementOfWorksPage->addListItemRun();
-    $preTestListItemRunOne->addText('Scheduled Test Plan', array('bold' => true));
-    $preTestListItemRunOne->addText(' – When requested we are able to provide scheduled test plans, these include critical requirements, credentials and test setup.');
+    $preTestListItemRunOne->addText('Scheduled Test Plan', array('bold' => true), null, $defaultParagraphStyle);
+    $preTestListItemRunOne->addText(' – When requested we are able to provide scheduled test plans, these include critical requirements, credentials and test setup.', null, $defaultParagraphStyle);
     
     $preTestListItemRunTwo = $statementOfWorksPage->addListItemRun();
-    $preTestListItemRunTwo->addText('Personnel Vetting', array('bold' => true));
-    $preTestListItemRunTwo->addText(' – Our tester aligns with CREST and OSCP standards, background checks are regularly conducted by Red Team Partners.');
+    $preTestListItemRunTwo->addText('Personnel Vetting', array('bold' => true), null, $defaultParagraphStyle);
+    $preTestListItemRunTwo->addText(' – Our tester aligns with CREST and OSCP standards, background checks are regularly conducted by Red Team Partners.', null, $defaultParagraphStyle);
     
     $preTestListItemRunThree = $statementOfWorksPage->addListItemRun();
-    $preTestListItemRunThree->addText('Third Party', array('bold' => true));
-    $preTestListItemRunThree->addText(' – All third parties that are affected must be informed prior to test.');
+    $preTestListItemRunThree->addText('Third Party', array('bold' => true), null, $defaultParagraphStyle);
+    $preTestListItemRunThree->addText(' – All third parties that are affected must be informed prior to test.', null, $defaultParagraphStyle);
     
     $preTestListItemRunFour = $statementOfWorksPage->addListItemRun();
-    $preTestListItemRunFour->addText('Confirmation Dates', array('bold' => true));
-    $preTestListItemRunFour->addText(' – Dates of test will be confirmed within the Statement of Works.');
+    $preTestListItemRunFour->addText('Confirmation Dates', array('bold' => true), null, $defaultParagraphStyle);
+    $preTestListItemRunFour->addText(' – Dates of test will be confirmed within the Statement of Works.', null, $defaultParagraphStyle);
     
     $preTestListItemRunFive = $statementOfWorksPage->addListItemRun();
-    $preTestListItemRunFive->addText('Point of Contact', array('bold' => true));
-    $preTestListItemRunFive->addText(' - Point of contact – A designated point of contact will be required to deal with any issues that arise. Your project manager will be your point of contact for Red Team Partners.');
+    $preTestListItemRunFive->addText('Point of Contact', array('bold' => true), null, $defaultParagraphStyle);
+    $preTestListItemRunFive->addText(' - Point of contact – A designated point of contact will be required to deal with any issues that arise. Your project manager will be your point of contact for Red Team Partners.', null, $defaultParagraphStyle);
 
 
     $statementOfWorksPage->addTitle('Assessment', 2);
     // $statementOfWorksPage->addPageBreak();
 
     $assessmentListItemRunOne = $statementOfWorksPage->addListItemRun();
-    $assessmentListItemRunOne->addText('Test Environment', array('bold'=>true));
-    $assessmentListItemRunOne->addText(' - Red Team Partners is careful to ensure performance of systems when cyber testing, we understand that systems are vital for the company and ensure measures to keep these systems operating during the testing window.');
+    $assessmentListItemRunOne->addText('Test Environment', array('bold'=>true), null, $defaultParagraphStyle);
+    $assessmentListItemRunOne->addText(' - Red Team Partners is careful to ensure performance of systems when cyber testing, we understand that systems are vital for the company and ensure measures to keep these systems operating during the testing window.', null, $defaultParagraphStyle);
 
     $assessmentListItemRunTwo = $statementOfWorksPage->addListItemRun();
-    $assessmentListItemRunTwo->addText('Live Communication', array('bold'=>true));
-    $assessmentListItemRunTwo->addText(' – We recognise that during your testing window that communication is key, our 24/7 communication platform allows you to contact your security expert for additional updates and related questions.');
+    $assessmentListItemRunTwo->addText('Live Communication', array('bold'=>true), null, $defaultParagraphStyle);
+    $assessmentListItemRunTwo->addText(' – We recognise that during your testing window that communication is key, our 24/7 communication platform allows you to contact your security expert for additional updates and related questions.', null, $defaultParagraphStyle);
 
     $assessmentListItemRunThree = $statementOfWorksPage->addListItemRun();
-    $assessmentListItemRunThree->addText('Notifications of Vulnerabilities', array('bold'=>true));
-    $assessmentListItemRunThree->addText(' – During the testing window if a critical vulnerability is found notifications will be sent to your point of contact through our communication platform to ensure remediation action.');
+    $assessmentListItemRunThree->addText('Notifications of Vulnerabilities', array('bold'=>true), null, $defaultParagraphStyle);
+    $assessmentListItemRunThree->addText(' – During the testing window if a critical vulnerability is found notifications will be sent to your point of contact through our communication platform to ensure remediation action.', null, $defaultParagraphStyle);
 
     $assessmentListItemRunFour = $statementOfWorksPage->addListItemRun();
-    $assessmentListItemRunFour->addText('Data Handling', array('bold'=>true));
-    $assessmentListItemRunFour->addText(' – All testing is performed in a secure laboratory adhering to ISO27001 requirements, only our testing personnel will have access to critical information.');
+    $assessmentListItemRunFour->addText('Data Handling', array('bold'=>true), null, $defaultParagraphStyle);
+    $assessmentListItemRunFour->addText(' – All testing is performed in a secure laboratory adhering to ISO27001 requirements, only our testing personnel will have access to critical information.', null, $defaultParagraphStyle);
 
 
     $statementOfWorksPage->addTitle('Post-Test', 2);
 
     $postTestListItemRunOne = $statementOfWorksPage->addListItemRun();
-    $postTestListItemRunOne->addText('Report Delivery', array('bold'=>true));
-    $postTestListItemRunOne->addText(' - All reports are encrypted from source and are send to your registered point of contact, passwords are sent via SMS to ensure maximum security controls.');
+    $postTestListItemRunOne->addText('Report Delivery', array('bold'=>true), null, $defaultParagraphStyle);
+    $postTestListItemRunOne->addText(' - All reports are encrypted from source and are send to your registered point of contact, passwords are sent via SMS to ensure maximum security controls.', null, $defaultParagraphStyle);
 
     $postTestListItemRunTwo = $statementOfWorksPage->addListItemRun();
-    $postTestListItemRunTwo->addText('Report Results', array('bold'=>true));
-    $postTestListItemRunTwo->addText(' - Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment.');
+    $postTestListItemRunTwo->addText('Report Results', array('bold'=>true), null, $defaultParagraphStyle);
+    $postTestListItemRunTwo->addText(' - Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment.', null, $defaultParagraphStyle);
 
     $postTestListItemRunThree = $statementOfWorksPage->addListItemRun();
-    $postTestListItemRunThree->addText('Data Removal', array('bold'=>true));
-    $postTestListItemRunThree->addText(' - Once your test has been completed, we dispose of all information using CREST approved procedures and handling methods.');
+    $postTestListItemRunThree->addText('Data Removal', array('bold'=>true), null, $defaultParagraphStyle);
+    $postTestListItemRunThree->addText(' - Once your test has been completed, we dispose of all information using CREST approved procedures and handling methods.', null, $defaultParagraphStyle);
 
     $postTestListItemRunFour = $statementOfWorksPage->addListItemRun();
-    $postTestListItemRunFour->addText('Debrief', array('bold'=>true));
-    $postTestListItemRunFour->addText(' - Red Team Partner encourages a debrief call with our tester to discuss any risk and remediation steps following the result of the report.');
+    $postTestListItemRunFour->addText('Debrief', array('bold'=>true), null, $defaultParagraphStyle);
+    $postTestListItemRunFour->addText(' - Red Team Partner encourages a debrief call with our tester to discuss any risk and remediation steps following the result of the report.', null, $defaultParagraphStyle);
 
 
     $statementOfWorksPageFooter = $statementOfWorksPage->addFooter();
@@ -908,23 +814,14 @@
 
 
     foreach ($typeOfService as $key) {
-        # code...
-        // $statementOfWorksPage->addText($key, $paragraphHeadingStyle, $paragraphHeadingPStyle);
-        // $statementOfWorksPage->addTextBreak();
-        // $statementOfWorksPage->addTextBreak();
-
-        
-        
 
         $costingPageTable->addRow();
         $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'));
         $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'))->addText($key, null, array('align'=>'center'));
         $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText( isset($_POST[ str_replace(' ', '', $key) ]) ? $_POST[ str_replace(' ', '', $key) ] : null, null, array( 'align' => 'center') );
         $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
+
     }
-
-
-    
 
     $costingPageTable->addRow();
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('TOTAL', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
@@ -938,11 +835,11 @@
 
     
     $costingPage->addListItem('Red Team Partners retains the right to charge for lost income in the event of postponed or cancelled work as mentioned in our Terms and Conditions.', 0);
-    $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0);
-    $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0);
-    $costingPage->addListItem('If the scope of this project chances, change requested and updated purchase order will be required.', 0);
-    $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0);
-    $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0);
+    $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0, null, null, $defaultParagraphStyle );
+    $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0, null, null, $defaultParagraphStyle );
+    $costingPage->addListItem('If the scope of this project chances, change requested and updated purchase order will be required.', 0, null, null, $defaultParagraphStyle );
+    $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0, null, null, $defaultParagraphStyle );
+    $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0, null, null, $defaultParagraphStyle );
     $costingPage->addTextBreak();
 
 
@@ -1087,7 +984,7 @@
     $reportingPage->addTitle('Reporting', 1); // TOC Bookmark 
     $reportingPage->addTextBreak();
 
-    $reportingPage->addText('After the assessment has been completed Red Team Partners will evaluate any vulnerabilities detected and evaluate their risk rating. These vulnerabilities will be formulated and presented with next step actions to mitigate the risks linked to the final report.');
+    $reportingPage->addText('After the assessment has been completed Red Team Partners will evaluate any vulnerabilities detected and evaluate their risk rating. These vulnerabilities will be formulated and presented with next step actions to mitigate the risks linked to the final report.', null, $defaultParagraphStyle );
     $reportingPage->addTextBreak();
 
     $reportingPageTable = $reportingPage->addTable(array(
@@ -1144,7 +1041,7 @@
 
     $managementSummaryTextRun = $reportingPage->addTextRun();
     $managementSummaryTextRun->addText('Management Summary', array('bold'=>true));
-    $managementSummaryTextRun->addText(' – a high level summary of results including recommendations and overall security posture. This summary is simple and easy to understand it included critical issues found and allows non-technical executives to understand the issues.');
+    $managementSummaryTextRun->addText(' – a high level summary of results including recommendations and overall security posture. This summary is simple and easy to understand it included critical issues found and allows non-technical executives to understand the issues.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
         'assets/images/management-summary.jpg',
@@ -1161,7 +1058,7 @@
 
     $technicalFindingsTextRun = $reportingPage->addTextRun();
     $technicalFindingsTextRun->addText('Technical Findings', array('bold'=>true));
-    $technicalFindingsTextRun->addText(' – breakdown of vulnerabilities found during testing phase including exploitation probability, technical fix and risk mitigation advice. Prioritised risks are provided to deal with most actionable suggestions.');
+    $technicalFindingsTextRun->addText(' – breakdown of vulnerabilities found during testing phase including exploitation probability, technical fix and risk mitigation advice. Prioritised risks are provided to deal with most actionable suggestions.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
         'assets/images/technical-findings.jpg',
@@ -1178,13 +1075,13 @@
 
     $evidenceTextRun = $reportingPage->addTextRun();
     $evidenceTextRun->addText('Evidence', array('bold'=>true));
-    $evidenceTextRun->addText('– Evidence of vulnerabilities will be provided within the report, this will include findings of critical flaws and high-risk vulnerabilities. Vulnerabilities are reported in detail showing the depth of our testing, screenshots and examples are provided.');
+    $evidenceTextRun->addText('– Evidence of vulnerabilities will be provided within the report, this will include findings of critical flaws and high-risk vulnerabilities. Vulnerabilities are reported in detail showing the depth of our testing, screenshots and examples are provided.', null, $defaultParagraphStyle );
 
     $reportingPage->addTextBreak(2);
     
     $recommendationsRemediationsTextRun = $reportingPage->addTextRun();
     $recommendationsRemediationsTextRun->addText('Recommendations and Remediations', array('bold'=>true));
-    $recommendationsRemediationsTextRun->addText(' – Based on findings discovered, our cyber experts provide an in-depth remediation summary based on industry best practice. Samples and screenshots will also be provided within your report.');
+    $recommendationsRemediationsTextRun->addText(' – Based on findings discovered, our cyber experts provide an in-depth remediation summary based on industry best practice. Samples and screenshots will also be provided within your report.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
         'assets/images/summary-of-findings.jpg',
@@ -1240,8 +1137,8 @@
     $timescalesPage->addTitle('Timescales', 1); // TOC Bookmark 
     // $timescalesPage->addTextBreak();
 
-    $timescalesPage->addText('Once dates have been confirmed by our delivery team and a full Statement of Works has been issued, we are able to start conducting testing.');
-    $timescalesPage->addText('You will be allocated a project manager as your project point of contact in addition to this you will also have access to your project lead consultant through our communication platform throughout your testing window. They will be responsible for successfully managing and controlling your project. They will help manage any project issues and track the progress of your project, the delivery team is accountable for the delivery of the full project and will ensure that the project is completed to the expected standard and agreed timescales. All reports are internally reviewed and quality assessed before being released.');
+    $timescalesPage->addText('Once dates have been confirmed by our delivery team and a full Statement of Works has been issued, we are able to start conducting testing.', null, $defaultParagraphStyle );
+    $timescalesPage->addText('You will be allocated a project manager as your project point of contact in addition to this you will also have access to your project lead consultant through our communication platform throughout your testing window. They will be responsible for successfully managing and controlling your project. They will help manage any project issues and track the progress of your project, the delivery team is accountable for the delivery of the full project and will ensure that the project is completed to the expected standard and agreed timescales. All reports are internally reviewed and quality assessed before being released.', null, $defaultParagraphStyle );
 
     // QUOTABLE QUOTES
     $timescalesPage->addTextBreak();
@@ -1265,28 +1162,28 @@
     // $whyChooseRTPPage->addTextBreak();
 
     $whyChooseRTPPage->addText('Red Team Partners Experience', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Red Team Partners has provided cyber security services on a global scale from small-medium business to enterprise clients. Our speed, quality and customer experience have been a major factor of successful growth and continued success.', 0);
+    $whyChooseRTPPage->addListItem('Red Team Partners has provided cyber security services on a global scale from small-medium business to enterprise clients. Our speed, quality and customer experience have been a major factor of successful growth and continued success.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Red Team Partners Strength', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Within the cyber security industry, we have a reputation for fast delivery, excellent quality of service and affordable pricing around the world. Our team consists of highly renowned experts in the field of cyber security and hold a vast amount of experience by working with cyber strategic intelligence services. Our customers noticeably experience Red Team Partners values in our service.', 0);
+    $whyChooseRTPPage->addListItem('Within the cyber security industry, we have a reputation for fast delivery, excellent quality of service and affordable pricing around the world. Our team consists of highly renowned experts in the field of cyber security and hold a vast amount of experience by working with cyber strategic intelligence services. Our customers noticeably experience Red Team Partners values in our service.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Vulnerability Detection', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Our teams research through new methods and technologies to identify the most accurate vulnerabilities within your security posture. These accurate findings will provide quantified data to allow actions against findings.', 0);
+    $whyChooseRTPPage->addListItem('Our teams research through new methods and technologies to identify the most accurate vulnerabilities within your security posture. These accurate findings will provide quantified data to allow actions against findings.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Manual Testing', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Our tests are conducted manually rather than using automated scanning tools, these techniques are specialised and can often outperform hackers’ techniques. Using manual testing eradicates false positive which are common in scanning tools.', 0);
+    $whyChooseRTPPage->addListItem('Our tests are conducted manually rather than using automated scanning tools, these techniques are specialised and can often outperform hackers’ techniques. Using manual testing eradicates false positive which are common in scanning tools.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Remediations', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Our recommendations are provided by cyber experts who can identify real actionable results, our customers trust these recommendations and are assured these are for the best benefits of the client’s security posture.', 0);
+    $whyChooseRTPPage->addListItem('Our recommendations are provided by cyber experts who can identify real actionable results, our customers trust these recommendations and are assured these are for the best benefits of the client’s security posture.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Scalable', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('We have the capacity to deliver from small to enterprises business worldwide and respond to immediate time scales.', 0);
+    $whyChooseRTPPage->addListItem('We have the capacity to deliver from small to enterprises business worldwide and respond to immediate time scales.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Experts in the Field', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('Our team consists of best cyber experts from around the world, all are dedicated to helping customers stay secure with years of practical experience in the field. Our Team includes experts with CREST, OSCP, CISSP and GWAPT and CISM. Our certified testers ensure quality of testing and continually research new techniques and technologies.', 0);
+    $whyChooseRTPPage->addListItem('Our team consists of best cyber experts from around the world, all are dedicated to helping customers stay secure with years of practical experience in the field. Our Team includes experts with CREST, OSCP, CISSP and GWAPT and CISM. Our certified testers ensure quality of testing and continually research new techniques and technologies.', 0, null, null, $defaultParagraphStyle );
 
     $whyChooseRTPPage->addText('Long Term Vision', array('bold'=>true));
-    $whyChooseRTPPage->addListItem('One of our main pillars of Red Team Partners is understanding the long-term partnership with organisations. Our purpose is to provide an outstanding service to develop a long-term relationship with our customers. Our customers are confident in our ability to deliver their requirements and very often use us for future projects.', 0);
+    $whyChooseRTPPage->addListItem('One of our main pillars of Red Team Partners is understanding the long-term partnership with organisations. Our purpose is to provide an outstanding service to develop a long-term relationship with our customers. Our customers are confident in our ability to deliver their requirements and very often use us for future projects.', 0, null, null, $defaultParagraphStyle );
 
 
     $whyChooseRTPPageFooter = $whyChooseRTPPage->addFooter();

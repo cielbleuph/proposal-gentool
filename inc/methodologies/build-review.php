@@ -12,12 +12,12 @@
     $methodologiesPage->addTitle('Build Review', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Red Team Partners offers a Build Review Assessment that combines best practice guidelines and cyber testing.');
+    $methodologiesPage->addText('Red Team Partners offers a Build Review Assessment that combines best practice guidelines and cyber testing.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('This assessment will contain the following areas that are assessed throughout the build review assessment:');
+    $methodologiesPage->addText('This assessment will contain the following areas that are assessed throughout the build review assessment:', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
     $methodologyBuildReviewTable = $methodologiesPage->addTable(
