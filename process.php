@@ -144,7 +144,12 @@
     );
 
     $defaultParagraphStyle = array(
-        'align'=>'both'
+        'align'=>'both',
+    );
+
+    $defaultParagraphListStyle = array(
+        'align'=>'both',
+        'line-height'=>1
     );
 
     $headerImageStyle = array(
@@ -170,12 +175,14 @@
     );
 
     $quoteFontStyle = array(
+        'name'=>'Times New Roman',
         'italic'=> true,
         'color'=> '696969',
         'size'=>12
     );
 
     $quoteParagraphStyle = array(
+        'name'=>'Times New Roman',
         'alignment'=>'right',
         'size'=>12
     );
