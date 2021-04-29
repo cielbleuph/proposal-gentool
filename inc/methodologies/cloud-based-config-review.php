@@ -10,18 +10,23 @@
         'bgColor' => $lightRed
     );
 
+    // $paragraphHeadingPStyle['align']='both';
+    // var_dump($paragraphHeadingPStyle);
+
+    // die();
+
     $methodologiesPage->addTitle('Cloud Based Configuration', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Red Team Partners offers a Cloud Based Configuration Review. Many organisations today make use of cloud-based tools for the provision of email and productivity tools. Red Team Partners provided a service to ensure that the correct security controls have been configured. Cloud security and configuration assessments provide a comprehensive overview of both the security and availability of the cloud- based tenant.');
+    $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle );
+    $methodologiesPage->addText('Red Team Partners offers a Cloud Based Configuration Review. Many organisations today make use of cloud-based tools for the provision of email and productivity tools. Red Team Partners provided a service to ensure that the correct security controls have been configured. Cloud security and configuration assessments provide a comprehensive overview of both the security and availability of the cloud- based tenant.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('If a successful venue of attack is identified, Red Team Partners will work with you to conduct safe exploitation (where possible) and verification of the issue whilst ensuring there are no disruptions to the daily running of your organisation. All exploitation is conducted under the agreed rules of the engagement.');
+    $methodologiesPage->addText('If a successful venue of attack is identified, Red Team Partners will work with you to conduct safe exploitation (where possible) and verification of the issue whilst ensuring there are no disruptions to the daily running of your organisation. All exploitation is conducted under the agreed rules of the engagement.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Red Team Partners offers a Cloud Based Configuration that combines best practice guidelines and cyber testing.');
+    $methodologiesPage->addText('Red Team Partners offers a Cloud Based Configuration that combines best practice guidelines and cyber testing.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('Red Team Partners Cloud Based Configuration Review compromises of the following checks:');
+    $methodologiesPage->addText('Red Team Partners Cloud Based Configuration Review compromises of the following checks:', null, $defaultParagraphStyle);
 
 
     $methodologyCloudBasedConfigTable = $methodologiesPage->addTable(

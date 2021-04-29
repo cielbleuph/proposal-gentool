@@ -14,9 +14,9 @@
     $methodologiesPage->addTextBreak();
     
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('RTP will conduct a document review to ensure that Xoserve’s implementation is being completed to specification and with a secure build out in mind.');
+    $methodologiesPage->addText('RTP will conduct a document review to ensure that Xoserve’s implementation is being completed to specification and with a secure build out in mind.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('This documentation review will give a comprehensive overview of the security considerations being included in the implementation of the design and build of a solution.');
+    $methodologiesPage->addText('This documentation review will give a comprehensive overview of the security considerations being included in the implementation of the design and build of a solution.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);

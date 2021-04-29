@@ -6,17 +6,17 @@ $(document).ready(function(){
 
 
   // prefilled data for testing
-  
-  // $('#company-name').val('COMPANY XYZ');
-  // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
-  // $('#client-name').val('JOHN DOE');
-  // $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
-  // $('#client-contact').val('1234567890');
-  // $('#account-manager').val('ALAIN PEDRONIO');
-  // $('#account-manager-contact').val('0987654321');
-  // $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
-  // $('#test-date').val('04/30/2021');
-  // $('#number-of-days').val('10');
+
+  $('#company-name').val('COMPANY XYZ');
+  $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
+  $('#client-name').val('JOHN DOE');
+  $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
+  $('#client-contact').val('1234567890');
+  $('#account-manager').val('ALAIN PEDRONIO');
+  $('#account-manager-contact').val('0987654321');
+  $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
+  $('#test-date').val('04/30/2021');
+  $('#number-of-days').val('10');
 
 
 

@@ -93,7 +93,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="account-manager" class="control-label f-700">Account Manager Name</label>
+                                            <label for="account-manager" class="control-label f-700">Account Manager's Name</label>
                                             <input type="text"
                                                 class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help">
                                             <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
