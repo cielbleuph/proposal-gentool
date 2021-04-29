@@ -158,11 +158,11 @@
 
     $paragraphHeadingStyle = array(
         'bold' => true,
-        'size' => 18
+        'size' => 16
     );
 
     $paragraphHeadingPStyle = array(
-        'lineHeight' => 2
+        'lineHeight' => 1.5
     );
 
     $footerTextStyle = array(
@@ -187,6 +187,17 @@
 
     $servicesParagraphStyle = array(
         'alignment'=>'center'
+    );
+
+    $phpWord->addNumberingStyle(
+        'multilevel',
+        array(
+            'type' => 'multilevel',
+            'levels' => array(
+                array('format' => 'decimal', 'text' => '%1.', 'left' => 720, 'hanging' => 360, 'tabPos' => 720),
+                array('format' => 'upperLetter', 'text' => '%2.', 'left' => 1080, 'hanging' => 360, 'tabPos' => 1080),
+            )
+        )
     );
 
     $coverCreatedCellStyle = array('bgColor'=>'494849');
