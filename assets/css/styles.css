@@ -112,7 +112,7 @@ body {
   }
 
 
-  .btn:not(.palette-White):not(.btn-default) {
+  .btn:not(.palette-White):not(.btn-default):not(.btn-outline-secondary) {
     color: #fff;
   }
 
