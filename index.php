@@ -1,26 +1,14 @@
-<?php include('views/inc/header.php'); ?>
+<?php 
+  
+  $currentPage = 'dashboard';
+
+  include('views/inc/header.php'); 
+?>
 
     <div class="container-fluid">
       <div class="row">
         
-        <?php include('views/inc/sidebar-nav.php'); ?>
-
-        <?php
-
-            // $url= $_SERVER['REQUEST_URI']; 
-
-            // var_dump($url); 
-            // die();
-
-            // $positionslash= strrpos($url, "/");
-
-            // $filename= substr($url, $positionslash + 1);
-  
-            // echo '<br /><br /><br />'.$filename;
-            
-            // if($filename === 'index.php') {
-            //   include('views/home.php');
-            // }
+        <?php include('views/inc/sidebar-nav.php');
 
             var_dump($_GET);
             // die();
@@ -31,17 +19,19 @@
             // die();
 
             switch ($path) {
-              case 'proposal-tool':
-                include('views/proposal-tool.php');
+              case 'generate-proposal':
+                $currentPage = 'generate-proposal';
+                include('views/generate-proposal.php');
                 break;
 
               case 'generate-sow':
+                $currentPage = 'generate-sow';
                 include('views/generate-sow.php');
                 break;
               
               default:
                 # code...
-                // include('views/proposal-tool.php');
+                
                 include('views/home.php');
                 ?>
                 <!-- Graphs -->
@@ -78,13 +68,7 @@
                 <?php
                 break;
             }
-            
+               
 
-        ?>
-
-        
-
-    
-
-    <?php include('views/inc/footer.php'); 
+        include('views/inc/footer.php'); 
     
