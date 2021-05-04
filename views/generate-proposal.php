@@ -182,7 +182,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <button class="btn-success btn waves-effect" id="add-days" disabled>Add Days</button>
+                                                        <button class="btn-primary btn waves-effect" id="add-days" disabled>Add Days</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
