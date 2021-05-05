@@ -12,200 +12,140 @@
 
           <div class="card">
             <div class="card-body card-padding palette-Grey-100 bg">
-                <h2 class="c-white"><i data-feather="info"></i> Client Information</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                    
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="service-type" class="control-label f-700">Service Types</label>
-                                <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
-                                    <?php 
-                                        $services = array(
-                                            'API Testing',
-                                            'Build Review',
-                                            'Cloud Based Configuration Review',
-                                            'Cyber Security Training',
-                                            'Dark Web Cyber Intelligence Monitoring',
-                                            'Documentation Review',
-                                            'Firewall Assessment',
-                                            'Forensics and Investigations',
-                                            'Infrastructure Testing',
-                                            'IoT Penetration Testing',
-                                            'Mobile iOS and Android Testing',
-                                            'PCI DSS Compliance Audit',
-                                            'Performance Stress Testing/Load Testing',
-                                            'Phishing Simulation',
-                                            'Red Team Assessment',
-                                            'Secure Code Review',
-                                            'VPN Assessment',
-                                            'Vulnerability Assessment',
-                                            'Web Application Penetration Testing',
-                                            'Wireless Network Audit',
-                                        );
-
-                                        sort($services);
-
-                                        foreach($services as $service)
-                                        echo '<option value="'.$service.'">'.$service.'</option>';
-                                    ?>
-
-
-                                </select>
-                                <small id="service-type-help" class="form-text text-muted">What are the types of services included.</small>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-
-
-
-
-
-
-                    
-                </div>
-            </div>
-          </div>
-
-          <div class="card">
-              <div class="card-body card-padding palette-Grey-100 bg">
-                <form method="post" action="process.php" id="proposal-generator-form" class="proposal-generator-form form-columnar form" role="form">
+                <form name="sow-generator-form" id="sow-generator-form" class="sow-generator-form">
                     <div class="row">
-                        <div class="col-md-6">
-                            <!-- <h2>Client Information Sheet</h2> -->
+                        <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header palette-Light-Blue-800">
-                                    <h2 class="c-white"><i data-feather="info"></i> Client Information</h2>
+                                <div class="card-header palette-Red-300">
+                                    <h2 class="c-white"><i data-feather="tool"></i> General Information</h2>
                                 </div>
                                 <div class="card-body form-padding">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="company-name" class="control-label f-700">Company Name</label>
-                                                <input type="text"
-                                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help">
-                                                <small id="company-name-help" class="form-text text-muted">Enter client's company name.</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="client-name" class="control-label f-700">Client's Name</label>
-                                                <input type="text"
-                                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help">
-                                            <small id="client-name-help" class="form-text text-muted">Enter client's full name.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                        <label for="company-description" class="control-label f-700">Company Description</label>
-                                        <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3"></textarea>
-                                        <small id="company-description-help" class="form-text text-muted">What does the company offer - services/provides?</small>
-                                        </div>
-                                    </div>    
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="company-email" class="control-label f-700">Client's Email Address</label>
-                                            <input type="email"
-                                                class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help">
-                                            <small id="client-email-help" class="form-text text-muted">Enter client's Email Address</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="company-contact" class="control-label f-700">Company Contact Number</label>
-                                            <input type="text"
-                                                class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help">
-                                            <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <!-- <h2>For RTP Personnel Only</h2> -->
-                        <div class="card">
-                            <div class="card-header palette-Red-300">
-                                <h2 class="c-white"><i data-feather="tool"></i> RTP Information</h2>
-                            </div>
-                            <div class="card-body form-padding">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="account-manager" class="control-label f-700">Account Manager's Name</label>
-                                            <input type="text"
-                                                class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help">
-                                            <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
-                                        </div>  
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="account-manager-contact" class="control-label f-700">Account Manager's Contact Number</label>
-                                            <input type="text"
-                                                class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help">
-                                            <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="company-name" class="control-label f-700">Account Manager's Email Address</label>
-                                            <input type="email"
-                                                class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help">
-                                            <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="test-date" class="control-label f-700">Test Date</label>
-                                            <input type="text"
-                                                class="form-control" name="test-date" id="test-date" aria-label="Testing Date" aria-describedby="test-date-help">
-                                            <small id="test-date-help" class="form-text text-muted">Enter estimated start of testing.</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-
-                                
-                                
-                                <!-- <div class="col-xs-12 col-lg-12">
                                     <div class="form-group">
-                                        <input type="text"
-                                            class="form-control" name="number-of-days" id="number-of-days" aria-label="Number of Days to Complete" aria-describedby="number-of-days-help" placeholder="Number of Days">
-                                        <small id="number-of-days-help" class="form-text text-muted">Total number of days to complete.</small>
+                                        <label for="service-type" class="control-label f-700">Select Service Type</label>
+                                            <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help">
+                                                <option></option>
+                                                <?php 
+                                                    $services = array(
+                                                        'API Testing',
+                                                        'Build Review',
+                                                        'Cloud Based Configuration Review',
+                                                        'Cyber Security Training',
+                                                        'Dark Web Cyber Intelligence Monitoring',
+                                                        'Documentation Review',
+                                                        'Firewall Assessment',
+                                                        'Forensics and Investigations',
+                                                        'Infrastructure Testing',
+                                                        'IoT Penetration Testing',
+                                                        'Mobile iOS and Android Testing',
+                                                        'PCI DSS Compliance Audit',
+                                                        'Performance Stress Testing/Load Testing',
+                                                        'Phishing Simulation',
+                                                        'Red Team Assessment',
+                                                        'Secure Code Review',
+                                                        'VPN Assessment',
+                                                        'Vulnerability Assessment',
+                                                        'Web Application Penetration Testing',
+                                                        'Wireless Network Audit',
+                                                    );
+
+                                                    sort($services);
+
+                                                    foreach($services as $service)
+                                                    echo '<option value="'.$service.'">'.$service.'</option>';
+                                                ?>
+                                            </select>
+                                        </label>
                                     </div>
-                                </div> -->
+                                    <div class="form-group">
+                                        <label for="generated-date" class="control-label f-700">Generated Date</label>
+                                        <input type="text" class="form-control generated-date" name="generated-date" id="generated-date" aria-label="Generated Date" aria-describedby="generated-date" placeholder="(MM/DD/YYYY)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="delivery-manager-name" class="control-label f-700">Delivery Manager Name</label>
+                                        <input type="text" class="form-control delivery-manager-name" name="delivery-manager-name" id="delivery-manager-name" aria-label="Delivery Manager Name" aria-describedby="delivery-manager-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="delivery-manager-email" class="control-label f-700">Delivery Manager Email Address</label>
+                                        <input type="email" class="form-control delivery-manager-email" name="delivery-manager-email" id="delivery-manager-email" aria-label="generated-date" aria-describedby="Delivery Manager Email">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="estimated-delivery-date" class="control-label f-700">Esimated Delivery Date</label>
+                                        <input type="text" class="form-control estimated-delivery-date" name="estimated-delivery-date" id="estimated-delivery-date" aria-label="Estimated Delivery Date" aria-describedby="estimated-delivery-date" placeholder="(MM/DD/YYYY)">
+                                    </div>
+                                </div>
                             </div>
-                            
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header palette-Indigo-300">
+                                    <h2 class="c-white"><i data-feather="tool"></i> Client Information</h2>
+                                </div>
+                                <div class="card-body form-padding">
+                                    <div class="form-group">
+                                        <label for="client-name" class="control-label f-700">Client's Name</label>
+                                        <input type="text" 
+                                            class="form-control client-name" name="client-name" id="client-name" aria-label="Client Name" aria-describedby="generated-date" >         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client-company-name" class="control-label f-700">Client's Company Name</label>
+                                        <input type="text" 
+                                            class="form-control client-company-name" name="client-company-name" id="client-company-name" aria-label="Client Company Name" aria-describedby="client-company-name">         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="poc-name" class="control-label f-700">POC Name</label>
+                                        <input type="text" 
+                                            class="form-control poc-name" name="poc-name" id="poc-name" aria-label="POC Name" aria-describedby="poc-name" >         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="poc-mobile-number" class="control-label f-700">POC Mobile Number</label>
+                                        <input type="text" 
+                                            class="form-control poc-mobile-number" name="poc-mobile-number" id="poc-mobile-number" aria-label="POC Mobile Number" aria-describedby="poc-mobile-number" >         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="poc-email-address" class="control-label f-700">POC Email Address</label>
+                                        <input type="email" 
+                                            class="form-control poc-email-address" name="poc-email-address" id="poc-email-address" aria-label="POC Email Address" aria-describedby="poc-email-address" >         
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header palette-Light-Blue-800">
+                                    <h2 class="c-white"><i data-feather="tool"></i> Tester Information</h2>
+                                </div>
+                                <div class="card-body form-padding">
+                                    <div class="form-group">
+                                        <label for="tester-name" class="control-label f-700">Tester Name</label>
+                                        <input type="text" 
+                                            class="form-control tester-name" name="tester-name" id="tester-name" aria-label="Tester Name" aria-describedby="tester-name" >         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tester-email" class="control-label f-700">Tester Email Address</label>
+                                        <input type="email" 
+                                            class="form-control tester-email" name="tester-email" id="tester-email" aria-label="Tester Email" aria-describedby="tester-email" >         
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="test-start-date" class="control-label f-700">Test Start Date</label>
+                                        <input type="text" class="form-control test-start-date" name="test-start-date" id="test-start-date" aria-label="Test Start Date" aria-describedby="test-start-date" placeholder="(MM/DD/YYYY)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-success waves-effect">Generate</button>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success waves-effect">Generate</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-              </div>
+                </form>
+            </div>
           </div>
-
-          <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="2304" height="972" style="display: block; height: 486px; width: 1152px;"></canvas> -->
-
-            
         </main>
       </div>
     </div>

@@ -4,45 +4,59 @@ var serviceTypeDataLength = 0;
 
 $(document).ready(function(){
 
-
   // prefilled data for testing
-  // $('#company-name').val('COMPANY XYZ');
-  // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
-  // $('#client-name').val('JOHN DOE');
-  // $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
-  // $('#client-contact').val('1234567890');
-  // $('#account-manager').val('ALAIN PEDRONIO');
-  // $('#account-manager-contact').val('0987654321');
-  // $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
-  // $('#test-date').val('04/30/2021');
-  // $('#number-of-days').val('10');
+  $('#company-name').val('COMPANY XYZ');
+  $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
+  $('#client-name').val('JOHN DOE');
+  $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
+  $('#client-contact').val('1234567890');
+  $('#account-manager').val('ALAIN PEDRONIO');
+  $('#account-manager-contact').val('0987654321');
+  $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
+  $('#test-date').val('04/30/2021');
+  $('#number-of-days').val('10');
 
 
-
+  $('#delivery-manager-name').val('John Doe');
+  $('#delivery-manager-email').val('johndoe@testlocal.co');
+  $('#client-name').val('Jane Doe');
+  $('#client-company-name').val('Company ACME');
+  $('#poc-name').val('Ruben Reyes');
+  $('#poc-mobile-number').val('1234567890');
+  $('#poc-email-address').val('rubenpoc@test.local');
+  $('#tester-name').val('Philip Tester');
+  $('#tester-email').val('philiptester@local.co');
+  $('#generated-date').val('06/23/2021');
+  $('#estimated-delivery-date').val('06/23/2021');
+  $('#test-start-date').val('06/23/2021');
 
   $('#test-date').datepicker({
 		minDate: 0
 	});
 
+  $('#generated-date').datepicker({
+		minDate: 0
+	});
+
+  $('#estimated-delivery-date').datepicker({
+    minDate: 0
+  });
+
+  $('#test-start-date').datepicker({
+    minDate: 0
+  });
+
   $('#service-type').select2({
     // placeholder: 'This is my placeholder',
     // allowClear: true
     // minimumInputLength: 2 // only start searching when the user has input 3 or more characters
+    theme: "classic"
   });
 
-  // 2. if service is removed from data variable, delete element in html.
   
-  // 0. add each service type to variable data and create an element based on the data.
-  
-
-
   $('#add-days').on('click', function(e){
     e.preventDefault();
     console.log('add days');
-
-    
-    
-    // var cleaner = [];
 
     $.each(servicesWrapper, function(index, service){
       var elemService = (service).replace(/\s+/g, "");
@@ -144,6 +158,52 @@ $(document).ready(function(){
         }
     });
 	});
+
+
+  $('form#sow-generator-form').on('submit', function(e){
+		e.preventDefault();
+
+		console.log('sow generate!');
+
+    var companyName = $('#client-company-name').val();
+		var formData = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: 'process-sow.php',
+        data: formData,
+        xhrFields: {
+          responseType: 'blob'
+        },
+        // dataType: "json",
+        success: function (data) {
+          var a = document.createElement('a');
+
+          if(typeof data != 'string'){
+            var binaryData = [];
+            binaryData.push(data);
+            var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+            a.href = url;
+            // console.log(a);
+            a.download = companyName + '_' + dateToday() +'.docx';
+            document.body.append(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+          }
+          else{
+            console.log('AJAX return data error.');
+          }
+          
+        },
+        error: function( xhr, textStatus, errorThrown ) {
+
+        }
+    });
+	});
+
+
+
 }); // document
 
 
