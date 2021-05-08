@@ -2,7 +2,12 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
+    include('inc/helper/helper.php');
+
     require_once __DIR__ . '/vendor/autoload.php';
+
+    $dateHelper = new Helper();
+    $dateFormat = 'd F Y';
 
     if ( isset($_POST) ) {
         if ( isset($_POST['service-type']) && $_POST['service-type'] != '' ){
@@ -10,11 +15,11 @@
         }
 
         if ( isset($_POST['generated-date']) && $_POST['generated-date'] != '' ){
-            $generatedDate = $_POST['generated-date'];
+            $generatedDate = $dateHelper->convertDateToStringFormat( $_POST['generated-date'], $dateFormat );
         }
 
         if ( isset($_POST['test-start-date']) && $_POST['test-start-date'] != '' ){
-            $testStartDate = $_POST['test-start-date'];
+            $testStartDate = $dateHelper->convertDateToStringFormat( $_POST['test-start-date'], $dateFormat );
         }
 
         if( isset($_POST['delivery-manager-name']) && $_POST['delivery-manager-name'] != '' ) {
@@ -26,7 +31,7 @@
         }
         
         if( isset($_POST['estimated-delivery-date']) && $_POST['estimated-delivery-date'] != '' ) {
-            $estimatedDeliveryDate = $_POST['estimated-delivery-date'];
+            $estimatedDeliveryDate = $dateHelper->convertDateToStringFormat( $_POST['estimated-delivery-date'], $dateFormat );
         }
 
         if( isset($_POST['client-name']) && $_POST['client-name'] != '' ) {
@@ -158,6 +163,14 @@
         'alignment' => 'right',
     );
 
+    $headerWatermarkStyle = array(
+        'width' => 596, 
+        'marginTop' => -36,
+        'marginLeft' => -73,
+        'posHorizontal' => 'absolute',
+        'posVertical' => 'absolute',
+    );
+
     $paragraphHeadingStyle = array(
         'bold' => true,
         'size' => 16
@@ -206,7 +219,6 @@
 
     $coverCreatedCellStyle = array('bgColor'=>'494849');
 
-    $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
 
 
     //############################### COVER PAGE ###############################
@@ -237,8 +249,8 @@
 
     //############################### TOC PAGE ###############################
     $TOCPage = $phpWord->addSection();
-    $TOCPagePageHeader = $TOCPage->addHeader();
-    $TOCPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    // $TOCPagePageHeader = $TOCPage->addHeader();
+    // $TOCPagePageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
 
     // Add text elements
     $TOCPage->addTitle('Table of Contents', 0);
@@ -259,13 +271,19 @@
     //############################### CLIENT DETAILS PAGE ###############################
 
     $clientDetailsPage = $phpWord->addSection();
+    $clientDetailsPageHeader = $clientDetailsPage->addHeader();
+   
+    // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
+    $clientDetailsPageHeader->addWatermark( 'assets/images/sow-header-image.png', $headerWatermarkStyle );
+    
     $clientDetailsPage->addTitle(htmlentities('Client Details & Information', 1)); // TOC Bookmark
-    $clientDetailsPage->addText('', [], ['borderBottomSize' => 6]);
-    $clientDetailsPage->addTextBreak();
+    $lineStyle = array('weight' => 1, 'width' => 440, 'height' => 0, 'color' => '38c172');
+    $clientDetailsPage->addLine($lineStyle);
+    // $clientDetailsPage->addText('', [], );
+
     $clientDetailsPage->addText('Red Team Partners will begin the Test on '.$testStartDate.' for '.$clientCompanyName.'. For any changes to the project including dates, please ensure you provide us with at least 2 weeks’ notice to review and agree on any proposed changes.');
 
-    $clientDetailsPage->addText('In this document you will find the details of the work, including dates, the consultant and their details if you wish to contact them 
-    during the engagement. The engagement will begin at 9:00 am on the day of testing unless otherwise agreed with you.');
+    $clientDetailsPage->addText('In this document you will find the details of the work, including dates, the consultant and their details if you wish to contact them during the engagement. The engagement will begin at 9:00 am on the day of testing unless otherwise agreed with you.');
 
     $clientDetailsPage->addText('If our consultant identifies any critical or high-risk issues during testing, they will let you know straight away to see if the issue can be remediated during the engagement.');
 
@@ -315,6 +333,9 @@
     $clientDetailsTableThree->addCell($converter->pixelToTwip(300))->addText($estimatedDeliveryDate);
 
 
+    $clientDetailsPageFooter = $clientDetailsPage->addFooter();
+
+
     //############################### END CLIENT DETAILS PAGE ###############################    
 
 
@@ -324,7 +345,7 @@
 
     $projectScopePage = $phpWord->addSection();
     $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
-    $projectScopePage->addText('', [], ['borderBottomSize' => 6]);
+    
 
 
     $projectScopePage->addTitle( '*** SCOPE of Project Selected ***', 2); // TOC Bookmark 
