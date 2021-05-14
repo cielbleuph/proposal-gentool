@@ -110,9 +110,9 @@
     // Define styles
     $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
     $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
-    $phpWord->addTitleStyle(1, array('size' => 24, 'color' => '000000', 'bold' => true));
-    $phpWord->addTitleStyle(2, array('size' => 18, 'color' => '333333', 'bold' => true, 'underline'=>'single' ));
-    // $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
+    $phpWord->addTitleStyle(1, array('size' => 18, 'color' => '000000'));
+    $phpWord->addTitleStyle(2, array('size' => 16, 'color' => '333333', 'bold' => true, 'underline'=>'single' ));
+    $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
     
     //adding the necessary header/title styles
@@ -218,6 +218,7 @@
     );
 
     $coverCreatedCellStyle = array('bgColor'=>'494849');
+    $lineStyle = array('weight' => 1, 'width' => 445, 'height' => 0, 'color' => '38c172');
 
 
 
@@ -276,8 +277,8 @@
     // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
     $clientDetailsPageHeader->addWatermark( 'assets/images/sow-header-image.png', $headerWatermarkStyle );
     
-    $clientDetailsPage->addTitle(htmlentities('Client Details & Information', 1)); // TOC Bookmark
-    $lineStyle = array('weight' => 1, 'width' => 440, 'height' => 0, 'color' => '38c172');
+    $clientDetailsPage->addTitle(htmlentities('CLIENT DETAILS & INFORMATION', 1)); // TOC Bookmark
+    
     $clientDetailsPage->addLine($lineStyle);
     // $clientDetailsPage->addText('', [], );
 
@@ -332,61 +333,30 @@
     $clientDetailsTableThree->addCell($converter->pixelToTwip(300))->addText('Report Delivery Estimated Date:');
     $clientDetailsTableThree->addCell($converter->pixelToTwip(300))->addText($estimatedDeliveryDate);
 
-
     $clientDetailsPageFooter = $clientDetailsPage->addFooter();
 
 
     //############################### END CLIENT DETAILS PAGE ###############################    
 
+    // include files
 
+    foreach($typeOfService as $service) {
+        if ( $service === 'API Testing' ) {
+            include('inc/sow-services/api-testing.php');
+        }
 
-
-    //############################### PROJECT SCOPE PAGE ###############################    
-
-    $projectScopePage = $phpWord->addSection();
-    $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
-    
-
-
-    $projectScopePage->addTitle( '*** SCOPE of Project Selected ***', 2); // TOC Bookmark 
-
-    $projectScopePage->addPageBreak();
-
-    //############################### END PROJECT SCOPE PAGE ###############################    
-
-
-
-    //############################### PROJECT DESCRIPTION PAGE ###############################    
-
-    $projectDescriptionPage = $phpWord->addSection();
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addText('', [], ['borderBottomSize' => 6]);
-
-    $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
-    $projectDescriptionPage->addTitle( 'BRIEF', 2); // TOC Bookmark 
-    $projectDescriptionPage->addTitle( 'METHOD', 2); // TOC Bookmark 
-    $projectDescriptionPage->addTitle( 'FALLBACKS', 2); // TOC Bookmark 
-    
-
-    $projectDescriptionPage->addPageBreak();
-
-    //############################### END PROJECT DESCRIPTION PAGE ###############################   
-
-
-
-
+        
+    }
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
 
     $projectPrereqPage = $phpWord->addSection();
     $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1); // TOC Bookmark
-    $projectPrereqPage->addText('', [], ['borderBottomSize' => 6]);
+    $projectPrereqPage->addLine($lineStyle);
 
     $projectPrereqPage->addText('Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.');
     // $projectPrereqPage->addText('(If API Test');
 
-
-    $projectPrereqPage->addText('', [], ['borderBottomSize' => 6]);
 
     if ($typeOfService[0] == 'API Testing') {
         $projectPrereqPage->addListItem('Application which is consuming the API');
@@ -394,10 +364,8 @@
         $projectPrereqPage->addListItem('API documentation');
         $projectPrereqPage->addListItem('Exported API list such as SWAGGER file, YAML or WSDL');
     }
-    
 
     //############################### END PROJECT PRE-REQUISITES REQUIREMENTS SCOPE PAGE ###############################   
-
 
     // // Saving the document as OOXML file...
     // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
