@@ -25,27 +25,46 @@
                                             <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help">
                                                 <option></option>
                                                 <?php 
+                                                    // $services = array(
+                                                    //     'API Testing',
+                                                    //     'Build Review',
+                                                    //     'Cloud Based Configuration Review',
+                                                    //     'Cyber Security Training',
+                                                    //     'Dark Web Cyber Intelligence Monitoring',
+                                                    //     'Documentation Review',
+                                                    //     'Firewall Assessment',
+                                                    //     'Forensics and Investigations',
+                                                    //     'Infrastructure Testing',
+                                                    //     'IoT Penetration Testing',
+                                                    //     'Mobile iOS and Android Testing',
+                                                    //     'PCI DSS Compliance Audit',
+                                                    //     'Performance Stress Testing/Load Testing',
+                                                    //     'Phishing Simulation',
+                                                    //     'Red Team Assessment',
+                                                    //     'Secure Code Review',
+                                                    //     'VPN Assessment',
+                                                    //     'Vulnerability Assessment',
+                                                    //     'Web Application Penetration Testing',
+                                                    //     'Wireless Network Audit',
+                                                    // );
+
                                                     $services = array(
                                                         'API Testing',
+                                                        'Application Pen Test',
                                                         'Build Review',
-                                                        'Cloud Based Configuration Review',
-                                                        'Cyber Security Training',
-                                                        'Dark Web Cyber Intelligence Monitoring',
-                                                        'Documentation Review',
-                                                        'Firewall Assessment',
-                                                        'Forensics and Investigations',
-                                                        'Infrastructure Testing',
-                                                        'IoT Penetration Testing',
-                                                        'Mobile iOS and Android Testing',
-                                                        'PCI DSS Compliance Audit',
-                                                        'Performance Stress Testing/Load Testing',
+                                                        'Cloud Assessment AWS',
+                                                        'Cloud Based Config',
+                                                        'Cyber Threat Intelligence',
+                                                        'Documentation',
+                                                        'Firewall',
+                                                        'Infrastructure Penetration',
                                                         'Phishing Simulation',
+                                                        'Physical Assessment',
                                                         'Red Team Assessment',
-                                                        'Secure Code Review',
+                                                        'Virtualisation Config',
                                                         'VPN Assessment',
-                                                        'Vulnerability Assessment',
-                                                        'Web Application Penetration Testing',
-                                                        'Wireless Network Audit',
+                                                        'Vulnerability Scan',
+                                                        'Wireless Network Assessment'
                                                     );
 
                                                     sort($services);

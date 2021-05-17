@@ -76,21 +76,13 @@
 
         //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 
-    // SETTING THE META DATA OF THE DOCUMENT
-    // $properties = $phpWord->getDocInfo();
-    // $properties->setCreator( get_ebook_author() );
-    // $properties->setCompany( get_ebook_author() );
-    // $properties->setTitle( get_ebook_title() );
-    // $properties->setDescription( get_ebook_description() );
-    // $properties->setCreated( get_ebook_date_created() );
-    // $properties->setModified( time() );
-
+ 
 
     // GENERAL SETTINGS
-    $phpWord->setDefaultFontName( 'Proxima Nova' );
-    $phpWord->setDefaultFontSize( 12 );
+    $phpWord->setDefaultFontName( 'Proxima Nova Rg' );
+    $phpWord->setDefaultFontSize( 14 );
     $phpWord->setDefaultParagraphStyle( array(
-       'lineHeight' => 1.3,
+       'lineHeight' => 1,
     ) );
 
     $phpWord->addNumberingStyle(
@@ -110,15 +102,11 @@
     // Define styles
     $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
     $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
-    $phpWord->addTitleStyle(1, array('size' => 18, 'color' => '000000'));
-    $phpWord->addTitleStyle(2, array('size' => 16, 'color' => '333333', 'bold' => true, 'underline'=>'single' ));
+    $phpWord->addTitleStyle(1, array( 'name'=>'Proxima Nova Rg', 'size' => 16, 'color' => '000000', 'bold' => true ) );
+    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'DE5C5C', 'bold' => true ));
     $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
-    
-    //adding the necessary header/title styles
-    // $phpWord->addTitleStyle(1, array('name'=>'HelveticaNeueLT Std Med', 'size'=>16, 'color'=>'red')); //h1
-    // $phpWord->addTitleStyle(2, "font_h2"); //h2
-    // $phpWord->addTitleStyle(3, "font_h3"); //h3
+
 
     //adding the necessary paragraph styles
     $phpWord->addParagraphStyle('paragraph_default', array('spaceBefore' => 0, 'spaceAfter' => 0));
@@ -220,24 +208,11 @@
     $coverCreatedCellStyle = array('bgColor'=>'494849');
     $lineStyle = array('weight' => 1, 'width' => 445, 'height' => 0, 'color' => '38c172');
 
-
+    include_once('inc/sow-services/sow-styles.php');
 
     //############################### COVER PAGE ###############################
 
     $coverPage = $phpWord->addSection();
-    // $coverPage->addImage('assets/images/sow-cover-image', 
-    //     array(
-    //         'width'         => 450,
-    //         'marginTop'     => 2,
-    //         'marginLeft'    => -100,
-    //         'wrappingStyle' => 'inline',
-    //         'alignment' => 'center',
-    //         'wrapDistanceLeft' => 100
-    //     )
-    // );
-
-    // $coverPage->addText('test');
-
     $coverPage->addText('Name of Service: ' . $typeOfService[0]);
     $coverPage->addText('Statement of Works for: ' . $clientCompanyName);
     $coverPage->addText('SOW Generated Date: ' . $generatedDate);
@@ -251,7 +226,7 @@
     //############################### TOC PAGE ###############################
     $TOCPage = $phpWord->addSection();
     // $TOCPagePageHeader = $TOCPage->addHeader();
-    // $TOCPagePageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
+    // $TOCPagePageHeader->addImage( 'assets/images/sow-header-image.png', $headerWatermarkStyle);
 
     // Add text elements
     $TOCPage->addTitle('Table of Contents', 0);
@@ -293,45 +268,42 @@
     $clientDetailsPage->addTextBreak();
     
     $clientDetailsPage->addTitle( 'Client', 2); // TOC Bookmark 
+    $companyNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $companyNameTextRun->addText('Company Name:' );
+    $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . $clientCompanyName, array( 'bold'=> true ) );
 
-    $clientDetailsTableOne = $clientDetailsPage->addTable();
+    $technicalPOCNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $technicalPOCNameTextRun->addText('Technical POC Name:' );
+    $technicalPOCNameTextRun->addText( htmlspecialchars("\t\t\t\t") . $POCName, array( 'bold'=>true ) );
 
-    $clientDetailsTableOne->addRow();
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText('Company Name:');
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText($clientCompanyName);
+    $technicalPOCNumberTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $technicalPOCNumberTextRun->addText('Technical POC Number:' );
+    $technicalPOCNumberTextRun->addText( htmlspecialchars("\t\t\t") . $POCMobileNumber, array( 'bold'=>true ) );
 
-    $clientDetailsTableOne->addRow();
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText('Technical POC Name');
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText($POCName);
+    $technicalPOCEmailTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $technicalPOCEmailTextRun->addText('Technical POC Email:' );
+    $technicalPOCEmailTextRun->addText( htmlspecialchars("\t\t\t\t") . $POCEmailAddress, array( 'bold'=>true ) );
 
-    $clientDetailsTableOne->addRow();
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText('Technical POC Number:');
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText($POCMobileNumber);
-
-    $clientDetailsTableOne->addRow();
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText('Technical POC Email:');
-    $clientDetailsTableOne->addCell($converter->pixelToTwip(300))->addText($POCEmailAddress);
+    $clientDetailsPage->addTextBreak();
 
     $clientDetailsPage->addTitle('TESTER', 2);
 
-    $clientDetailsTableTwo = $clientDetailsPage->addTable();
+    $nameOfTesterTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $nameOfTesterTextRun->addText('Name of Tester:');
+    $nameOfTesterTextRun->addText( htmlspecialchars("\t\t\t\t\t") . $testerName, array( 'bold'=>true ));
 
-    $clientDetailsTableTwo->addRow();
-    $clientDetailsTableTwo->addCell($converter->pixelToTwip(300))->addText('Name of Tester:');
-    $clientDetailsTableTwo->addCell($converter->pixelToTwip(300))->addText($testerName);
+    $emailOfTesterTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $emailOfTesterTextRun->addText('Email of Tester:');
+    $emailOfTesterTextRun->addText( htmlspecialchars("\t\t\t\t\t") . $testerEmail, array( 'bold'=>true ));
 
-    $clientDetailsTableTwo->addRow();
-    $clientDetailsTableTwo->addCell($converter->pixelToTwip(300))->addText('Email of Tester:');
-    $clientDetailsTableTwo->addCell($converter->pixelToTwip(300))->addText($testerEmail);
-
+    $clientDetailsPage->addTextBreak();
 
     $clientDetailsPage->addTitle( 'OTHER INFORMATION', 2);
+    $reportDeliveryTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
+    $reportDeliveryTextRun->addText('Report Delivery Estimated Date:');
+    $reportDeliveryTextRun->addText( htmlspecialchars("\t\t") . $estimatedDeliveryDate, array( 'bold'=>true ));
 
-    $clientDetailsTableThree = $clientDetailsPage->addTable();
 
-    $clientDetailsTableThree->addRow();
-    $clientDetailsTableThree->addCell($converter->pixelToTwip(300))->addText('Report Delivery Estimated Date:');
-    $clientDetailsTableThree->addCell($converter->pixelToTwip(300))->addText($estimatedDeliveryDate);
 
     $clientDetailsPageFooter = $clientDetailsPage->addFooter();
 
@@ -340,12 +312,82 @@
 
     // include files
 
-    foreach($typeOfService as $service) {
-        if ( $service === 'API Testing' ) {
-            include('inc/sow-services/api-testing.php');
-        }
+    // foreach($typeOfService as $service) {
+    //     if ( $service === 'API Testing' ) {
+    //         include('inc/sow-services/api-testing.php');
+    //     }
+    // }
 
+    $service = $typeOfService[0];
+
+    switch ($service) {
+        case 'API Testing':
+            include('inc/sow-services/api-testing.php');
+            break;
         
+        case 'Application Pen Test':
+            include('inc/sow-services/app-pentest.php');
+            break;
+        
+        case 'Build Review':
+            include('inc/sow-services/build-review.php');
+            break;
+        
+        case 'Cloud Assessment AWS':
+            include('inc/sow-services/cloud-assessment-aws.php');
+            break;
+        
+        case 'Cloud Based Config':
+            include('inc/sow-services/cloud-based-config.php');
+            break;        
+        
+        case 'Cyber Threat Intelligence':
+            include('inc/sow-services/cyber-threat-intelligence.php');
+            break;             
+
+        case 'Document Review':
+            include('inc/sow-services/document-review.php');
+            break;    
+            
+        case 'Firewall':
+            include('inc/sow-services/firewall.php');
+            break;
+
+        case 'Infrastructure Penetration':
+            include('inc/sow-services/infrastructure-penetration.php');
+            break;
+        
+        case 'Phishing Simulation':
+            include('inc/sow-services/phishing-simulation.php');
+            break;
+        
+        case 'Physical Assessment':
+            include('inc/sow-services/physical-assessment.php');
+            break;
+        
+        case 'Red Team Assessment':
+            include('inc/sow-services/red-team-assessment.php');
+            break;
+        
+        case 'Virtualisation Config':
+            include('inc/sow-services/virtualisation-config.php');
+            break;        
+        
+        case 'VPN Assessment':
+            include('inc/sow-services/vpn-assessment.php');
+            break;             
+
+        case 'Vulnerability Scan':
+            include('inc/sow-services/vulnerability-scan.php');
+            break;    
+            
+        case 'Wireless Network Assessment':
+            include('inc/sow-services/wireless-network-assessment.php');
+            break;     
+        
+        default:
+            # code...
+            break;
     }
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
