@@ -84,6 +84,7 @@
     $phpWord->setDefaultFontSize( 14 );
     $phpWord->setDefaultParagraphStyle( array(
        'lineHeight' => 1,
+       'align' => 'both'
     ) );
 
     $phpWord->addNumberingStyle(
