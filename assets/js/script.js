@@ -61,7 +61,7 @@ $(document).ready(function(){
     $.each(servicesWrapper, function(index, service){
       var elemService = (service).replace(/\s+/g, "");
       var classElem = '.' + elemService +'_class';
-      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'</label><input type="number" class="'+elemService+'" id="'+elemService+'" name="'+elemService+'" />')
+      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'</label><input type="number" step="0.1" class="'+elemService+' serviceDays" id="'+elemService+'" name="'+elemService+'" />')
     });
 
   });
@@ -121,6 +121,18 @@ $(document).ready(function(){
 		e.preventDefault();
 
 		console.log('clicked!');
+
+    // get all days
+    var totalInputDays = $('.serviceDays');
+    var totalDaysArray = [];
+    var sumTotalDays = 0;
+
+    for(i = 0; i < totalInputDays.length; i++){
+      // totalDaysArray.push( $(totalInputDays[i]).val() );
+      sumTotalDays += parseFloat( $( totalInputDays[i] ).val() );
+    }
+
+    $('.totalDays').val(sumTotalDays);
 
     var companyName = $('#company-name').val();
 		var formData = $(this).serialize();

@@ -221,6 +221,7 @@
                         <button type="submit" class="btn btn-success waves-effect">Generate</button>
                     </div>
                 </div>
+                <input type="hidden" name="totalDays" id="totalDays" class="totalDays" /> 
             </form>
               </div>
           </div>

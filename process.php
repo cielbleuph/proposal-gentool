@@ -58,6 +58,10 @@
         if ( isset($_POST['service-type']) && $_POST['service-type'] != '' ){
             $typeOfService = $_POST['service-type'];
         }
+        
+        if( isset($_POST['totalDays']) && $_POST['totalDays'] != '' ) {
+            $totalDays = $_POST['totalDays'];
+        }
 
     }
 
@@ -844,7 +848,7 @@
     $costingPageTable->addRow();
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('TOTAL', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
     $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'));
-    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'));
+    $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText($totalDays, null, array( 'align' => 'center'));
     $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
 
     $costingPage->addTextBreak();
