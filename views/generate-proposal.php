@@ -155,6 +155,7 @@
                                                         'Vulnerability Assessment',
                                                         'Web Application Penetration Testing',
                                                         'Wireless Network Audit',
+                                                        'Cyber Threat Intelligence',
                                                     );
 
                                                     sort($services);

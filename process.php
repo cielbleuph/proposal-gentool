@@ -885,7 +885,7 @@
     $methodologiesPage->addTextBreak();
 
     
-    $methodologiesPage->addText('The process of how the mentioned assessment is conducted is explained in the below methodology(s).');
+    $methodologiesPage->addText('The process of how the mentioned assessment is conducted is explained in the below methodology(ies).');
     $methodologiesPage->addTextBreak();
 
     // DYNAMIC CONTENT
@@ -990,6 +990,12 @@
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
             include('inc/methodologies/iot-pentest.php');
         }
+
+        if ($service === 'Cyber Threat Intelligence') {
+            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            include('inc/methodologies/cyber-threat-intelligence.php');
+        }
+        
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();

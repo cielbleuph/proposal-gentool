@@ -22,7 +22,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage('assets/images/sow/cyber-threat-intelligence-01.jpg', 
+    $methodologiesPage->addImage('assets/images/methodologies/cyber-threat-intelligence-01.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 24,
@@ -43,7 +43,7 @@
 
     $methodologiesPage->addText( 'Red Team Partner takes the following approach:', $defaultParagraphStyle );
 
-    $methodologiesPage->addImage('assets/images/sow/cyber-threat-intelligence-02.jpg', 
+    $methodologiesPage->addImage('assets/images/methodologies/cyber-threat-intelligence-02.png', 
         array(
             'width'         => 450,
             'marginTop'     => 24,
@@ -68,7 +68,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage('assets/images/sow/cyber-threat-intelligence-03.jpg', 
+    $methodologiesPage->addImage('assets/images/methodologies/cyber-threat-intelligence-03.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 24,
@@ -133,7 +133,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage('assets/images/sow/cyber-threat-intelligence-04.jpg', 
+    $methodologiesPage->addImage('assets/images/methodologies/cyber-threat-intelligence-04.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 24,
