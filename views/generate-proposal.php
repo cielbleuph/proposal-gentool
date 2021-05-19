@@ -156,6 +156,8 @@
                                                         'Web Application Penetration Testing',
                                                         'Wireless Network Audit',
                                                         'Cyber Threat Intelligence',
+                                                        'O365 Penetration Testing',
+                                                        'Azure Review',
                                                     );
 
                                                     sort($services);

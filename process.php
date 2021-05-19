@@ -79,13 +79,13 @@
     //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 
     // SETTING THE META DATA OF THE DOCUMENT
-    // $properties = $phpWord->getDocInfo();
-    // $properties->setCreator( get_ebook_author() );
-    // $properties->setCompany( get_ebook_author() );
-    // $properties->setTitle( get_ebook_title() );
+    $properties = $phpWord->getDocInfo();
+    $properties->setCreator( 'Azsandra Joy Aldea' );
+    $properties->setCompany( 'Red Team Partners' );
+    $properties->setTitle( 'RTP Proposal Generated File' );
     // $properties->setDescription( get_ebook_description() );
     // $properties->setCreated( get_ebook_date_created() );
-    // $properties->setModified( time() );
+    $properties->setModified( time() );
 
 
     // GENERAL SETTINGS
@@ -996,6 +996,15 @@
             include('inc/methodologies/cyber-threat-intelligence.php');
         }
         
+        if ($service === 'O365 Penetration Testing') {
+            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            include('inc/methodologies/O365-penetration-testing.php');
+        }
+
+        if ($service === 'Azure Review') {
+            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            include('inc/methodologies/azure-review.php');
+        }
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();
