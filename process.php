@@ -585,7 +585,7 @@
     $whatMakesUsDifferentPage->addTextBreak();
     
     $whatMakesUsDifferentPage->addText('Deeper Customer Experience', array('bold'=>true));
-    $whatMakesUsDifferentPage->addListItem('We understand that conducting a (Service) can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy-to-understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.', 0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
+    $whatMakesUsDifferentPage->addListItem('We understand that conducting a cyber security service can be overwhelming, one of Red Team Partners pillars of its foundation is to go beyond helping our customers achieve their desired outcomes through an easy-to-understand process and constant available communication with our team. You can be sure that our customer service and experience goes beyond traditional providers.', 0 ,null, array('format'=>'bullet'), $defaultParagraphStyle );
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Better Availability and Capabilities', array('bold'=>true));
@@ -662,7 +662,7 @@
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
 
     $statementOfWorksPage->addTitle('Scope', 2);
-    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their (service). Red Team Partners and '.$companyName.' have identified the need for (service). These services have been based on the discussion conducted with ' .$clientContactName, null, $defaultParagraphStyle);
+    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their company. Red Team Partners and '.$companyName.' have identified the need for the following service(s) - ' . $serviceDescription . '. These services have been based on the discussion conducted with ' .$clientContactName, null, $defaultParagraphStyle);
     $statementOfWorksPage->addTextBreak();
     
     $statementOfWorksPage->addTitle('Details of Scope', 2);
