@@ -50,7 +50,8 @@ $(document).ready(function(){
     // placeholder: 'This is my placeholder',
     // allowClear: true
     // minimumInputLength: 2 // only start searching when the user has input 3 or more characters
-    theme: "classic"
+    theme: "classic",
+    width: "100%"
   });
 
   

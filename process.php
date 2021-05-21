@@ -1005,6 +1005,11 @@
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
             include('inc/methodologies/azure-review.php');
         }
+
+        if ($service === 'Cloud Assessment AWS') {
+            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            include('inc/methodologies/cyber-assessment-aws.php');
+        }
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();

@@ -158,6 +158,7 @@
                                                         'Cyber Threat Intelligence',
                                                         'O365 Penetration Testing',
                                                         'Azure Review',
+                                                        'Cloud Assessment AWS',
                                                     );
 
                                                     sort($services);
