@@ -105,7 +105,7 @@
     $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
     $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
     $phpWord->addTitleStyle(1, array( 'name'=>'Proxima Nova Rg', 'size' => 16, 'color' => '000000', 'bold' => true ) );
-    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'DE5C5C', 'bold' => true ));
+    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'C42543', 'bold' => true ));
     $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
 
@@ -300,7 +300,11 @@
 
     $clientDetailsPage->addTextBreak();
 
-    $clientDetailsPage->addTitle( 'OTHER INFORMATION', 2);
+
+    $otherInfoSectionTitleTextRun = $clientCompanyName->addTitle();
+    $otherInfoSectionTitleTextRun->addText('OTHER ');
+    $otherInfoSectionTitleTextRun->addText('Information ');
+    // $clientDetailsPage->addTitle( 'OTHER INFORMATION', 2);
     $reportDeliveryTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $reportDeliveryTextRun->addText('Report Delivery Estimated Date:');
     $reportDeliveryTextRun->addText( htmlspecialchars("\t\t") . $estimatedDeliveryDate, array( 'bold'=>true ));
@@ -308,6 +312,21 @@
 
 
     $clientDetailsPageFooter = $clientDetailsPage->addFooter();
+    
+    $clientDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
+    $clientDetailsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'right'));
+
+    //############################### PROJECT SCOPE PAGE ###############################    
+
+    $projectScopePage = $phpWord->addSection();
+    $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
+    $projectScopePage->addLine($lineStyle);   
+
+    $projectScopePage->addTitle( '*** SCOPE of Project Selected ***', 2); // TOC Bookmark 
+
+    $projectScopePage->addPageBreak();
+
+    //############################### END PROJECT SCOPE PAGE ###############################  
 
 
     //############################### END CLIENT DETAILS PAGE ###############################    

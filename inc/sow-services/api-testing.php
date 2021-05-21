@@ -1,18 +1,5 @@
 <?php 
-    //############################### PROJECT SCOPE PAGE ###############################    
-
-    $projectScopePage = $phpWord->addSection();
-    $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
-    $projectScopePage->addLine($lineStyle);   
-
-    $projectScopePage->addTitle( '*** SCOPE of Project Selected ***', 2); // TOC Bookmark 
-
-    $projectScopePage->addPageBreak();
-
-    //############################### END PROJECT SCOPE PAGE ###############################    
-
-
-
+    
     //############################### PROJECT DESCRIPTION PAGE ###############################    
 
     $projectDescriptionPage = $phpWord->addSection();
