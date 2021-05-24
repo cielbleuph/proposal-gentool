@@ -20,9 +20,9 @@
     $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addText( 'This test can be divided into three stages:' );
-    $projectDescriptionPage->addListItem( 'Discovery', 0, null, null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Assessment', 0, null, null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Exploitation', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Discovery', 0, array('italic'=>true), null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Assessment', 0, array('italic'=>true), null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Exploitation', 0, array('italic'=>true), null, $aParagraphStyles );
     $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addTitle( 'METHOD', 2); // TOC Bookmark 

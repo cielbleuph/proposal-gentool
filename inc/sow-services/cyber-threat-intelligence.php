@@ -19,9 +19,9 @@
     $projectDescriptionPage->addText( 'Throughout the assessment, consultants utilise proven methodologies to ensure the application gets a thorough test. This is a mixture of non-invasive testing and more hands testing techniques when required.' );
     $projectDescriptionPage->addTextBreak();
     $projectDescriptionPage->addText( 'This test can be divided into three stages:' );
-    $projectDescriptionPage->addListItem( 'Discovery', 0, null, null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Assessment', 0, null, null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Exploitation', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Discovery', 0, array('italic'=>true), null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Assessment', 0, array('italic'=>true), null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Exploitation', 0, array('italic'=>true), null, $aParagraphStyles );
     $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addTitle( 'METHOD', 2); // TOC Bookmark 

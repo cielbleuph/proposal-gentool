@@ -103,9 +103,9 @@
     // adding the necessary font styles
     // Define styles
     $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
-    $phpWord->addTitleStyle(null, array('size' => 24, 'bold' => true));
-    $phpWord->addTitleStyle(1, array( 'name'=>'Proxima Nova Rg', 'size' => 16, 'color' => '000000', 'bold' => true ) );
-    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'C42543', 'bold' => true ));
+    $phpWord->addTitleStyle(null, array('name'=>'Proxima Nova Bl', 'size' => 18, 'color' => 'C42543', 'bold' => true ) );
+    $phpWord->addTitleStyle(1, array( 'name'=>'Proxima Nova Bl', 'size' => 18, 'color' => 'C42543', 'bold' => true ) );
+    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'C42543', 'bold' => true ) );
     $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
 
@@ -230,8 +230,14 @@
     // $TOCPagePageHeader = $TOCPage->addHeader();
     // $TOCPagePageHeader->addImage( 'assets/images/sow-header-image.png', $headerWatermarkStyle);
 
+    $TOCPageHeader = $TOCPage->addHeader();
+   
+    // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
+    $TOCPageHeader->addWatermark( 'assets/images/sow-header-image.png', $headerWatermarkStyle );
+
     // Add text elements
-    $TOCPage->addTitle('Table of Contents', 0);
+    $TOCPage->addTitle('TABLE OF CONTENTS', 0);
+    $TOCPage->addLine($lineStyle);
     $TOCPage->addTextBreak();
 
     // Add TOC #1
@@ -269,7 +275,7 @@
 
     $clientDetailsPage->addTextBreak();
     
-    $clientDetailsPage->addTitle( 'Client', 2); // TOC Bookmark 
+    $clientDetailsPage->addTitle( 'CLIENT', 2); // TOC Bookmark 
     $companyNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $companyNameTextRun->addText('Company Name:' );
     $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . $clientCompanyName, array( 'bold'=> true ) );
@@ -300,11 +306,7 @@
 
     $clientDetailsPage->addTextBreak();
 
-
-    $otherInfoSectionTitleTextRun = $clientCompanyName->addTitle();
-    $otherInfoSectionTitleTextRun->addText('OTHER ');
-    $otherInfoSectionTitleTextRun->addText('Information ');
-    // $clientDetailsPage->addTitle( 'OTHER INFORMATION', 2);
+    $clientDetailsPage->addTitle( 'OTHER INFORMATION', 2);
     $reportDeliveryTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $reportDeliveryTextRun->addText('Report Delivery Estimated Date:');
     $reportDeliveryTextRun->addText( htmlspecialchars("\t\t") . $estimatedDeliveryDate, array( 'bold'=>true ));
@@ -322,7 +324,7 @@
     $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
     $projectScopePage->addLine($lineStyle);   
 
-    $projectScopePage->addTitle( '*** SCOPE of Project Selected ***', 2); // TOC Bookmark 
+    $projectScopePage->addText( '*** SCOPE of Project Selected ***' ); // TOC Bookmark 
 
     $projectScopePage->addPageBreak();
 
