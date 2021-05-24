@@ -1,7 +1,5 @@
 <?php 
-    //############################### PROJECT DESCRIPTION PAGE ###############################    
 
-    $projectDescriptionPage = $phpWord->addSection();
     $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
@@ -43,7 +41,5 @@
     $projectDescriptionPage->addText( 'Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.' );
     
     $projectDescriptionPage->addPageBreak();
-
-    //############################### END PROJECT DESCRIPTION PAGE ###############################
 
 

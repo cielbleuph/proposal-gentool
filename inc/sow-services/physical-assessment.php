@@ -1,7 +1,5 @@
 <?php 
-    //############################### PROJECT DESCRIPTION PAGE ###############################    
 
-    $projectDescriptionPage = $phpWord->addSection();
     $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
@@ -40,7 +38,5 @@
     $projectDescriptionPage->addText( 'Red Team Partners will provide a detailed report at the end of this engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any security flaws, gaps and deficiencies in your security systems and procedures from your Physical Assessment. From the report provided you will be able to understand any vulnerabilities that can be exploited and if your Physical system meets expectations for functionality and security. Red Team Partners will also include remediation/ comments and suggestions on how to resolve any vulnerabilities/ risks found. Also allowing you to improve the safety and security of your facility.' );
     $projectDescriptionPage->addTextBreak();
 
-
-    //############################### END PROJECT DESCRIPTION PAGE ###############################
 
 

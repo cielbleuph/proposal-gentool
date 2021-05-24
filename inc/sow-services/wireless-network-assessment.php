@@ -1,8 +1,6 @@
 <?php 
 
-    //############################### PROJECT DESCRIPTION PAGE ###############################    
 
-    $projectDescriptionPage = $phpWord->addSection();
     $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
@@ -40,7 +38,5 @@
     
     $projectDescriptionPage->addTextBreak();
 
-
-    //############################### END PROJECT DESCRIPTION PAGE ###############################
 
 

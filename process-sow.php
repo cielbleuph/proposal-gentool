@@ -72,6 +72,7 @@
     $converter = new \PhpOffice\PhpWord\Shared\Converter();
     // force update to reflect correct page number in TOC.
     $phpWord->getSettings()->setUpdateFields(true);
+    // $phpWord->getSettings()->setOutputEscapingEnabled(true);
 
 
 
@@ -154,7 +155,7 @@
     );
 
     $headerWatermarkStyle = array(
-        'width' => 596, 
+        'width' => 597, 
         'marginTop' => -36,
         'marginLeft' => -73,
         'posHorizontal' => 'absolute',
@@ -210,23 +211,88 @@
     $coverCreatedCellStyle = array('bgColor'=>'494849');
     $lineStyle = array('weight' => 1, 'width' => 445, 'height' => 0, 'color' => '38c172');
 
+    $paper = new \PhpOffice\PhpWord\Style\Paper();
+    $paper->setSize('Letter');
+
     include_once('inc/sow-services/sow-styles.php');
 
     //############################### COVER PAGE ###############################
 
-    $coverPage = $phpWord->addSection();
-    $coverPage->addText('Name of Service: ' . $typeOfService[0]);
-    $coverPage->addText('Statement of Works for: ' . $clientCompanyName);
-    $coverPage->addText('SOW Generated Date: ' . $generatedDate);
+    $coverPage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight(),
+        'marginLeft' => $converter->inchToTwip(.7),
+        'marginRight' => $converter->inchToTwip(.3)
+    ));
 
-    $coverPage->addPageBreak();
+
+    $coverPage->addImage('assets/images/sow-cover-image.jpg', 
+        array(
+            // 'width' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(3),
+            // 'height' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(3),
+            'width' => 612,
+            'positioning' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
+            'posHorizontal' => \PhpOffice\PhpWord\Style\Image::POSITION_HORIZONTAL_LEFT,
+            'posHorizontalRel' => \PhpOffice\PhpWord\Style\Image::POSITION_RELATIVE_TO_PAGE,
+            'posVerticalRel' => \PhpOffice\PhpWord\Style\Image::POSITION_RELATIVE_TO_PAGE,
+            'marginLeft' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(15.5),
+            'marginTop' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(1.55),
+            'wrappingStyle' => 'behind'
+        )
+    );
+
+    $coverPage->addTextBreak(4);
+    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Aileron Black', 'size'=>30), array('alignment'=>'start'));
+    $coverPage->addTextBreak(2);
+    $coverPageSOWTextRun = $coverPage->addTextRun(array('alignment'=>'start'));
+    $coverPageSOWTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t STATEMENT OF WORKS"), array('size'=>16, 'bold'=>true));
+    $coverPageSOWTextRun->addTextBreak();
+    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t for"), array('size'=>16) );
+    $coverPageSOWTextRun->addTextBreak();
+    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t " . $clientCompanyName), array('size'=>16, 'bold'=>true,'color' => 'DE5C5C') );
+    // $coverPage->addText('SOW Generated Date: ' . $generatedDate);
+
+    $coverPage->addTextBreak(2);
+
+    $coverPageDateTextRun = $coverPage->addTextRun( array('alignment' => 'start') );
+    $coverPageDateTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t DATE:"), array('size' => 16, 'color' => 'DE5C5C'));
+    $coverPageDateTextRun->addTextBreak();
+    $coverPageDateTextRun->addText(htmlspecialchars( "\t\t\t\t\t\t\t\t\t " . $testStartDate ), array('size'=>16));
+
+    $coverPage->addTextBreak(5);
+
+    $coverPage->addText(' Red Team Partners Ltd.', array('size'=>11, 'bold'=>true));
+    $coverPage->addText('One Canada Square, Canary Wharf, London, E14 5AB', array('size'=>11), $aParagraphStyles);
+    $coverPage->addText('+44 (0) 20 3951 0299', array('size'=>11), $aParagraphStyles);
+    $coverPage->addText('www.redteampartners.co.uk', array('size'=>11), $aParagraphStyles);
+    $coverPage->addTextBreak();
+    $coverPage->addText('We work with qualified testers.', array('size'=>11, 'bold'=>true));
+
+    // $textbox = $coverPage->addTextBox(
+    //     array(
+    //         'align'   => 'left',
+    //         'width'       => 200,
+    //         'height'      => 40,
+    //         'borderColor' => 'none',
+    //         'borderSize'  => 0,
+    //         'positioning' => 'absolute',
+    //         'marginLeft' => 500,
+    //         'marginTop' => 200,
+    //     )
+    // );
+    // $textbox->addText($typeOfService[0], array('name'=>'Aileron Black'), array('alignment' => 'end'));
+
 
     //############################### END COVER PAGE ###############################
 
 
 
     //############################### TOC PAGE ###############################
-    $TOCPage = $phpWord->addSection();
+    $TOCPage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight(),
+    ));
+
     // $TOCPagePageHeader = $TOCPage->addHeader();
     // $TOCPagePageHeader->addImage( 'assets/images/sow-header-image.png', $headerWatermarkStyle);
 
@@ -254,7 +320,11 @@
 
     //############################### CLIENT DETAILS PAGE ###############################
 
-    $clientDetailsPage = $phpWord->addSection();
+    $clientDetailsPage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight(),
+    ));
+
     $clientDetailsPageHeader = $clientDetailsPage->addHeader();
    
     // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
@@ -320,7 +390,11 @@
 
     //############################### PROJECT SCOPE PAGE ###############################    
 
-    $projectScopePage = $phpWord->addSection();
+    $projectScopePage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight(),
+    ));
+
     $projectScopePage->addTitle( 'PROJECT SCOPE', 1); // TOC Bookmark
     $projectScopePage->addLine($lineStyle);   
 
@@ -333,6 +407,10 @@
 
     //############################### END CLIENT DETAILS PAGE ###############################    
 
+    //############################### PROJECT DESCRIPTION PAGE ###############################    
+
+    $projectDescriptionPage = $phpWord->addSection();
+
     // include files
 
     // foreach($typeOfService as $service) {
@@ -340,6 +418,7 @@
     //         include('inc/sow-services/api-testing.php');
     //     }
     // }
+    
 
     $service = $typeOfService[0];
 
@@ -412,10 +491,16 @@
             # code...
             break;
     }
+    //############################### END PROJECT DESCRIPTION PAGE ###############################
+
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
 
-    $projectPrereqPage = $phpWord->addSection();
+    $projectPrereqPage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight()
+    ));
+
     $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1); // TOC Bookmark
     $projectPrereqPage->addLine($lineStyle);
 

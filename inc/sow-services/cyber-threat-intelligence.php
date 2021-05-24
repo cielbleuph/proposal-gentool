@@ -1,7 +1,5 @@
 <?php 
-    //############################### PROJECT DESCRIPTION PAGE ###############################    
 
-    $projectDescriptionPage = $phpWord->addSection();
     $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
@@ -151,8 +149,5 @@
     $projectDescriptionPage->addTitle( 'RESULTS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners will provide a detailed report at the end of this engagement; your report will highlight any vulnerabilities/risks. From the report provided you will be able to understand any vulnerabilities that can be exploited and if this meets expectations for functionality and security. Red Team Partners will also include remediation/comments and suggestions on how to resolve any vulnerabilities/risks found ' );
     $projectDescriptionPage->addTextBreak();
-
-
-    //############################### END PROJECT DESCRIPTION PAGE ###############################
 
 
