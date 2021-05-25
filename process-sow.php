@@ -318,6 +318,9 @@
     //############################### END TOC PAGE ###############################
 
 
+
+
+
     //############################### CLIENT DETAILS PAGE ###############################
 
     $clientDetailsPage = $phpWord->addSection(array(
@@ -348,7 +351,7 @@
     $clientDetailsPage->addTitle( 'CLIENT', 2); // TOC Bookmark 
     $companyNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $companyNameTextRun->addText('Company Name:' );
-    $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . htmlentities($clientCompanyName), array( 'bold'=> true ) );
+    $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . htmlspecialchars($clientCompanyName), array( 'bold'=> true ) );
 
     $technicalPOCNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $technicalPOCNameTextRun->addText('Technical POC Name:' );
@@ -388,6 +391,11 @@
     $clientDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $clientDetailsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'right'));
 
+    //############################### END CLIENT DETAILS PAGE ###############################    
+
+
+
+
     //############################### PROJECT SCOPE PAGE ###############################    
 
     $projectScopePage = $phpWord->addSection(array(
@@ -404,9 +412,6 @@
 
     //############################### END PROJECT SCOPE PAGE ###############################  
 
-
-    //############################### END CLIENT DETAILS PAGE ###############################    
-
     //############################### PROJECT DESCRIPTION PAGE ###############################    
 
     $projectDescriptionPage = $phpWord->addSection();
@@ -418,7 +423,6 @@
     //         include('inc/sow-services/api-testing.php');
     //     }
     // }
-    
 
     $service = $typeOfService[0];
 
@@ -493,6 +497,8 @@
     }
     //############################### END PROJECT DESCRIPTION PAGE ###############################
 
+
+    
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
 
