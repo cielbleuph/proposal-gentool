@@ -249,7 +249,7 @@
     $coverPageSOWTextRun->addTextBreak();
     $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t for"), array('size'=>16) );
     $coverPageSOWTextRun->addTextBreak();
-    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t " . $clientCompanyName), array('size'=>16, 'bold'=>true,'color' => 'DE5C5C') );
+    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t " . htmlentities($clientCompanyName) ), array('size'=>16, 'bold'=>true,'color' => 'DE5C5C') );
     // $coverPage->addText('SOW Generated Date: ' . $generatedDate);
 
     $coverPage->addTextBreak(2);
@@ -335,7 +335,7 @@
     $clientDetailsPage->addLine($lineStyle);
     // $clientDetailsPage->addText('', [], );
 
-    $clientDetailsPage->addText('Red Team Partners will begin the Test on '.$testStartDate.' for '.$clientCompanyName.'. For any changes to the project including dates, please ensure you provide us with at least 2 weeks’ notice to review and agree on any proposed changes.');
+    $clientDetailsPage->addText("Red Team Partners will begin the Test on ".$testStartDate." for ".htmlentities( $clientCompanyName ).". For any changes to the project including dates, please ensure you provide us with at least 2 weeks’ notice to review and agree on any proposed changes.");
 
     $clientDetailsPage->addText('In this document you will find the details of the work, including dates, the consultant and their details if you wish to contact them during the engagement. The engagement will begin at 9:00 am on the day of testing unless otherwise agreed with you.');
 
@@ -348,7 +348,7 @@
     $clientDetailsPage->addTitle( 'CLIENT', 2); // TOC Bookmark 
     $companyNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $companyNameTextRun->addText('Company Name:' );
-    $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . $clientCompanyName, array( 'bold'=> true ) );
+    $companyNameTextRun->addText( htmlspecialchars("\t\t\t\t\t") . htmlentities($clientCompanyName), array( 'bold'=> true ) );
 
     $technicalPOCNameTextRun = $clientDetailsPage->addTextRun( $aParagraphStyles );
     $technicalPOCNameTextRun->addText('Technical POC Name:' );
