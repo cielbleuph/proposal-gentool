@@ -43,8 +43,11 @@
             $companyName = $_POST['company-name'];
         }
 
-        if ( isset($_POST['test-date']) && $_POST['test-date'] != '' ){
+        if ( isset($_POST['test-date']) ){
             $startDate = $_POST['test-date'];
+        }
+        else{
+            $startDate = 'N/A';
         }
 
         if ( isset($_POST['number-of-days']) && $_POST['number-of-days'] != '' ){
@@ -554,7 +557,7 @@
     $ourApproachPage->addText('Our key outcomes for this proposal are:');
     $ourApproachPage->addListItem('Provide '.$companyName.' with an understanding of their security stage of their current environment.', 0, null, null, $defaultParagraphStyle );
 
-    $ourApproachPage->addListItem('Red Team Partners would like to propose a date of (Date of test – Month) to start conducting test, this date has been discussed with'.$clientContactName .'.', 0, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Red Team Partners would like to propose a date of '. $startDate .' to start conducting test, this date has been discussed with '.$clientContactName .'.', 0, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('After testing has been conducted our world-class team will independently verify the report and provide security risks including:', 0, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('That '.$companyName.' security posture is being met through policies, procedure and design ', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('Vulnerabilities facing '.$companyName.' are highlighted to understand the risk rating and measured to show the key areas to focus on with the organisation.', 1, null, null, $defaultParagraphStyle );
