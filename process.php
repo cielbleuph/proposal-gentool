@@ -43,10 +43,11 @@
             $companyName = $_POST['company-name'];
         }
 
-        if ( isset($_POST['test-date']) ){
+        if ( isset( $_POST['test-date'] ) && $_POST['test-date'] != '' ){
             $startDate = $_POST['test-date'];
         }
-        else{
+        
+        if ( isset( $_POST['test-date'] ) && $_POST['test-date'] == '' ) {
             $startDate = 'N/A';
         }
 
