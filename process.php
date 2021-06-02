@@ -665,7 +665,7 @@
     // BODY PART
     $statementOfWorksPage->addText('Red Team Partners will provide the services described in this scope. A final Statement of Works will be provided by the delivery team once the proposal has been accepted.', null, $defaultParagraphStyle);
 
-    $statementOfWorksPage->addText('Understanding Hamilton’s environment is key to performing the correct assessment. This section will contain the type of assessment requested.', null, $defaultParagraphStyle);
+    $statementOfWorksPage->addText("Understanding " . $companyName . "'s environment is key to performing the correct assessment. This section will contain the type of assessment requested.", null, $defaultParagraphStyle);
     $statementOfWorksPage->addTextBreak();
 
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
