@@ -455,7 +455,7 @@
             include('inc/sow-services/document-review.php');
             break;    
             
-        case 'Firewall':
+        case 'Firewall Configuration Assessment':
             include('inc/sow-services/firewall.php');
             break;
 
