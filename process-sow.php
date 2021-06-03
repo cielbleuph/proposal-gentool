@@ -414,7 +414,10 @@
 
     //############################### PROJECT DESCRIPTION PAGE ###############################    
 
-    $projectDescriptionPage = $phpWord->addSection();
+    $projectDescriptionPage = $phpWord->addSection(array(
+        'pageSizeW' => $paper->getWidth(),
+        'pageSizeH' => $paper->getHeight(),
+    ));
 
     // include files
 
