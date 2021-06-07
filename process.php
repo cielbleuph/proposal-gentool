@@ -450,7 +450,7 @@
     
     $RTPfillUpFormTable->addRow();
     $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Number:');
-    $RTPfillUpFormTable->addCell()->addText($accountManagerNumber);
+    $RTPfillUpFormTable->addCell()->addText($clientContactNumber);
 
     $RTPfillUpFormTable->addRow();
     $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Email:');
