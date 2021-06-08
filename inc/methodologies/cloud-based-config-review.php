@@ -10,11 +10,6 @@
         'bgColor' => $lightRed
     );
 
-    // $paragraphHeadingPStyle['align']='both';
-    // var_dump($paragraphHeadingPStyle);
-
-    // die();
-
     $methodologiesPage->addTitle('Cloud Based Configuration', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle );

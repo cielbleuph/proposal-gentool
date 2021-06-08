@@ -862,16 +862,16 @@
 
     $costingPage->addTextBreak();
 
-    $costingPage->addText('Pricing Notes:', array('bold'=>true, ));
+    // $costingPage->addText('Pricing Notes:', array('bold'=>true, ));
 
     
-    $costingPage->addListItem('Red Team Partners retains the right to charge for lost income in the event of postponed or cancelled work as mentioned in our Terms and Conditions.', 0);
-    $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0, null, null, $defaultParagraphStyle );
-    $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0, null, null, $defaultParagraphStyle );
-    $costingPage->addListItem('If the scope of this project chances, changed request and updated purchase order will be required.', 0, null, null, $defaultParagraphStyle );
-    $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0, null, null, $defaultParagraphStyle );
-    $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0, null, null, $defaultParagraphStyle );
-    $costingPage->addTextBreak();
+    // $costingPage->addListItem('Red Team Partners retains the right to charge for lost income in the event of postponed or cancelled work as mentioned in our Terms and Conditions.', 0);
+    // $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0, null, null, $defaultParagraphStyle );
+    // $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0, null, null, $defaultParagraphStyle );
+    // $costingPage->addListItem('If the scope of this project chances, changed request and updated purchase order will be required.', 0, null, null, $defaultParagraphStyle );
+    // $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0, null, null, $defaultParagraphStyle );
+    // $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0, null, null, $defaultParagraphStyle );
+    // $costingPage->addTextBreak();
 
 
     $costingPage->addText('Our Approach', array('bold'=> true));
@@ -914,17 +914,17 @@
             include('inc/methodologies/vulnerability-assessment.php');
         }
 
-        if ($service === 'Infrastructure Testing') {
+        if ($service === 'Infrastructure Penetration Testing') {
             // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
             include('inc/methodologies/infrastructure-testing.php');
         }
 
-        if ($service === 'API Testing') {
+        if ($service === 'API Penetration Testing') {
             // $methodologiesPage->addText('--- insert API Testing content ---');
             include('inc/methodologies/api-testing.php');
         }
 
-        if ($service === 'Mobile iOS and Android Testing') {
+        if ($service === 'Mobile Application Penetration Testing') {
             // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
             include('inc/methodologies/mobile-ios-android-testing.php');
         }
@@ -939,7 +939,7 @@
             include('inc/methodologies/documentation-review.php');
         }
 
-        if ($service === 'Firewall Assessment') {
+        if ($service === 'Firewall Configuration Assessment') {
             // $methodologiesPage->addText('--- insert Firewall Assessment content ---');
             include('inc/methodologies/firewall-assessment.php');
         }
@@ -949,7 +949,7 @@
             include('inc/methodologies/cloud-based-config-review.php');
         }
 
-        if ($service === 'Wireless Network Audit') {
+        if ($service === 'Wireless Network Assessment') {
             // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
             include('inc/methodologies/wireless-network-audit.php');
         }
@@ -964,40 +964,40 @@
             include('inc/methodologies/build-review.php');
         }
 
-        if ($service === 'PCI DSS Compliance Audit') {
-            // $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
-            include('inc/methodologies/pci-dss-compliance-audit.php');
-        }
+        // if ($service === 'PCI DSS Compliance Audit') {
+        //     // $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
+        //     include('inc/methodologies/pci-dss-compliance-audit.php');
+        // }
 
         if ($service === 'Secure Code Review') {
             // $methodologiesPage->addText('--- insert Secure Code Review content ---');
             include('inc/methodologies/secure-code-review.php');
         }
 
-        if ($service === 'Cyber Security Training') {
-            // $methodologiesPage->addText('--- insert Cyber Security Training content ---');
-            include('inc/methodologies/cyber-security-training.php');
-        }
+        // if ($service === 'Cyber Security Training') {
+        //     // $methodologiesPage->addText('--- insert Cyber Security Training content ---');
+        //     include('inc/methodologies/cyber-security-training.php');
+        // }
 
-        if ($service === 'Forensics and Investigations') {
-            // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
-            include('inc/methodologies/forensic-investigations.php');
-        }
+        // if ($service === 'Forensics and Investigations') {
+        //     // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
+        //     include('inc/methodologies/forensic-investigations.php');
+        // }
 
-        if ($service === 'Dark Web Cyber Intelligence Monitoring') {
-            // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
-            include('inc/methodologies/dark-web-cyber-intelligence-monitoring.php');
-        }
+        // if ($service === 'Dark Web Cyber Intelligence Monitoring') {
+        //     // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
+        //     include('inc/methodologies/dark-web-cyber-intelligence-monitoring.php');
+        // }
 
-        if ($service === 'Performance Stress Testing/Load Testing') {
-            // $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
-            include('inc/methodologies/performance-stress-testing.php');
-        }
+        // if ($service === 'Performance Stress Testing/Load Testing') {
+        //     // $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
+        //     include('inc/methodologies/performance-stress-testing.php');
+        // }
 
-        if ($service === 'IoT Penetration Testing') {
-            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-            include('inc/methodologies/iot-pentest.php');
-        }
+        // if ($service === 'IoT Penetration Testing') {
+        //     // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+        //     include('inc/methodologies/iot-pentest.php');
+        // }
 
         if ($service === 'Cyber Threat Intelligence') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
@@ -1009,12 +1009,12 @@
             include('inc/methodologies/O365-penetration-testing.php');
         }
 
-        if ($service === 'Azure Review') {
+        if ($service === 'Azure Cloud Review') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
             include('inc/methodologies/azure-review.php');
         }
 
-        if ($service === 'Cloud Assessment AWS') {
+        if ($service === 'AWS Cloud Assessment') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
             include('inc/methodologies/cyber-assessment-aws.php');
         }
@@ -1579,7 +1579,7 @@
     $servicesPage->addText('Vulnerability Assessment', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Infrastructure Testing (Internal and External)', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('API Testing', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Mobile iOS and Android Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Mobile Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Phishing Simulation', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Documentation Review', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Firewall Assessment', $servicesFontStyle, $servicesParagraphStyle);

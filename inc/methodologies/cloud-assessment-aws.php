@@ -13,8 +13,6 @@
     $methodologiesPage->addTextBreak();
 
 
-
-
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners offers a Cloud Assessment (AWS). Red Team Partners provides a readiness assessment and determine if the resources and IT environment is capable of migrating to the cloud.', null, $defaultParagraphStyle);
     $methodologiesPage->addText('Red Team Partners performs a cloud readiness assessment in order to smooth the migration process and set up a cloud environment that fits the organization’s requirements.', null, $defaultParagraphStyle);
