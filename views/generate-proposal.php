@@ -135,7 +135,7 @@
                                             <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
                                                 <?php 
                                                     $services = array(
-                                                        'API Penetration Testing',
+                                                        'API Penetration Test',
                                                         'Build Review Assessment',
                                                         'Cloud Based Configuration Review',
                                                         // 'Cyber Security Training',
@@ -143,9 +143,9 @@
                                                         'Documentation Review',
                                                         'Firewall Configuration Assessment',
                                                         // 'Forensics and Investigations',
-                                                        'Infrastructure Penetration Testing',
+                                                        'Infrastructure Penetration Test',
                                                         // 'IoT Penetration Testing',
-                                                        'Mobile Application Penetration Testing',
+                                                        'Mobile Application Penetration Test',
                                                         // 'PCI DSS Compliance Audit',
                                                         // 'Performance Stress Testing/Load Testing',
                                                         'Phishing Simulation',
@@ -153,10 +153,10 @@
                                                         'Secure Code Review',
                                                         'VPN Assessment',
                                                         'Vulnerability Assessment',
-                                                        'Web Application Penetration Testing',
+                                                        'Web Application Penetration Test',
                                                         'Wireless Network Assessment',
                                                         'Cyber Threat Intelligence',
-                                                        'O365 Penetration Testing',
+                                                        'O365 Penetration Test',
                                                         'Azure Cloud Review',
                                                         'AWS Cloud Assessment',
                                                     );

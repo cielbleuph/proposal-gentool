@@ -899,7 +899,7 @@
     // DYNAMIC CONTENT
     foreach($typeOfService as $service) {
 
-        if ($service === 'Web Application Penetration Testing') {
+        if ($service === 'Web Application Penetration Test') {
             // $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
             include('inc/methodologies/web-application-pentest.php');
         }
@@ -914,17 +914,17 @@
             include('inc/methodologies/vulnerability-assessment.php');
         }
 
-        if ($service === 'Infrastructure Penetration Testing') {
+        if ($service === 'Infrastructure Penetration Test') {
             // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
             include('inc/methodologies/infrastructure-testing.php');
         }
 
-        if ($service === 'API Penetration Testing') {
+        if ($service === 'API Penetration Test') {
             // $methodologiesPage->addText('--- insert API Testing content ---');
             include('inc/methodologies/api-testing.php');
         }
 
-        if ($service === 'Mobile Application Penetration Testing') {
+        if ($service === 'Mobile Application Penetration Test') {
             // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
             include('inc/methodologies/mobile-ios-android-testing.php');
         }
@@ -1004,7 +1004,7 @@
             include('inc/methodologies/cyber-threat-intelligence.php');
         }
         
-        if ($service === 'O365 Penetration Testing') {
+        if ($service === 'O365 Penetration Test') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
             include('inc/methodologies/O365-penetration-testing.php');
         }

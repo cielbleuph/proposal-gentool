@@ -49,15 +49,15 @@
                                                     // );
 
                                                     $services = array(
-                                                        'API Penetration Testing',
-                                                        'Web Application Penetration Testing',
+                                                        'API Penetration Test',
+                                                        'Web Application Penetration Test',
                                                         'Build Review Assessment',
                                                         'AWS Cloud Assessment',
                                                         'Cloud Based Configuration Review',
                                                         'Cyber Threat Intelligence',
                                                         'Documentation Review',
                                                         'Firewall Configuration Assessment',
-                                                        'Infrastructure Penetration Testing',
+                                                        'Infrastructure Penetration Test',
                                                         'Phishing Simulation',
                                                         'Physical Assessment',
                                                         'Red Team Assessment',

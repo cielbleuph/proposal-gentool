@@ -415,11 +415,11 @@
     $service = $typeOfService[0];
 
     switch ($service) {
-        case 'API Penetration Testing':
+        case 'API Penetration Test':
             include('inc/sow-services/api-testing.php');
             break;
         
-        case 'Web Application Penetration Testing':
+        case 'Web Application Penetration Test':
             include('inc/sow-services/app-pentest.php');
             break;
         
@@ -447,7 +447,7 @@
             include('inc/sow-services/firewall.php');
             break;
 
-        case 'Infrastructure Penetration Testing':
+        case 'Infrastructure Penetration Test':
             include('inc/sow-services/infrastructure-penetration.php');
             break;
         
