@@ -379,7 +379,7 @@
 
     $clientDetailsPageFooter = $clientDetailsPage->addFooter();
     
-    $clientDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
+    // $clientDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $clientDetailsPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'right'));
 
     //############################### END CLIENT DETAILS PAGE ###############################    
