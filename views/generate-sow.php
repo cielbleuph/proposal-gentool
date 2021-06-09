@@ -49,21 +49,21 @@
                                                     // );
 
                                                     $services = array(
-                                                        'API Testing',
-                                                        'Application Pen Test',
-                                                        'Build Review',
-                                                        'Cloud Assessment AWS',
-                                                        'Cloud Based Config',
+                                                        'API Penetration Testing',
+                                                        'Web Application Penetration Testing',
+                                                        'Build Review Assessment',
+                                                        'AWS Cloud Assessment',
+                                                        'Cloud Based Configuration Review',
                                                         'Cyber Threat Intelligence',
                                                         'Documentation Review',
                                                         'Firewall Configuration Assessment',
-                                                        'Infrastructure Penetration',
+                                                        'Infrastructure Penetration Testing',
                                                         'Phishing Simulation',
                                                         'Physical Assessment',
                                                         'Red Team Assessment',
-                                                        'Virtualisation Config',
+                                                        'Virtualisation Configuration Review',
                                                         'VPN Assessment',
-                                                        'Vulnerability Scan',
+                                                        'Vulnerability Assessment',
                                                         'Wireless Network Assessment'
                                                     );
 

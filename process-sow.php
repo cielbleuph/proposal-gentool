@@ -430,23 +430,23 @@
     $service = $typeOfService[0];
 
     switch ($service) {
-        case 'API Testing':
+        case 'API Penetration Testing':
             include('inc/sow-services/api-testing.php');
             break;
         
-        case 'Application Pen Test':
+        case 'Web Application Penetration Testing':
             include('inc/sow-services/app-pentest.php');
             break;
         
-        case 'Build Review':
+        case 'Build Review Assessment':
             include('inc/sow-services/build-review.php');
             break;
         
-        case 'Cloud Assessment AWS':
+        case 'AWS Cloud Assessment':
             include('inc/sow-services/cloud-assessment-aws.php');
             break;
         
-        case 'Cloud Based Config':
+        case 'Cloud Based Configuration Review':
             include('inc/sow-services/cloud-based-config.php');
             break;        
         
@@ -454,7 +454,7 @@
             include('inc/sow-services/cyber-threat-intelligence.php');
             break;             
 
-        case 'Document Review':
+        case 'Documentation Review':
             include('inc/sow-services/document-review.php');
             break;    
             
@@ -462,7 +462,7 @@
             include('inc/sow-services/firewall.php');
             break;
 
-        case 'Infrastructure Penetration':
+        case 'Infrastructure Penetration Testing':
             include('inc/sow-services/infrastructure-penetration.php');
             break;
         
@@ -478,7 +478,7 @@
             include('inc/sow-services/red-team-assessment.php');
             break;
         
-        case 'Virtualisation Config':
+        case 'Virtualisation Configuration Review':
             include('inc/sow-services/virtualisation-config.php');
             break;        
         
