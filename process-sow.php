@@ -240,7 +240,7 @@
     );
 
     $coverPage->addTextBreak(4);
-    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Proxima Nova Rg', 'size'=>30), array('alignment'=>'start'));
+    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Proxima Nova Rg', 'size'=>30, 'bold'=> true), array('alignment'=>'start'));
     $coverPage->addTextBreak(2);
     $coverPageSOWTextRun = $coverPage->addTextRun(array('alignment'=>'start'));
     $coverPageSOWTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t STATEMENT OF WORKS"), array('size'=>16, 'bold'=>true));
