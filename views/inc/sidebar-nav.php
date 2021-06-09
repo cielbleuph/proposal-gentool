@@ -20,6 +20,13 @@
           Generate S.O.W.
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="?p=generate-reports">
+          <i data-feather="clipboard"></i>
+          Generate Reports
+        </a>
+      </li>
       <hr style="border-color: black; border-size: 1px;" />
       <!-- <li class="nav-item">
         <a class="nav-link" href="#">

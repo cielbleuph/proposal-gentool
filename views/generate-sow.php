@@ -21,33 +21,10 @@
                                 </div>
                                 <div class="card-body form-padding">
                                     <div class="form-group">
-                                        <label for="service-type" class="control-label f-700">Select Service Type</label>
-                                            <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help">
-                                                <option>--- Please Choose---</option>
+                                        <label for="service-type" class="control-label f-700">Select Service Type <span class="required">*</span></label>
+                                            <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help" required>
+                                                <option></option>
                                                 <?php 
-                                                    // $services = array(
-                                                    //     'API Testing',
-                                                    //     'Build Review',
-                                                    //     'Cloud Based Configuration Review',
-                                                    //     'Cyber Security Training',
-                                                    //     'Dark Web Cyber Intelligence Monitoring',
-                                                    //     'Documentation Review',
-                                                    //     'Firewall Assessment',
-                                                    //     'Forensics and Investigations',
-                                                    //     'Infrastructure Testing',
-                                                    //     'IoT Penetration Testing',
-                                                    //     'Mobile iOS and Android Testing',
-                                                    //     'PCI DSS Compliance Audit',
-                                                    //     'Performance Stress Testing/Load Testing',
-                                                    //     'Phishing Simulation',
-                                                    //     'Red Team Assessment',
-                                                    //     'Secure Code Review',
-                                                    //     'VPN Assessment',
-                                                    //     'Vulnerability Assessment',
-                                                    //     'Web Application Penetration Testing',
-                                                    //     'Wireless Network Audit',
-                                                    // );
-
                                                     $services = array(
                                                         'API Penetration Test',
                                                         'Web Application Penetration Test',
@@ -76,21 +53,21 @@
                                         </label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="generated-date" class="control-label f-700">Generated Date</label>
-                                        <input type="text" class="form-control generated-date" name="generated-date" id="generated-date" aria-label="Generated Date" aria-describedby="generated-date" placeholder="(MM/DD/YYYY)">
+                                        <label for="generated-date" class="control-label f-700">Generated Date <span class="required">*</span></label>
+                                        <input type="text" class="form-control generated-date" name="generated-date" id="generated-date" aria-label="Generated Date" aria-describedby="generated-date" placeholder="(MM/DD/YYYY)" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="delivery-manager-name" class="control-label f-700">Delivery Manager Name</label>
-                                        <input type="text" class="form-control delivery-manager-name" name="delivery-manager-name" id="delivery-manager-name" aria-label="Delivery Manager Name" aria-describedby="delivery-manager-name">
+                                        <label for="delivery-manager-name" class="control-label f-700">Delivery Manager Name <span class="required">*</span></label>
+                                        <input type="text" class="form-control delivery-manager-name" name="delivery-manager-name" id="delivery-manager-name" aria-label="Delivery Manager Name" aria-describedby="delivery-manager-name" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="delivery-manager-email" class="control-label f-700">Delivery Manager Email Address</label>
-                                        <input type="email" class="form-control delivery-manager-email" name="delivery-manager-email" id="delivery-manager-email" aria-label="generated-date" aria-describedby="Delivery Manager Email">
+                                        <label for="delivery-manager-email" class="control-label f-700">Delivery Manager Email Address <span class="required">*</span></label>
+                                        <input type="email" class="form-control delivery-manager-email" name="delivery-manager-email" id="delivery-manager-email" aria-label="generated-date" aria-describedby="Delivery Manager Email" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="estimated-delivery-date" class="control-label f-700">Esimated Delivery Date</label>
-                                        <input type="text" class="form-control estimated-delivery-date" name="estimated-delivery-date" id="estimated-delivery-date" aria-label="Estimated Delivery Date" aria-describedby="estimated-delivery-date" placeholder="(MM/DD/YYYY)">
+                                        <label for="estimated-delivery-date" class="control-label f-700">Esimated Delivery Date <span class="required">*</span></label>
+                                        <input type="text" class="form-control estimated-delivery-date" name="estimated-delivery-date" id="estimated-delivery-date" aria-label="Estimated Delivery Date" aria-describedby="estimated-delivery-date" placeholder="(MM/DD/YYYY)" required>
                                     </div>
                                 </div>
                             </div>
@@ -108,24 +85,24 @@
                                             class="form-control client-name" name="client-name" id="client-name" aria-label="Client Name" aria-describedby="generated-date" >         
                                     </div> -->
                                     <div class="form-group">
-                                        <label for="client-company-name" class="control-label f-700">Client's Company Name</label>
+                                        <label for="client-company-name" class="control-label f-700">Client's Company Name <span class="required">*</span></label>
                                         <input type="text" 
-                                            class="form-control client-company-name" name="client-company-name" id="client-company-name" aria-label="Client Company Name" aria-describedby="client-company-name">         
+                                            class="form-control client-company-name" name="client-company-name" id="client-company-name" aria-label="Client Company Name" aria-describedby="client-company-name" required>         
                                     </div>
                                     <div class="form-group">
-                                        <label for="poc-name" class="control-label f-700">POC Name</label>
+                                        <label for="poc-name" class="control-label f-700">POC Name <span class="required">*</span></label>
                                         <input type="text" 
-                                            class="form-control poc-name" name="poc-name" id="poc-name" aria-label="POC Name" aria-describedby="poc-name" >         
+                                            class="form-control poc-name" name="poc-name" id="poc-name" aria-label="POC Name" aria-describedby="poc-name" required>         
                                     </div>
                                     <div class="form-group">
-                                        <label for="poc-mobile-number" class="control-label f-700">POC Mobile Number</label>
+                                        <label for="poc-mobile-number" class="control-label f-700">POC Mobile Number <span class="required">*</span></label>
                                         <input type="text" 
-                                            class="form-control poc-mobile-number" name="poc-mobile-number" id="poc-mobile-number" aria-label="POC Mobile Number" aria-describedby="poc-mobile-number" >         
+                                            class="form-control poc-mobile-number" name="poc-mobile-number" id="poc-mobile-number" aria-label="POC Mobile Number" aria-describedby="poc-mobile-number" required>         
                                     </div>
                                     <div class="form-group">
-                                        <label for="poc-email-address" class="control-label f-700">POC Email Address</label>
+                                        <label for="poc-email-address" class="control-label f-700">POC Email Address <span class="required">*</span></label>
                                         <input type="email" 
-                                            class="form-control poc-email-address" name="poc-email-address" id="poc-email-address" aria-label="POC Email Address" aria-describedby="poc-email-address" >         
+                                            class="form-control poc-email-address" name="poc-email-address" id="poc-email-address" aria-label="POC Email Address" aria-describedby="poc-email-address" required>         
                                     </div>
 
                                 </div>
@@ -139,18 +116,18 @@
                                 </div>
                                 <div class="card-body form-padding">
                                     <div class="form-group">
-                                        <label for="tester-name" class="control-label f-700">Tester Name</label>
+                                        <label for="tester-name" class="control-label f-700">Tester Name <span class="required">*</span></label>
                                         <input type="text" 
-                                            class="form-control tester-name" name="tester-name" id="tester-name" aria-label="Tester Name" aria-describedby="tester-name" >         
+                                            class="form-control tester-name" name="tester-name" id="tester-name" aria-label="Tester Name" aria-describedby="tester-name" required>         
                                     </div>
                                     <div class="form-group">
-                                        <label for="tester-email" class="control-label f-700">Tester Email Address</label>
+                                        <label for="tester-email" class="control-label f-700">Tester Email Address <span class="required">*</span></label>
                                         <input type="email" 
-                                            class="form-control tester-email" name="tester-email" id="tester-email" aria-label="Tester Email" aria-describedby="tester-email" >         
+                                            class="form-control tester-email" name="tester-email" id="tester-email" aria-label="Tester Email" aria-describedby="tester-email"  required>         
                                     </div>
                                     <div class="form-group">
-                                        <label for="test-start-date" class="control-label f-700">Test Start Date</label>
-                                        <input type="text" class="form-control test-start-date" name="test-start-date" id="test-start-date" aria-label="Test Start Date" aria-describedby="test-start-date" placeholder="(MM/DD/YYYY)">
+                                        <label for="test-start-date" class="control-label f-700">Test Start Date <span class="required">*</span></label>
+                                        <input type="text" class="form-control test-start-date" name="test-start-date" id="test-start-date" aria-label="Test Start Date" aria-describedby="test-start-date" placeholder="(MM/DD/YYYY)" required>
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +137,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-success waves-effect">Generate</button>
+                            <div class="lds-facebook"><div></div><div></div><div></div></div>
                         </div>
                     </div>
                 </form>

@@ -16,7 +16,6 @@ $(document).ready(function(){
   // $('#test-date').val('04/30/2021');
   // $('#number-of-days').val('10');
 
-
   // $('#delivery-manager-name').val('John Doe');
   // $('#delivery-manager-email').val('johndoe@testlocal.co');
   // $('#client-name').val('Jane Doe');
@@ -81,9 +80,6 @@ $(document).ready(function(){
     serviceTypesData = $('#service-type').select2('data');
     serviceTypeDataLength = serviceTypesData.length;
 
-    // update buttons
-    // serviceTypeDataLength > 0 ?  : 
-
     if (serviceTypeDataLength > 0) {
       $('.services-actions').show();
       $('.services-actions button').prop('disabled', false);
@@ -94,7 +90,7 @@ $(document).ready(function(){
     }
 
     $.each(serviceTypesData, function(index, serviceDataObj){
-      // 1. check if there is new service entered in data variable, if there is, append new service to html form.      
+  
       
       servicesWrapper.indexOf(serviceDataObj.text) === -1 ? servicesWrapper.push(serviceDataObj.text) : console.log('this item already exists, skipping...');
 
@@ -118,36 +114,111 @@ $(document).ready(function(){
   });
 
   
-	$('form#proposal-generator-form').on('submit', function(e){
-		e.preventDefault();
+	// $('form#proposal-generator-form').on('submit', function(e){
+	// 	e.preventDefault();
 
-		console.log('clicked!');
+	// 	// console.log('clicked!');
 
-    // get all days
-    var totalInputDays = $('.serviceDays');
-    var totalDaysArray = [];
-    var sumTotalDays = 0;
+  //   $('.lds-facebook').css('visibility', 'initial');
+  //   $('button[type="submit"]').prop("disabled", true);
 
-    for(i = 0; i < totalInputDays.length; i++){
-      // totalDaysArray.push( $(totalInputDays[i]).val() );
-      sumTotalDays += parseFloat( $( totalInputDays[i] ).val() );
-    }
+  //   // get all days
+  //   var totalInputDays = $('.serviceDays');
+  //   var totalDaysArray = [];
+  //   var sumTotalDays = 0;
 
-    $('.totalDays').val(sumTotalDays);
+  //   for(i = 0; i < totalInputDays.length; i++){
+  //     // totalDaysArray.push( $(totalInputDays[i]).val() );
+  //     sumTotalDays += parseFloat( $( totalInputDays[i] ).val() );
+  //   }
 
-    var companyName = $('#company-name').val();
-		var formData = $(this).serialize();
+  //   $('.totalDays').val(sumTotalDays);
+
+  //   var companyName = $('#company-name').val();
+	// 	var formData = $(this).serialize();
+
+  //     $.ajax({
+  //       type: 'POST',
+  //       url: 'process.php',
+  //       data: formData,
+  //       xhrFields: {
+  //         responseType: 'blob'
+  //       },
+  //       // dataType: "json",
+  //       success: function (data) {
+  //         var a = document.createElement('a');
+
+  //         $('.lds-facebook').css('visibility', 'hidden');
+  //         $('button[type="submit"]').prop("disabled", false);
+
+  //         if(typeof data != 'string'){
+  //           var binaryData = [];
+  //           binaryData.push(data);
+  //           var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+  //           a.href = url;
+  //           // console.log(a);
+  //           a.download = companyName + '_' + dateToday() +'.docx';
+  //           document.body.append(a);
+  //           a.click();
+  //           a.remove();
+  //           window.URL.revokeObjectURL(url);
+  //         }
+  //         else{
+  //           console.log('AJAX return data error.');
+  //         }
+          
+  //       },
+  //       error: function( xhr, textStatus, errorThrown ) {
+
+  //       }
+  //     });
+	// });
+
+  $("form#proposal-generator-form").validate({
+    ignore: "hidden",
+    groups: {
+      servicetype: "service-type"
+    },
+    errorPlacement: function(error, element) {
+      if ( element.attr("name") == "service-type[]" ) {
+        error.insertAfter(".select2-selection");
+      } else {
+        error.insertAfter(element);
+      }
+    },
+    submitHandler: function(form) {
+      // do other things for a valid form
+
+      $('.lds-facebook').css('visibility', 'initial');
+      $('button[type="submit"]').prop("disabled", true);
+
+      // get all days
+      var totalInputDays = $('.serviceDays');
+      var totalDaysArray = [];
+      var sumTotalDays = 0;
+
+      for(i = 0; i < totalInputDays.length; i++){
+        // totalDaysArray.push( $(totalInputDays[i]).val() );
+        sumTotalDays += parseFloat( $( totalInputDays[i] ).val() );
+      }
+
+      $('.totalDays').val(sumTotalDays);
+
+      var companyName = $('#company-name').val();
 
       $.ajax({
         type: 'POST',
         url: 'process.php',
-        data: formData,
+        data: $(form).serialize(),
         xhrFields: {
           responseType: 'blob'
         },
         // dataType: "json",
         success: function (data) {
           var a = document.createElement('a');
+
+          $('.lds-facebook').css('visibility', 'hidden');
+          $('button[type="submit"]').prop("disabled", false);
 
           if(typeof data != 'string'){
             var binaryData = [];
@@ -169,28 +240,96 @@ $(document).ready(function(){
         error: function( xhr, textStatus, errorThrown ) {
 
         }
-    });
-	});
+      });
+      return false;
+
+    },
+    
+  });
 
 
-  $('form#sow-generator-form').on('submit', function(e){
-		e.preventDefault();
+  // $('form#sow-generator-form').on('submit', function(e){
+	// 	e.preventDefault();
 
-		console.log('sow generate!');
+	// 	// console.log('sow generate!');
 
-    var companyName = $('#client-company-name').val();
-		var formData = $(this).serialize();
+  //   $('.lds-facebook').css('visibility', 'initial');
+  //   $('button[type="submit"]').prop("disabled", true);
+
+  //   var companyName = $('#client-company-name').val();
+	// 	var formData = $(this).serialize();
+
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: 'process-sow.php',
+  //     data: formData,
+  //     xhrFields: {
+  //       responseType: 'blob'
+  //     },
+  //     // dataType: "json",
+  //     success: function (data) {
+  //       var a = document.createElement('a');
+
+  //       $('.lds-facebook').css('visibility', 'hidden');
+  //       $('button[type="submit"]').prop("disabled", false);
+
+  //       if(typeof data != 'string'){
+  //         var binaryData = [];
+  //         binaryData.push(data);
+  //         var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+  //         a.href = url;
+  //         // console.log(a);
+  //         a.download = companyName + '_' + dateToday() +'.docx';
+  //         document.body.append(a);
+  //         a.click();
+  //         a.remove();
+  //         window.URL.revokeObjectURL(url);
+  //       }
+  //       else{
+  //         console.log('AJAX return data error.');
+  //       }
+        
+  //     },
+  //     error: function( xhr, textStatus, errorThrown ) {
+
+  //     }
+  //   });
+	// });
+
+  $("form#sow-generator-form").validate({
+    ignore: "hidden",
+    groups: {
+      servicetype: "service-type"
+    },
+    errorPlacement: function(error, element) {
+      if ( element.attr("name") == "service-type[]" ) {
+        error.insertAfter(".select2-selection");
+      } else {
+        error.insertAfter(element);
+      }
+    },
+    submitHandler: function(form) {
+      // do other things for a valid form
+
+      $('.lds-facebook').css('visibility', 'initial');
+      $('button[type="submit"]').prop("disabled", true);
+
+      var companyName = $('#client-company-name').val();
+      // var formData = $(this).serialize();
 
       $.ajax({
         type: 'POST',
         url: 'process-sow.php',
-        data: formData,
+        data: $(form).serialize(),
         xhrFields: {
           responseType: 'blob'
         },
         // dataType: "json",
         success: function (data) {
           var a = document.createElement('a');
+
+          $('.lds-facebook').css('visibility', 'hidden');
+          $('button[type="submit"]').prop("disabled", false);
 
           if(typeof data != 'string'){
             var binaryData = [];
@@ -212,9 +351,12 @@ $(document).ready(function(){
         error: function( xhr, textStatus, errorThrown ) {
 
         }
-    });
-	});
+      });
+      return false;
 
+    },
+    
+  });
 
 
 }); // document

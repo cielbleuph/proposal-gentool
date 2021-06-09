@@ -34,17 +34,17 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="company-name" class="control-label f-700">Company Name</label>
+                                                <label for="company-name" class="control-label f-700">Company Name <span class="required">*</span></label>
                                                 <input type="text"
-                                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help">
+                                                    class="form-control" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name-help" required>
                                                 <small id="company-name-help" class="form-text text-muted">Enter client's company name.</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="client-name" class="control-label f-700">Client's Name</label>
+                                                <label for="client-name" class="control-label f-700">Client's Name <span class="required">*</span></label>
                                                 <input type="text"
-                                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help">
+                                                    class="form-control" name="client-name" id="client-name" aria-label="Client's Name" aria-describedby="client-name-help" required>
                                             <small id="client-name-help" class="form-text text-muted">Enter client's full name.</small>
                                         </div>
                                     </div>
@@ -52,8 +52,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                        <label for="company-description" class="control-label f-700">Company Description</label>
-                                        <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3"></textarea>
+                                        <label for="company-description" class="control-label f-700">Company Description <span class="required">*</span></label>
+                                        <textarea class="form-control" name="company-description" id="company-description" aria-label="Company Description" rows="3" required></textarea>
                                         <small id="company-description-help" class="form-text text-muted">What does the company offer - services/provides?</small>
                                         </div>
                                     </div>    
@@ -62,17 +62,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="company-email" class="control-label f-700">Client's Email Address</label>
+                                            <label for="company-email" class="control-label f-700">Client's Email Address <span class="required">*</span></label>
                                             <input type="email"
-                                                class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help">
+                                                class="form-control" name="client-email" id="client-email" aria-label="Client's Email" aria-describedby="client-email-help" required>
                                             <small id="client-email-help" class="form-text text-muted">Enter client's Email Address</small>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="company-contact" class="control-label f-700">Company Contact Number</label>
+                                            <label for="company-contact" class="control-label f-700">Company Contact Number <span class="required">*</span></label>
                                             <input type="text"
-                                                class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help">
+                                                class="form-control" name="client-contact" id="client-contact" aria-label="Client's Contact" aria-describedby="client-contact-help" required>
                                             <small id="client-contact-help" class="form-text text-muted">Enter client's contact number.</small>
                                         </div>
                                     </div>
@@ -93,17 +93,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="account-manager" class="control-label f-700">Account Manager's Name</label>
+                                            <label for="account-manager" class="control-label f-700">Account Manager's Name <span class="required">*</span></label>
                                             <input type="text"
-                                                class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help">
+                                                class="form-control" name="account-manager" id="account-manager" aria-label="Account Manager" aria-describedby="account-manager-help" required>
                                             <small id="account-manager-help" class="form-text text-muted">Enter your account manager's name.</small>
                                         </div>  
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="account-manager-contact" class="control-label f-700">Account Manager's Contact Number</label>
+                                            <label for="account-manager-contact" class="control-label f-700">Account Manager's Contact Number <span class="required">*</span></label>
                                             <input type="text"
-                                                class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help">
+                                                class="form-control" name="account-manager-contact" id="account-manager-contact" aria-label="Account Manager Contact Number" aria-describedby="account-manager-email-help" required>
                                             <small id="account-manager-contact-help" class="form-text text-muted">Enter valid account manager's contact number.</small>
                                         </div>
                                     </div>
@@ -111,9 +111,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="company-name" class="control-label f-700">Account Manager's Email Address</label>
+                                            <label for="company-name" class="control-label f-700">Account Manager's Email Address <span class="required">*</span></label>
                                             <input type="email"
-                                                class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help">
+                                                class="form-control" name="account-manager-email" id="account-manager-email" aria-label="Account Manager Email" aria-describedby="account-manager-email-help" required>
                                             <small id="account-manager-email-help" class="form-text text-muted">Enter valid account manager's email address.</small>
                                         </div>
                                     </div>
@@ -131,8 +131,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="service-type" class="control-label f-700">Service Types</label>
-                                            <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help">
+                                            <label for="service-type" class="control-label f-700">Service Types <span class="required">*</span></label>
+                                            <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help"  required>
                                                 <?php 
                                                     $services = array(
                                                         'API Penetration Test',
@@ -223,6 +223,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success waves-effect">Generate</button>
+                        <div class="lds-facebook"><div></div><div></div><div></div></div>
                     </div>
                 </div>
                 <input type="hidden" name="totalDays" id="totalDays" class="totalDays" /> 
