@@ -10,7 +10,6 @@
 
     $projectDescriptionPage->addTitle( 'BRIEF', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Throughout the assessment, consultants utilise proven methodologies to ensure the application gets a thorough test. This is a mixture of non-invasive testing and more hands testing techniques when required.' );
-    $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addText( 'A web application assessment can be divided into three stages: ' );
     $projectDescriptionPage->addListItem( 'Discovery', 0, array('italic'=>true), null, $aParagraphStyles );
@@ -52,7 +51,6 @@
 
     $projectDescriptionPage->addTitle( 'FALLBACKS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment. From the report provided, you will be able to understand any weaknesses that can be exploited and if your system meets expectations for functionality and security. Red Team Partners will also include remediation/comments and suggestions on how to resolve any vulnerabilities/risks found.' );
-    $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addText( 'Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.' );
     

@@ -76,9 +76,7 @@
 
 
 
-        //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
-
- 
+    //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 
     // GENERAL SETTINGS
     $phpWord->setDefaultFontName( 'Proxima Nova Rg' );
@@ -155,7 +153,7 @@
     );
 
     $headerWatermarkStyle = array(
-        'width' => 597, 
+        'width' => 612, 
         'marginTop' => -36,
         'marginLeft' => -73,
         'posHorizontal' => 'absolute',
@@ -242,26 +240,26 @@
     );
 
     $coverPage->addTextBreak(4);
-    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Aileron Black', 'size'=>30), array('alignment'=>'start'));
+    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Proxima Nova Rg', 'size'=>30), array('alignment'=>'start'));
     $coverPage->addTextBreak(2);
     $coverPageSOWTextRun = $coverPage->addTextRun(array('alignment'=>'start'));
     $coverPageSOWTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t STATEMENT OF WORKS"), array('size'=>16, 'bold'=>true));
     $coverPageSOWTextRun->addTextBreak();
     $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t for"), array('size'=>16) );
     $coverPageSOWTextRun->addTextBreak();
-    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t " . htmlentities($clientCompanyName) ), array('size'=>16, 'bold'=>true,'color' => 'DE5C5C') );
+    $coverPageSOWTextRun->addText( htmlspecialchars("\t\t\t\t\t\t\t\t\t " . htmlentities($clientCompanyName) ), array('size'=>16, 'bold'=>true,'color' => 'C42543') );
     // $coverPage->addText('SOW Generated Date: ' . $generatedDate);
 
     $coverPage->addTextBreak(2);
 
     $coverPageDateTextRun = $coverPage->addTextRun( array('alignment' => 'start') );
-    $coverPageDateTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t DATE:"), array('size' => 16, 'color' => 'DE5C5C'));
+    $coverPageDateTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t DATE:"), array('size' => 16, 'color' => 'C42543'));
     $coverPageDateTextRun->addTextBreak();
     $coverPageDateTextRun->addText(htmlspecialchars( "\t\t\t\t\t\t\t\t\t " . $testStartDate ), array('size'=>16));
 
     $coverPage->addTextBreak(5);
 
-    $coverPage->addText(' Red Team Partners Ltd.', array('size'=>11, 'bold'=>true));
+    $coverPage->addText('Red Team Partners Ltd.', array('size'=>11, 'bold'=>true));
     $coverPage->addText('One Canada Square, Canary Wharf, London, E14 5AB', array('size'=>11), $aParagraphStyles);
     $coverPage->addText('+44 (0) 20 3951 0299', array('size'=>11), $aParagraphStyles);
     $coverPage->addText('www.redteampartners.co.uk', array('size'=>11), $aParagraphStyles);
@@ -314,12 +312,7 @@
 
     $TOCPage->addTextBreak();
 
-
     //############################### END TOC PAGE ###############################
-
-
-
-
 
     //############################### CLIENT DETAILS PAGE ###############################
 
@@ -384,8 +377,6 @@
     $reportDeliveryTextRun->addText('Report Delivery Estimated Date:');
     $reportDeliveryTextRun->addText( htmlspecialchars("\t\t") . $estimatedDeliveryDate, array( 'bold'=>true ));
 
-
-
     $clientDetailsPageFooter = $clientDetailsPage->addFooter();
     
     $clientDetailsPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -412,20 +403,14 @@
 
     //############################### END PROJECT SCOPE PAGE ###############################  
 
+
+
     //############################### PROJECT DESCRIPTION PAGE ###############################    
 
     $projectDescriptionPage = $phpWord->addSection(array(
         'pageSizeW' => $paper->getWidth(),
         'pageSizeH' => $paper->getHeight(),
     ));
-
-    // include files
-
-    // foreach($typeOfService as $service) {
-    //     if ( $service === 'API Testing' ) {
-    //         include('inc/sow-services/api-testing.php');
-    //     }
-    // }
 
     $service = $typeOfService[0];
 
@@ -501,7 +486,6 @@
     //############################### END PROJECT DESCRIPTION PAGE ###############################
 
 
-    
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
 
@@ -513,16 +497,14 @@
     $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1); // TOC Bookmark
     $projectPrereqPage->addLine($lineStyle);
 
-    $projectPrereqPage->addText('Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.');
-    // $projectPrereqPage->addText('(If API Test');
-
-
-    if ($typeOfService[0] == 'API Testing') {
+    if ($typeOfService[0] == 'API Penetration Testing') {
         $projectPrereqPage->addListItem('Application which is consuming the API');
         $projectPrereqPage->addListItem('Accounts created for each user role');
         $projectPrereqPage->addListItem('API documentation');
         $projectPrereqPage->addListItem('Exported API list such as SWAGGER file, YAML or WSDL');
     }
+
+    $projectPrereqPage->addText('Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.');
 
     //############################### END PROJECT PRE-REQUISITES REQUIREMENTS SCOPE PAGE ###############################   
 

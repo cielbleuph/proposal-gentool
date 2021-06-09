@@ -23,7 +23,7 @@
                                     <div class="form-group">
                                         <label for="service-type" class="control-label f-700">Select Service Type</label>
                                             <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help">
-                                                <option></option>
+                                                <option>--- Please Choose---</option>
                                                 <?php 
                                                     // $services = array(
                                                     //     'API Testing',
