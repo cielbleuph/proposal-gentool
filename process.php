@@ -71,7 +71,7 @@
 
     $serviceDescription = str_replace(",", ", ",implode(",", $typeOfService));
 
-    $accountManagerNumber = "020 3951 0299"; // FIXED
+    // $accountManagerNumber = "020 3951 0299"; // FIXED
 
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -450,7 +450,7 @@
     
     $RTPfillUpFormTable->addRow();
     $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Number:');
-    $RTPfillUpFormTable->addCell()->addText($clientContactNumber);
+    $RTPfillUpFormTable->addCell()->addText($accountManagerNumber);
 
     $RTPfillUpFormTable->addRow();
     $RTPfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Email:');
