@@ -41,7 +41,8 @@
                                                         'Virtualisation Configuration Review',
                                                         'VPN Assessment',
                                                         'Vulnerability Assessment',
-                                                        'Wireless Network Assessment'
+                                                        'Wireless Network Assessment',
+                                                        'Mobile Application Penetration Test'
                                                     );
 
                                                     sort($services);
