@@ -42,7 +42,10 @@
                                                         'VPN Assessment',
                                                         'Vulnerability Assessment',
                                                         'Wireless Network Assessment',
-                                                        'Mobile Application Penetration Test'
+                                                        'Mobile Application Penetration Test',
+                                                        'Secure Code Review',
+                                                        'O365 Penetration Test',
+                                                        'Azure Cloud Review',
                                                     );
 
                                                     sort($services);

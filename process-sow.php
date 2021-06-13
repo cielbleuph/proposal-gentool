@@ -119,8 +119,8 @@
 
     // template colors
     $paletteRed = 'D31439';
-    $darkRed = 'CE4E4E';
-    $lightRed = 'F5B7A6';
+    $darkRed = 'C42543';
+    $lightRed = 'F5CBD3';
 
 
     $defaultTableStyle = array(
@@ -482,6 +482,18 @@
         case 'Mobile Application Penetration Test':
             include('inc/sow-services/mobile-application-penetration-test.php');
             break;
+
+        case 'Secure Code Review':
+            include('inc/sow-services/secure-code-review.php');
+            break;
+            
+        case 'O365 Penetration Test':
+            include('inc/sow-services/O365-penetration-test.php');
+            break;            
+        
+        case 'Azure Cloud Review':
+            include('inc/sow-services/azure-cloud-review.php');
+            break;      
         
         default:
             # code...
