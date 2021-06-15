@@ -75,11 +75,6 @@
                             <h2 class="c-white"><i data-feather="tool"></i> Client Information</h2>
                         </div>
                         <div class="card-body form-padding">
-                            <!-- <div class="form-group">
-                                <label for="client-name" class="control-label f-700">Client's Name</label>
-                                <input type="text" 
-                                    class="form-control client-name" name="client-name" id="client-name" aria-label="Client Name" aria-describedby="generated-date" >         
-                            </div> -->
                             <div class="form-group">
                                 <label for="client-company-name" class="control-label f-700">Client's Company Name <span class="required">*</span></label>
                                 <input type="text" 

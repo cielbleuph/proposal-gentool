@@ -69,4 +69,3 @@
   }
   
   include('views/inc/footer.php'); 
-    

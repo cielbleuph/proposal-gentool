@@ -220,6 +220,8 @@
 
     $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
 
+    include_once('views/inc/styles.php');
+
     //############################### COVER PAGE ###############################
 
     $cellRowSpan = array('vMerge' => 'restart', 'valign' => 'center', 'bgColor' => $paletteRed);
