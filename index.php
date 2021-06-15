@@ -10,14 +10,15 @@
         
         <?php include('views/inc/sidebar-nav.php');
 
-            var_dump($_GET);
+            // var_dump($_GET);
             // die();
 
             if ( isset($_GET) && isset($_GET['p']) && $_GET['p'] != ''){
               $path = $_GET['p'];
             }
+            // echo $path;
             // die();
-
+            
             switch ($path) {
               case 'generate-proposal':
                 $currentPage = 'generate-proposal';
@@ -27,6 +28,11 @@
               case 'generate-sow':
                 $currentPage = 'generate-sow';
                 include('views/generate-sow.php');
+                break;
+              
+              case 'generate-reports':
+                $currentPage = 'generate-reports';
+                include('views/generate-reports.php');
                 break;
               
               default:
