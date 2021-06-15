@@ -1,2 +1,17 @@
-<?php
-    echo '<h1>Generate Reports</h1>';
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><?php echo $titlePage; ?></h1>
+</div>
+
+<div class="card">
+    <div class="card-body card-padding palette-Grey-100 bg">
+        <form name="sow-generator-form" id="sow-generator-form" class="sow-generator-form">
+            <div class="row">
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="row">
+            
+            </div>
+        </form>
+    </div>
+</div>
