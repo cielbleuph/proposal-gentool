@@ -14,6 +14,8 @@ class ComposerStaticInitc6781e3b4dbe8a0feaf3adea7ceb8596
         'P' => 
         array (
             'PhpOffice\\PhpWord\\' => 18,
+            'PhpOffice\\PhpPresentation\\' => 26,
+            'PhpOffice\\Common\\' => 17,
         ),
         'L' => 
         array (
@@ -27,6 +29,14 @@ class ComposerStaticInitc6781e3b4dbe8a0feaf3adea7ceb8596
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
         ),
+        'PhpOffice\\PhpPresentation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phppresentation/src/PhpPresentation',
+        ),
+        'PhpOffice\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/common/src/Common',
+        ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
@@ -39,6 +49,7 @@ class ComposerStaticInitc6781e3b4dbe8a0feaf3adea7ceb8596
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PclZip' => __DIR__ . '/..' . '/pclzip/pclzip/pclzip.lib.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

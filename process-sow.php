@@ -64,8 +64,6 @@
 
     }
 
-    
-
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
     // helper 
@@ -73,8 +71,6 @@
     // force update to reflect correct page number in TOC.
     $phpWord->getSettings()->setUpdateFields(true);
     // $phpWord->getSettings()->setOutputEscapingEnabled(true);
-
-
 
     //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 

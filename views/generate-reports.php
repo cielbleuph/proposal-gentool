@@ -7,7 +7,7 @@
         <form name="sow-generator-form" id="sow-generator-form" class="sow-generator-form">
             <div class="row">
                 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> General Information</h2>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> General Information</h2>
@@ -29,6 +29,40 @@
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header palette-Red-300">
+                            <h2 class="c-white"><i data-feather="tool"></i> General Information</h2>
+                        </div>
+                        <div class="card-body form-padding">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header palette-Red-300">
+                            <h2 class="c-white"><i data-feather="tool"></i> Generator Settings</h2>
+                        </div>
+                        <div class="card-body form-padding">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Summary Overview</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Audit Checklist</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+                                <label class="form-check-label" for="flexSwitchCheckDisabled">Board Report</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <hr />
             <div class="row">

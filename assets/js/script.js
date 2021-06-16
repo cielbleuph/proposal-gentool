@@ -4,7 +4,7 @@ var serviceTypeDataLength = 0;
 
 $(document).ready(function(){
 
-  // prefilled data for testing
+  // ***** TEST DATA - prefilled data for testing ***** //
   // $('#company-name').val('COMPANY XYZ');
   // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
   // $('#client-name').val('JOHN DOE');
@@ -19,7 +19,7 @@ $(document).ready(function(){
   // $('#delivery-manager-name').val('John Doe');
   // $('#delivery-manager-email').val('johndoe@testlocal.co');
   // $('#client-name').val('Jane Doe');
-  // $('#client-company-name').val('Company ACME');
+  // $('#client-company-name').val('Company & ACME');
   // $('#poc-name').val('Ruben Reyes');
   // $('#poc-mobile-number').val('1234567890');
   // $('#poc-email-address').val('rubenpoc@test.local');
@@ -54,26 +54,7 @@ $(document).ready(function(){
   });
 
   
-  $('#add-days').on('click', function(e){
-    e.preventDefault();
-    console.log('add days');
-
-    $.each(servicesWrapper, function(index, service){
-      var elemService = (service).replace(/\s+/g, "");
-      var classElem = '.' + elemService +'_class';
-      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'</label><input type="number" step="0.1" class="'+elemService+' serviceDays" id="'+elemService+'" name="'+elemService+'" />')
-    });
-
-  });
-
-  $('#clear-services').on('click', function(e) {
-    e.preventDefault();
-    $('#service-type').val(null).trigger('change');
-
-    $('#services-type-wrapper').html('');
-
-    servicesWrapper = [];
-  });
+  
     
   $('#service-type').on('change', function (e) {
 
@@ -114,65 +95,7 @@ $(document).ready(function(){
   });
 
   
-	// $('form#proposal-generator-form').on('submit', function(e){
-	// 	e.preventDefault();
-
-	// 	// console.log('clicked!');
-
-  //   $('.lds-facebook').css('visibility', 'initial');
-  //   $('button[type="submit"]').prop("disabled", true);
-
-  //   // get all days
-  //   var totalInputDays = $('.serviceDays');
-  //   var totalDaysArray = [];
-  //   var sumTotalDays = 0;
-
-  //   for(i = 0; i < totalInputDays.length; i++){
-  //     // totalDaysArray.push( $(totalInputDays[i]).val() );
-  //     sumTotalDays += parseFloat( $( totalInputDays[i] ).val() );
-  //   }
-
-  //   $('.totalDays').val(sumTotalDays);
-
-  //   var companyName = $('#company-name').val();
-	// 	var formData = $(this).serialize();
-
-  //     $.ajax({
-  //       type: 'POST',
-  //       url: 'process.php',
-  //       data: formData,
-  //       xhrFields: {
-  //         responseType: 'blob'
-  //       },
-  //       // dataType: "json",
-  //       success: function (data) {
-  //         var a = document.createElement('a');
-
-  //         $('.lds-facebook').css('visibility', 'hidden');
-  //         $('button[type="submit"]').prop("disabled", false);
-
-  //         if(typeof data != 'string'){
-  //           var binaryData = [];
-  //           binaryData.push(data);
-  //           var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
-  //           a.href = url;
-  //           // console.log(a);
-  //           a.download = companyName + '_' + dateToday() +'.docx';
-  //           document.body.append(a);
-  //           a.click();
-  //           a.remove();
-  //           window.URL.revokeObjectURL(url);
-  //         }
-  //         else{
-  //           console.log('AJAX return data error.');
-  //         }
-          
-  //       },
-  //       error: function( xhr, textStatus, errorThrown ) {
-
-  //       }
-  //     });
-	// });
+  // ***** PROPOSAL GENERATOR ***** // 
 
   $("form#proposal-generator-form").validate({
     ignore: "hidden",
@@ -247,54 +170,31 @@ $(document).ready(function(){
     
   });
 
+  $('#add-days').on('click', function(e){
+    e.preventDefault();
+    console.log('add days');
 
-  // $('form#sow-generator-form').on('submit', function(e){
-	// 	e.preventDefault();
+    $.each(servicesWrapper, function(index, service){
+      var elemService = (service).replace(/\s+/g, "");
+      var classElem = '.' + elemService +'_class';
+      $('#services-type-wrapper').append('<div class"form-group"><label for="'+ elemService +'">'+service+'</label><input type="number" step="0.1" class="'+elemService+' serviceDays" id="'+elemService+'" name="'+elemService+'" />')
+    });
 
-	// 	// console.log('sow generate!');
+  });
 
-  //   $('.lds-facebook').css('visibility', 'initial');
-  //   $('button[type="submit"]').prop("disabled", true);
+  $('#clear-services').on('click', function(e) {
+    e.preventDefault();
+    $('#service-type').val(null).trigger('change');
 
-  //   var companyName = $('#client-company-name').val();
-	// 	var formData = $(this).serialize();
+    $('#services-type-wrapper').html('');
 
-  //   $.ajax({
-  //     type: 'POST',
-  //     url: 'process-sow.php',
-  //     data: formData,
-  //     xhrFields: {
-  //       responseType: 'blob'
-  //     },
-  //     // dataType: "json",
-  //     success: function (data) {
-  //       var a = document.createElement('a');
+    servicesWrapper = [];
+  });
 
-  //       $('.lds-facebook').css('visibility', 'hidden');
-  //       $('button[type="submit"]').prop("disabled", false);
+  // ***** END PROPOSAL GENERATOR ***** //
 
-  //       if(typeof data != 'string'){
-  //         var binaryData = [];
-  //         binaryData.push(data);
-  //         var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
-  //         a.href = url;
-  //         // console.log(a);
-  //         a.download = companyName + '_' + dateToday() +'.docx';
-  //         document.body.append(a);
-  //         a.click();
-  //         a.remove();
-  //         window.URL.revokeObjectURL(url);
-  //       }
-  //       else{
-  //         console.log('AJAX return data error.');
-  //       }
-        
-  //     },
-  //     error: function( xhr, textStatus, errorThrown ) {
 
-  //     }
-  //   });
-	// });
+  // ***** S.O.W. GENERATOR ***** //
 
   $("form#sow-generator-form").validate({
     ignore: "hidden",
@@ -359,8 +259,14 @@ $(document).ready(function(){
   });
 
 
+
 }); // document
 
+
+
+
+
+// ***** FUNCTIONS ***** //
 
 function dateToday(){
   var today = new Date();

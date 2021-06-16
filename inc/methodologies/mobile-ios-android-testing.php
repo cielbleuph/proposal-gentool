@@ -8,9 +8,6 @@
         'bgColor' => $lightRed
     );
 
-    // $methodologiesPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION") , 1); // TOC Bookmark 
-    // $methodologiesPage->addLine($lineStyle);
-
     $methodologiesPage->addTitle( htmlspecialchars("Fundamentals"), 2); // TOC Bookmark 
     $methodologiesPage->addText( htmlspecialchars("Red Team Partners provides Mobile Application Penetration Testing, that focuses directly on the mobile app. The Mobile Application Penetration Testing is dynamic; therefore, the assessment is conducted while the application is running and as well static, meaning that the source code can be made available (e.g. through reverse engineering) for testing to assist with vulnerability and security issue identification.") );
 

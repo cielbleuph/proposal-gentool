@@ -1,6 +1,4 @@
 <?php
-
-
     $DarkRedCellStyle = array(
         'bgColor' => $darkRed,
         'valign'=> 'center',
@@ -9,11 +7,6 @@
     $lightRedCellStyle = array(
         'bgColor' => $lightRed
     );
-
-    // $paragraphHeadingPStyle['align']='both';
-    // var_dump($paragraphHeadingPStyle);
-
-    // die();
 
     $methodologiesPage->addTitle('O365 Penetration Testing', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
