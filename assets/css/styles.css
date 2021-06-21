@@ -128,7 +128,7 @@
     opacity: .9;
   }
 
-  .form-columnar textarea{
+  .form-columnar textarea, textarea{
     resize: none;
   }
 
@@ -253,3 +253,40 @@
     }
   }
   
+.date-generated-wrapper > input{
+  display: inline-block;
+  width: 48%;
+}
+
+.date-generated-wrapper > span{
+  display: inline-block;
+  width: 3%;
+  text-align: center;
+}
+
+.traffic-color-critical{
+  background-color: #7030A0;
+}
+
+.traffic-color-high{
+  background-color: #FF0000;
+}
+
+.traffic-color-medium{
+  background-color: #ED7D31;
+}
+
+.traffic-color-low{
+  background-color: #00B0F0;
+}
+
+.traffic-color-informational{
+  background-color: #00B050;
+}
+
+.traffic-control{
+  
+}
+.form-group.row {
+  margin-left: 0px;
+}
