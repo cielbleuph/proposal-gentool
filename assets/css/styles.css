@@ -323,9 +323,11 @@ span.del-item{
 .feather-help-circle{
   width: 20px !important;
   height: 20px !important;
+  margin-right: 0.75rem;
 }
 
-.feather-trash-2:hover {
+.feather-trash-2:hover,
+.del-item:hover {
   color: #f00 !important;
 }
 
