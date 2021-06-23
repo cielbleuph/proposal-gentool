@@ -322,7 +322,74 @@ $(document).ready(function(){
 
   // ***** REPORTS GENERATOR TOOL ***** 
 
-  $("form#proposal-reports-form").validate();
+
+
+
+  $("form#reports-generator-form").validate({
+    // ignore: "hidden",
+    // groups: {
+    //   servicetype: "service-type"
+    // },
+    // errorPlacement: function(error, element) {
+    //   if ( element.attr("name") == "service-type[]" ) {
+    //     error.insertAfter(".select2-selection");
+    //   } else {
+    //     error.insertAfter(element);
+    //   }
+    // },
+    submitHandler: function(form) {
+      // do other things for a valid form
+
+      $('.lds-facebook').css('visibility', 'initial');
+      $('button[type="submit"]').prop("disabled", true);
+
+      // var companyName = $('#client-company-name').val();
+      // var formData = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: 'process-reports.php',
+        data: $(form).serialize(),
+        // xhrFields: {
+        //   responseType: 'blob'
+        // },
+        // dataType: "json",
+        success: function (data) {
+          var a = document.createElement('a');
+
+          $('.lds-facebook').css('visibility', 'hidden');
+          $('button[type="submit"]').prop("disabled", false);
+
+          if(typeof data != 'string'){
+            var binaryData = [];
+            binaryData.push(data);
+            var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+            a.href = url;
+            // console.log(a);
+            a.download = companyName + '_' + dateToday() +'.docx';
+            document.body.append(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+          }
+          else if(typeof data === 'string'){
+            console.log(data)
+          }
+          
+          else{
+            console.log('AJAX return data error.');
+          }
+          
+        },
+        error: function( xhr, textStatus, errorThrown ) {
+
+        }
+      });
+      return false;
+
+    },
+    
+  });
       
     
   $( ".help-icon" ).tooltip();
@@ -333,17 +400,14 @@ $(document).ready(function(){
   $('.entry-btn').on('click', function(e){
     // console.log(e.target.id);
 
-    var targetBtn = e.target.id;
-
-    // console.log(targetBtn);
-    
+    var targetBtn = e.target.id;    
     var entryTxtboxInput = $("."+targetBtn+"-input");
 
-    // console.log(entryTxtboxInput.val());
-
     if (entryTxtboxInput.val().length > 0){
-      $("."+targetBtn+"-listgroup").append('<li class="list-group-item">'+ entryTxtboxInput.val() +' <span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></span></li>');
+      $("."+targetBtn+"-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">'+ entryTxtboxInput.val() +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></span><input type="hidden" value="'+entryTxtboxInput.val()+'" name="'+targetBtn+'-hidden[]"</li>');
       // console.log(entryTxtboxInput.val());
+
+      // $("."+targetBtn+"-listgroup-wrapper").append('>');
     }
     else{
       alert('Cannot add empty value.');

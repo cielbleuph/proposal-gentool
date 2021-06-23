@@ -319,3 +319,16 @@ span.del-item{
 .card-header > h2 > a{
   color: white;
 }
+
+.feather-help-circle{
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.feather-trash-2:hover {
+  color: #f00 !important;
+}
+
+button.ui-dialog-titlebar-close{
+  display: none;
+}

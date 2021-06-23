@@ -54,10 +54,10 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="tool"></i> Key Findings <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-animation="true" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span></a><i data-feather="help-circle"></i></span></h2>
+                            <h2 class="c-white"><i data-feather="tool"></i> Key Findings <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
                             
@@ -70,16 +70,16 @@
                             <div class="form-group">
                                 <label for="keyfindings-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control keyfindings-input" name="keyfindings-input" id="keyfindings-input" aria-label="Add New Key Finding Entry" aria-describedby="keyfindings-input" placeholder="">
+                                    <input type="text" class="form-control keyfindings-input" id="keyfindings-input" aria-label="Add New Key Finding Entry" aria-describedby="keyfindings-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary entry-btn" id="keyfindings" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="keyfindings" type="button"><i data-feather="plus"></i> Entry</button>
                                     </div>
                                 </div>
                                 
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
                             
-                            <div class="form-group">
+                            <div class="form-group keyfindings-listgroup-wrapper">
                                 <ul class="list-group list-group keyfindings-listgroup">
                                     <!-- <li class="list-group-item">Cras justo odio<span class="del-item"><i data-feather="trash-2"></i></span></li>
                                     <li class="list-group-item">Dapibus ac facilisis in <span class="del-item"><i data-feather="trash-2"></i></span></li>
@@ -90,10 +90,10 @@
                             </div>
                         </div>
                     </div>
-                        
+                    <br />
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="tool"></i> Short Term Goals <a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span><i data-feather="help-circle"></i></span></a></h2>
+                            <h2 class="c-white"><i data-feather="tool"></i> Short Term Goals <a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon shortterm-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
                             <div class="collapse form-group" id="shortterm-help-content">
@@ -104,20 +104,21 @@
                             <div class="form-group">
                                 <label for="shortterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control shortterm-input" name="shortterm-input" id="shortterm-input" aria-label="Add New Short Term Goal Entry" aria-describedby="shortterm-input" placeholder="">
+                                    <input type="text" class="form-control shortterm-input" id="shortterm-input" aria-label="Add New Short Term Goal Entry" aria-describedby="shortterm-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary entry-btn" id="shortterm" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="shortterm" type="button"><i data-feather="plus"></i> Entry</button>
                                     </div>
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
-                            <div class="form-group">
+                            <div class="form-group shortterm-listgroup-wrapper">
                                 <ul class="list-group list-group shortterm-listgroup">
 
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <br />
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Medium Term Goals <a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span></a></h2>
@@ -131,14 +132,14 @@
                             <div class="form-group">
                                 <label for="mediumterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control mediumterm-input" name="mediumterm-input" id="mediumterm-input" aria-label="Add New Medium Term Goal Entry" aria-describedby="mediumterm-input" placeholder="">
+                                    <input type="text" class="form-control mediumterm-input" id="mediumterm-input" aria-label="Add New Medium Term Goal Entry" aria-describedby="mediumterm-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary entry-btn" id="mediumterm" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="mediumterm" type="button"><i data-feather="plus"></i> Entry </button>
                                     </div>
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
-                            <div class="form-group">
+                            <div class="form-group mediumterm-listgroup-wrapper">
                                 <ul class="list-group list-group mediumterm-listgroup">
                                     
                                 </ul>
@@ -157,46 +158,46 @@
                         <div class="card-body form-padding">
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-critical col-sm-2"></div>
-                                <label for="critical" class="col-sm-6 col-form-label control-label f-700">Critical <span class="required">*</span></label>
-                                <div class="col-sm-4">
+                                <label for="critical" class="col-sm-5 col-form-label control-label f-700">Critical <span class="required">*</span></label>
+                                <div class="col-sm-5">
                                     <input type="number" min="1" max="100" class="form-control findings critical" name="critical" id="critical" aria-label="Critical Findings" aria-describedby="critical" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-high col-sm-2"></div>
-                                <label for="high" class="col-sm-6 col-form-label control-label f-700">High <span class="required">*</span></label>
-                                <div class="col-sm-4">
+                                <label for="high" class="col-sm-5 col-form-label control-label f-700">High <span class="required">*</span></label>
+                                <div class="col-sm-5">
                                     <input type="number" min="1" max="100" class="form-control findings high" name="high" id="high" aria-label="High Findings" aria-describedby="high" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-medium col-sm-2"></div>
-                                <label for="medium" class="col-sm-6 col-form-label control-label f-700">Medium <span class="required">*</span></label>
-                                <div class="col-sm-4">
+                                <label for="medium" class="col-sm-5 col-form-label control-label f-700">Medium <span class="required">*</span></label>
+                                <div class="col-sm-5">
                                     <input type="number" min="1" max="100" class="form-control findings medium" name="medium" id="medium" aria-label="Medium Findings" aria-describedby="medium" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-low col-sm-2"></div>
-                                <label for="low" class="col-sm-6 col-form-label control-label f-700">Low <span class="required">*</span></label>
-                                <div class="col-sm-4">
+                                <label for="low" class="col-sm-5 col-form-label control-label f-700">Low <span class="required">*</span></label>
+                                <div class="col-sm-5">
                                     <input type="number" min="1" max="100" class="form-control findings low" name="low" id="low" aria-label="Low Findings" aria-describedby="low" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-informational col-sm-2"></div>
-                                <label for="informational" class="col-sm-6 col-form-label control-label f-700">Informational <span class="required">*</span></label>
-                                <div class="col-sm-4">
+                                <label for="informational" class="col-sm-5 col-form-label control-label f-700">Informational <span class="required">*</span></label>
+                                <div class="col-sm-5">
                                     <input type="number" min="1" max="100" class="form-control findings informational" name="informational" id="informational" aria-label="Informational Findings" aria-describedby="informational" placeholder="" required>
                                 </div>
                             </div>
                             <hr />
                             <div class="form-group row">
-                                <div class="col-md-8">
+                                <div class="col-md-7">
                                     <label for="total-findings" class="col-form-label control-label f-700">Total Findings</label>
                                 </div>
-                                <div class="col-sm-4">
-                                    <input disabled type="number" class="form-control total-findings" name="total-findings" id="total-findings" aria-label="Total Findings" aria-describedby="total-findings">
+                                <div class="col-sm-5">
+                                    <input readonly type="number" class="form-control total-findings" name="total-findings" id="total-findings" aria-label="Total Findings" aria-describedby="total-findings">
                                 </div>
                             </div>
                         </div>
@@ -208,16 +209,16 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Summary Overview</label>
+                                <input class="form-check-input" type="checkbox" id="summary-overview-check" name="summary-overview-check" class="summary-overview-check" checked>
+                                <label class="form-check-label" for="summary-overview-check">Summary Overview</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-                                <label class="form-check-label" for="flexSwitchCheckChecked">Audit Checklist</label>
+                                <input class="form-check-input" type="checkbox" id="audit-checklist-check" name="audit-checklist-check" class="audit-checklist-check" checked>
+                                <label class="form-check-label" for="audit-checklist-check">Audit Checklist</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-                                <label class="form-check-label" for="flexSwitchCheckDisabled">Board Report</label>
+                                <input class="form-check-input" type="checkbox" id="board-report-check" name="board-report-check" class="board-report-check" checked>
+                                <label class="form-check-label" for="board-report-check">Board Report</label>
                             </div>
                         </div>
                         <div class="card-footer text-muted">
