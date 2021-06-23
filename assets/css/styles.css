@@ -9,8 +9,8 @@ body {
 }
 
 /*
-  * Sidebar
-  */
+ * Sidebar
+ */
 
 .sidebar {
   position: fixed;
@@ -287,10 +287,6 @@ body {
 
 .traffic-color-informational{
   background-color: #00B050;
-}
-
-.traffic-control{
-  
 }
 
 .form-group.row {

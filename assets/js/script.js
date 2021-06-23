@@ -30,20 +30,69 @@ $(document).ready(function(){
   $('#test-start-date').val('06/23/2021');
 
   $('#test-date').datepicker({
-		minDate: 0
+		minDate: 0,
+    changeMonth: true,
+    changeYear: true
 	});
 
   $('#generated-date').datepicker({
-		minDate: 0
+		minDate: 0,
+    changeMonth: true,
+    changeYear: true
 	});
 
   $('#estimated-delivery-date').datepicker({
-    minDate: 0
+    minDate: 0,
+    changeMonth: true,
+    changeYear: true
   });
 
   $('#test-start-date').datepicker({
-    minDate: 0
+    minDate: 0,
+    changeMonth: true,
+    changeYear: true
   });
+
+  $('#date-generated').datepicker({
+    // minDate: 0
+    changeMonth: true,
+    changeYear: true
+  });
+
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#test-duration-from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 2
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#test-duration-to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 2
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+
+
+
 
   $('#service-type').select2({
     // placeholder: 'This is my placeholder',
