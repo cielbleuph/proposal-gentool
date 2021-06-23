@@ -1,12 +1,12 @@
 <?php
-    define('PHP_VER', '5.0');
+    // define('PHP_VER', '5.0');
 
-    // echo PHP_VER;
+    // // echo PHP_VER;
 
-    if( count(get_included_files()) == ((version_compare(PHP_VERSION, PHP_VER, '>='))?1:0) )
-    {
-        exit('Restricted Access');
-    }
+    // if( count(get_included_files()) == ((version_compare(PHP_VERSION, PHP_VER, '>='))?1:0) )
+    // {
+    //     exit('Restricted Access');
+    // }
 
     define('MAINDIR', dirname(__DIR__) . '/');
     define('INC_DIR', MAINDIR . 'inc/');

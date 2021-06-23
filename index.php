@@ -15,24 +15,24 @@
     case 'generate-proposal':
       $currentPage = 'generate-proposal';
       $titlePage = "Generate Proposal";
-      include('views/generate-proposal.php');
+      include(VIEWS_DIR . 'generate-proposal.php');
       break;
 
     case 'generate-sow':
       $currentPage = 'generate-sow';
       $titlePage = "Generate Statement of Works";
-      include('views/generate-sow.php');
+      include(VIEWS_DIR . 'generate-sow.php');
       break;
     
     case 'generate-reports':
       $currentPage = 'generate-reports';
       $titlePage = "Generate Reports";
-      include('views/generate-reports.php');
+      include(VIEWS_DIR . 'generate-reports.php');
       break;
     
     default:
       # code...
-      include('views/home.php'); ?>
+      include(VIEWS_DIR . 'home.php'); ?>
       
       <!-- Graphs -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -69,4 +69,4 @@
       break;
   }
   
-  include('views/inc/footer.php'); 
+  include(VIEWS_DIR . 'inc/footer.php'); 

@@ -1,2 +1,2 @@
 <?php 
-    define('__CHECKACCESS', 1); 
+    // defined('_DEFVAR') or exit('Restricted Access');
