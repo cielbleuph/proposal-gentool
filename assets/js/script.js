@@ -29,6 +29,18 @@ $(document).ready(function(){
   $('#estimated-delivery-date').val('06/23/2021');
   $('#test-start-date').val('06/23/2021');
 
+  $('.critical').val('1');
+  $('.high').val('2');
+  $('.medium').val('3');
+  $('.low').val('4');
+  $('.service-name').val('This is a Test Service Name');
+  $('.version').val('1.0');
+  $('.date-generated').val('06/30/2021');
+  $('.test-duration-from').val('06/30/2021');
+  $('.test-duration-to').val('07/30/2021');
+  $('.overall-security').val('This is something about overall security.');
+
+  
   $('#test-date').datepicker({
 		minDate: 0,
     changeMonth: true,
@@ -310,6 +322,14 @@ $(document).ready(function(){
 
   // ***** REPORTS GENERATOR TOOL ***** 
 
+  $("form#proposal-reports-form").validate();
+      
+    
+  $( ".help-icon" ).tooltip();
+
+
+
+
   $('.entry-btn').on('click', function(e){
     // console.log(e.target.id);
 
@@ -362,17 +382,15 @@ $(document).ready(function(){
 
 
   // calculate total findings
-  $('.findings').on('keyup', function() {
-    var sum = 0;
-    $('.findings').each(function(){
-        sum += Number($(this).val());
-    });
-    $('.total-findings').val(sum);
+  $('.findings').on('change', function() {
+    computeTotalFindings();
   });
+
+  $('.findings').on('keyup', function() {
+    computeTotalFindings();
+  });
+
   
-
-
-
 }); // document
 
 
@@ -380,6 +398,14 @@ $(document).ready(function(){
 
 
 // ***** FUNCTIONS ***** //
+
+function computeTotalFindings() {
+  var sum = 0;
+  $('.findings').each(function(){
+      sum += Number($(this).val());
+  });
+  $('.total-findings').val(sum);
+}
 
 function dateToday(){
   var today = new Date();

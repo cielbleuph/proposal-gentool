@@ -2,14 +2,11 @@
     <h1 class="h2"><?php echo $titlePage; ?></h1>
 </div>
 
-
-
 <div class="card">
     <div class="card-body card-padding palette-Grey-100 bg">
         <form name="reports-generator-form" id="reports-generator-form" class="reports-generator-form">
             <div class="row">
-                
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Information</h2>
@@ -60,9 +57,16 @@
 
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="tool"></i> Key Findings</h2>
+                            <h2 class="c-white"><i data-feather="tool"></i> Key Findings <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-animation="true" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span></a><i data-feather="help-circle"></i></span></h2>
                         </div>
                         <div class="card-body form-padding">
+                            
+                            <div class="collapse form-group" id="keyfindings-help-content">
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="keyfindings-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
@@ -71,7 +75,10 @@
                                         <button class="btn btn-primary entry-btn" id="keyfindings" type="button">Add Entry</button>
                                     </div>
                                 </div>
+                                
                             </div>
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            
                             <div class="form-group">
                                 <ul class="list-group list-group keyfindings-listgroup">
                                     <!-- <li class="list-group-item">Cras justo odio<span class="del-item"><i data-feather="trash-2"></i></span></li>
@@ -86,9 +93,14 @@
                         
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="tool"></i> Short Term Goals</h2>
+                            <h2 class="c-white"><i data-feather="tool"></i> Short Term Goals <a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
+                            <div class="collapse form-group" id="shortterm-help-content">
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="shortterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
@@ -98,22 +110,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
                             <div class="form-group">
-                            <ul class="list-group list-group shortterm-listgroup">
-                                    <!-- <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Morbi leo risus</li>
-                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                    <li class="list-group-item">Vestibulum at eros</li> -->
+                                <ul class="list-group list-group shortterm-listgroup">
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="tool"></i> Medium Term Goals</h2>
+                            <h2 class="c-white"><i data-feather="tool"></i> Medium Term Goals <a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
+                            <div class="collapse form-group" id="mediumterm-help-content">
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="mediumterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
@@ -123,13 +137,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
                             <div class="form-group">
                                 <ul class="list-group list-group mediumterm-listgroup">
-                                    <!-- <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Morbi leo risus</li>
-                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                    <li class="list-group-item">Vestibulum at eros</li> -->
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -138,7 +149,7 @@
 
                 
 
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Findings Breakdown </h2>
@@ -146,45 +157,45 @@
                         <div class="card-body form-padding">
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-critical col-sm-2"></div>
-                                <label for="critical" class="col-sm-4 col-form-label control-label f-700">Critical <span class="required">*</span></label>
-                                <div class="col-sm-6">
+                                <label for="critical" class="col-sm-6 col-form-label control-label f-700">Critical <span class="required">*</span></label>
+                                <div class="col-sm-4">
                                     <input type="number" min="1" max="100" class="form-control findings critical" name="critical" id="critical" aria-label="Critical Findings" aria-describedby="critical" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-high col-sm-2"></div>
-                                <label for="high" class="col-sm-4 col-form-label control-label f-700">High <span class="required">*</span></label>
-                                <div class="col-sm-6">
+                                <label for="high" class="col-sm-6 col-form-label control-label f-700">High <span class="required">*</span></label>
+                                <div class="col-sm-4">
                                     <input type="number" min="1" max="100" class="form-control findings high" name="high" id="high" aria-label="High Findings" aria-describedby="high" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-medium col-sm-2"></div>
-                                <label for="medium" class="col-sm-4 col-form-label control-label f-700">Medium <span class="required">*</span></label>
-                                <div class="col-sm-6">
+                                <label for="medium" class="col-sm-6 col-form-label control-label f-700">Medium <span class="required">*</span></label>
+                                <div class="col-sm-4">
                                     <input type="number" min="1" max="100" class="form-control findings medium" name="medium" id="medium" aria-label="Medium Findings" aria-describedby="medium" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-low col-sm-2"></div>
-                                <label for="low" class="col-sm-4 col-form-label control-label f-700">Low <span class="required">*</span></label>
-                                <div class="col-sm-6">
+                                <label for="low" class="col-sm-6 col-form-label control-label f-700">Low <span class="required">*</span></label>
+                                <div class="col-sm-4">
                                     <input type="number" min="1" max="100" class="form-control findings low" name="low" id="low" aria-label="Low Findings" aria-describedby="low" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-informational col-sm-2"></div>
-                                <label for="informational" class="col-sm-4 col-form-label control-label f-700">Informational <span class="required">*</span></label>
-                                <div class="col-sm-6">
+                                <label for="informational" class="col-sm-6 col-form-label control-label f-700">Informational <span class="required">*</span></label>
+                                <div class="col-sm-4">
                                     <input type="number" min="1" max="100" class="form-control findings informational" name="informational" id="informational" aria-label="Informational Findings" aria-describedby="informational" placeholder="" required>
                                 </div>
                             </div>
                             <hr />
                             <div class="form-group row">
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <label for="total-findings" class="col-form-label control-label f-700">Total Findings</label>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <input disabled type="number" class="form-control total-findings" name="total-findings" id="total-findings" aria-label="Total Findings" aria-describedby="total-findings">
                                 </div>
                             </div>
