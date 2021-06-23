@@ -260,7 +260,31 @@ $(document).ready(function(){
 
   // ***** REPORTS GENERATOR TOOL ***** 
 
-  
+  $('.entry-btn').on('click', function(e){
+    // console.log(e.target.id);
+
+    var targetBtn = e.target.id;
+
+    // console.log(targetBtn);
+    
+    var entryTxtboxInput = $("."+targetBtn+"-input");
+
+    // console.log(entryTxtboxInput.val());
+
+    if (entryTxtboxInput.val().length > 0){
+      $("."+targetBtn+"-listgroup").append('<li class="list-group-item">'+ entryTxtboxInput.val() +'</li>');
+      // console.log(entryTxtboxInput.val());
+    }
+    else{
+      alert('Cannot add empty value.');
+    }
+    entryTxtboxInput.val('');
+
+  });
+
+  $('.list-group-item').on('click', function(){
+    $(this).remove();
+  });
 
 
 

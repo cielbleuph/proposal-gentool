@@ -7,7 +7,7 @@
         <form name="reports-generator-form" id="reports-generator-form" class="reports-generator-form">
             <div class="row">
                 
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Information</h2>
@@ -66,13 +66,17 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control keyfindings-input" name="keyfindings-input" id="keyfindings-input" aria-label="Add New Key Finding Entry" aria-describedby="keyfindings-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary" id="keyfindings-add-btn" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="keyfindings" type="button">Add Entry</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <ul class="list-group keyfindings-listgroup">
+                                <ul class="list-group list-group-flush keyfindings-listgroup">
                                     <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
                                 </ul>
                             </div>
                         </div>
@@ -84,16 +88,16 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-group">
-                                <label for="date-generated" class="control-label f-700">Date Generated <span class="required">*</span></label>
+                                <label for="shortterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="text" class="form-control shortterm-input" name="shortterm-input" id="shortterm-input" aria-label="Add New Short Term Goal Entry" aria-describedby="shortterm-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="shortterm" type="button">Add Entry</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush shortterm-listgroup">
                                     <li class="list-group-item">Cras justo odio</li>
                                     <li class="list-group-item">Dapibus ac facilisis in</li>
                                     <li class="list-group-item">Morbi leo risus</li>
@@ -109,16 +113,16 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-group">
-                                <label for="date-generated" class="control-label f-700">Date Generated <span class="required">*</span></label>
+                                <label for="mediumterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="text" class="form-control mediumterm-input" name="mediumterm-input" id="mediumterm-input" aria-label="Add New Medium Term Goal Entry" aria-describedby="mediumterm-input" placeholder="">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">Add Entry</button>
+                                        <button class="btn btn-primary entry-btn" id="mediumterm" type="button">Add Entry</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <ul class="list-group list-group-flush">
+                                <ul class="list-group list-group-flush mediumterm-listgroup">
                                     <li class="list-group-item">Cras justo odio</li>
                                     <li class="list-group-item">Dapibus ac facilisis in</li>
                                     <li class="list-group-item">Morbi leo risus</li>
@@ -132,7 +136,7 @@
 
                 
 
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Findings Breakdown </h2>
@@ -142,35 +146,35 @@
                                 <div class="traffic-color traffic-color-critical col-sm-2"></div>
                                 <label for="critical" class="col-sm-4 col-form-label control-label f-700">Critical <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control critical" name="critical-findings" id="critical-findings" aria-label="Critical Findings" aria-describedby="critical-findings" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-high col-sm-2"></div>
-                                <label for="critical" class="col-sm-4 col-form-label control-label f-700">High <span class="required">*</span></label>
+                                <label for="high" class="col-sm-4 col-form-label control-label f-700">High <span class="required">*</span></label>
                                 <div class="col-sm-6">
                                     <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-medium col-sm-2"></div>
-                                <label for="critical" class="col-sm-4 col-form-label control-label f-700">Medium <span class="required">*</span></label>
+                                <label for="medium" class="col-sm-4 col-form-label control-label f-700">Medium <span class="required">*</span></label>
                                 <div class="col-sm-6">
                                     <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-low col-sm-2"></div>
-                                <label for="critical" class="col-sm-4 col-form-label control-label f-700">Low <span class="required">*</span></label>
+                                <label for="low" class="col-sm-4 col-form-label control-label f-700">Low <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control low" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-informational col-sm-2"></div>
-                                <label for="critical" class="col-sm-4 col-form-label control-label f-700">Informational <span class="required">*</span></label>
+                                <label for="informational" class="col-sm-4 col-form-label control-label f-700">Informational <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control date-generated" name="informational" id="informational" aria-label="Informational" aria-describedby="date-generated" placeholder="" required>
                                 </div>
                             </div>
                             <hr />
