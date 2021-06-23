@@ -1,6 +1,7 @@
 <?php 
   $currentPage = 'dashboard';
-  include('views/inc/header.php'); 
+  include __DIR__ . "/inc/prepend.php";
+  include VIEWS_DIR . "inc/header.php"; 
 
   
   if ( isset($_GET) && isset($_GET['p']) && $_GET['p'] != ''){

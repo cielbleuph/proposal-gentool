@@ -3,7 +3,13 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
-    require_once __DIR__ . '/vendor/autoload.php';
+    include "prepend.php";
+    include HELPER_DIR . 'helper.php';
+
+    require_once VENDOR_DIR . 'autoload.php';
+
+    $dateHelper = new Helper();
+    $dateFormat = 'd F Y';
 
     if ( isset($_POST) ) {
 
@@ -220,7 +226,7 @@
 
     $footerText = 'Company Number: 09923929 | Registered Address: One Canada Square, Canary Wharf London, E14 5AB | Phone Number: 0203 951 0299 | Email: info@redteampartners.co.uk | Website: www.redteampartners.co.uk';
 
-    include_once('views/inc/styles.php');
+    include_once(VIEWS_DIR . 'inc/styles.php');
 
     //############################### COVER PAGE ###############################
 
@@ -256,7 +262,7 @@
     $cell2 = $table2->addCell(6000);
     $cell2->addText(''); // spacer
     $cell2->addImage(
-        'assets/images/rtp-logo.png',
+        ASSETS_IMG_DIR . 'rtp-logo.png',
         array(
             'width'         => 200,
             // 'height'        => 52,
@@ -350,7 +356,7 @@
     $introPage = $phpWord->addSection();
     $introPage->getStyle()->setPageNumberingStart(1);
     $introPageHeader = $introPage->addHeader();
-    $introPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $introPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $introPage->addText($companyName, $defaultFontStyle);
     $introPage->addTextBreak();
@@ -368,7 +374,7 @@
 
     $TOCPage = $phpWord->addSection();
     $TOCPagePageHeader = $TOCPage->addHeader();
-    $TOCPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $TOCPagePageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     // Add text elements
     $TOCPage->addTitle('Table of Contents', 0);
@@ -394,7 +400,7 @@
     
     // HEADER PART
     $proposalDetailsPageHeader = $proposalDetailsPage->addHeader();
-    $proposalDetailsPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $proposalDetailsPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     // BODY PART
     $typeAssessmentTable = $proposalDetailsPage->addTable(
@@ -509,7 +515,7 @@
     // HEADER PART
     $projectSummaryPage = $phpWord->addSection();
     $projectSummaryPageHeader = $projectSummaryPage->addHeader();
-    $projectSummaryPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $projectSummaryPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $projectSummaryPage->addTitle('Project Summary', 1); // TOC Bookmark 
     $projectSummaryPage->addTextBreak();
@@ -538,7 +544,7 @@
 
     $ourApproachPage = $phpWord->addSection();
     $ourApproachPageHeader = $ourApproachPage->addHeader();
-    $ourApproachPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $ourApproachPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $ourApproachPage->addTitle('Our Approach', 1); // TOC Bookmark 
     $ourApproachPage->addTextBreak();
@@ -586,7 +592,7 @@
 
     $whatMakesUsDifferentPage = $phpWord->addSection();
     $whatMakesUsDifferentPageHeader = $whatMakesUsDifferentPage->addHeader();
-    $whatMakesUsDifferentPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $whatMakesUsDifferentPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $whatMakesUsDifferentPage->addTitle('What Makes Us Different?', 1); // TOC Bookmark 
     $whatMakesUsDifferentPage->addTextBreak();
@@ -660,7 +666,7 @@
 
     $statementOfWorksPage = $phpWord->addSection();
     $statementOfWorksPageHeader = $statementOfWorksPage->addHeader();
-    $statementOfWorksPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $statementOfWorksPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $statementOfWorksPage->addTitle('Statement of Works', 1); // TOC Bookmark 
     
@@ -713,7 +719,7 @@
     $statementOfWorksPage->addPageBreak();
     $statementOfWorksPage->addText('Red Team Partners will use the following stages to undertake the requested service(s).', array('bold'=>true));
 
-    $statementOfWorksPage->addImage('assets/images/RTP-stages.jpg', 
+    $statementOfWorksPage->addImage(ASSETS_IMG_DIR . '/RTP-stages.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 2,
@@ -802,7 +808,7 @@
 
     // $typeOfServicePage = $phpWord->addSection();
     // $typeOfServicePageHeader = $typeOfServicePage->addHeader();
-    // $typeOfServicePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    // $typeOfServicePageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     // $typeOfServicePage->addTitle('Type of Service(s):', 1); // TOC Bookmark 
     // // $typeOfServicePage->addTextBreak();
@@ -823,7 +829,7 @@
 
     $costingPage = $phpWord->addSection();
     $costingPageHeader = $costingPage->addHeader();
-    $costingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $costingPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $costingPage->addTitle('Costing', 1); // TOC Bookmark 
     $costingPage->addTextBreak();
@@ -889,7 +895,7 @@
 
     $methodologiesPage = $phpWord->addSection();
     $methodologiesPageHeader = $methodologiesPage->addHeader();
-    $methodologiesPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $methodologiesPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
@@ -903,122 +909,122 @@
 
         if ($service === 'Web Application Penetration Test') {
             // $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
-            include('inc/methodologies/web-application-pentest.php');
+            include(INC_METHODOLOGIES . 'web-application-pentest.php');
         }
 
         if ($service === 'Red Team Assessment') {
             // $methodologiesPage->addText('--- insert Red Team Assessment content ---');
-            include('inc/methodologies/red-team-assessment.php');
+            include(INC_METHODOLOGIES . 'red-team-assessment.php');
         }
 
         if ($service === 'Vulnerability Assessment') {
             // $methodologiesPage->addText('--- insert Vulnerability Assessment content ---');
-            include('inc/methodologies/vulnerability-assessment.php');
+            include(INC_METHODOLOGIES . 'vulnerability-assessment.php');
         }
 
         if ($service === 'Infrastructure Penetration Test') {
             // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
-            include('inc/methodologies/infrastructure-testing.php');
+            include(INC_METHODOLOGIES . 'infrastructure-testing.php');
         }
 
         if ($service === 'API Penetration Test') {
             // $methodologiesPage->addText('--- insert API Testing content ---');
-            include('inc/methodologies/api-testing.php');
+            include(INC_METHODOLOGIES . 'api-testing.php');
         }
 
         if ($service === 'Mobile Application Penetration Test') {
             // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
-            include('inc/methodologies/mobile-ios-android-testing.php');
+            include(INC_METHODOLOGIES . 'mobile-ios-android-testing.php');
         }
 
         if ($service === 'Phishing Simulation') {
             // $methodologiesPage->addText('--- insert Phishing Simulation content ---');
-            include('inc/methodologies/phishing-simulation.php');
+            include(INC_METHODOLOGIES . 'phishing-simulation.php');
         }
 
         if ($service === 'Documentation Review') {
             // $methodologiesPage->addText('--- insert Documentation Review content ---');
-            include('inc/methodologies/documentation-review.php');
+            include(INC_METHODOLOGIES . 'documentation-review.php');
         }
 
         if ($service === 'Firewall Configuration Assessment') {
             // $methodologiesPage->addText('--- insert Firewall Assessment content ---');
-            include('inc/methodologies/firewall-assessment.php');
+            include(INC_METHODOLOGIES . 'firewall-assessment.php');
         }
 
         if ($service === 'Cloud Based Configuration Review') {
             // $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
-            include('inc/methodologies/cloud-based-config-review.php');
+            include(INC_METHODOLOGIES . 'cloud-based-config-review.php');
         }
 
         if ($service === 'Wireless Network Assessment') {
             // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
-            include('inc/methodologies/wireless-network-audit.php');
+            include(INC_METHODOLOGIES . 'wireless-network-audit.php');
         }
 
         if ($service === 'VPN Assessment') {
             // $methodologiesPage->addText('--- insert VPN Assessment content ---');
-            include('inc/methodologies/vpn-assessment.php');
+            include(INC_METHODOLOGIES . 'vpn-assessment.php');
         }
 
         if ($service === 'Build Review') {
             // $methodologiesPage->addText('--- insert Build Review content ---');
-            include('inc/methodologies/build-review.php');
+            include(INC_METHODOLOGIES . 'build-review.php');
         }
 
         // if ($service === 'PCI DSS Compliance Audit') {
         //     // $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
-        //     include('inc/methodologies/pci-dss-compliance-audit.php');
+        //     include(INC_METHODOLOGIES . 'pci-dss-compliance-audit.php');
         // }
 
         if ($service === 'Secure Code Review') {
             // $methodologiesPage->addText('--- insert Secure Code Review content ---');
-            include('inc/methodologies/secure-code-review.php');
+            include(INC_METHODOLOGIES . 'secure-code-review.php');
         }
 
         // if ($service === 'Cyber Security Training') {
         //     // $methodologiesPage->addText('--- insert Cyber Security Training content ---');
-        //     include('inc/methodologies/cyber-security-training.php');
+        //     include(INC_METHODOLOGIES . 'cyber-security-training.php');
         // }
 
         // if ($service === 'Forensics and Investigations') {
         //     // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
-        //     include('inc/methodologies/forensic-investigations.php');
+        //     include(INC_METHODOLOGIES . 'forensic-investigations.php');
         // }
 
         // if ($service === 'Dark Web Cyber Intelligence Monitoring') {
         //     // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
-        //     include('inc/methodologies/dark-web-cyber-intelligence-monitoring.php');
+        //     include(INC_METHODOLOGIES . 'dark-web-cyber-intelligence-monitoring.php');
         // }
 
         // if ($service === 'Performance Stress Testing/Load Testing') {
         //     // $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
-        //     include('inc/methodologies/performance-stress-testing.php');
+        //     include(INC_METHODOLOGIES . 'performance-stress-testing.php');
         // }
 
         // if ($service === 'IoT Penetration Testing') {
         //     // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-        //     include('inc/methodologies/iot-pentest.php');
+        //     include(INC_METHODOLOGIES . 'iot-pentest.php');
         // }
 
         if ($service === 'Cyber Threat Intelligence') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-            include('inc/methodologies/cyber-threat-intelligence.php');
+            include(INC_METHODOLOGIES . 'cyber-threat-intelligence.php');
         }
         
         if ($service === 'O365 Penetration Test') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-            include('inc/methodologies/O365-penetration-testing.php');
+            include(INC_METHODOLOGIES . 'O365-penetration-testing.php');
         }
 
         if ($service === 'Azure Cloud Review') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-            include('inc/methodologies/azure-review.php');
+            include(INC_METHODOLOGIES . 'azure-review.php');
         }
 
         if ($service === 'AWS Cloud Assessment') {
             // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
-            include('inc/methodologies/cyber-assessment-aws.php');
+            include(INC_METHODOLOGIES . 'cyber-assessment-aws.php');
         }
     }
 
@@ -1032,7 +1038,7 @@
 
     $reportingPage = $phpWord->addSection();
     $reportingPageHeader = $reportingPage->addHeader();
-    $reportingPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $reportingPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $reportingPage->addTitle('Reporting', 1); // TOC Bookmark 
     $reportingPage->addTextBreak();
@@ -1097,7 +1103,7 @@
     $managementSummaryTextRun->addText(' - a high level summary of results including recommendations and overall security posture. This summary is simple and easy to understand it included with critical issues found and it allows non-technical executives to understand the issues.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
-        'assets/images/management-summary.jpg',
+        ASSETS_IMG_DIR . 'management-summary.jpg',
         array(
             'width'         => 300,
             'marginTop'     => 2,
@@ -1114,7 +1120,7 @@
     $technicalFindingsTextRun->addText(' – breakdown of vulnerabilities found during testing phase including exploitation probability, technical fix and risk mitigation advice. Prioritised risks are provided to deal with most actionable suggestions.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
-        'assets/images/technical-findings.jpg',
+        ASSETS_IMG_DIR . 'technical-findings.jpg',
         array(
             'width'         => 300,
             'marginTop'     => 2,
@@ -1137,7 +1143,7 @@
     $recommendationsRemediationsTextRun->addText(' – Based on the discovered findings, our cyber experts provide an in-depth remediation summary based on industry best practice. Samples and screenshots will also be provided within your report.', null, $defaultParagraphStyle );
 
     $reportingPage->addImage(
-        'assets/images/summary-of-findings.jpg',
+        ASSETS_IMG_DIR . 'summary-of-findings.jpg',
         array(
             'width'         => 300,
             'marginTop'     => 2,
@@ -1160,7 +1166,7 @@
 
     $deliveryStepsPage = $phpWord->addSection();
     $deliveryStepsPageHeader = $deliveryStepsPage->addHeader();
-    $deliveryStepsPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $deliveryStepsPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $deliveryStepsPage->addTitle('Delivery Steps', 1); // TOC Bookmark 
     // $deliveryStepsPage->addTextBreak();
@@ -1185,7 +1191,7 @@
 
     $timescalesPage = $phpWord->addSection();
     $timescalesPageHeader = $timescalesPage->addHeader();
-    $timescalesPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $timescalesPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $timescalesPage->addTitle('Timescales', 1); // TOC Bookmark 
     // $timescalesPage->addTextBreak();
@@ -1209,7 +1215,7 @@
 
     $whyChooseRTPPage = $phpWord->addSection();
     $whyChooseRTPPageHeader = $whyChooseRTPPage->addHeader();
-    $whyChooseRTPPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $whyChooseRTPPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $whyChooseRTPPage->addTitle('Why Choose Red Team Partners', 1); // TOC Bookmark 
     // $whyChooseRTPPage->addTextBreak();
@@ -1250,7 +1256,7 @@
 
     $testersQualificationsPage = $phpWord->addSection();
     $testersQualificationsPageHeader = $testersQualificationsPage->addHeader();
-    $testersQualificationsPageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $testersQualificationsPageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $testersQualificationsPage->addTitle('Our Testers Qualifications', 1); // TOC Bookmark 
     // $testersQualificationsPage->addTextBreak();
@@ -1264,7 +1270,7 @@
     );
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/oscp-logo.png',
+        ASSETS_IMG_DIR . 'logos/oscp-logo.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1278,7 +1284,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/CCT-logo.png',
+        ASSETS_IMG_DIR . 'logos/CCT-logo.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1293,7 +1299,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/GIAC-Web-Application-Penetration-Tester.png',
+        ASSETS_IMG_DIR . 'logos/GIAC-Web-Application-Penetration-Tester.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1308,7 +1314,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/GIAC-Advisory-Board-Certification.png',
+        ASSETS_IMG_DIR . 'logos/GIAC-Advisory-Board-Certification.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1323,7 +1329,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/GIAC-Exploit-Researcher-Advances-Penetration-Tester.png',
+        ASSETS_IMG_DIR . 'logos/GIAC-Exploit-Researcher-Advances-Penetration-Tester.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1337,7 +1343,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Certified-Information-Systems.png',
+        ASSETS_IMG_DIR . 'logos/Certified-Information-Systems.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1351,7 +1357,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/CREST.jpg',
+        ASSETS_IMG_DIR . 'logos/CREST.jpg',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1365,7 +1371,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/ECIH.png',
+        ASSETS_IMG_DIR . 'logos/ECIH.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1379,7 +1385,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Certified-Information-Security-Manager.png',
+        ASSETS_IMG_DIR . 'logos/Certified-Information-Security-Manager.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1394,7 +1400,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Google-Associate-Cloud-Engineer.png',
+        ASSETS_IMG_DIR . 'logos/Google-Associate-Cloud-Engineer.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1409,7 +1415,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/CCNA.jpg',
+        ASSETS_IMG_DIR . 'logos/CCNA.jpg',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1424,7 +1430,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Nexpose-Advanced-Certified-Administrator.png',
+        ASSETS_IMG_DIR . 'logos/Nexpose-Advanced-Certified-Administrator.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1439,7 +1445,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/International-Software-Testing-Qualifications-Board.png',
+        ASSETS_IMG_DIR . 'logos/International-Software-Testing-Qualifications-Board.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1454,7 +1460,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Certified-Cloud-Security-Professional.jpg',
+        ASSETS_IMG_DIR . 'logos/Certified-Cloud-Security-Professional.jpg',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1469,7 +1475,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/CompTIA-Pentest.png',
+        ASSETS_IMG_DIR . 'logos/CompTIA-Pentest.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1484,7 +1490,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Certified-Penetration-Testing-Consultant.png',
+        ASSETS_IMG_DIR . 'logos/Certified-Penetration-Testing-Consultant.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1500,7 +1506,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/OSCP-OSWE.png',
+        ASSETS_IMG_DIR . 'logos/OSCP-OSWE.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1515,7 +1521,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Certified-Ethical-Hacker.png',
+        ASSETS_IMG_DIR . 'logos/Certified-Ethical-Hacker.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1531,7 +1537,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/Fortinet-Network-Security-Associate.png',
+        ASSETS_IMG_DIR . 'logos/Fortinet-Network-Security-Associate.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1546,7 +1552,7 @@
 
     $testersQualificationsTable->addRow();
     $testersQualificationsTable->addCell(100)->addImage(
-        'assets/images/logos/AZ-900-MS-Azure-Fundamentals.png',
+        ASSETS_IMG_DIR . 'logos/AZ-900-MS-Azure-Fundamentals.png',
         array(
             'width'         => 100,
             // 'height'        => 52,
@@ -1571,7 +1577,7 @@
 
     $servicesPage = $phpWord->addSection();
     $servicesPagePageHeader = $servicesPage->addHeader();
-    $servicesPagePageHeader->addImage( 'assets/images/rtp-logo.png', $headerImageStyle);
+    $servicesPagePageHeader->addImage( ASSETS_IMG_DIR . 'rtp-logo.png', $headerImageStyle);
 
     $servicesPage->addText('SERVICES', array('size'=>26, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
     $servicesPage->addText('Red Team Partners Offers the Following Services:', array('size'=>16, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));

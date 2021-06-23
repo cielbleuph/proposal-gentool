@@ -7,7 +7,7 @@
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
     $projectDescriptionPage->addText( htmlspecialchars("Office 365 services are accessible from the internet (by default, use Conditional Access to restrict access) which makes them attractive to attackers. Attackers leverage several attack methods against Azure AD & Office 365.") );
 
-    $projectDescriptionPage->addImage('assets/images/sow/o365-penetration-test-01.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/o365-penetration-test-01.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,

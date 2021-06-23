@@ -3,11 +3,15 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
-    include('inc/helper/helper.php');
+    include "prepend.php";
+    include HELPER_DIR . 'helper.php';
 
-    require_once __DIR__ . '/vendor/autoload.php';
+    require_once VENDOR_DIR . 'autoload.php';
 
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
-    // var_dump($_POST);
+
+    var_dump($_POST);
+
+    

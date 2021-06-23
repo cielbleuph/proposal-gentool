@@ -14,7 +14,7 @@
     $methodologiesPage->addText( htmlspecialchars('Office 365 services are accessible from the internet (by default, use Conditional Access to restrict access) which makes them attractive to attackers. Attackers leverage several attack methods against Azure AD & Office 365.') , null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage('assets/images/methodologies/O365-pentest-01.png', 
+    $methodologiesPage->addImage(ASSETS_IMG_DIR . 'methodologies/O365-pentest-01.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,

@@ -28,7 +28,7 @@
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addImage('assets/images/sow/cloud-assessment-aws-01.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/cloud-assessment-aws-01.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,

@@ -5,40 +5,40 @@ var serviceTypeDataLength = 0;
 $(document).ready(function(){
 
   // ***** TEST DATA - prefilled data for testing ***** //
-  // $('#company-name').val('COMPANY XYZ');
-  // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
-  // $('#client-name').val('JOHN DOE');
-  // $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
-  // $('#client-contact').val('1234567890');
-  // $('#account-manager').val('ALAIN PEDRONIO');
-  // $('#account-manager-contact').val('0987654321');
-  // $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
-  // $('#test-date').val('04/30/2021');
-  // $('#number-of-days').val('10');
+  $('#company-name').val('COMPANY XYZ');
+  $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
+  $('#client-name').val('JOHN DOE');
+  $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
+  $('#client-contact').val('1234567890');
+  $('#account-manager').val('ALAIN PEDRONIO');
+  $('#account-manager-contact').val('0987654321');
+  $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
+  $('#test-date').val('04/30/2021');
+  $('#number-of-days').val('10');
 
-  // $('#delivery-manager-name').val('John Doe');
-  // $('#delivery-manager-email').val('johndoe@testlocal.co');
-  // $('#client-name').val('Jane Doe');
-  // $('#client-company-name').val('Company & ACME');
-  // $('#poc-name').val('Ruben Reyes');
-  // $('#poc-mobile-number').val('1234567890');
-  // $('#poc-email-address').val('rubenpoc@test.local');
-  // $('#tester-name').val('Philip Tester');
-  // $('#tester-email').val('philiptester@local.co');
-  // $('#generated-date').val('06/23/2021');
-  // $('#estimated-delivery-date').val('06/23/2021');
-  // $('#test-start-date').val('06/23/2021');
+  $('#delivery-manager-name').val('John Doe');
+  $('#delivery-manager-email').val('johndoe@testlocal.co');
+  $('#client-name').val('Jane Doe');
+  $('#client-company-name').val('Company & ACME');
+  $('#poc-name').val('Ruben Reyes');
+  $('#poc-mobile-number').val('1234567890');
+  $('#poc-email-address').val('rubenpoc@test.local');
+  $('#tester-name').val('Philip Tester');
+  $('#tester-email').val('philiptester@local.co');
+  $('#generated-date').val('06/23/2021');
+  $('#estimated-delivery-date').val('06/23/2021');
+  $('#test-start-date').val('06/23/2021');
 
-  // $('.critical').val('1');
-  // $('.high').val('2');
-  // $('.medium').val('3');
-  // $('.low').val('4');
-  // $('.service-name').val('This is a Test Service Name');
-  // $('.version').val('1.0');
-  // $('.date-generated').val('06/30/2021');
-  // $('.test-duration-from').val('06/30/2021');
-  // $('.test-duration-to').val('07/30/2021');
-  // $('.overall-security').val('This is something about overall security.');
+  $('.critical').val('1');
+  $('.high').val('2');
+  $('.medium').val('3');
+  $('.low').val('4');
+  $('.service-name').val('This is a Test Service Name');
+  $('.version').val('1.0');
+  $('.date-generated').val('06/30/2021');
+  $('.test-duration-from').val('06/30/2021');
+  $('.test-duration-to').val('07/30/2021');
+  $('.overall-security').val('This is something about overall security.');
 
   
   $('#test-date').datepicker({
@@ -193,7 +193,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: 'process.php',
+        url: 'inc/process.php',
         data: $(form).serialize(),
         xhrFields: {
           responseType: 'blob'
@@ -281,7 +281,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: 'process-sow.php',
+        url: 'inc/process-sow.php',
         data: $(form).serialize(),
         xhrFields: {
           responseType: 'blob'
@@ -348,7 +348,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: 'process-reports.php',
+        url: 'inc/process-reports.php',
         data: $(form).serialize(),
         // xhrFields: {
         //   responseType: 'blob'

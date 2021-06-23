@@ -16,7 +16,7 @@
     $methodologiesPage->addText('Test can be divided into three stages:', null, $defaultParagraphStyle);
 
     $methodologiesPage->addImage(
-        'assets/images/methodologies/discovery-assessment-exploitation-process.png',
+        ASSETS_IMG_DIR . 'methodologies/discovery-assessment-exploitation-process.png',
         array(
             'width'         => 450,
             // 'height'        => 52,
@@ -31,7 +31,7 @@
     $methodologiesPage->addText('Red Team Partners utilises a wide range of tools to scan and discover assets. Usually, a target IP range is provided prior to the commencing of testing, albeit some engagements require Red Team Partners to identify ranges in use. Our consultants use the latest scanning tools and techniques to perform a comprehensive audit of all IP ranges. Some of these include:', null, $defaultParagraphStyle);
 
     $methodologiesPage->addImage(
-        'assets/images/methodologies/infrastructure-pentest-01.png',
+        ASSETS_IMG_DIR . 'methodologies/infrastructure-pentest-01.png',
         array(
             'width'         => 450,
             // 'height'        => 52,
@@ -46,7 +46,7 @@
     $methodologiesPage->addText('Once the discovery phase has ended, Red Team Partners consultants interpret the results and use them to identify possible attack vectors and perform manual attack simulations. Manual assessments focus on:', null, $defaultParagraphStyle);
     
     $methodologiesPage->addImage(
-        'assets/images/methodologies/infrastructure-pentest-02.png',
+        ASSETS_IMG_DIR . 'methodologies/infrastructure-pentest-02.png',
         array(
             'width'         => 450,
             // 'height'        => 52,

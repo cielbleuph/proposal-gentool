@@ -2,9 +2,10 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
-    include('inc/helper/helper.php');
+    include "prepend.php";
+    include HELPER_DIR . 'helper.php';
 
-    require_once __DIR__ . '/vendor/autoload.php';
+    require_once VENDOR_DIR . 'autoload.php';
 
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
@@ -208,7 +209,7 @@
     $paper = new \PhpOffice\PhpWord\Style\Paper();
     $paper->setSize('Letter');
 
-    include_once('inc/sow-services/sow-styles.php');
+    include_once(INC_DIR . 'sow-services/sow-styles.php');
 
     //############################### COVER PAGE ###############################
 
@@ -220,7 +221,7 @@
     ));
 
 
-    $coverPage->addImage('assets/images/sow-cover-image.jpg', 
+    $coverPage->addImage(ASSETS_IMG_DIR . '/sow-cover-image.jpg', 
         array(
             // 'width' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(3),
             // 'height' => \PhpOffice\PhpWord\Shared\Drawing::centimetersToPixels(3),
@@ -293,7 +294,7 @@
     $TOCPageHeader = $TOCPage->addHeader();
    
     // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
-    $TOCPageHeader->addWatermark( 'assets/images/sow-header-image.png', $headerWatermarkStyle );
+    $TOCPageHeader->addWatermark( ASSETS_IMG_DIR . 'sow-header-image.png', $headerWatermarkStyle );
 
     // Add text elements
     $TOCPage->addTitle('TABLE OF CONTENTS', 0);
@@ -320,7 +321,7 @@
     $clientDetailsPageHeader = $clientDetailsPage->addHeader();
    
     // $clientDetailsPageHeader->addImage( 'assets/images/sow-header-image.png', $headerImageStyle);
-    $clientDetailsPageHeader->addWatermark( 'assets/images/sow-header-image.png', $headerWatermarkStyle );
+    $clientDetailsPageHeader->addWatermark( ASSETS_IMG_DIR . 'sow-header-image.png', $headerWatermarkStyle );
     
     $clientDetailsPage->addTitle(htmlentities('CLIENT DETAILS & INFORMATION', 1)); // TOC Bookmark
     

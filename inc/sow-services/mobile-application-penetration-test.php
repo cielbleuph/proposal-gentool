@@ -16,7 +16,7 @@
 
     $projectDescriptionPage->addText(htmlspecialchars("An overview of the mobile security testing methodology is documented below, as in the OWASP TOP 10:"));
 
-    $projectDescriptionPage->addImage('assets/images/sow/mobile-app-pentest-01.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/mobile-app-pentest-01.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,
@@ -43,7 +43,7 @@
 
     $projectDescriptionPage->addText(htmlspecialchars("The diagram that follows outlines the penetration testing methodology to be followed, as part of identifying vulnerabilities and exploits:"));
 
-    $projectDescriptionPage->addImage('assets/images/sow/mobile-app-pentest-02.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/mobile-app-pentest-02.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,

@@ -7,7 +7,7 @@
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
     $projectDescriptionPage->addText( htmlspecialchars("Red Team Partners will conduct a Secure Code Review. This code review is a systematic examination (sometimes referred to as peer review) of computer source code. It is intended to find mistakes overlooked in software development, improving the overall quality of software. Reviews are done in various forms such as pair programming, informal walkthroughs, and formal inspections.") );
 
-    $projectDescriptionPage->addImage('assets/images/sow/secure-code-review-01.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/secure-code-review-01.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,

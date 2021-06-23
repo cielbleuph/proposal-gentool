@@ -15,7 +15,7 @@
 
 
     $methodologiesPage->addImage(
-        'assets/images/methodologies/api-testing-01.png',
+        ASSETS_IMG_DIR . 'methodologies/api-testing-01.png',
         array(
             'width'         => 450,
             // 'height'        => 52,

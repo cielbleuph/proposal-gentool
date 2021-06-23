@@ -31,7 +31,7 @@
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addImage('assets/images/sow/cyber-threat-intelligence-01.jpg', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/cyber-threat-intelligence-01.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 2,
@@ -50,7 +50,7 @@
     
     $projectDescriptionPage->addText( 'Red Team Partner takes the following approach:' );
 
-    $projectDescriptionPage->addImage('assets/images/sow/cyber-threat-intelligence-02.png', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/cyber-threat-intelligence-02.png', 
         array(
             'width'         => 450,
             'marginTop'     => 2,
@@ -67,7 +67,7 @@
     $projectDescriptionPage->addText('Contact CLIENT if there is an immediate issue or incident');
     $projectDescriptionPage->addText('Provide surveillance of corporate and personal information for CLIENT Senior staff');
 
-    $projectDescriptionPage->addImage('assets/images/sow/cyber-threat-intelligence-03.jpg', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/cyber-threat-intelligence-03.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 2,
@@ -132,7 +132,7 @@
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addImage('assets/images/sow/cyber-threat-intelligence-04.jpg', 
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'sow/cyber-threat-intelligence-04.jpg', 
         array(
             'width'         => 450,
             'marginTop'     => 24,

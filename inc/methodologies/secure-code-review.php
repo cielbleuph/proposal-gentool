@@ -15,7 +15,7 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addImage(
-        'assets/images/methodologies/secure-code-review-01.png',
+        ASSETS_IMG_DIR . 'methodologies/secure-code-review-01.png',
         array(
             'width'         => 450,
             // 'height'        => 52,
