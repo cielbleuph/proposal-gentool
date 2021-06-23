@@ -2,6 +2,8 @@
     <h1 class="h2"><?php echo $titlePage; ?></h1>
 </div>
 
+
+
 <div class="card">
     <div class="card-body card-padding palette-Grey-100 bg">
         <form name="reports-generator-form" id="reports-generator-form" class="reports-generator-form">
@@ -71,12 +73,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <ul class="list-group list-group-flush keyfindings-listgroup">
-                                    <!-- <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Morbi leo risus</li>
-                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                    <li class="list-group-item">Vestibulum at eros</li> -->
+                                <ul class="list-group list-group keyfindings-listgroup">
+                                    <!-- <li class="list-group-item">Cras justo odio<span class="del-item"><i data-feather="trash-2"></i></span></li>
+                                    <li class="list-group-item">Dapibus ac facilisis in <span class="del-item"><i data-feather="trash-2"></i></span></li>
+                                    <li class="list-group-item">Morbi leo risus <span class="del-item"><i data-feather="trash-2"></i></span></li>
+                                    <li class="list-group-item">Porta ac consectetur ac <span class="del-item"><i data-feather="trash-2"></i></span></li>
+                                    <li class="list-group-item">Vestibulum at eros <span class="del-item"><i data-feather="trash-2"></i></span></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                            <ul class="list-group list-group-flush shortterm-listgroup">
+                            <ul class="list-group list-group shortterm-listgroup">
                                     <!-- <li class="list-group-item">Cras justo odio</li>
                                     <li class="list-group-item">Dapibus ac facilisis in</li>
                                     <li class="list-group-item">Morbi leo risus</li>
@@ -122,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <ul class="list-group list-group-flush mediumterm-listgroup">
+                                <ul class="list-group list-group mediumterm-listgroup">
                                     <!-- <li class="list-group-item">Cras justo odio</li>
                                     <li class="list-group-item">Dapibus ac facilisis in</li>
                                     <li class="list-group-item">Morbi leo risus</li>
@@ -146,40 +148,43 @@
                                 <div class="traffic-color traffic-color-critical col-sm-2"></div>
                                 <label for="critical" class="col-sm-4 col-form-label control-label f-700">Critical <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control critical" name="critical-findings" id="critical-findings" aria-label="Critical Findings" aria-describedby="critical-findings" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control findings critical" name="critical" id="critical" aria-label="Critical Findings" aria-describedby="critical" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-high col-sm-2"></div>
                                 <label for="high" class="col-sm-4 col-form-label control-label f-700">High <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control findings high" name="high" id="high" aria-label="High Findings" aria-describedby="high" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-medium col-sm-2"></div>
                                 <label for="medium" class="col-sm-4 col-form-label control-label f-700">Medium <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control findings medium" name="medium" id="medium" aria-label="Medium Findings" aria-describedby="medium" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-low col-sm-2"></div>
                                 <label for="low" class="col-sm-4 col-form-label control-label f-700">Low <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control low" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control findings low" name="low" id="low" aria-label="Low Findings" aria-describedby="low" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-informational col-sm-2"></div>
                                 <label for="informational" class="col-sm-4 col-form-label control-label f-700">Informational <span class="required">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="number" min="1" max="100" class="form-control date-generated" name="informational" id="informational" aria-label="Informational" aria-describedby="date-generated" placeholder="" required>
+                                    <input type="number" min="1" max="100" class="form-control findings informational" name="informational" id="informational" aria-label="Informational Findings" aria-describedby="informational" placeholder="" required>
                                 </div>
                             </div>
                             <hr />
                             <div class="form-group row">
-                                <div class="col-sm-6 offset-sm-6">
+                                <div class="col-md-6">
+                                    <label for="total-findings" class="col-form-label control-label f-700">Total Findings</label>
+                                </div>
+                                <div class="col-sm-6">
                                     <input disabled type="number" class="form-control total-findings" name="total-findings" id="total-findings" aria-label="Total Findings" aria-describedby="total-findings">
                                 </div>
                             </div>
@@ -213,4 +218,8 @@
             </div>
         </form>
     </div>
+</div>
+
+<div id="delete-confirm" style="display: none;" title="Delete Entry?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This item will be permanently deleted and cannot be recovered. Are you sure?</p>
 </div>
