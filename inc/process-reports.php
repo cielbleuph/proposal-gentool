@@ -11,7 +11,7 @@
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
-    if ( isset($_POST) && count($_POST) != 0 ) {
+    if ( isset($_POST) && count($_POST) != 0 && $_SERVER["REQUEST_METHOD"] === "POST" ) {
         var_dump($_POST);
     }
     else {
