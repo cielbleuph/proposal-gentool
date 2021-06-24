@@ -11,7 +11,11 @@
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
-
-    var_dump($_POST);
+    if ( isset($_POST) && count($_POST) != 0 ) {
+        var_dump($_POST);
+    }
+    else {
+        exit('Restricted Access');
+    }
 
     

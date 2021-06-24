@@ -10,7 +10,8 @@
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
-    if ( isset($_POST) ) {
+    if ( isset($_POST) && count($_POST) != 0 && $_SERVER["REQUEST_METHOD"] === "POST" ) {
+
         if ( isset($_POST['service-type']) && $_POST['service-type'] != '' ){
             $typeOfService = $_POST['service-type'];
         }
@@ -63,6 +64,10 @@
             $testerEmail = $_POST['tester-email'];
         }
 
+    }
+
+    else{
+        exit('Restricted Access');
     }
 
     // Creating the new document...

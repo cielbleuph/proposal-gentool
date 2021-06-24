@@ -10,7 +10,8 @@
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
-    if ( isset($_POST) ) {
+
+    if ( isset($_POST) && count($_POST) != 0 && $_SERVER["REQUEST_METHOD"] === "POST" ) {
 
         if ( isset($_POST['account-manager']) && $_POST['account-manager'] != '' ){
             $accountManagerName = $_POST['account-manager'];
@@ -73,6 +74,11 @@
         }
 
     }
+
+    else{
+        exit('Restricted Access');
+    }
+    
 
     $serviceDescription = str_replace(",", ", ",implode(",", $typeOfService));
 
