@@ -1,4 +1,9 @@
 <?php
+
+    if (!isset($_POST) || count($_POST) <= 0 || $_SERVER["REQUEST_METHOD"] != "POST" ) {
+        exit('Restricted Access');
+    }
+    
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 

@@ -5,40 +5,40 @@ var serviceTypeDataLength = 0;
 $(document).ready(function(){
 
   // ***** TEST DATA - prefilled data for testing ***** //
-  // $('#company-name').val('COMPANY XYZ');
-  // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
-  // $('#client-name').val('JOHN DOE');
-  // $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
-  // $('#client-contact').val('1234567890');
-  // $('#account-manager').val('ALAIN PEDRONIO');
-  // $('#account-manager-contact').val('0987654321');
-  // $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
-  // $('#test-date').val('04/30/2021');
-  // $('#number-of-days').val('10');
+  $('#company-name').val('COMPANY XYZ');
+  $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
+  $('#client-name').val('JOHN DOE');
+  $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
+  $('#client-contact').val('1234567890');
+  $('#account-manager').val('ALAIN PEDRONIO');
+  $('#account-manager-contact').val('0987654321');
+  $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
+  $('#test-date').val('04/30/2021');
+  $('#number-of-days').val('10');
 
-  // $('#delivery-manager-name').val('John Doe');
-  // $('#delivery-manager-email').val('johndoe@testlocal.co');
-  // $('#client-name').val('Jane Doe');
-  // $('#client-company-name').val('Company & ACME');
-  // $('#poc-name').val('Ruben Reyes');
-  // $('#poc-mobile-number').val('1234567890');
-  // $('#poc-email-address').val('rubenpoc@test.local');
-  // $('#tester-name').val('Philip Tester');
-  // $('#tester-email').val('philiptester@local.co');
-  // $('#generated-date').val('06/23/2021');
-  // $('#estimated-delivery-date').val('06/23/2021');
-  // $('#test-start-date').val('06/23/2021');
+  $('#delivery-manager-name').val('John Doe');
+  $('#delivery-manager-email').val('johndoe@testlocal.co');
+  $('#client-name').val('Jane Doe');
+  $('#client-company-name').val('Company & ACME');
+  $('#poc-name').val('Ruben Reyes');
+  $('#poc-mobile-number').val('1234567890');
+  $('#poc-email-address').val('rubenpoc@test.local');
+  $('#tester-name').val('Philip Tester');
+  $('#tester-email').val('philiptester@local.co');
+  $('#generated-date').val('06/23/2021');
+  $('#estimated-delivery-date').val('06/23/2021');
+  $('#test-start-date').val('06/23/2021');
 
-  // $('.critical').val('1');
-  // $('.high').val('2');
-  // $('.medium').val('3');
-  // $('.low').val('4');
-  // $('.service-name').val('This is a Test Service Name');
-  // $('.version').val('1.0');
-  // $('.date-generated').val('06/30/2021');
-  // $('.test-duration-from').val('06/30/2021');
-  // $('.test-duration-to').val('07/30/2021');
-  // $('.overall-security').val('This is something about overall security.');
+  $('.critical').val('1');
+  $('.high').val('2');
+  $('.medium').val('3');
+  $('.low').val('4');
+  $('.service-name').val('This is a Test Service Name');
+  $('.version').val('1.0');
+  $('.date-generated').val('06/30/2021');
+  $('.test-duration-from').val('06/30/2021');
+  $('.test-duration-to').val('07/30/2021');
+  $('.overall-security').val('This is something about overall security.');
 
   
   $('#test-date').datepicker({
@@ -343,19 +343,21 @@ $(document).ready(function(){
       $('.lds-facebook').css('visibility', 'initial');
       $('button[type="submit"]').prop("disabled", true);
 
-      // var companyName = $('#client-company-name').val();
+      var companyName = $('#company-name').val();
       // var formData = $(this).serialize();
 
       $.ajax({
         type: 'POST',
         url: 'inc/process-reports.php',
         data: $(form).serialize(),
-        // xhrFields: {
-        //   responseType: 'blob'
-        // },
+        xhrFields: {
+          responseType: 'blob'
+        },
         // dataType: "json",
         success: function (data) {
           var a = document.createElement('a');
+
+          // console.log(data);
 
           $('.lds-facebook').css('visibility', 'hidden');
           $('button[type="submit"]').prop("disabled", false);
@@ -394,7 +396,56 @@ $(document).ready(function(){
     
   $( ".help-icon" ).tooltip();
 
+  $('#keyfindings-bulk-btn').on("click", function(){
 
+    var keyfindings_bulk = $("#keyfindings-bulk-upload").val();
+    var keyfindings_arr = keyfindings_bulk.split(";");
+
+    keyfindings_arr.pop();
+
+    $.each(keyfindings_arr, function( key, val ) {
+      addEntryItem('keyfindings', val);
+    });
+
+    $("#keyfindings-bulk-upload").val("");
+    $("#keyfindings-bulk-wrapper").collapse('toggle');
+
+    return false;
+  });
+
+  $('#shortterm-bulk-btn').on("click", function(){
+
+    var shortterm_bulk = $("#shortterm-bulk-upload").val();
+    var shortterm_arr = shortterm_bulk.split(";");
+
+    shortterm_arr.pop();
+
+    $.each(shortterm_arr, function( key, val ) {
+      addEntryItem('shortterm', val);
+    });
+
+    $("#shortterm-bulk-upload").val("");
+    $("#shortterm-bulk-wrapper").collapse('toggle');
+
+    return false;
+  });
+
+  $('#mediumterm-bulk-btn').on("click", function(){
+
+    var mediumterm_bulk = $("#mediumterm-bulk-upload").val();
+    var mediumterm_arr = mediumterm_bulk.split(";");
+
+    mediumterm_arr.pop();
+
+    $.each(mediumterm_arr, function( key, val ) {
+      addEntryItem('mediumterm', val);
+    });
+
+    $("#mediumterm-bulk-upload").val("");
+    $("#mediumterm-bulk-wrapper").collapse('toggle');
+
+    return false;
+  });
 
 
   $('.entry-btn').on('click', function(e){
@@ -404,10 +455,9 @@ $(document).ready(function(){
     var entryTxtboxInput = $("."+targetBtn+"-input");
 
     if (entryTxtboxInput.val().length > 0){
-      $("."+targetBtn+"-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">'+ entryTxtboxInput.val() +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="'+entryTxtboxInput.val()+'" name="'+targetBtn+'-hidden[]"</li>');
-      // console.log(entryTxtboxInput.val());
 
-      // $("."+targetBtn+"-listgroup-wrapper").append('>');
+      addEntryItem( targetBtn, entryTxtboxInput.val() );
+
     }
     else{
       alert('Cannot add empty value.');
@@ -462,6 +512,10 @@ $(document).ready(function(){
 
 
 // ***** FUNCTIONS ***** //
+
+function addEntryItem( target, value ) {
+  $("."+target+"-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">'+ value +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="'+value+'" name="'+target+'-hidden[]"</li>');
+}
 
 function computeTotalFindings() {
   var sum = 0;

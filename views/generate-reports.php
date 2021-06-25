@@ -78,14 +78,33 @@
                                 
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
+                            <br />
+                            
+                            <div class="collapse form-group" id="keyfindings-bulk-wrapper">
+                                <div class="card">
+                                    <div class="card-header"><h2>Key Findings Bulk Upload</h2></div>
+                                    <div class="card-body">
+                                        <div class="alert alert-info" role="alert">
+                                            Make sure that each entry should be separated by a semi-colon.
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control bulk-upload-textarea" id="keyfindings-bulk-upload" rows="10"></textarea>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="align-center btn btn-secondary" id="keyfindings-bulk-btn"><i data-feather="plus"></i> Add Entries</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                             
                             <div class="form-group keyfindings-listgroup-wrapper">
                                 <ul class="list-group list-group keyfindings-listgroup">
-                                    <!-- <li class="list-group-item">Cras justo odio<span class="del-item"><i data-feather="trash-2"></i></span></li>
-                                    <li class="list-group-item">Dapibus ac facilisis in <span class="del-item"><i data-feather="trash-2"></i></span></li>
-                                    <li class="list-group-item">Morbi leo risus <span class="del-item"><i data-feather="trash-2"></i></span></li>
-                                    <li class="list-group-item">Porta ac consectetur ac <span class="del-item"><i data-feather="trash-2"></i></span></li>
-                                    <li class="list-group-item">Vestibulum at eros <span class="del-item"><i data-feather="trash-2"></i></span></li> -->
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -111,6 +130,28 @@
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
+                            <br />
+                            <div class="collapse form-group" id="shortterm-bulk-wrapper">
+                                <div class="card">
+                                    <div class="card-header"><h2>Short Term Goals Bulk Upload</h2></div>
+                                    <div class="card-body">
+                                        <div class="alert alert-info" role="alert">
+                                            Make sure that each entry should be separated by a semi-colon.
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control bulk-upload-textarea" id="shortterm-bulk-upload" rows="10"></textarea>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="align-center btn btn-secondary" id="shortterm-bulk-btn"><i data-feather="plus"></i> Add Entries</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
                             <div class="form-group shortterm-listgroup-wrapper">
                                 <ul class="list-group list-group shortterm-listgroup">
 
@@ -139,6 +180,27 @@
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
+                            <br />
+                            <div class="collapse form-group" id="mediumterm-bulk-wrapper">
+                                <div class="card">
+                                    <div class="card-header"><h2>Medium Term Goals Bulk Upload</h2></div>
+                                    <div class="card-body">
+                                        <div class="alert alert-info" role="alert">
+                                            Make sure that each entry should be separated by a semi-colon.
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control bulk-upload-textarea" id="mediumterm-bulk-upload" rows="10"></textarea>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="align-center btn btn-secondary" id="mediumterm-bulk-btn"><i data-feather="plus"></i> Add Entries</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                             <div class="form-group mediumterm-listgroup-wrapper">
                                 <ul class="list-group list-group mediumterm-listgroup">
                                     

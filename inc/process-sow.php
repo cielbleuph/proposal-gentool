@@ -1,4 +1,8 @@
 <?php
+    if (!isset($_POST) || count($_POST) <= 0 || $_SERVER["REQUEST_METHOD"] != "POST" ) {
+        exit('Restricted Access');
+    }
+
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
@@ -10,6 +14,7 @@
     $dateHelper = new Helper();
     $dateFormat = 'd F Y';
 
+    
     if ( isset($_POST) && count($_POST) != 0 && $_SERVER["REQUEST_METHOD"] === "POST" ) {
 
         if ( isset($_POST['service-type']) && $_POST['service-type'] != '' ){
@@ -67,7 +72,7 @@
     }
 
     else{
-        exit('Restricted Access');
+        exit('Oh noes! There\'s an issue! We apologized for this. Do not worry, we already notified the bug catchers. Check back again later.');
     }
 
     // Creating the new document...

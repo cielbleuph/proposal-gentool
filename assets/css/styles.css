@@ -130,6 +130,7 @@ body {
 
 .form-columnar textarea, textarea{
   resize: none;
+  width: 100%;
 }
 
 .required, .error{
@@ -333,4 +334,17 @@ span.del-item{
 
 button.ui-dialog-titlebar-close{
   display: none;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-center{
+  text-align: center;
+  float: right;
 }
