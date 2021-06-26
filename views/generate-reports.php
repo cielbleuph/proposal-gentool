@@ -134,7 +134,7 @@
                             <br />
                             <div class="collapse form-group" id="shortterm-bulk-wrapper">
                                 <div class="card">
-                                    <div class="card-header"><h2>Short Term Goals Bulk Upload</h2></div>
+                                    <div class="card-header"><h2>Short Term Goal sBulk Upload</h2></div>
                                     <div class="card-body">
                                         <div class="alert alert-info" role="alert">
                                             Make sure that each entry should be separated by a semi-colon.
