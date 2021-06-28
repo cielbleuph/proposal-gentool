@@ -17,4 +17,6 @@
     define('VENDOR_DIR', MAINDIR . 'vendor/');
     define('HELPER_DIR', MAINDIR . 'inc/helper/');
     define('INC_METHODOLOGIES', MAINDIR . 'inc/methodologies/');
+    define('INC_SOW', MAINDIR . 'inc/sow-services/');
+
     

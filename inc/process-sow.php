@@ -423,83 +423,83 @@
 
     switch ($service) {
         case 'API Penetration Test':
-            include('inc/sow-services/api-testing.php');
+            include(INC_SOW . 'api-testing.php');
             break;
         
         case 'Web Application Penetration Test':
-            include('inc/sow-services/app-pentest.php');
+            include(INC_SOW . 'app-pentest.php');
             break;
         
         case 'Build Review Assessment':
-            include('inc/sow-services/build-review.php');
+            include(INC_SOW . 'build-review.php');
             break;
         
         case 'AWS Cloud Assessment':
-            include('inc/sow-services/cloud-assessment-aws.php');
+            include(INC_SOW . 'cloud-assessment-aws.php');
             break;
         
         case 'Cloud Based Configuration Review':
-            include('inc/sow-services/cloud-based-config.php');
+            include(INC_SOW . 'cloud-based-config.php');
             break;        
         
         case 'Cyber Threat Intelligence':
-            include('inc/sow-services/cyber-threat-intelligence.php');
+            include(INC_SOW . 'cyber-threat-intelligence.php');
             break;             
 
         case 'Documentation Review':
-            include('inc/sow-services/document-review.php');
+            include(INC_SOW . 'document-review.php');
             break;    
             
         case 'Firewall Configuration Assessment':
-            include('inc/sow-services/firewall.php');
+            include(INC_SOW . 'firewall.php');
             break;
 
         case 'Infrastructure Penetration Test':
-            include('inc/sow-services/infrastructure-penetration.php');
+            include(INC_SOW . 'infrastructure-penetration.php');
             break;
         
         case 'Phishing Simulation':
-            include('inc/sow-services/phishing-simulation.php');
+            include(INC_SOW . 'phishing-simulation.php');
             break;
         
         case 'Physical Assessment':
-            include('inc/sow-services/physical-assessment.php');
+            include(INC_SOW . 'physical-assessment.php');
             break;
         
         case 'Red Team Assessment':
-            include('inc/sow-services/red-team-assessment.php');
+            include(INC_SOW . 'red-team-assessment.php');
             break;
         
         case 'Virtualisation Configuration Review':
-            include('inc/sow-services/virtualisation-config.php');
+            include(INC_SOW . 'virtualisation-config.php');
             break;        
         
         case 'VPN Assessment':
-            include('inc/sow-services/vpn-assessment.php');
+            include(INC_SOW . 'vpn-assessment.php');
             break;             
 
         case 'Vulnerability Scan':
-            include('inc/sow-services/vulnerability-scan.php');
+            include(INC_SOW . 'vulnerability-scan.php');
             break;    
             
         case 'Wireless Network Assessment':
-            include('inc/sow-services/wireless-network-assessment.php');
+            include(INC_SOW . 'wireless-network-assessment.php');
             break;
         
         case 'Mobile Application Penetration Test':
-            include('inc/sow-services/mobile-application-penetration-test.php');
+            include(INC_SOW . 'mobile-application-penetration-test.php');
             break;
 
         case 'Secure Code Review':
-            include('inc/sow-services/secure-code-review.php');
+            include(INC_SOW . 'secure-code-review.php');
             break;
             
         case 'O365 Penetration Test':
-            include('inc/sow-services/O365-penetration-test.php');
+            include(INC_SOW . 'O365-penetration-test.php');
             break;            
         
         case 'Azure Cloud Review':
-            include('inc/sow-services/azure-cloud-review.php');
+            include(INC_SOW . 'azure-cloud-review.php');
             break;      
         
         default:
