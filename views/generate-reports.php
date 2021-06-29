@@ -104,6 +104,7 @@
                             
                             <div class="form-group keyfindings-listgroup-wrapper">
                                 <ul class="list-group list-group keyfindings-listgroup">
+                                
                                     
                                 </ul>
                             </div>
@@ -222,35 +223,35 @@
                                 <div class="traffic-color traffic-color-critical col-sm-2"></div>
                                 <label for="critical" class="col-sm-5 col-form-label control-label f-700">Critical <span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="number" min="1" max="100" class="form-control findings critical" name="critical" id="critical" aria-label="Critical Findings" aria-describedby="critical" placeholder="" required>
+                                    <input type="number" min="0" max="100" class="form-control findings critical" name="critical" id="critical" aria-label="Critical Findings" aria-describedby="critical" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-high col-sm-2"></div>
                                 <label for="high" class="col-sm-5 col-form-label control-label f-700">High <span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="number" min="1" max="100" class="form-control findings high" name="high" id="high" aria-label="High Findings" aria-describedby="high" placeholder="" required>
+                                    <input type="number" min="0" max="100" class="form-control findings high" name="high" id="high" aria-label="High Findings" aria-describedby="high" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-medium col-sm-2"></div>
                                 <label for="medium" class="col-sm-5 col-form-label control-label f-700">Medium <span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="number" min="1" max="100" class="form-control findings medium" name="medium" id="medium" aria-label="Medium Findings" aria-describedby="medium" placeholder="" required>
+                                    <input type="number" min="0" max="100" class="form-control findings medium" name="medium" id="medium" aria-label="Medium Findings" aria-describedby="medium" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-low col-sm-2"></div>
                                 <label for="low" class="col-sm-5 col-form-label control-label f-700">Low <span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="number" min="1" max="100" class="form-control findings low" name="low" id="low" aria-label="Low Findings" aria-describedby="low" placeholder="" required>
+                                    <input type="number" min="0" max="100" class="form-control findings low" name="low" id="low" aria-label="Low Findings" aria-describedby="low" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="traffic-color traffic-color-informational col-sm-2"></div>
                                 <label for="informational" class="col-sm-5 col-form-label control-label f-700">Informational <span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="number" min="1" max="100" class="form-control findings informational" name="informational" id="informational" aria-label="Informational Findings" aria-describedby="informational" placeholder="" required>
+                                    <input type="number" min="0" max="100" class="form-control findings informational" name="informational" id="informational" aria-label="Informational Findings" aria-describedby="informational" placeholder="">
                                 </div>
                             </div>
                             <hr />

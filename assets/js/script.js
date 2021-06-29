@@ -4,7 +4,7 @@ var serviceTypeDataLength = 0;
 
 $(document).ready(function(){
 
-  // ***** TEST DATA - prefilled data for testing ***** //
+  // // ***** TEST DATA - prefilled data for testing ***** //
   // $('#company-name').val('COMPANY XYZ');
   // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
   // $('#client-name').val('JOHN DOE');
@@ -33,6 +33,7 @@ $(document).ready(function(){
   // $('.high').val('2');
   // $('.medium').val('3');
   // $('.low').val('4');
+  // $('.informational').val('5ninong ');
   // $('.service-name').val('This is a Test Service Name');
   // $('.version').val('1.0');
   // $('.date-generated').val('06/30/2021');
@@ -40,6 +41,22 @@ $(document).ready(function(){
   // $('.test-duration-to').val('07/30/2021');
   // $('.overall-security').val('This is something about overall security.');
 
+  // var ctr=6;
+
+  // for(let i = 1; i < ctr; i++) {
+  //   $(".keyfindings-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">Key Findings 0'+ i +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="Key Findings 0'+ i +'" name="keyfindings-hidden[]"</li>');
+  // }
+
+  // for(let i = 1; i < ctr; i++) {
+  //   $(".shortterm-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">Short Term 0'+ i +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="Short Term 0'+ i +'" name="shortterm-hidden[]"</li>');
+  // }
+
+  // for(let i = 1; i < ctr; i++) {
+  //   $(".mediumterm-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">Medium Term 0'+ i +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="Medium Term 0'+ i +'" name="mediumterm-hidden[]"</li>');
+  // }
+
+
+  // ##### END TESTING PARAMS #####
   
   $('#test-date').datepicker({
 		minDate: 0,
@@ -353,7 +370,7 @@ $(document).ready(function(){
         xhrFields: {
           responseType: 'blob'
         },
-        // dataType: "json",
+        
         success: function (data) {
           var a = document.createElement('a');
 
