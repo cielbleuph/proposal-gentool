@@ -1013,28 +1013,36 @@
         // }
 
         // if ($service === 'IoT Penetration Testing') {
-        //     // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+        //     
         //     include(INC_METHODOLOGIES . 'iot-pentest.php');
         // }
 
         if ($service === 'Cyber Threat Intelligence') {
-            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            
             include(INC_METHODOLOGIES . 'cyber-threat-intelligence.php');
         }
         
         if ($service === 'O365 Penetration Test') {
-            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            
             include(INC_METHODOLOGIES . 'O365-penetration-testing.php');
         }
 
         if ($service === 'Azure Cloud Review') {
-            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            
             include(INC_METHODOLOGIES . 'azure-review.php');
         }
 
         if ($service === 'AWS Cloud Assessment') {
-            // $methodologiesPage->addText('--- insert IoT Penetration Testing content ---');
+            
             include(INC_METHODOLOGIES . 'cyber-assessment-aws.php');
+        }
+
+        if ($service === 'Cyber Essentials Basic' ) {
+            include(INC_METHODOLOGIES . 'cyber-essentials-basic.php');
+        }
+
+        if ($service === 'Cyber Essentials Plus' ) {
+            include(INC_METHODOLOGIES . 'cyber-essentials-plus.php');
         }
     }
 

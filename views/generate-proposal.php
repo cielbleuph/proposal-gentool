@@ -148,6 +148,8 @@
                                             'O365 Penetration Test',
                                             'Azure Cloud Review',
                                             'AWS Cloud Assessment',
+                                            'Cyber Essentials Basic',
+                                            'Cyber Essentials Plus'
                                         );
 
                                         sort($services);
