@@ -99,41 +99,26 @@
     // force update to reflect correct page number in TOC.
     $phpWord->getSettings()->setUpdateFields(true);
     // $phpWord->getSettings()->setOutputEscapingEnabled(true);
-
-    /** Document Settings & Styles **/
     
     //############################### DOCUMENT SETTINGS AND DEFINING STYLES ###############################
 
+    include_once(INC_DIR . 'gen-styles.php');
+
     // GENERAL SETTINGS
-    $phpWord->setDefaultFontName( 'Proxima Nova Rg' );
+    $phpWord->setDefaultFontName( "Proxima Nova Rg" );
     $phpWord->setDefaultFontSize( 14 );
     $phpWord->setDefaultParagraphStyle( array(
        'lineHeight' => 1,
        'align' => 'both'
     ) );
 
-    $phpWord->addNumberingStyle(
-        'hNum',
-        array(
-           'type'   => 'multilevel',
-           'levels' => array(
-                array('pStyle' => 'Heading1', 'format' => 'decimal', 'text' => '%1'),
-                array('pStyle' => 'Heading2', 'format' => 'decimal', 'text' => '%1.%2'),
-                array('pStyle' => 'Heading3', 'format' => 'decimal', 'text' => '%1.%2.%3'),
-           )
-        )
-     );
 
-
-    // adding the necessary font styles
-    // Define styles
-    $TOCFontStyle = array('spaceAfter' => 60, 'size' => 14);
-    $phpWord->addTitleStyle(null, array('name'=>'Proxima Nova Bl', 'size' => 18, 'color' => 'C42543', 'bold' => true ) );
-    $phpWord->addTitleStyle(1, array( 'name'=>'Proxima Nova Bl', 'size' => 18, 'color' => 'C42543', 'bold' => true ) );
-    $phpWord->addTitleStyle(2, array( 'name' => 'Proxima Nova Rg', 'size' => 14, 'color' => 'C42543', 'bold' => true ) );
-    $phpWord->addTitleStyle(3, array('size' => 14, 'italic' => true));
+    $TOCFontStyle = array('spaceAfter' => 10, 'size' => 20, 'name'=>'Arial');
+    $phpWord->addTitleStyle(null, array('name' => 'Times New Roman', 'size' => 18, 'color' => 'C42543', 'bold' => true ) );
+    $phpWord->addTitleStyle(1, array( 'name' => 'Proxima Nova Rg', 'size' => 28, 'color' => 'C42543', 'bold' => true ) );
+    $phpWord->addTitleStyle(2, array( 'name' => 'Arial', 'size' => 20, 'color' => 'C42543', 'bold' => true ) );
+    $phpWord->addTitleStyle(3, array('size' => 16, 'italic' => true));
     // $phpWord->addTitleStyle(4, array('size' => 12));
-
 
     //adding the necessary paragraph styles
     $phpWord->addParagraphStyle('paragraph_default', array('spaceBefore' => 0, 'spaceAfter' => 0));
@@ -238,7 +223,7 @@
     $paper = new \PhpOffice\PhpWord\Style\Paper();
     $paper->setSize('A4');
 
-    include_once(INC_DIR . 'gen-styles.php');
+    
 
 
     ############################### COVER PAGE ###############################
@@ -265,8 +250,8 @@
         )
     );
     
-    $coverPage->addTextBreak(30);
-    $coverPage->addText( htmlspecialchars( $companyName ), array('color'=>$darkRed, 'name'=> $aileronHeavy, 'size'=>60, 'bold'=> true), array('alignment'=>'start'));
+    $coverPage->addTextBreak(20);
+    $coverPage->addText( htmlspecialchars( $companyName ), array('color'=>$darkRed, 'name'=> $proximaNovaBl, 'size'=>48, 'bold'=> true), array('alignment'=>'start'));
     $coverPage->addText( htmlspecialchars( $serviceName ), array('color'=>'000000', 'name'=> $proximaNovaAltLT, 'size'=>20, 'bold'=> true), array( 'alignment' =>'start' ) );
     $coverPage->addText( htmlspecialchars( $dateGenerated ), array('color'=>'333333', 'name'=> $proximaNovaAltLT, 'size'=>14, 'bold'=> true), array( 'alignment' =>'start' ) );
     $coverPage->addText( htmlspecialchars( "V" . $version ), array('color'=>'333333', 'name'=> $proximaNovaAltLT, 'size'=>14, 'bold'=> true), array( 'alignment' =>'start' ) );
@@ -279,8 +264,8 @@
     $TOCPage = $phpWord->addSection(array(
         'pageSizeW' => $paper->getWidth(),
         'pageSizeH' => $paper->getHeight(),
-        'marginLeft' => $converter->inchToTwip(.7),
-        'marginRight' => $converter->inchToTwip(.3)
+        'marginLeft' => $converter->inchToTwip(.6),
+        'marginRight' => $converter->inchToTwip(3.5)
     ));
 
     $TOCPage->addImage(ASSETS_IMG_DIR . '/reports/reports-toc.png', 
@@ -298,17 +283,17 @@
         )
     );
 
-    $TOCPage->addTextBreak(4);
+    $TOCPage->addTextBreak();
     // Add text elements
-    $TOCPage->addTitle('TABLE OF CONTENTS', 0);
+    $TOCPage->addTitle('', 0);
     
     $TOCPage->addTextBreak();
 
-    // Add TOC #1
+    // Add text elements
+    $TOCPage->addTitle('', 0);
+
+    // Add TOC
     $toc = $TOCPage->addTOC($TOCFontStyle);
-    
-    $toc->setMinDepth( 1 );
-    $toc->setMaxDepth( 2 );
 
     $TOCPage->addTextBreak();
 
@@ -339,11 +324,11 @@
 
     $introPage->addText( htmlspecialchars("Red Team Partners services provide a comprehensive review of your organisation's information security. Using industry standard methodologies our consultants have performed a series of assessments designed to discover areas of concern in your business. Conducting a ".$serviceName." is a process of identifying flaws in business which may be exploited by an attacker. During the engagement, any entry that may be exploited is considered a vulnerability, and the severity of each vulnerability is measured using the latest CVSSv3 scoring system. We categorise all our findings so it’s easy for you to identify root causes and work on solving issues at their core."));
 
-    $introPage->addTextBreak();
+    // $introPage->addTextBreak();
 
     $introPage->addText( htmlspecialchars("Vulnerabilities may be caused by anything from incorrect configuration to out-of-date software or the use of weak authentication. As well as identifying technical vulnerabilities, you may need to review your policies and procedures to ensure that working practices are not vulnerable to other forms of attack. For example, we may identify weak password use or lapses in physical security, which may result or assist in a successful attack. By identifying possible attack vectors from the perspective of an attacker and rating the severity of each vulnerability, we are able to report on how intruders would most likely attempt to gain unauthorised access to your systems.") );
 
-    $introPage->addTextBreak();
+    // $introPage->addTextBreak();
 
     $introPage->addText( htmlspecialchars("The purpose of this document is to summarise the findings of the ". $serviceName .".") );
 
@@ -362,37 +347,43 @@
 
     $executiveSummaryPage->addTextBreak();
 
-    $strNumber = "";
+    $strFindingsNumber = "";
+    $strCriticalHighNumber = "";
 
     if ($critical > 0) {
-        $strNumber = "Critical - " . $critical;
+        $strFindingsNumber = "(" . $critical . ") Critical";
+        $strCriticalHighNumber .= "(" . $critical . ") Critical";
     }
 
     if ($high > 0) {
-        $strNumber .= ", ";
-        $strNumber .= "High - " . $high;
+        $strFindingsNumber .= ", ";
+        $strFindingsNumber .= "(" . $high . ") High";
+        $strCriticalHighNumber .= " and ";
+        $strCriticalHighNumber .= "(" . $high . ") High";
     }
 
     if ($medium > 0) {
-        $strNumber .= ", ";
-        $strNumber .= "Medium - " . $medium;
+        $strFindingsNumber .= ", ";
+        $strFindingsNumber .= "(" . $medium . ") Medium";
     }
 
     if ($low > 0) {
-        $strNumber .= ", ";
-        $strNumber .= "Low - " . $low;
+        $strFindingsNumber .= ", ";
+        $strFindingsNumber .= "(" . $low . ") Low";
     }
 
     if ($informational > 0) {
-        $strNumber .= ", ";
-        $strNumber .= "Informational - " . $informational;
+        $strFindingsNumber .= ", ";
+        $strFindingsNumber .= "(" . $informational . ") Informational";
     }
 
-    $executiveSummaryPage->addText( htmlspecialchars("Red Team Partners has performed a ". $serviceName ." for ". $companyName ." against its environment. The assessment was carried out between ". $testDuration .". In performing a detailed ". $serviceName ." against ". $companyName ."'s environment, Red Team Partners identified ". $strNumber ." areas of concern, but overall found ". $overallSecurity .". Throughout this report we provide brief descriptions of each finding and how it could affect your business.") );
+    
 
-    $executiveSummaryPage->addTextBreak();
+    $executiveSummaryPage->addText( htmlspecialchars("Red Team Partners has performed a ". $serviceName ." for ". $companyName ." against its environment. The assessment was carried out between ". $testDuration .". In performing a detailed ". $serviceName ." against ". $companyName ."'s environment, Red Team Partners identified ". $strCriticalHighNumber ." areas of concern, but overall found ". $overallSecurity .". Throughout this report we provide brief descriptions of each finding and how it could affect your business.") );
 
-    $executiveSummaryPage->addText( htmlspecialchars("Overall, Red Team Partners was able to achieve the goals of the (service) and there was a total of (Total number) findings during the assessment. These where categorised into (Critical number) Critical, (High Number) High, (Medium Number) Medium, (Low number) Low. ") );
+    // $executiveSummaryPage->addTextBreak();
+
+    $executiveSummaryPage->addText( htmlspecialchars("Overall, Red Team Partners was able to achieve the goals of the (service) and there was a total of ". $totalFindings ." findings during the assessment. These where categorised into " . $strFindingsNumber . "." ) );
 
     $executiveSummaryPage->addTextBreak();
 
@@ -415,9 +406,11 @@
     $technicalSummaryPage->addTitle( htmlspecialchars("Technical Summary"), 1); // TOC Bookmark
     // $projectScopePage->addLine($lineStyle);
 
+    $technicalSummaryPage->addTextBreak();
+
     $technicalSummaryPage->addText( htmlspecialchars("The most important objective of the assessment was to identify any vulnerabilities or potential issues that could affect the systems in scope, in case of a cyber-attack. The security team has conducted the assessment based on the agreed scope to determine the security posture of your organisation.") );
 
-    $technicalSummaryPage->addTextBreak();
+    // $technicalSummaryPage->addTextBreak();
 
     $technicalSummaryPage->addText( htmlspecialchars("In order to improve the security of the environment ". $companyName ." should apply the fixes mentioned in the main report in order of category. We have provided some suggestions below should be reviewed and fixed according to the risk posed to your business model.") );
 
@@ -441,9 +434,11 @@
 
     $technicalSummaryPage->addText( htmlspecialchars("With the identified vulnerabilities, an attacker can abuse the confidentiality, integrity and availability of the system and its components. The overall security posture of the environment presents impactful risks.") );
 
-    $technicalSummaryPage->addTextBreak();
+    // $technicalSummaryPage->addTextBreak();
 
     $technicalSummaryPage->addText( htmlspecialchars("The security team recommends that you should conduct a session for planning the remediation of the above-mentioned risks, starting with the highest rated vulnerability."));
+
+    $technicalSummaryPage->addTextBreak();
 
     $technicalSummaryPage->addText( htmlspecialchars("For full details on each finding and how to remediate them, your team can refer to the main report. If there are any questions, we can arrange a call with our tester to discuss any part of the report in detail."), array("italic"=>true, "name"=>$aileronLight) );
 
@@ -453,7 +448,7 @@
     $technicalSummaryPageDisclaimer->addText( htmlspecialchars("DISCLAIMERS: "), array("name"=>$proximaNova, "bold"=>true, "color"=>$darkRed) );
     $technicalSummaryPageDisclaimer->addText( htmlspecialchars("The information presented in this document is provided as is and without warranty. Vulnerability assessments are a “point in time” analysis and as such it is possible that something in the environment could have changed since the tests reflected in this report were run. Also, it is possible that new vulnerabilities may have been discovered since the tests were run. For this reason, this report should be considered a guide, not a 100% representation of the risk threatening your systems, networks, and applications") );
 
-    $technicalSummaryPage->addPageBreak();
+    // $technicalSummaryPage->addPageBreak();
 
 
     ############################### END TECHNICAL SUMMARY PAGE ###############################
@@ -471,8 +466,6 @@
     $rtpRecommendedNextStepPage->addTextBreak();
 
     $rtpRecommendedNextStepPage->addText("Alongside addressing the risks identified, RTP also suggests the following:");
-
-    $rtpRecommendedNextStepPage->addTextBreak();
 
     $rtpRecommendedNextStepPage->addListItem( htmlspecialchars("Quarterly Vulnerability Scan and a minimum of an annual Penetration Test."), 0 );
 
@@ -505,6 +498,10 @@
 
     $appendixPage->addText( htmlspecialchars("To make remediation more organized, you can use the following checklist: "));
 
+    $appendixPage->addTextBreak(2);
+
+    $appendixPage->addText( htmlspecialchars(" *** INSERT TABLE AUDIT CHECKLIST HERE *** ") );
+
     ############################### END APPENDIX - AUDIT CHECKLIST PAGE ###############################
 
 
@@ -512,8 +509,6 @@
 
     // var_dump($keyFindings);
     // exit();
-
-
 
     $file = 'temp.docx';
     header("Content-Description: File Transfer");
@@ -525,3 +520,22 @@
     ob_clean();
     $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
     $xmlWriter->save("php://output");
+
+    
+    // -------------------  
+
+    $now = new DateTime();
+    $now->setTimezone(new DateTimeZone('Europe/London'));    // Another way
+    $now->getTimestamp();           // Unix Timestamp -- Since PHP 5.3
+    $dtString = $now->format('YmdHis');    // MySQL datetime format
+
+    // $dtString = $now;
+    $filename = "";
+
+    // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+    // $objWriter->save('temp/helloWorld-'.$dtString.'.docx');
+
+    // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+    // $objWriter->save('temp/helloWorld2-'. $dtString .'.docx');
+
+

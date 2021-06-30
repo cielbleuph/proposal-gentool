@@ -5,6 +5,8 @@
     $lightRed = 'F5CBD3';
 
     $proximaNovaAltLT = 'Proxima Nova Alt Lt';
+    $proximaNova = "Proxima Nova";
+    $proximaNovaBl = "Proxima Nova Bl";
     $aileronHeavy = 'Aileron Heavy';
     $aileronLight = 'Aileron Light';
 

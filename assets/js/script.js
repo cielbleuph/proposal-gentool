@@ -4,7 +4,7 @@ var serviceTypeDataLength = 0;
 
 $(document).ready(function(){
 
-  // // ***** TEST DATA - prefilled data for testing ***** //
+  // ***** TEST DATA - prefilled data for testing ***** //
   // $('#company-name').val('COMPANY XYZ');
   // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
   // $('#client-name').val('JOHN DOE');
