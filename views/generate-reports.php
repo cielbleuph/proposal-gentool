@@ -68,7 +68,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="keyfindings-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
+                                <label for="keyfindings-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control keyfindings-input" id="keyfindings-input" aria-label="Add New Key Finding Entry" aria-describedby="keyfindings-input" placeholder="">
                                     <div class="input-group-append">
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="shortterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
+                                <label for="shortterm-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control shortterm-input" id="shortterm-input" aria-label="Add New Short Term Goal Entry" aria-describedby="shortterm-input" placeholder="">
                                     <div class="input-group-append">
@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="mediumterm-input" class="control-label f-700">Add New Entry <span class="required">*</span></label>
+                                <label for="mediumterm-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control mediumterm-input" id="mediumterm-input" aria-label="Add New Medium Term Goal Entry" aria-describedby="mediumterm-input" placeholder="">
                                     <div class="input-group-append">

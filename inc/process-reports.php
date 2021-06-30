@@ -13,7 +13,7 @@
     require_once VENDOR_DIR . 'autoload.php';
 
     $dateHelper = new Helper();
-    $dateFormat = 'd F Y';
+    $dateFormat = 'F j, Y';
 
     
     if ( isset($_POST) && count($_POST) != 0 && $_SERVER["REQUEST_METHOD"] === "POST" ) {
@@ -39,7 +39,7 @@
           && isset( $_POST['test-duration-to'] ) && $_POST['test-duration-to'] != ""  ) {
             $testDurationFrom = $_POST["test-duration-from"];
             $testDurationTo = $_POST["test-duration-to"];
-            $testDuration = $testDurationFrom . " - " . $testDurationTo;
+            $testDuration = $dateHelper->convertDateToStringFormat( $testDurationFrom, $dateFormat ) . " - " . $dateHelper->convertDateToStringFormat( $testDurationTo, $dateFormat );
         }
         
         if ( isset( $_POST['overall-security'] ) && $_POST['overall-security'] != "" ) {
@@ -90,7 +90,7 @@
         exit('Oh noes! There\'s an issue! We apologized for this. Do not worry, we already notified the bug catchers. Check back again later.');
     }
 
-    // php word
+    // FIRST DOCUMENT - SUMMARY OVERVIEW
 
     // Creating the new document...
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -383,7 +383,7 @@
 
     // $executiveSummaryPage->addTextBreak();
 
-    $executiveSummaryPage->addText( htmlspecialchars("Overall, Red Team Partners was able to achieve the goals of the (service) and there was a total of ". $totalFindings ." findings during the assessment. These where categorised into " . $strFindingsNumber . "." ) );
+    $executiveSummaryPage->addText( htmlspecialchars("Overall, Red Team Partners was able to achieve the goals of the ". $serviceName ." and there was a total of ". $totalFindings ." findings during the assessment. These were categorised into " . $strFindingsNumber . "." ) );
 
     $executiveSummaryPage->addTextBreak();
 
@@ -412,22 +412,28 @@
 
     // $technicalSummaryPage->addTextBreak();
 
-    $technicalSummaryPage->addText( htmlspecialchars("In order to improve the security of the environment ". $companyName ." should apply the fixes mentioned in the main report in order of category. We have provided some suggestions below should be reviewed and fixed according to the risk posed to your business model.") );
+    $technicalSummaryPage->addText( htmlspecialchars("In order to improve the security of the environment, ". $companyName ." should apply the fixes mentioned in the main report in order of category. We have provided some suggestions below that should be reviewed and fixed according to the risk posed to your business model.") );
 
-    $technicalSummaryPage->addTextBreak();
+    if ( sizeof($shortTermGoals) > 0 ) {
 
-    $technicalSummaryPage->addText( htmlspecialchars("Our suggestions for the short-term goals are:") );
+        $technicalSummaryPage->addTextBreak();
 
-    foreach ($shortTermGoals as $shortTermGoal) {
-        $technicalSummaryPage->addListItem( htmlspecialchars( $shortTermGoal ), 0 );
-    }
+        $technicalSummaryPage->addText( htmlspecialchars("Our suggestions for the short-term goals are:") );
 
-    $technicalSummaryPage->addTextBreak();
+        foreach ($shortTermGoals as $shortTermGoal) {
+            $technicalSummaryPage->addListItem( htmlspecialchars( $shortTermGoal ), 0 );
+        }
+    }   
 
-    $technicalSummaryPage->addText( htmlspecialchars("Medium-Term Goals:") );
+    if ( sizeof($mediumTermGoals) > 0 ) {
 
-    foreach ($mediumTermGoals as $mediumTermGoal) {
-        $technicalSummaryPage->addListItem( htmlspecialchars( $mediumTermGoal ), 0 );
+        $technicalSummaryPage->addTextBreak();
+
+        $technicalSummaryPage->addText( htmlspecialchars("Medium-Term Goals:") );
+
+        foreach ($mediumTermGoals as $mediumTermGoal) {
+            $technicalSummaryPage->addListItem( htmlspecialchars( $mediumTermGoal ), 0 );
+        }
     }
 
     $technicalSummaryPage->addTextBreak();
@@ -446,7 +452,7 @@
 
     $technicalSummaryPageDisclaimer = $technicalSummaryPage->addTextRun();
     $technicalSummaryPageDisclaimer->addText( htmlspecialchars("DISCLAIMERS: "), array("name"=>$proximaNova, "bold"=>true, "color"=>$darkRed) );
-    $technicalSummaryPageDisclaimer->addText( htmlspecialchars("The information presented in this document is provided as is and without warranty. Vulnerability assessments are a “point in time” analysis and as such it is possible that something in the environment could have changed since the tests reflected in this report were run. Also, it is possible that new vulnerabilities may have been discovered since the tests were run. For this reason, this report should be considered a guide, not a 100% representation of the risk threatening your systems, networks, and applications") );
+    $technicalSummaryPageDisclaimer->addText( htmlspecialchars("The information presented in this document is provided as is and without warranty. Vulnerability assessments are a “point in time” analysis and as such it is possible that something in the environment could have changed since the tests reflected in this report were run. Also, it is possible that new vulnerabilities may have been discovered since the tests were run. For this reason, this report should be considered a guide, not a 100% representation of the risk threatening your systems, networks, and applications.") );
 
     // $technicalSummaryPage->addPageBreak();
 
@@ -539,3 +545,8 @@
     // $objWriter->save('temp/helloWorld2-'. $dtString .'.docx');
 
 
+    // SECOND DOCUMENT - AUDIT CHECKLIST
+
+
+
+    
