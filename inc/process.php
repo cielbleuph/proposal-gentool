@@ -1599,27 +1599,44 @@
 
     $servicesPage->addText('SERVICES', array('size'=>26, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
     $servicesPage->addText('Red Team Partners Offers the Following Services:', array('size'=>16, 'bold'=>true, 'color'=>'D4173D'), array('alignment'=>'center'));
-    // $servicesPage->addTextBreak();
+    $servicesPage->addTextBreak();
+    $servicesPage->addText('Cyber Essentials Basic', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cyber Essentials Plus', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Web Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Red Team Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Infrastructure Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Vulnerability Assessment', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Infrastructure Testing (Internal and External)', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('API Testing', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Mobile Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Phishing Simulation', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('API Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Dark Web Cyber Threat Intelligence', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cyber Forensics and Investigations', $servicesFontStyle, $servicesParagraphStyle);   
+    $servicesPage->addText('Red Team Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('O365 Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cloud Assessment /Review (AWS)', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cloud Assessment /Review (AZURE)', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Mobile Application Testing (iOS/Android)', $servicesFontStyle, $servicesParagraphStyle);
     $servicesPage->addText('Documentation Review', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Firewall Assessment', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Cloud Based Configuration Review', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Wireless Network Audit', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('VPN Assessment', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Build Review', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('PCI DSS Compliance Audit', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Secure Code Review', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Cyber Security Training (Engineers and Awareness/Management)', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Forensics and Investigations', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Dark Web Cyber Intelligence Monitoring', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('Performance Stress Testing/Load Testing', $servicesFontStyle, $servicesParagraphStyle);
-    $servicesPage->addText('IoT Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    $servicesPage->addText('Cyber Awareness Training', $servicesFontStyle, $servicesParagraphStyle);
+
+    
+    
+    
+    // $servicesPage->addText('Mobile Application Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Phishing Simulation', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Documentation Review', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Firewall Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Cloud Based Configuration Review', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Wireless Network Audit', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('VPN Assessment', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Build Review', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('PCI DSS Compliance Audit', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Secure Code Review', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('Cyber Security Training (Engineers and Awareness/Management)', $servicesFontStyle, $servicesParagraphStyle);
+    
+    
+    // $servicesPage->addText('Performance Stress Testing/Load Testing', $servicesFontStyle, $servicesParagraphStyle);
+    // $servicesPage->addText('IoT Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
+
+
+
     
 
     // Web Application Penetration Testing
