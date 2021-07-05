@@ -32,7 +32,7 @@
         }
 
         if ( isset( $_POST['date-generated'] ) && $_POST['date-generated'] != "" ) {
-            $dateGenerated = $_POST["date-generated"];
+            $dateGenerated = $dateHelper->convertDateToStringFormat($_POST["date-generated"], $dateFormat);
         }
 
         if ( isset( $_POST['test-duration-from'] ) && $_POST['test-duration-from'] != "" 
@@ -254,7 +254,7 @@
     $coverPage->addText( htmlspecialchars( $companyName ), array('color'=>$darkRed, 'name'=> $proximaNovaBl, 'size'=>48, 'bold'=> true), array('alignment'=>'start'));
     $coverPage->addText( htmlspecialchars( $serviceName ), array('color'=>'000000', 'name'=> $proximaNovaAltLT, 'size'=>20, 'bold'=> true), array( 'alignment' =>'start' ) );
     $coverPage->addText( htmlspecialchars( $dateGenerated ), array('color'=>'333333', 'name'=> $proximaNovaAltLT, 'size'=>14, 'bold'=> true), array( 'alignment' =>'start' ) );
-    $coverPage->addText( htmlspecialchars( "V" . $version ), array('color'=>'333333', 'name'=> $proximaNovaAltLT, 'size'=>14, 'bold'=> true), array( 'alignment' =>'start' ) );
+    $coverPage->addText( htmlspecialchars( "Version " . $version ), array('color'=>'333333', 'name'=> $proximaNovaAltLT, 'size'=>14, 'bold'=> true), array( 'alignment' =>'start' ) );
 
     ############################### END COVER PAGE ###############################
 
@@ -350,34 +350,74 @@
     $strFindingsNumber = "";
     $strCriticalHighNumber = "";
 
+
+    $findings_arr = array();
+
+
     if ($critical > 0) {
-        $strFindingsNumber = "(" . $critical . ") Critical";
-        $strCriticalHighNumber .= "(" . $critical . ") Critical";
+    //     $strFindingsNumber = "(" . $critical . ") Critical";
+    //     $strCriticalHighNumber .= "(" . $critical . ") Critical";
+        $findings_arr["Critical"] = $critical;
     }
 
     if ($high > 0) {
-        $strFindingsNumber .= ", ";
-        $strFindingsNumber .= "(" . $high . ") High";
-        $strCriticalHighNumber .= " and ";
-        $strCriticalHighNumber .= "(" . $high . ") High";
+    //     $strFindingsNumber .= ", ";
+    //     $strFindingsNumber .= "(" . $high . ") High";
+    //     $strCriticalHighNumber .= " and ";
+    //     $strCriticalHighNumber .= "(" . $high . ") High";
+        $findings_arr["High"] = $high;
     }
 
     if ($medium > 0) {
-        $strFindingsNumber .= ", ";
-        $strFindingsNumber .= "(" . $medium . ") Medium";
+    //     $strFindingsNumber .= ", ";
+    //     $strFindingsNumber .= "(" . $medium . ") Medium";
+        $findings_arr["Medium"] = $medium;
     }
 
     if ($low > 0) {
-        $strFindingsNumber .= ", ";
-        $strFindingsNumber .= "(" . $low . ") Low";
+    //     $strFindingsNumber .= ", ";
+    //     $strFindingsNumber .= "(" . $low . ") Low";
+        $findings_arr["Low"]= $low;
     }
 
     if ($informational > 0) {
-        $strFindingsNumber .= ", ";
-        $strFindingsNumber .= "(" . $informational . ") Informational";
+    //     $strFindingsNumber .= ", ";
+    //     $strFindingsNumber .= "(" . $informational . ") Informational";
+        $findings_arr["Informational"] = $informational;
     }
 
+    $ctr = 0;
     
+    foreach($findings_arr as $findings => $val) {
+        $strFindingsNumber .= "(" . $val . ") " .ucfirst($findings);
+        $ctr++;
+        if ($ctr != sizeof($findings_arr)) {
+            $strFindingsNumber .= ", ";
+        }
+    }
+
+    // foreach($find)
+
+    if ( $findings_arr["Critical"] == 0 || $findings_arr["High"] == 0) {
+        if ($findings_arr["Critical"] > 0) {
+            $strCriticalHighNumber = "(" . $findings_arr["Critical"] . ") Critical";
+        }
+
+        elseif($findings_arr["High"] > 0) {
+            $strCriticalHighNumber = "(" . $findings_arr["High"] . ") High";
+        }
+        else{
+            $strCriticalHighNumber = "no";
+        }
+
+        
+    }else{
+        $strCriticalHighNumber .= "(" . $findings_arr["Critical"] . ") Critical and (" . $findings_arr["High"] . ") High" ;
+    }
+
+    // for($i = 0; $i < sizeof($findings_arr; $i++) ){
+    //     $strFindingsNumber .= ucfirst($key)
+    // }
 
     $executiveSummaryPage->addText( htmlspecialchars("Red Team Partners has performed a ". $serviceName ." for ". $companyName ." against its environment. The assessment was carried out between ". $testDuration .". In performing a detailed ". $serviceName ." against ". $companyName ."'s environment, Red Team Partners identified ". $strCriticalHighNumber ." areas of concern, but overall found ". $overallSecurity .". Throughout this report we provide brief descriptions of each finding and how it could affect your business.") );
 

@@ -1630,8 +1630,6 @@
     // $servicesPage->addText('PCI DSS Compliance Audit', $servicesFontStyle, $servicesParagraphStyle);
     // $servicesPage->addText('Secure Code Review', $servicesFontStyle, $servicesParagraphStyle);
     // $servicesPage->addText('Cyber Security Training (Engineers and Awareness/Management)', $servicesFontStyle, $servicesParagraphStyle);
-    
-    
     // $servicesPage->addText('Performance Stress Testing/Load Testing', $servicesFontStyle, $servicesParagraphStyle);
     // $servicesPage->addText('IoT Penetration Testing', $servicesFontStyle, $servicesParagraphStyle);
 
