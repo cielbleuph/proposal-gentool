@@ -7,7 +7,7 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
-    include "prepend.php";
+    include dirname(dirname(__FILE__) ) . "\prepend.php";
     include HELPER_DIR . 'helper.php';
 
     require_once VENDOR_DIR . 'autoload.php';
@@ -139,6 +139,13 @@
         'width' => 5000,
         'alignment' => 'center',
         'borderSize'=>0
+    );
+
+    $auditTableStyle = array(
+        "unit" => "pct",
+        "width" => 5000,
+        "alignment" => "center",
+        "borderSize" => 0
     );
     
     $defaultFontStyle = array(
@@ -546,7 +553,19 @@
 
     $appendixPage->addTextBreak(2);
 
-    $appendixPage->addText( htmlspecialchars(" *** INSERT TABLE AUDIT CHECKLIST HERE *** ") );
+    // $appendixPage->addText( htmlspecialchars(" *** INSERT TABLE AUDIT CHECKLIST HERE *** ") );
+
+    $appendixPageTable = $appendixPage->addTable($defaultTableStyle);
+
+    $appendixPageTable->addRow();
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("REF"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("Issue"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("Location and Affected End Point"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("Risk"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("Remediation"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343') )->addText( htmlspecialchars("Date Completed"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+
+    
 
     ############################### END APPENDIX - AUDIT CHECKLIST PAGE ###############################
 

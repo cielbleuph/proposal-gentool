@@ -7,6 +7,7 @@
     $proximaNovaAltLT = 'Proxima Nova Alt Lt';
     $proximaNova = "Proxima Nova";
     $proximaNovaBl = "Proxima Nova Bl";
+    $proximaNovaRg = "Proxima Nova Rg";
     $aileronHeavy = 'Aileron Heavy';
     $aileronLight = 'Aileron Light';
 

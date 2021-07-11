@@ -272,15 +272,15 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="summary-overview-check" name="summary-overview-check" class="summary-overview-check" checked>
+                                <input class="form-check-input" type="checkbox" id="summary-overview-check" name="summary-overview-check" class="summary-overview-check output-group">
                                 <label class="form-check-label" for="summary-overview-check">Summary Overview</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="audit-checklist-check" name="audit-checklist-check" class="audit-checklist-check" checked>
+                                <input class="form-check-input" type="checkbox" id="audit-checklist-check" name="audit-checklist-check" class="audit-checklist-check output-group">
                                 <label class="form-check-label" for="audit-checklist-check">Audit Checklist</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="board-report-check" name="board-report-check" class="board-report-check" checked>
+                                <input class="form-check-input" type="checkbox" id="board-report-check" name="board-report-check" class="board-report-check output-group">
                                 <label class="form-check-label" for="board-report-check">Board Report</label>
                             </div>
                         </div>
