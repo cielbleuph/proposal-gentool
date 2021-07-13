@@ -219,10 +219,10 @@
 
     $auditTableStyle = array(
         "unit" => "pct",
-        "width" => 120*50,
+        "width" => 110*50,
         "alignment" => "center",
         "borderSize" => 0,
-        "indentLeft" => $converter->InchToTwip(-52)
+        "indentLeft" => $converter->InchToTwip(-52),
     );
 
     $coverCreatedCellStyle = array('bgColor'=>'494849');
@@ -297,21 +297,53 @@
     $introPage->addTextBreak();
 
     $appendixPageTable->addRow(null, array( 'tblHeader' => true, 'cantSplit' => false ) );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("REF"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Issue"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Location and Affected End Point"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Risk"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Remediation"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Date Completed"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("REF"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Issue"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Location and Affected End Point"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Risk"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Remediation"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'434343', "valign"=>"center") )->addText( htmlspecialchars("Date Completed"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true), array("alignment"=>"center") );
 
 
     $appendixPageTable->addRow(null, array( 'tblHeader' => false, 'cantSplit' => false ) );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
-    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"left") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars("Critical"), array("size"=>11, "color"=>"7030A0", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+
+    $appendixPageTable->addRow(null, array( 'tblHeader' => false, 'cantSplit' => false ) );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars("High"), array("size"=>11, "color"=>"FF0000", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+
+    $appendixPageTable->addRow(null, array( 'tblHeader' => false, 'cantSplit' => false ) );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars("Medium"), array("size"=>11, "color"=>"ED7D31", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+
+    $appendixPageTable->addRow(null, array( 'tblHeader' => false, 'cantSplit' => false ) );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars("Low"), array("size"=>11, "color"=>"00B0F0", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+
+    $appendixPageTable->addRow(null, array( 'tblHeader' => false, 'cantSplit' => false ) );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) , array('bgColor'=>'7F7F7F') )->addText( htmlspecialchars("#.#.#"), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars("Informational"), array("size"=>11, "color"=>"00B050", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
+    $appendixPageTable->addCell( $converter->pixelToTwip(300) )->addText( htmlspecialchars(""), array("size"=>11, "color"=>"FFFFFF", "bold"=>true, "alignment"=>"center"), array("alignment"=>"center") );
 
 
     ############################### END AUDIT PAGE TABLE ###############################
