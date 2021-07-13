@@ -410,93 +410,93 @@ $(document).ready(function(){
   
       }
 
-      if ( $( "#audit-checklist-check" ).prop( "checked" ) ) {
-        $.ajax({
-          type: 'POST',
-          url: 'inc/reports/audit-checklist.php',
-          data: $(form).serialize(),
-          xhrFields: {
-            responseType: 'blob'
-          },
+      // if ( $( "#audit-checklist-check" ).prop( "checked" ) ) {
+      //   $.ajax({
+      //     type: 'POST',
+      //     url: 'inc/reports/audit-checklist.php',
+      //     data: $(form).serialize(),
+      //     xhrFields: {
+      //       responseType: 'blob'
+      //     },
           
-          success: function (data) {
-            var a = document.createElement('a');
+      //     success: function (data) {
+      //       var a = document.createElement('a');
   
-            // console.log(data);
+      //       // console.log(data);
   
-            $('.lds-facebook').css('visibility', 'hidden');
-            $('button[type="submit"]').prop("disabled", false);
+      //       $('.lds-facebook').css('visibility', 'hidden');
+      //       $('button[type="submit"]').prop("disabled", false);
   
-            if(typeof data != 'string'){
-              var binaryData = [];
-              binaryData.push(data);
-              var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
-              a.href = url;
-              // console.log(a);
-              a.download = companyName + '_AuditChecklist_' + dateToday() +'.docx';
-              document.body.append(a);
-              a.click();
-              a.remove();
-              window.URL.revokeObjectURL(url);
-            }
-            else if(typeof data === 'string'){
-              console.log(data)
-            }
+      //       if(typeof data != 'string'){
+      //         var binaryData = [];
+      //         binaryData.push(data);
+      //         var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+      //         a.href = url;
+      //         // console.log(a);
+      //         a.download = companyName + '_AuditChecklist_' + dateToday() +'.docx';
+      //         document.body.append(a);
+      //         a.click();
+      //         a.remove();
+      //         window.URL.revokeObjectURL(url);
+      //       }
+      //       else if(typeof data === 'string'){
+      //         console.log(data)
+      //       }
             
-            else{
-              console.log('AJAX return data error.');
-            }
+      //       else{
+      //         console.log('AJAX return data error.');
+      //       }
             
-          },
-          error: function( xhr, textStatus, errorThrown ) {
+      //     },
+      //     error: function( xhr, textStatus, errorThrown ) {
   
-          }
-        });
-      }
+      //     }
+      //   });
+      // }
 
-      if ( $( "#board-report-check" ).prop( "checked" ) ) {
-        $.ajax({
-          type: 'POST',
-          url: 'inc/reports/board-report.php',
-          data: $(form).serialize(),
-          xhrFields: {
-            responseType: 'blob'
-          },
+      // if ( $( "#board-report-check" ).prop( "checked" ) ) {
+      //   $.ajax({
+      //     type: 'POST',
+      //     url: 'inc/reports/board-report.php',
+      //     data: $(form).serialize(),
+      //     xhrFields: {
+      //       responseType: 'blob'
+      //     },
           
-          success: function (data) {
-            var a = document.createElement('a');
+      //     success: function (data) {
+      //       var a = document.createElement('a');
   
-            // console.log(data);
+      //       // console.log(data);
   
-            $('.lds-facebook').css('visibility', 'hidden');
-            $('button[type="submit"]').prop("disabled", false);
+      //       $('.lds-facebook').css('visibility', 'hidden');
+      //       $('button[type="submit"]').prop("disabled", false);
   
-            if(typeof data != 'string'){
-              var binaryData = [];
-              binaryData.push(data);
-              var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
-              a.href = url;
-              // console.log(a);
-              a.download = companyName + '_BoardReport_' + dateToday() +'.docx';
-              document.body.append(a);
-              a.click();
-              a.remove();
-              window.URL.revokeObjectURL(url);
-            }
-            else if(typeof data === 'string'){
-              console.log(data)
-            }
+      //       if(typeof data != 'string'){
+      //         var binaryData = [];
+      //         binaryData.push(data);
+      //         var url = window.URL.createObjectURL(new Blob(binaryData, {type: "application/docx"}))
+      //         a.href = url;
+      //         // console.log(a);
+      //         a.download = companyName + '_BoardReport_' + dateToday() +'.docx';
+      //         document.body.append(a);
+      //         a.click();
+      //         a.remove();
+      //         window.URL.revokeObjectURL(url);
+      //       }
+      //       else if(typeof data === 'string'){
+      //         console.log(data)
+      //       }
             
-            else{
-              console.log('AJAX return data error.');
-            }
+      //       else{
+      //         console.log('AJAX return data error.');
+      //       }
             
-          },
-          error: function( xhr, textStatus, errorThrown ) {
+      //     },
+      //     error: function( xhr, textStatus, errorThrown ) {
   
-          }
-        });
-      }
+      //     }
+      //   });
+      // }
 
       return false;
 
