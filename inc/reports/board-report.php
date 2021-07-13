@@ -7,7 +7,7 @@
     use PhpOffice\PhpWord\PhpWord;
     use PhpOffice\PhpWord\Shared\Converter;
 
-    include dirname(dirname(__FILE__) ) . "\prepend.php";
+    include dirname(dirname(__FILE__) ) . "/prepend.php";
     include HELPER_DIR . 'helper.php';
 
     require_once VENDOR_DIR . 'autoload.php';
