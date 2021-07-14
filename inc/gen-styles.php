@@ -3,6 +3,7 @@
     $paletteRed = 'D31439';
     $darkRed = 'C42543';
     $lightRed = 'F5CBD3';
+    $redOne = 'C62749';
 
     $proximaNovaAltLT = 'Proxima Nova Alt Lt';
     $proximaNova = "Proxima Nova";
@@ -42,13 +43,18 @@
         'spaceAfter' => 0
     );
 
-    $phpWord->addParagraphStyle(
-        'multipleTab',
-        array(
-            'tabs' => array(
-                new \PhpOffice\PhpWord\Style\Tab('left', 1550),
-                new \PhpOffice\PhpWord\Style\Tab('center', 3200),
-                new \PhpOffice\PhpWord\Style\Tab('right', 5300),
+    try {
+        $phpWord->addParagraphStyle(
+            'multipleTab',
+            array(
+                'tabs' => array(
+                    new \PhpOffice\PhpWord\Style\Tab('left', 1550),
+                    new \PhpOffice\PhpWord\Style\Tab('center', 3200),
+                    new \PhpOffice\PhpWord\Style\Tab('right', 5300),
+                )
             )
-        )
-    );
+        );
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+    
