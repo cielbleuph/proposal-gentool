@@ -4,6 +4,7 @@
     $darkRed = 'C42543';
     $lightRed = 'F5CBD3';
     $redOne = 'C62749';
+    $blackDefault = '000000';
 
     $proximaNovaAltLT = 'Proxima Nova Alt Lt';
     $proximaNova = "Proxima Nova";

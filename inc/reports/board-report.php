@@ -3,12 +3,22 @@
     use PhpOffice\PhpPresentation\PhpPresentation;
     use PhpOffice\PhpPresentation\DocumentLayout;
     use PhpOffice\PhpPresentation\IOFactory;
-    use PhpOffice\PhpPresentation\Style\Color;
-    use PhpOffice\PhpPresentation\Style\Alignment;
+    
+    use PhpOffice\PhpPresentation\Shape;
     use PhpOffice\PhpPresentation\Shape\Placeholder;
     use PhpOffice\PhpPresentation\Shape\RichText;
-    use PhpOffice\PhpPresentation\Style\Fill;
+    use PhpOffice\PhpPresentation\Shape\RichText\Paragraph;
     use PhpOffice\PhpPresentation\Shape\Drawing;
+    
+    use PhpOffice\PhpPresentation\Style\Border;
+    use PhpOffice\PhpPresentation\Style\Fill;
+    use PhpOffice\PhpPresentation\Style\Bullet;
+    use PhpOffice\PhpPresentation\Style\Color;
+    use PhpOffice\PhpPresentation\Style\Alignment;
+    use PhpOffice\PhpPresentation\Style\Color as StyleColor;
+    
+    use PhpOffice\PhpPresentation\Slide\Background\Image;
+    
 
 
     include dirname(dirname(__FILE__) ) . "/prepend.php";
@@ -88,6 +98,9 @@
         if ( isset( $_POST['total-findings'] ) && $_POST['total-findings'] != "" ) {
             $totalFindings = $_POST["total-findings"];
         }
+
+        $totalVulnerabilities = intval($critical) + intval($high) + intval($medium) + intval($low);
+        
     }
     else{
         exit('Oh noes! There\'s an issue! We apologized for this. Do not worry, we already notified the bug catchers. Check back again later.');
@@ -100,304 +113,55 @@
     //     ->setCX(1280, DocumentLayout::UNIT_PIXEL)
     //     ->setCY(700, DocumentLayout::UNIT_PIXEL);
     $objPHPPresentation->getLayout()->setDocumentLayout(DocumentLayout::LAYOUT_SCREEN_16X9);
+
+
+
+    $bgImageCover = new Image();
+    $bgImageCover->setPath(ASSETS_IMG_DIR . '/board-report-bg-01.jpg');
     
+    $bgImage02 = new Image();
+    $bgImage02->setPath(ASSETS_IMG_DIR . '/board-report-bg-02.jpg');
 
-    // Create slide
-    $currentSlide = $objPHPPresentation->getActiveSlide();
-
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-    $shape = new Drawing\File();
-    $shape->setName('RTP Cover Page')
-        ->setDescription('PHPPresentation logo')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-bg-1.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $currentSlide->addShape($shape);
-
-
-    // Create a shape (text)
-    $shape = $currentSlide->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(100)
-        ->setOffsetX(70)
-        ->setOffsetY(60);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( $companyName ));
-    $textRun->getFont()->setBold(true)
-                    ->setSize(44)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( 'FFFFFF' )
-          
-    );
+    $bgImage03 = new Image();
+    $bgImage03->setPath(ASSETS_IMG_DIR . '/board-report-bg-03.jpg');
     
-    $shape = $currentSlide->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(70)
-        ->setOffsetY(125);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( $serviceName ));
-    $textRun->getFont()->setSize(20)
-                    ->setName( $proximaNovaAltLT )
-                    ->setColor( new Color( $darkRed ) 
-    );
+    $bgImageDefault = new Image();
+    $bgImageDefault->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg');
 
-    $shape = $currentSlide->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(70)
-        ->setOffsetY(160);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( $version ));
-    $textRun->getFont()->setSize(20)
-                    ->setName( $proximaNovaAltLT )
-                    ->setColor( new Color( $redOne ) 
-    );
+    // ########## SLIDE 1 ###########
+
+    include('slides/slide01.php');
     
     
     // ########## SLIDE 2 ###########
 
-    $slideTwo = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Executive Summary')
-        ->setDescription('Executive Summary')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideTwo->addShape($shape);
-
-    $shape = $slideTwo->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "EXECUTIVE SUMMARY" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );
-
-    $shape = $slideTwo->createRichTextShape()
-        ->setWidth(480)
-        ->setOffsetX(30)
-        ->setOffsetY(120);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "Red Team Partners has conducted a (Service) for (Company) on their cyber environment on (Date)" ));
-    $textRun->getFont()->setSize(16)
-                    ->setName( $proximaNovaAltLT )
-                    ->setColor( new Color( '000000' ) 
-    );
-
+    include('slides/slide02.php');
 
     // ########## SLIDE 3 ###########
 
-    $slideThree = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Application Test Scope')
-        ->setDescription('Application Test Scope')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideThree->addShape($shape);
-
-    $shape = $slideThree->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "APPLICATION TEST SCOPE" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );
-
+    include('slides/slide03.php');
 
     // ########## SLIDE 4 ###########
 
-    $slideFour = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Service Summary')
-        ->setDescription('Service Summary')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideFour->addShape($shape);
-
-    $shape = $slideFour->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( $serviceName . " SUMMARY" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );
-
+    include('slides/slide04.php');
 
     // ########## SLIDE 5 ###########
     
-    $slideFive = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Key Findings')
-        ->setDescription('Key Findings')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideFive->addShape($shape);
-
-    $shape = $slideFive->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "KEY FINDINGS" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );    
+    include('slides/slide05.php');
     
     // ########## SLIDE 6 ###########
     
-    $slideSix = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Recommendations')
-        ->setDescription('Recommendations')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideSix->addShape($shape);
-
-    $shape = $slideSix->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "RECOMMENDATIONS" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );        
+    include('slides/slide06.php');
     
     // ########## SLIDE 7 ###########
 
     
-    $slideSeven = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Next Steps')
-        ->setDescription('Next Steps')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideSeven->addShape($shape);
-
-    $shape = $slideSeven->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "NEXT STEPS" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );     
+    include('slides/slide07.php');
     
     // ########## SLIDE 8 ###########  
     
-    
-    $slideSeven = $objPHPPresentation->createSlide();
-    
-    $oFill = new Fill();
-    $oFill->setFillType(Fill::FILL_SOLID)
-        ->setStartColor(new Color(Color::COLOR_DARKRED));
-
-    $shape = new Drawing\File();
-    $shape->setName('Appendix Audit Checklist')
-        ->setDescription('Appendix Audit Checklist')
-        ->setPath(ASSETS_IMG_DIR . '/board-report-default-bg.jpg')
-        ->setHeight(540)
-        ->setOffsetX(0)
-        ->setOffsetY(0)
-        ->setFill($oFill);
-    $slideSeven->addShape($shape);
-
-    $shape = $slideSeven->createRichTextShape()
-        ->setWidth(600)
-        ->setHeight(50)
-        ->setOffsetX(30)
-        ->setOffsetY(40);
-    $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
-    $textRun = $shape->createTextRun(htmlspecialchars( "APPENDIX - AUDIT CHECKLIST" ));
-    $textRun->getFont()->setSize(28)
-            ->setBold(true)
-                    ->setName( $proximaNovaBl )
-                    ->setColor( new Color( $redOne ) 
-    );   
-
-    // ########## SLIDE 9 ###########    
-
-
-
-
-
+    include('slides/slide08.php');
+     
 
     $file = 'sample.pptx';
     header("Content-Description: File Transfer");
