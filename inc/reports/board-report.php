@@ -99,7 +99,12 @@
             $totalFindings = $_POST["total-findings"];
         }
 
-        $totalVulnerabilities = intval($critical) + intval($high) + intval($medium) + intval($low);
+        $totalVulnerabilities = intval($critical) + intval($high) + intval($medium) + intval($low) + intval($informational);
+
+        $highNum = intval($critical) + intval($high) + intval($medium);
+        $lowNum = intval($low) + intval($informational);
+
+        $highNum > $lowNum ? $overallRating = "Overall High" : $overallRating = "Overall Low";
         
     }
     else{

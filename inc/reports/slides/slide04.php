@@ -32,10 +32,10 @@
     
 
     $block_data = array(
-        $serviceName ." identified ".$totalVulnerabilities." issues including (high number) high issue around (Vulnerability high)",
+        $serviceName ." identified ".$totalVulnerabilities." issues including ".$high." high issue around " . $overallRating,
         $medium . " other medium and low issues were also identified, which require attention in the short-term.",
         $critical . " critical issues were found which indicates the highlight risk.",
-        "The overall number of issues found was reasonably (Overall low/high) in the context of this (service)"
+        "The overall number of issues found was reasonably (Overall low/high) in the context of this " . $serviceName . "."
     );
     
     
@@ -81,7 +81,7 @@
 
     // Create a shape (table)
 
-    $shape = $slideFour->createTableShape(3);
+    $shape = $slideFour->createTableShape(2);
     $shape->setHeight(500);
     $shape->setWidth(390);
     $shape->setOffsetX(545);
@@ -112,16 +112,7 @@
     $cell->createTextRun( $serviceName )->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
-    
-    $cell = $row->nextCell();
 
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun("Vulnerability")->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FFFFFFFF"));
-    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);
 
 
 
@@ -151,21 +142,9 @@
     $cell->createTextRun($critical)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);     
-
-    $cell = $row->nextCell();
-
-    $cell->getBorders()->getLeft()->setLineWidth(1)
-    ->setLineStyle(Border::LINE_SINGLE)
-    ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun($critical)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
-    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);    
-
-
         
+
+
     $row = $shape->createRow();
 
     $row->getFill()->setFillType(Fill::FILL_SOLID)
@@ -193,21 +172,6 @@
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);  
 
-    $cell = $row->nextCell();
-
-    $cell->getBorders()->getLeft()->setLineWidth(1)
-    ->setLineStyle(Border::LINE_SINGLE)
-    ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun($high)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
-    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);  
-
-
-
-
     $row = $shape->createRow();
 
     $row->getFill()->setFillType(Fill::FILL_SOLID)
@@ -234,19 +198,6 @@
     $cell->createTextRun($medium)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10); 
-
-
-    $cell = $row->nextCell();
-
-    $cell->getBorders()->getLeft()->setLineWidth(1)
-    ->setLineStyle(Border::LINE_SINGLE)
-    ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun($medium)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
-    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);          
 
 
     $row = $shape->createRow();
@@ -277,17 +228,35 @@
         ->setMarginLeft(10); 
 
 
-    $cell = $row->nextCell();
 
+    $row = $shape->createRow();
+
+    $row->getFill()->setFillType(Fill::FILL_SOLID)
+                ->setStartColor(new Color('FFFFFFFF'));
+    
+    $cell = $row->nextCell();
+    
+    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
+    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
+    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
+    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
+    $cell->createTextRun('Informational')->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF00B050"));
+    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
+        ->setMarginLeft(10);
+
+    $cell = $row->nextCell();
+    
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
     $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
     $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
     $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun($low)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
+    $cell->createTextRun($informational)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10); 
+        ->setMarginLeft(10);         
+
+
 
     $row = $shape->createRow();
 
@@ -312,14 +281,4 @@
     $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun($totalVulnerabilities)->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);      
-        
-    $cell = $row->nextCell();
-
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
-    $cell->createTextRun("")->getFont()->setName($proximaNova)->setBold(true)->setSize(10)->setColor(new Color("FFFFFFFF"));
-    $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
-        ->setMarginLeft(10);      
+        ->setMarginLeft(10);        

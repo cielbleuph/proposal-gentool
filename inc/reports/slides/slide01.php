@@ -41,7 +41,7 @@
         ->setOffsetY(160);
     $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_LEFT );
     $textRun = $shape->createTextRun(htmlspecialchars( "Version " . $version ));
-    $textRun->getFont()->setSize(20)
+    $textRun->getFont()->setSize(14)
                     ->setName( $proximaNovaAltLT )
                     ->setColor( new Color( "FF" . $redOne ) 
     );
