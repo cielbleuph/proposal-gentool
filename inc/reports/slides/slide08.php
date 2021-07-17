@@ -37,60 +37,40 @@
     
     $cell = $row->nextCell();
     
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
+    // $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
+    // $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
+    // $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
+    // $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun('REF')->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
 
     $cell = $row->nextCell();
     
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun( "Issue" )->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
 
     $cell = $row->nextCell();
-    
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
+        
     $cell->createTextRun( "Location/Affected\nEnd Point" )->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
 
     $cell = $row->nextCell();
 
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun( "Risk" )->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
 
     $cell = $row->nextCell();
 
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun( "Remediation" )->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
 
     $cell = $row->nextCell();
 
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun( "Date Completed" )->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
@@ -105,11 +85,7 @@
                 ->setStartColor(new Color('FFFFFFFF'));
     
     $cell = $row->nextCell();
-    
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
+
     $cell->createTextRun('')->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
@@ -121,9 +97,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("Name of Findings")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);     
@@ -133,9 +106,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);   
@@ -145,9 +115,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);   
