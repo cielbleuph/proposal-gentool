@@ -124,9 +124,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);   
@@ -136,9 +133,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);   
@@ -157,11 +151,6 @@
     $cell = $row->nextCell();
     
 
-    
-    $cell->getBorders()->getLeft()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun('')->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FFFFFFF"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);
@@ -173,9 +162,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("Name of Findings")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);     
@@ -185,9 +171,6 @@
     $cell->getBorders()->getLeft()->setLineWidth(1)
     ->setLineStyle(Border::LINE_SINGLE)
     ->setDashStyle(Border::DASH_DASH);
-    $cell->getBorders()->getRight()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getTop()->setLineStyle(Border::LINE_NONE);
-    $cell->getBorders()->getBottom()->setLineStyle(Border::LINE_NONE);
     $cell->createTextRun("")->getFont()->setName($proximaNovaAltLT)->setBold(true)->setSize(8)->setColor(new Color("FF000000"));
     $cell->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER )->setVertical( Alignment::VERTICAL_CENTER )
         ->setMarginLeft(10);   

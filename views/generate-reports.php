@@ -60,13 +60,7 @@
                             <h2 class="c-white"><i data-feather="tool"></i> Key Findings <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
-                            
-                            <div class="collapse form-group" id="keyfindings-help-content">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                </div>
-                            </div>
-                            
+
                             <div class="form-group">
                                 <label for="keyfindings-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
@@ -78,6 +72,13 @@
                                 
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            
+                            <div class="collapse form-group" id="keyfindings-help-content">
+                                <br />
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
 
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#keyfindings-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
                             <br />
@@ -116,11 +117,7 @@
                             <h2 class="c-white"><i data-feather="tool"></i> Short Term Goals <a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon shortterm-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
-                            <div class="collapse form-group" id="shortterm-help-content">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="shortterm-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
@@ -131,6 +128,12 @@
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            <div class="collapse form-group" id="shortterm-help-content">
+                                <br />
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
                             <br />
                             <div class="collapse form-group" id="shortterm-bulk-wrapper">
@@ -166,11 +169,7 @@
                             <h2 class="c-white"><i data-feather="tool"></i> Medium Term Goals <a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon mediumterm-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
-                            <div class="collapse form-group" id="mediumterm-help-content">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="mediumterm-input" class="control-label f-700">Add New Entry</label>
                                 <div class="input-group">
@@ -181,6 +180,12 @@
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-help-content" role="button" aria-expanded="true">Where Can I Find This?</a></small>
+                            <div class="collapse form-group" id="mediumterm-help-content">
+                                <br>                            
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
                             <br />
                             <div class="collapse form-group" id="mediumterm-bulk-wrapper">
