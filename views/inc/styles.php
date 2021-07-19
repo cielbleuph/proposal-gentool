@@ -1,5 +1,7 @@
 <?php
 
+    use PhpOffice\PhpWord\Shared\Converter;
+
     // ###### STYLES ######
     $titleStyles = array(
         '' => ''
@@ -44,3 +46,9 @@
         )
     );
     
+    $styleSingleColumn = array( 'breakType' => 'continuous', 'colsNum' => 1 );
+    $styleTwoColumn    = array(
+    'breakType' => 'continuous',
+    'colsNum'   => 2,
+    'colsSpace' => Converter::cmToTwip( 0.5 )
+    );
