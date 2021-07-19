@@ -952,7 +952,7 @@
             include(INC_METHODOLOGIES . 'phishing-simulation.php');
         }
 
-        if ($service === 'Documentation Review') {
+        if ($service === 'Documentation/Architecture Review') {
             // $methodologiesPage->addText('--- insert Documentation Review content ---');
             include(INC_METHODOLOGIES . 'documentation-review.php');
         }
@@ -962,10 +962,10 @@
             include(INC_METHODOLOGIES . 'firewall-assessment.php');
         }
 
-        if ($service === 'Cloud Based Configuration Review') {
-            // $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
-            include(INC_METHODOLOGIES . 'cloud-based-config-review.php');
-        }
+        // if ($service === 'Cloud Based Configuration Review') {
+        //     // $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
+        //     include(INC_METHODOLOGIES . 'cloud-based-config-review.php');
+        // }
 
         if ($service === 'Wireless Network Assessment') {
             // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
@@ -997,10 +997,10 @@
         //     include(INC_METHODOLOGIES . 'cyber-security-training.php');
         // }
 
-        // if ($service === 'Forensics and Investigations') {
-        //     // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
-        //     include(INC_METHODOLOGIES . 'forensic-investigations.php');
-        // }
+        if ($service === 'Cyber Forensics and Investigations') {
+            // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
+            include(INC_METHODOLOGIES . 'forensic-investigations.php');
+        }
 
         // if ($service === 'Dark Web Cyber Intelligence Monitoring') {
         //     // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
@@ -1017,22 +1017,23 @@
         //     include(INC_METHODOLOGIES . 'iot-pentest.php');
         // }
 
-        if ($service === 'Cyber Threat Intelligence') {
+        if ($service === 'Dark Web Cyber Threat Intelligence') {
             
             include(INC_METHODOLOGIES . 'cyber-threat-intelligence.php');
         }
         
+
         if ($service === 'O365 Penetration Test') {
             
             include(INC_METHODOLOGIES . 'O365-penetration-testing.php');
         }
 
-        if ($service === 'Azure Cloud Review') {
+        if ($service === 'Cloud Assessment/Review (Azure)') {
             
             include(INC_METHODOLOGIES . 'azure-review.php');
         }
 
-        if ($service === 'AWS Cloud Assessment') {
+        if ($service === 'Cloud Assessment/Review (AWS)') {
             
             include(INC_METHODOLOGIES . 'cyber-assessment-aws.php');
         }
@@ -1040,6 +1041,7 @@
         if ($service === 'Cyber Essentials Basic' ) {
             include(INC_METHODOLOGIES . 'cyber-essentials-basic.php');
         }
+        
 
         if ($service === 'Cyber Essentials Plus' ) {
             include(INC_METHODOLOGIES . 'cyber-essentials-plus.php');
