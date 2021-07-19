@@ -21,7 +21,7 @@
 
     $methodologiesPage->addText("Performing these mock attacks will exploit the availability, integrity, and confidentially of the service(s) and any data contained within.", null, $defaultParagraphStyle);
 
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addPageBreak();
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     
@@ -29,21 +29,21 @@
     $methodologiesPage->addTextBreak();
 
 
-    // $methodologiesPage->addImage(
-    //     ASSETS_IMG_DIR . 'methodologies/api-testing-01.png',
-    //     array(
-    //         'width'         => 450,
-    //         // 'height'        => 52,
-    //         'marginTop'     => 2,
-    //         'marginLeft'    => -1,
-    //         'wrappingStyle' => 'behind',
-    //         'alignment' => 'center',
-    //     )
-    // );
+    $methodologiesPage->addImage(
+        ASSETS_IMG_DIR . 'methodologies/api-testing-01.png',
+        array(
+            'width'         => 450,
+            // 'height'        => 52,
+            'marginTop'     => 2,
+            'marginLeft'    => -1,
+            'wrappingStyle' => 'behind',
+            'alignment' => 'center',
+        )
+    );
 
-    $methodologiesPage->addText("Below are the most common performed checks (This may vary depending on technologies).", null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
+    $methodologiesPage->addText("Below are the most common performed checks (This may vary depending on technologies).", null, $defaultParagraphStyle);
 
     $htmlStr = "<ol>
     <li><strong>Authentication:</strong><ul><li>Attempt to bypass authentication</li><li>Ascertain the account lockout policy</li><li>Assess the use of generic error messages</li></ul></li>
