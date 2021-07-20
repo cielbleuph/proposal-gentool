@@ -131,7 +131,7 @@
                                             // 'Dark Web Cyber Intelligence Monitoring',
                                             'Documentation/Architecture Review',
                                             'Firewall Configuration Assessment',
-                                            // 'Cyber Forensics and Investigations',
+                                            'Cyber Forensics and Investigations',
                                             'Infrastructure Penetration Test',
                                             // 'IoT Penetration Testing',
                                             'Mobile Application Penetration Test',
