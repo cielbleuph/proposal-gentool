@@ -79,7 +79,7 @@
 
     $methodologiesPage->addText("REPORT", $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $methodologiesPage->addText("(A sample report is available upon request)". $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText("(A sample report is available upon request)", $boldText, $defaultParagraphStyle);
 
     $methodologiesPage->addText("Obtaining an accurate report after the breach will help organisations prevent future attacks, minimise the cost of hiring individuals, purchasing applications and maximise good customer relationship.", null, $defaultParagraphStyle);
 
@@ -99,7 +99,7 @@
     $methodologiesPage->addListItem("A deep technical write-up of the incident", 0, $numberStyleList);
     $methodologiesPage->addListItem("Exploitation path", 0, $numberStyleList);
     $methodologiesPage->addListItem("Attack vectors", 0, $numberStyleList);
-    $methodologiesPage->addListItem("Security & Technology Practices ", 0, $numberStyleList);
+    $methodologiesPage->addListItem(htmlspecialchars("Security & Technology Practices"), 0, $numberStyleList);
     $methodologiesPage->addListItem("Improvement suggestions", 0, $numberStyleList);
 
     $methodologiesPage->addPageBreak();
