@@ -494,7 +494,7 @@
 
     $technicalSummaryPage->addTextBreak();
 
-    $technicalSummaryPage->addText( htmlspecialchars("For full details on each finding and how to remediate them, your team can refer to the main report. If there are any questions, we can arrange a call with our tester to discuss any part of the report in detail."), array("italic"=>true, "name"=>$aileronLight) );
+    $technicalSummaryPage->addText( htmlspecialchars("For full details on each finding and how to remediate them, your team can refer to the main report. If there are any questions, we can arrange a call with our tester to discuss any part of the report in detail.") );
 
     $technicalSummaryPage->addTextBreak();
 

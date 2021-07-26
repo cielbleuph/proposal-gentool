@@ -61,33 +61,83 @@
         ->setBulletColor(new Color( "FF". $darkRed ))
         ->setBulletChar('•');
     
-    $shape->createTextRun('Quarterly Vulnerability Scan and a minimum of an annual Penetration Test.');
+    $textRun = $shape->createTextRun('Quarterly Vulnerability Scan and a minimum of an annual Penetration Test.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
     $shape->createParagraph()->getAlignment()->setLevel(1)
         ->setMarginLeft(75)
         ->setIndent(-25);
-    $shape->createTextRun('This will ensure the security posture does not regress.');
-    $shape->createParagraph()->createTextRun('Any remediations can be verified in next quarter of testing.');
-    $shape->createParagraph()->createTextRun('Ensure any modifications or application developments do not introduce additional security risks.');
+
+    
+
+    $textRun = $shape->createTextRun('This will ensure the security posture does not regress.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
+    $textRun = $shape->createParagraph()->createTextRun('Any remediations can be verified in next quarter of testing.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
+    $textRun = $shape->createParagraph()->createTextRun('Ensure any modifications or application developments do not introduce additional security risks.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
     
     $shape->createParagraph()->getAlignment()->setLevel(0)
         ->setMarginLeft(25)
         ->setIndent(-25);
-    $shape->createTextRun('Phishing');
+    $textRun = $shape->createTextRun('Phishing');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
 
     $shape->createParagraph()->getAlignment()->setLevel(1)
         ->setMarginLeft(75)
         ->setIndent(-25);
-    $shape->createTextRun('Regular phishing attacks will ensure staff are reminded of their responsibilities around safeguarding their access and be aware of suspicious activities.');
+    $textRun = $shape->createTextRun('Regular phishing attacks will ensure staff are reminded of their responsibilities around safeguarding their access and be aware of suspicious activities.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
     
     $shape->createParagraph()->getAlignment()->setLevel(0)
         ->setMarginLeft(25)
         ->setIndent(-25);
-    $shape->createTextRun('Longer term');
+    $textRun = $shape->createTextRun('Longer term');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
 
     $shape->createParagraph()->getAlignment()->setLevel(1)
         ->setMarginLeft(75)
         ->setIndent(-25);
-    $shape->createTextRun('Annual Red Team to ensure the security risks are not just focused on the application or specific environment.');
-    $shape->createParagraph()->createTextRun('Threat Intelligence – security monitoring for pro-active warning of potential risks and attacks.');
+    $textRun = $shape->createTextRun('Annual Red Team to ensure the security risks are not just focused on the application or specific environment.');
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
+
+    $textRun = $shape->createParagraph()->createTextRun('Threat Intelligence – security monitoring for pro-active warning of potential risks and attacks.');
+
+    $textRun->getFont()
+        ->setSize(14)
+        ->setName( $proximaNovaAltLT )
+        ->setColor( new Color( "FF" . $blackDefault ) 
+    );
 
     

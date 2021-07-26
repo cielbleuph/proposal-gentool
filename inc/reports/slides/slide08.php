@@ -16,8 +16,8 @@
     $textRun = $shape->createTextRun(htmlspecialchars( "APPENDIX - AUDIT CHECKLIST" ));
     $textRun->getFont()->setSize(28)
             ->setBold(true)
-                    ->setName( $proximaNovaAltLTBl )
-                    ->setColor( new Color( "FF" . $redOne ) 
+            ->setName( $proximaNovaBl )
+            ->setColor( new Color( "FF" . $redOne ) 
     );  
 
 
