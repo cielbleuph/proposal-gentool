@@ -4,7 +4,8 @@ var serviceTypeDataLength = 0;
 
 $(document).ready(function(){
 
-  // // ***** TEST DATA - prefilled data for testing ***** //
+  // ***** TEST DATA - prefilled data for testing ***** //
+
   // $('#company-name').val('COMPANY XYZ');
   // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
   // $('#client-name').val('JOHN DOE');
@@ -515,7 +516,7 @@ $(document).ready(function(){
     keyfindings_arr.pop();
 
     $.each(keyfindings_arr, function( key, val ) {
-      addEntryItem('keyfindings', val);
+      addEntryItem('keyfindings', val.trim() );
     });
 
     $("#keyfindings-bulk-upload").val("");
@@ -642,7 +643,8 @@ function dateToday(){
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
-  today = mm + '-' + dd + '-' + yyyy;
+  // today = mm + '-' + dd + '-' + yyyy;
+  today = yyyy + '-' + mm + '-' + dd;
   
   return today;
 }
