@@ -104,7 +104,7 @@
         $highNum = intval($critical) + intval($high) + intval($medium);
         $lowNum = intval($low) + intval($informational);
 
-        $highNum > $lowNum ? $overallRating = "Overall High" : $overallRating = "Overall Low";
+        $highNum > $lowNum ? $overallRating = "high" : $overallRating = "low";
         
     }
     else{

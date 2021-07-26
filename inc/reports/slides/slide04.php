@@ -32,10 +32,10 @@
     
 
     $block_data = array(
-        $serviceName ." identified ".$totalVulnerabilities." issues including ".$high." high issue around " . $overallRating,
+        $serviceName ." identified ".$totalVulnerabilities." issues including ".$high." high issue.",
         $medium . " other medium and low issues were also identified, which require attention in the short-term.",
         $critical . " critical issues were found which indicates the highlight risk.",
-        "The overall number of issues found was reasonably (Overall low/high) in the context of this " . $serviceName . "."
+        "The overall number of issues found was reasonably overall ". $overallRating ." in the context of this " . $serviceName . "."
     );
     
     
