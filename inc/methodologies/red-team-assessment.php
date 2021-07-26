@@ -11,11 +11,14 @@
     $methodologiesPage->addTitle('Red Team Assessment', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('The role of the Red Team is to provide an attacker-like approach to the organisation, this approach consists of network detection, system vulnerabilities and a physical assessment. The overall aim of the red team is to gain system/network/data access. Organisations wanting to increase their security strategy throughout the year can view the Red Team as a specialist extension of their own IT team.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('The role of the Red Team is to provide an attacker-like approach to the organisation, this approach consists of network detection and system vulnerabilities. The overall aim of the red team is to gain system/network/data access. Organisations wanting to increase their security strategy throughout the year can view the Red Team as a specialist extension of their own IT team.', null, $defaultParagraphStyle);
     
+    $methodologiesPage->addText("During red team exercises, our security experts will launch a realistic attempt to exploit your environment to gain access to systems that would enable us to impact the critical functions necessary for your operations.  This simulated attack is carried out in a controlled manner to ensure that your operations are not adversely affected, while still providing valuable information regarding gaps in your preventive or detective controls that could allow an adversary to harm your organization.  The attacks utilize real-world adversary tactics, techniques, and procedures (TTPs) that represent a genuine threat to the critical functions of your organization.", null, $defaultParagraphStyle);
+
+    $methodologiesPage->addText("The attack scenarios will recognize that a dedicated adversary would leverage a broad targeting profile to gain a foothold within the organization.  From this broad attack surface, additional focused attacks on critical functions will be launched in accordance with predefined rules of engagement.  The goal of each attack scenario will be to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", null, $defaultParagraphStyle);
+
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Virtual Assessment:', array('underline'=>'single'), $defaultParagraphStyle);
+    $methodologiesPage->addText('Virtual Assessment:', null, $defaultParagraphStyle);
 
     $redteamAssessmentListItemRunOne = $methodologiesPage->addListItemRun(0, 'multilevel' );
     $redteamAssessmentListItemRunOne->addText('Reconnaissance/OSINT', array('bold' => true), null, $defaultParagraphStyle);
@@ -59,7 +62,24 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText('Fallbacks', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('If Phishing Attacks are not successful as a point of entry, we would ask the organisation to install a device (Raspberry Pi) at any network port. RedTeamPartners will continue working from the pretext that a successful breach has been made. This will allow RedTeamPartners to continue the service without wasting time on phishing campaigns.', null, $defaultParagraphStyle);
+    $methodologiesPage->addText('Methodology', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+
+    $methodologiesPage->addList("Red Team Partners will use open-source intelligence tools to collect and identify a target profile of your organisation.", 0);
+
+    $methodologiesPage->addList("We will conduct social engineering attacks against your employees to elicit further targeting information including company credentials.", 0);
+
+    $methodologiesPage->addList("Based on available threat intelligence gathered, Red Team Partners will devise a series of attack scenarios against the critical functions and key data to simulate real-world threats to your organisation", 0);
+
+    $methodologiesPage->addList("Red Team Partners will conduct an offensive campaign against the identified critical functions of your organisation to gain a foothold within the organisation.", 0);
+
+    $methodologiesPage->addList("We will be continuing to focus attacks on critical functions to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", 0);
 
     $methodologiesPage->addTextBreak();
+
+    $methodologiesPage->addText("These exercises proved a valuable insight into improving the visibility and capability of your network defenders.  At the end of each adversary emulation, our team will work with yours to ensure that all attack techniques leveraged against your organization are clearly explained, evidence that may have been left behind is identified, and suggestions for improving controls to prevent or detect similar attacks in the future are provided.", null, $defaultParagraphStyle);
+
+    $methodologiesPage->addText("Critical functions include the people, process, and technology underpinning the ongoing successful operation of your organization, and threats to any of these functions could negatively impact your operations.  Based on available threat intelligence, our team will devise a series of attack scenarios against your critical functions.  Since a real-world adversary could employ illegal or unethical methods not available to our team, and since the time and effort allocated to this phase of the test will be fixed, this portion of the assessment is conducted in a gray box manner to ensure the completeness of the results.", null, $defaultParagraphStyle);
+
+    $methodologiesPage->addText("The attacks will be conducted without detailed coordination with your network defenders to ensure that an accurate picture of your organization’s ability to prevent or detect targeted attacks is achieved.  To minimize disruption to your operations, senior management members of your organization will be notified of the details of the attacks, including the timing of the attacks, in accordance with a predefined risk management plan.", null, $defaultParagraphStyle);
+
+    $methodologiesPage->addPageBreak();
