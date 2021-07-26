@@ -533,7 +533,7 @@ $(document).ready(function(){
     shortterm_arr.pop();
 
     $.each(shortterm_arr, function( key, val ) {
-      addEntryItem('shortterm', val);
+      addEntryItem('shortterm', val.trim());
     });
 
     $("#shortterm-bulk-upload").val("");
@@ -550,7 +550,7 @@ $(document).ready(function(){
     mediumterm_arr.pop();
 
     $.each(mediumterm_arr, function( key, val ) {
-      addEntryItem('mediumterm', val);
+      addEntryItem('mediumterm', val.trim());
     });
 
     $("#mediumterm-bulk-upload").val("");
