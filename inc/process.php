@@ -940,17 +940,17 @@
 
         if ($service === 'Infrastructure Penetration Test') {
             // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
-            include(INC_METHODOLOGIES . 'infrastructure-testing.php');
+            include(INC_METHODOLOGIES . 'infrastructure-pentest.php');
         }
 
         if ($service === 'API Penetration Test') {
             // $methodologiesPage->addText('--- insert API Testing content ---');
-            include(INC_METHODOLOGIES . 'api-testing.php');
+            include(INC_METHODOLOGIES . 'api-pentest.php');
         }
 
         if ($service === 'Mobile Application Penetration Test') {
             // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
-            include(INC_METHODOLOGIES . 'mobile-ios-android-testing.php');
+            include(INC_METHODOLOGIES . 'mobile-application-pentest.php');
         }
 
         if ($service === 'Phishing Simulation') {
@@ -965,7 +965,7 @@
 
         if ($service === 'Firewall Configuration Assessment') {
             // $methodologiesPage->addText('--- insert Firewall Assessment content ---');
-            include(INC_METHODOLOGIES . 'firewall-assessment.php');
+            include(INC_METHODOLOGIES . 'firewall-configuration-assessment.php');
         }
 
         // if ($service === 'Cloud Based Configuration Review') {
@@ -975,7 +975,7 @@
 
         if ($service === 'Wireless Network Assessment') {
             // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
-            include(INC_METHODOLOGIES . 'wireless-network-audit.php');
+            include(INC_METHODOLOGIES . 'wireless-network-assessment.php');
         }
 
         if ($service === 'VPN Assessment') {
@@ -1005,7 +1005,7 @@
 
         if ($service === 'Cyber Forensics and Investigations') {
             // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
-            include(INC_METHODOLOGIES . 'forensic-investigations.php');
+            include(INC_METHODOLOGIES . 'cyber-forensic-investigations.php');
         }
 
         // if ($service === 'Dark Web Cyber Intelligence Monitoring') {
@@ -1025,18 +1025,18 @@
 
         if ($service === 'Dark Web Cyber Threat Intelligence') {
             
-            include(INC_METHODOLOGIES . 'cyber-threat-intelligence.php');
+            include(INC_METHODOLOGIES . 'dark-web-cyber-threat-intelligence.php');
         }
         
 
         if ($service === 'O365 Penetration Test') {
             
-            include(INC_METHODOLOGIES . 'O365-penetration-testing.php');
+            include(INC_METHODOLOGIES . 'O365-pentest.php');
         }
 
         if ($service === 'Cloud Assessment/Review (Azure)') {
             
-            include(INC_METHODOLOGIES . 'azure-review.php');
+            include(INC_METHODOLOGIES . 'cloud-assessment-azure.php');
         }
 
         if ($service === 'Cloud Assessment/Review (AWS)') {
