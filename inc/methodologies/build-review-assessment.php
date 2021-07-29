@@ -9,16 +9,17 @@
         'bgColor' => $lightRed
     );
 
-    $methodologiesPage->addTitle('Build Review', 2); // TOC Bookmark 
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addTitle('Build Review Assessment', 2); // TOC Bookmark 
+    
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Red Team Partners offers a Build Review Assessment that combines best practice guidelines and cyber testing.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('Red Team Partners offers a Build Review Assessment. It aims to highlight any vulnerabilities and misconfigurations within the company’s infrastructure. Any vulnerabilities through misconfigured servers or workstations can provide a weakness within the company’s infrastructure. These misconfigured vulnerabilities can allow an external threat or attacker to easily access the company’s domain administrator and fully compromise a corporate network.', null, $defaultParagraphStyle);
+    
 
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('This assessment will contain the following areas that are assessed throughout the build review assessment:', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('Red Team Partners offers a Build Review Assessment that combines best practice guidelines and cyber testing.', null, $defaultParagraphStyle);
+    $methodologiesPage->addText("This assessment will contain the following areas that are assessed throughout the build review assessment:", null, $defaultParagraphStyle);
+    
 
     $methodologyBuildReviewTable = $methodologiesPage->addTable(
         array(

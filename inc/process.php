@@ -983,9 +983,9 @@
             include(INC_METHODOLOGIES . 'vpn-assessment.php');
         }
 
-        if ($service === 'Build Review') {
+        if ($service === 'Build Review Assessment') {
             // $methodologiesPage->addText('--- insert Build Review content ---');
-            include(INC_METHODOLOGIES . 'build-review.php');
+            include(INC_METHODOLOGIES . 'build-review-assessment.php');
         }
 
         // if ($service === 'PCI DSS Compliance Audit') {
@@ -1041,7 +1041,7 @@
 
         if ($service === 'Cloud Assessment/Review (AWS)') {
             
-            include(INC_METHODOLOGIES . 'cyber-assessment-aws.php');
+            include(INC_METHODOLOGIES . 'cloud-assessment-aws.php');
         }
 
         if ($service === 'Cyber Essentials Basic' ) {

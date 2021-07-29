@@ -9,46 +9,47 @@
         'bgColor' => $lightRed
     );
 
-    $methodologiesPage->addTitle('Build Review', 2); // TOC Bookmark 
+    $methodologiesPage->addTitle('Cloud Assessment/Review (AWS)', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
 
 
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners offers a Cloud Assessment (AWS). Red Team Partners provides a readiness assessment and determine if the resources and IT environment is capable of migrating to the cloud.', null, $defaultParagraphStyle);
-    $methodologiesPage->addText('Red Team Partners performs a cloud readiness assessment in order to smooth the migration process and set up a cloud environment that fits the organization’s requirements.', null, $defaultParagraphStyle);
-
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('Red Team Partners performs a cloud readiness assessment to make the migration process smooth and set up a cloud environment that fits the organisation’s requirements.', null, $defaultParagraphStyle);
+    $methodologiesPage->addText("That said, every successful cloud migration is preceded by detailed planning, assessment, testing, and verifying, which are the stepping stones to leveraging the full capabilities of the cloud and optimizing your performance.", null, $defaultParagraphStyle);
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Red Team Partners offers a Cloud Assessment (AWS) with detailed planning, assessment, testing and verifying.', null, $defaultParagraphStyle);
+    $methodologiesPage->addText('Red Team Partners offers a Cloud Assessment (AWS) with detailed planning, assessment, testing, and verifying.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
 
     $methodologiesPage->addText('AWS', array('color'=>'DE5C5C'));
     $methodologiesPage->addListItem('General Threats');
 
-    $methodologiesPage->addListItem('Compromise of (entire) AWS', 1, null, null, $aParagraphStyles );
-    $methodologiesPage->addListItem('Denial of Service (DoS) attack on application', 1, null, null, $aParagraphStyles );
-    $methodologiesPage->addListItem('Insider threats and privileged user threats: These incidents can include both malicious and negligent behavior— ranging from taking actions that unintentionally expose data to risk, to employees stealing data before quitting to join a competitor', 1, null, null, $aParagraphStyles );
-    $methodologiesPage->addListItem('Third-party account compromise:  Misconfigured security settings or accounts that have excessive identity and access management (IAM) permissions can increase the potential damage.', 1, null, null, $aParagraphStyles );
-    $methodologiesPage->addListItem('Sensitive data uploaded against policy/regulation: Many organizations have industry-specific or regional regulations, or internal policies, that prohibit certain types of data from being uploaded to the cloud', 1, null, null, $aParagraphStyles );
-    $methodologiesPage->addListItem('Software development lacks security input: As enterprises continue to migrate to or build their custom applications in AWS Amazon takes responsibility for the security of its infrastructure. The customer is responsible for ensuring their AWS environment is configured securely, data is not shared with someone it shouldn’t be shared with inside or outside the company, identifying when a user misuses AWS, and enforcing compliance and governance policies.', 1, null, null, $aParagraphStyles );
+    $methodologiesPage->addListItem('Compromise of (entire) AWS', 0);
+    $methodologiesPage->addListItem('Denial of Service (DoS) attack on application', 0);
+    $methodologiesPage->addListItem('Insider threats and privileged user threats: These incidents can include both malicious and negligent behavior— ranging from taking actions that unintentionally expose data to risk, to employees stealing data before quitting to join a competitor', 0);
+    $methodologiesPage->addListItem('Third-party account compromise:  Misconfigured security settings or accounts that have excessive identity and access management (IAM) permissions can increase the potential damage.', 0);
+    $methodologiesPage->addListItem('Sensitive data uploaded against policy/regulation: Many organizations have industry-specific or regional regulations, or internal policies, that prohibit certain types of data from being uploaded to the cloud', 0 );
+    $methodologiesPage->addListItem('Software development lacks security input: As enterprises continue to migrate to or build their custom applications in AWS', 0);
+    
+    $methodologiesPage->addText("Amazon takes responsibility for the security of its infrastructure.", null, $defaultParagraphStyle);
+    
+    $methodologiesPage->addText("The customer is responsible for ensuring their AWS environment is configured securely, data is not shared with someone it shouldn’t be shared with inside or outside the company, identifying when a user misuses AWS, and enforcing compliance and governance policies.", null, $aParagraphStyles );
 
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage(ASSETS_IMG_DIR . 'sow/cloud-assessment-aws-01.png', 
-        array(
-            'width'         => 450,
-            'marginTop'     => 2,
-            'marginLeft'    => -100,
-            'wrappingStyle' => 'inline',
-            'alignment' => 'center',
-            'wrapDistanceLeft' => 100
-        )
-    );
-
-    $methodologiesPage->addTextBreak();
+    // $methodologiesPage->addImage(ASSETS_IMG_DIR . 'sow/cloud-assessment-aws-01.png', 
+    //     array(
+    //         'width'         => 450,
+    //         'marginTop'     => 2,
+    //         'marginLeft'    => -100,
+    //         'wrappingStyle' => 'inline',
+    //         'alignment' => 'center',
+    //         'wrapDistanceLeft' => 100
+    //     )
+    // );
 
     $methodologiesPage->addTextBreak();
 
