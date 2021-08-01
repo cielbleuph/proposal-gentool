@@ -973,6 +973,11 @@
         //     include(INC_METHODOLOGIES . 'cloud-based-config-review.php');
         // }
 
+        if ($service === 'Fraud Investigation') {
+            // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
+            include(INC_METHODOLOGIES . 'fraud-investigation.php');
+        }
+
         if ($service === 'Wireless Network Assessment') {
             // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
             include(INC_METHODOLOGIES . 'wireless-network-assessment.php');

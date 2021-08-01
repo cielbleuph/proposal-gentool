@@ -149,7 +149,8 @@
                                             'Cloud Assessment/Review (AWS)',
                                             'Cloud Assessment/Review (Azure)',
                                             'Cyber Essentials Basic',
-                                            'Cyber Essentials Plus'
+                                            'Cyber Essentials Plus',
+                                            'Fraud Investigation',
                                         );
 
                                         sort($services);

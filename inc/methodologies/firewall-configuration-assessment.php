@@ -15,10 +15,8 @@
     
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('A poorly configured firewall can allow for trivial network compromise by malicious actors. Red Team Partners firewall assessment will test the integrity of your current firewall rules and implementations to ensure nothing has been overlooked.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Since a firewall is only as secure as the rules that have been set, it is imperative that rulesets are reviewed and audited by a separate party to the original implementer.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
-
+    
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners firewall configuration assessment compromises of the following checks:', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
@@ -58,4 +56,5 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('The firewall configuration review is based on security best practice guidelines.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    
+    $methodologiesPage->addPageBreak();
