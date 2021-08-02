@@ -165,27 +165,22 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('ISO 27001 Consultancy Proposal', $boldText, $paragraphHeadingPStyle);
-    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, null, $numberStyleList);
+    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, $boldText, $numberStyleList);
     $methodologiesPage->addListItem("Review current operational and IT processes", 1);
     $methodologiesPage->addListItem("Review of existing documentation and interviews with team", 1);
     $methodologiesPage->addListItem("Review against ISO27001 criteria", 1);
 
-    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, null, $numberStyleList);
+    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, $boldText, $numberStyleList);
     $methodologiesPage->addListItem("High-level plan and outline of the path to Certification", 1);
     $methodologiesPage->addListItem("Agree on approach for Critical areas.", 1);
     $methodologiesPage->addListItem("Initial review and discussion with Team", 1);
 
-    $methodologiesPage->addListItem("3.	ISO27001 Remediation (3 days)", 0, null, $numberStyleList);
+    $methodologiesPage->addListItem("ISO27001 Remediation (3 days)", 0, $boldText, $numberStyleList);
     $methodologiesPage->addListItem("Initial Remediation Steps -e.g., creation of policies", 1);
     $methodologiesPage->addListItem("Detailed Plan of ISO Controls to address and timeline.", 1);
     
 
-    
-
-
-
-
-    
+        
     // $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     // $methodologiesPage->addText('Red Team Partners firewall configuration assessment compromises of the following checks:', null, $defaultParagraphStyle);
     // $methodologiesPage->addTextBreak();
