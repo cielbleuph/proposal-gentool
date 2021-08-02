@@ -924,128 +924,78 @@
     foreach($typeOfService as $service) {
 
         if ($service === 'Web Application Penetration Test') {
-            // $methodologiesPage->addText('--- insert Web Application Penetration Testing content ---');
             include(INC_METHODOLOGIES . 'web-application-pentest.php');
         }
 
         if ($service === 'Red Team Assessment') {
-            // $methodologiesPage->addText('--- insert Red Team Assessment content ---');
             include(INC_METHODOLOGIES . 'red-team-assessment.php');
         }
 
         if ($service === 'Vulnerability Assessment') {
-            // $methodologiesPage->addText('--- insert Vulnerability Assessment content ---');
             include(INC_METHODOLOGIES . 'vulnerability-assessment.php');
         }
 
         if ($service === 'Infrastructure Penetration Test') {
-            // $methodologiesPage->addText('--- insert Infrastructure Testing content ---');
             include(INC_METHODOLOGIES . 'infrastructure-pentest.php');
         }
 
         if ($service === 'API Penetration Test') {
-            // $methodologiesPage->addText('--- insert API Testing content ---');
             include(INC_METHODOLOGIES . 'api-pentest.php');
         }
 
         if ($service === 'Mobile Application Penetration Test') {
-            // $methodologiesPage->addText('--- insert Mobile iOS and Android Testing content ---');
             include(INC_METHODOLOGIES . 'mobile-application-pentest.php');
         }
 
         if ($service === 'Phishing Simulation') {
-            // $methodologiesPage->addText('--- insert Phishing Simulation content ---');
             include(INC_METHODOLOGIES . 'phishing-simulation.php');
         }
 
         if ($service === 'Documentation/Architecture Review') {
-            // $methodologiesPage->addText('--- insert Documentation Review content ---');
             include(INC_METHODOLOGIES . 'documentation-review.php');
         }
 
         if ($service === 'Firewall Configuration Assessment') {
-            // $methodologiesPage->addText('--- insert Firewall Assessment content ---');
             include(INC_METHODOLOGIES . 'firewall-configuration-assessment.php');
         }
 
-        // if ($service === 'Cloud Based Configuration Review') {
-        //     // $methodologiesPage->addText('--- insert Cloud Based Configuration Review content ---');
-        //     include(INC_METHODOLOGIES . 'cloud-based-config-review.php');
-        // }
-
         if ($service === 'Fraud Investigation') {
-            // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
             include(INC_METHODOLOGIES . 'fraud-investigation.php');
         }
 
         if ($service === 'Wireless Network Assessment') {
-            // $methodologiesPage->addText('--- insert Wireless Network Audit content ---');
             include(INC_METHODOLOGIES . 'wireless-network-assessment.php');
         }
 
         if ($service === 'VPN Assessment') {
-            // $methodologiesPage->addText('--- insert VPN Assessment content ---');
             include(INC_METHODOLOGIES . 'vpn-assessment.php');
         }
 
         if ($service === 'Build Review Assessment') {
-            // $methodologiesPage->addText('--- insert Build Review content ---');
             include(INC_METHODOLOGIES . 'build-review-assessment.php');
         }
 
-        // if ($service === 'PCI DSS Compliance Audit') {
-        //     // $methodologiesPage->addText('--- insert PCI DSS Compliance Audit content ---');
-        //     include(INC_METHODOLOGIES . 'pci-dss-compliance-audit.php');
-        // }
-
         if ($service === 'Secure Code Review') {
-            // $methodologiesPage->addText('--- insert Secure Code Review content ---');
             include(INC_METHODOLOGIES . 'secure-code-review.php');
         }
 
-        // if ($service === 'Cyber Security Training') {
-        //     // $methodologiesPage->addText('--- insert Cyber Security Training content ---');
-        //     include(INC_METHODOLOGIES . 'cyber-security-training.php');
-        // }
-
         if ($service === 'Cyber Forensics and Investigations') {
-            // $methodologiesPage->addText('--- insert Forensics and Investigations content ---');
             include(INC_METHODOLOGIES . 'cyber-forensic-investigations.php');
         }
-
-        // if ($service === 'Dark Web Cyber Intelligence Monitoring') {
-        //     // $methodologiesPage->addText('--- insert Dark Web Cyber Intelligence Monitoring content ---');
-        //     include(INC_METHODOLOGIES . 'dark-web-cyber-intelligence-monitoring.php');
-        // }
-
-        // if ($service === 'Performance Stress Testing/Load Testing') {
-        //     // $methodologiesPage->addText('--- insert Performance Stress Testing/Load Testing ---');
-        //     include(INC_METHODOLOGIES . 'performance-stress-testing.php');
-        // }
-
-        // if ($service === 'IoT Penetration Testing') {
-        //     
-        //     include(INC_METHODOLOGIES . 'iot-pentest.php');
-        // }
-
+        
         if ($service === 'Dark Web Cyber Threat Intelligence') {
-            
             include(INC_METHODOLOGIES . 'dark-web-cyber-threat-intelligence.php');
         }
         
-
         if ($service === 'O365 Penetration Test') {
-            
             include(INC_METHODOLOGIES . 'O365-pentest.php');
         }
 
         if ($service === 'Cloud Assessment/Review (Azure)') {
-            
             include(INC_METHODOLOGIES . 'cloud-assessment-azure.php');
         }
 
         if ($service === 'Cloud Assessment/Review (AWS)') {
-            
             include(INC_METHODOLOGIES . 'cloud-assessment-aws.php');
         }
 
@@ -1053,9 +1003,16 @@
             include(INC_METHODOLOGIES . 'cyber-essentials-basic.php');
         }
         
-
         if ($service === 'Cyber Essentials Plus' ) {
             include(INC_METHODOLOGIES . 'cyber-essentials-plus.php');
+        }
+
+        if ($service === 'OWASP for Developers' ) {
+            include(INC_METHODOLOGIES . 'owasp-developers.php');
+        }
+
+        if ($service === 'Physical Assessment' ) {
+            include(INC_METHODOLOGIES . 'physical-assessment.php');
         }
     }
 

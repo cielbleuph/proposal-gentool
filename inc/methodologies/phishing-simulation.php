@@ -12,9 +12,9 @@
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Phishing is one of the most common paths to compromise utilised by attackers in real-world attacks. A phishing assessment aims to highlight weak security controls and susceptible employees to target for further in-depth phishing awareness training.', null, $defaultParagraphStyle);
-    $methodologiesPage->addText('Prior to the engagement starting, Red Team Partners work with you to agree an appropriate scope; including phishing templates and scenarios. In some cases, you may have a specific list of employees who you’d like to be targeted (spear phishing); whilst in other cases the attempt will be a ‘smash and grab’ attack, covering entire departments or whole organisations.', null, $defaultParagraphStyle);
+    $methodologiesPage->addText('Before the engagement, Red Team Partners work with you to agree on an appropriate scope, including phishing templates and scenarios. In some cases, you may have a specific list of employees who you’d like to be targeted (spear phishing); whilst in other cases, the attempt will be a ‘smash and grab’ attack, covering entire departments or whole organisations.', null, $defaultParagraphStyle);
     $methodologiesPage->addText('Once agreed, Red Team Partners will attempt to register a visually similar domain to your own to maximize the success of the engagement.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('The following areas are assessed throughout the Phishing Assessment:', null, $defaultParagraphStyle);
 
@@ -54,4 +54,4 @@
     $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
     $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Reporting processes in place.', null, array('indent'=>0.5));
 
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addPageBreak();

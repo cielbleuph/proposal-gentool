@@ -14,29 +14,29 @@
     $methodologiesPage->addText('Red Team Partners will conduct a Secure Code Review. This code review is a systematic examination (sometimes referred to as peer review) of computer source code. It is intended to find mistakes overlooked in software development, improving the overall quality of software. Reviews are done in various forms such as pair programming, informal walkthroughs, and formal inspections.', null, $defaultParagraphStyle);
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addImage(
-        ASSETS_IMG_DIR . 'methodologies/secure-code-review-01.png',
-        array(
-            'width'         => 450,
-            // 'height'        => 52,
-            'marginTop'     => 2,
-            'marginLeft'    => -1,
-            'wrappingStyle' => 'behind',
-            'alignment' => 'center',
-        )
-    );
+    // $methodologiesPage->addImage(
+    //     ASSETS_IMG_DIR . 'methodologies/secure-code-review-01.png',
+    //     array(
+    //         'width'         => 450,
+    //         // 'height'        => 52,
+    //         'marginTop'     => 2,
+    //         'marginLeft'    => -1,
+    //         'wrappingStyle' => 'behind',
+    //         'alignment' => 'center',
+    //     )
+    // );
     
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText('Code review is probably the single-most effective technique for identifying security flaws. When used together with automated tools and manual penetration testing, code review can significantly increase the cost effectiveness of an application security verification effort.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('This guide describes the mechanics of reviewing code for certain vulnerabilities, and provides limited guidance on how the effort should be structured and executed.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('Manual security code review provides insight into the “real risk” associated with insecure code.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
-    $methodologiesPage->addText('A human reviewer can understand the context for certain coding practices, and make a serious risk estimate that accounts for both the likelihood of attack and the business impact of a breach.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('Code review is probably the single most effective technique for identifying security flaws. When used together with automated tools and manual penetration testing, code review can significantly increase the cost-effectiveness of an application security verification effort.', null, $defaultParagraphStyle);
     
-    $methodologiesPage->addText('Secure Code Review Checklist', array('underline'=>'single'), $defaultParagraphStyle);
+    $methodologiesPage->addText('This guide describes the mechanics of reviewing code for certain vulnerabilities and provides limited guidance on how the effort should be structured and executed.', null, $defaultParagraphStyle);
+    
+    $methodologiesPage->addText('Manual security code review provides insight into the “real risk” associated with insecure code.', null, $defaultParagraphStyle);
+    
+    $methodologiesPage->addText('A human reviewer can understand the context for certain coding practices, and make a serious risk estimate that accounts for both the likelihood of attack and the business impact of a breach.', null, $defaultParagraphStyle);
+    
+    
+    $methodologiesPage->addText('Secure Code Review Checklist', array('underline'=>'single', "bold"=>true), $defaultParagraphStyle);
     $methodologiesPage->addText('Design', array('bold'=>true), $defaultParagraphStyle);
     $methodologiesPage->addListItem('architecture and design documentation is complete', 0, null, null, $defaultParagraphListStyle);
     $methodologiesPage->addListItem('user and role based privileges are documented', 0, null, null, $defaultParagraphListStyle);
@@ -190,4 +190,4 @@
     $methodologiesPage->addListItem('code has no back doors', 0, null, null, $defaultParagraphListStyle);
     $methodologiesPage->addListItem('debugging code and test harnesses have been removed ', 0, null, null, $defaultParagraphListStyle);
 
-    $methodologiesPage->addTextBreak();
+    $methodologiesPage->addPageBreak();

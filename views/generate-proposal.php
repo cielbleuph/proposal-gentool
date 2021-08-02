@@ -151,6 +151,8 @@
                                             'Cyber Essentials Basic',
                                             'Cyber Essentials Plus',
                                             'Fraud Investigation',
+                                            'OWASP for Developers',
+                                            'Physical Assessment',
                                         );
 
                                         sort($services);
