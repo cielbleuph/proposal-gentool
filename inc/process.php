@@ -1014,6 +1014,18 @@
         if ($service === 'Physical Assessment' ) {
             include(INC_METHODOLOGIES . 'physical-assessment.php');
         }
+
+        if ($service === 'Virtualisation Configuration Review' ) {
+            include(INC_METHODOLOGIES . 'virtualisation-config-review.php');
+        }
+
+        if ($service === 'Incident Response and Investigation' ) {
+            include(INC_METHODOLOGIES . 'incident-response-investigation.php');
+        }
+
+        if ($service === 'IoT Penetration Testing' ) {
+            include(INC_METHODOLOGIES . 'iot-pentest.php');
+        }
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();

@@ -8,7 +8,7 @@
         'bgColor' => $lightRed
     );
 
-    $methodologiesPage->addTitle('IoT Penetration Testing', 2); // TOC Bookmark 
+    $methodologiesPage->addTitle('Incident Response and Investigation', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Incident response is a process that allows organisations to identify, prioritise, contain and eradicate cyber-attacks. The goal of incident response is to ensure that organisations are aware of significant security incidents and act quickly to stop the attacker, minimize damage caused, and prevent follow on attacks or similar incidents in the future.', null, $defaultParagraphStyle);
