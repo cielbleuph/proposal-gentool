@@ -133,7 +133,7 @@
                                             'Firewall Configuration Assessment',
                                             'Cyber Forensics and Investigations',
                                             'Infrastructure Penetration Test',
-                                            // 'IoT Penetration Testing',
+                                            'IoT Penetration Testing',
                                             'Mobile Application Penetration Test',
                                             // 'PCI DSS Compliance Audit',
                                             // 'Performance Stress Testing/Load Testing',
@@ -153,6 +153,9 @@
                                             'Fraud Investigation',
                                             'OWASP for Developers',
                                             'Physical Assessment',
+                                            'Virtualisation Configuration Review',
+                                            'VPN Assessment',
+                                            'Incident Response and Investigation',
                                         );
 
                                         sort($services);
