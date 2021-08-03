@@ -156,6 +156,7 @@
                                             'Virtualisation Configuration Review',
                                             'VPN Assessment',
                                             'Incident Response and Investigation',
+                                            'Performance Stress/Load testing',
                                         );
 
                                         sort($services);

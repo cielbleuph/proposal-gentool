@@ -1026,6 +1026,10 @@
         if ($service === 'IoT Penetration Testing' ) {
             include(INC_METHODOLOGIES . 'iot-pentest.php');
         }
+
+        if ($service === 'Performance Stress/Load testing' ) {
+            include(INC_METHODOLOGIES . 'performance-stress-load-testing.php');
+        }
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();
