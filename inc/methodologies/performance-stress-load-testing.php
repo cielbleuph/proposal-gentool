@@ -128,12 +128,14 @@
     $methodologiesPage->addText("Exploratory Stress Testing: ", $boldText, $defaultParagraphStyle);
     $methodologiesPage->addText("This is one of the test scenarios which is used to test the system with unusual parameters or conditions that are unlikely to occur in a real scenario. It is used to find defects in unexpected scenarios like");
     
-    $methodologiesPage->addListItem("A large number of users logged in at the same time.", 0, null, $numberStyleList);
-    $methodologiesPage->addListItem("If a virus scanner started in all machines simultaneously", 0, null, $numberStyleList);
-    $methodologiesPage->addListItem("If Database has gone offline when it is accessed from a website,", 0, null, $numberStyleList);
-    $methodologiesPage->addListItem("When a large volume of data is inserted into the database simultaneously", 0, null, $numberStyleList);
+    $methodologiesPage->addListItem("A large number of users logged in at the same time.", 0);
+    $methodologiesPage->addListItem("If a virus scanner started in all machines simultaneously", 0);
+    $methodologiesPage->addListItem("If Database has gone offline when it is accessed from a website,", 0);
+    $methodologiesPage->addListItem("When a large volume of data is inserted into the database simultaneously", 0);
 
     $methodologiesPage->addTextBreak();
+
+    $methodologiesPageTwo = $phpWord->addSection();
 
     $methodologiesPage->addText("How we do Stress Testing?", $boldText, $defaultParagraphStyle);
     $methodologiesPage->addText("The Stress Testing process can be done in 5 major steps:", null, $defaultParagraphStyle);
@@ -145,6 +147,43 @@
 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText("Lastly, you again run the entire cycle to determine that the tweaks have produced the desired results. For example, it's not unusual to have 3 to 4 cycles of the Stress Testing process to achieve the performance goals.", null, $defaultParagraphStyle);
+
+
+    $methodologiesPage->addTextBreak();
+
+    $methodologiesPage->addText('Load Testing Networks', $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText("Where a system can support testing to actual volumes, we have a performance testing service to meet your requirements.", null, $defaultParagraphStyle);
+    $methodologiesPage->addText("This service also offers a comprehensive security validation by testing your system while it is experiencing peak load and while some of that load is attacking traffic.", null, $defaultParagraphStyle);
+
+    $methodologiesPage->addText("Tools we use during Stress Testing:", $boldText, $defaultParagraphStyle);
+
+    $performanceOne = $methodologiesPage->addListItemRun();
+    $performanceOne->addText("LoadRunner", $boldText);
+    $performanceOne->addText(" - LoadRunner from HP is a widely used Load Testing tool. Load Test Results shaped by Loadrunner are considered as a benchmark.");
+
+    $performanceTwo = $methodologiesPage->addListItemRun();
+    $performanceTwo->addText("Jmeter", $boldText);
+    $performanceTwo->addText(" - Jmeter is an Open-Source testing tool. It is a pure Java application for stress and Performance Testing. Jmeter is intended to cover types of tests like load, functional, stress, etc. It needs JDK 5 or higher to function.");
+
+    $performanceThree = $methodologiesPage->addListItemRun();
+    $performanceThree->addText("Stress Tester ", $boldText);
+    $performanceThree->addText(" - This tool provides an extensive analysis of the web application performance, provides results in graphical format, and it is extremely easy to use. No high-level scripting is required, and it gives a good return on investment. ");
+
+    $performanceFour = $methodologiesPage->addListItemRun();
+    $performanceFour->addText("Neo load", $boldText);
+    $performanceFour->addText(" - This is a popular tool available in the market to test web and mobile applications. This tool can simulate thousands of users to evaluate the application performance under load and analyse the response times. It also supports Cloud-integrated performance, load, and stress testing. It is easy to use, cost-effective and provides good scalability.");
+
+    $methodologiesPage->addListItem("WAN Killer Network Traffic Generator", 0);
+    $methodologiesPage->addListItem("Ostinato Packet Generator", 0);
+    $methodologiesPage->addListItem("Packet Sender", 0);
+    $methodologiesPage->addListItem("Nping from Nmap", 0);
+    $methodologiesPage->addListItem("Cisco’s TRex", 0);
+    $methodologiesPage->addListItem("Packet Generator from NetScanTools", 0);
+    $methodologiesPage->addListItem("NTGM from PBSoftware", 0);
+
+    
+
+
 
 
     $methodologiesPage->addPageBreak();
