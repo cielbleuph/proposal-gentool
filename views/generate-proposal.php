@@ -140,7 +140,6 @@
                                             'Phishing Simulation',
                                             'Red Team Assessment',
                                             'Secure Code Review',
-                                            'VPN Assessment',
                                             'Vulnerability Assessment',
                                             'Web Application Penetration Test',
                                             'Wireless Network Assessment',
