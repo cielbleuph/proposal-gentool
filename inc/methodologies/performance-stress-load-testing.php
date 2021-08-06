@@ -184,11 +184,18 @@
     $methodologiesPage->addText("Metrics for Stress Testing", $boldText);
     $methodologiesPage->addText("Metrics help in evaluating a System's performance and generally studied at the end of Stress Test. Commonly used metrics are:", null, $defaultParagraphStyle);
 
-    $methodologiesPage->addListItem("Measuring Scalability & Performance", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addListItem(htmlspecialchars("Measuring Scalability & Performance"), 0, $boldText, $numberStyleList);
     $methodologiesPage->addListItem("Pages per Second: Measures how many pages have been requested / Second.", 1);
     $methodologiesPage->addListItem("Throughput: Basic Metric - Response data size/Second", 1);
     $methodologiesPage->addListItem("Rounds: Number of times test scenarios have been planned Versus Number of times a client has executed", 1);
 
+    $methodologiesPage->addListItem("Application Response", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addListItem("Hit time: Average time to retrieve an image or a page.", 1);
+    $methodologiesPage->addListItem("Time to the first byte: Time is taken to return the first byte of data or information.", 1);
+    $methodologiesPage->addListItem("Page Time: Time is taken to retrieve all the information on a page.", 1);
+
+    $methodologiesPage->addListItem("Application Response", 0, $boldText, $numberStyleList);
+    
 
 
 
