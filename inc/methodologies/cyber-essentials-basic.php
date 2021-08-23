@@ -42,8 +42,11 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $methodologiesPage->addText('Results', $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber- Data security. It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support is available upon request."), null, $defaultParagraphStyle);
+    $methodologiesPage->addText( htmlspecialchars("It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support are available upon request."), null, $defaultParagraphStyle);
+
+
+    // $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber- Data security. It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support is available upon request."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addPageBreak();

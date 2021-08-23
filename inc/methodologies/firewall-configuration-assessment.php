@@ -22,38 +22,44 @@
     $methodologiesPage->addTextBreak();
 
 
-    $methodologyFirewallAssessmentTable = $methodologiesPage->addTable(
-        array(
-            'width' => 5000,
-            'unit' => 'pct',
-            'borderColor' => 'FFFFFF',
-            'cellSpacing' => 5,
-            'borderSize'=>1,
-            'cellMargin' => 20
-        )
-    );
+    $methodologiesPage->addListItem("Ensure bidirectional filtering is in place (ingress and egress)", 0);
+    $methodologiesPage->addListItem("Ensure no inappropriate rules have been implanted, such as to allow a specific employee to insecurely work from home", 0);
+    $methodologiesPage->addListItem("Ensure that routing has been correctly implemented to prevent attacks such as VLAN hopping", 0);
+    $methodologiesPage->addListItem("Ensure VPN configuration has been correctly implemented", 0);
+    $methodologiesPage->addListItem("Ensure adequate logging has been enabled for the device", 0);
+
+    // $methodologyFirewallAssessmentTable = $methodologiesPage->addTable(
+    //     array(
+    //         'width' => 5000,
+    //         'unit' => 'pct',
+    //         'borderColor' => 'FFFFFF',
+    //         'cellSpacing' => 5,
+    //         'borderSize'=>1,
+    //         'cellMargin' => 20
+    //     )
+    // );
     
-    $methodologyFirewallAssessmentTable->addRow();
-    $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center') );
-    $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure bidirectional filtering is in place (ingress and egress)', null, array('indent'=>0.5));
+    // $methodologyFirewallAssessmentTable->addRow();
+    // $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center') );
+    // $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure bidirectional filtering is in place (ingress and egress)', null, array('indent'=>0.5));
 
-    $methodologyFirewallAssessmentTable->addRow();
-    $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure no inappropriate rules have been implanted, such as to allow a specific employee to insecurely work from home', null, array('indent'=>0.5));
+    // $methodologyFirewallAssessmentTable->addRow();
+    // $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure no inappropriate rules have been implanted, such as to allow a specific employee to insecurely work from home', null, array('indent'=>0.5));
 
-    $methodologyFirewallAssessmentTable->addRow();
-    $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure that routing has been correctly implemented to prevent attacks such as VLAN hopping', null, array('indent'=>0.5));
+    // $methodologyFirewallAssessmentTable->addRow();
+    // $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure that routing has been correctly implemented to prevent attacks such as VLAN hopping', null, array('indent'=>0.5));
 
-    $methodologyFirewallAssessmentTable->addRow();
-    $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure VPN configuration has been correctly implemented', null, array('indent'=>0.5));
+    // $methodologyFirewallAssessmentTable->addRow();
+    // $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure VPN configuration has been correctly implemented', null, array('indent'=>0.5));
 
-    $methodologyFirewallAssessmentTable->addRow();
-    $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure adequate logging has been enabled for the device', null, array('indent'=>0.5));
+    // $methodologyFirewallAssessmentTable->addRow();
+    // $methodologyFirewallAssessmentTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyFirewallAssessmentTable->addCell(null, $lightRedCellStyle)->addText('Ensure adequate logging has been enabled for the device', null, array('indent'=>0.5));
 
-    $methodologiesPage->addTextBreak();
+    // $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('The firewall configuration review is based on security best practice guidelines.', null, $defaultParagraphStyle);
     

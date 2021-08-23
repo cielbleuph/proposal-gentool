@@ -9,6 +9,7 @@
     );
 
     $methodologiesPage->addTitle('Cloud Assessment/Review (Azure)', 2); // TOC Bookmark 
+    $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners offers Cloud Assessment/Review (AZURE). This assessment aims to highlight any vulnerabilities and misconfigurations in your Azure environment. A report will be provided highlighting what has passed and any remediation or recommendations necessary.', null, $defaultParagraphStyle);
     
@@ -59,7 +60,7 @@
     $methodologiesPage->addListItem("Azure Defender is set to On for Container Registries", 0);
     $methodologiesPage->addListItem("Azure Defender is set to On for Key Vault", 0);
     $methodologiesPage->addListItem("Windows Defender ATP (WDATP) integration with Security Center is selected", 0);
-    $methodologiesPage->addListItem("    Microsoft Cloud App Security (MCAS) integration with Security Center is selected", 0);
+    $methodologiesPage->addListItem("Microsoft Cloud App Security (MCAS) integration with Security Center is selected", 0);
     $methodologiesPage->addListItem("'Automatic provisioning of monitoring agent' is set to 'On'", 0);
     $methodologiesPage->addListItem("Any of the ASC Default policy settings are not set to 'Disabled'", 0);
     $methodologiesPage->addListItem("'Additional email addresses' is configured with a security contact email", 0);
@@ -100,7 +101,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText("Database Services -  PostgreSQL Database Server", $boldText);
+    $methodologiesPage->addText("Database Services - PostgreSQL Database Server", $boldText);
     $methodologiesPage->addListItem("'Enforce SSL connection' is set to 'ENABLED' for PostgreSQL Database Server", 0);
     $methodologiesPage->addListItem("'Enforce SSL connection' is set to 'ENABLED' for MySQL Database Server", 0);
     $methodologiesPage->addListItem("Server parameter 'log_checkpoints' is set to 'ON' for PostgreSQL Database Server", 0);

@@ -14,12 +14,11 @@
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners offers Cyber Forensics that aims to identify network vulnerabilities and then develop ways to mitigate them.', null, $defaultParagraphStyle);
-    $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Red Team Partners will collect process, preserve, analyse computer-related evidence, and go deep inside the networks, computers, smartphones and other devices in search of evidence of criminal activity. Counterintelligence will be run against hackers, criminals, and other nefarious intentions.', null, $defaultParagraphStyle);
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText('Test Areas', $boldText);
+    $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     // $methodologiesPage->addText( 'Red Team Partners offers a Cloud Assessment/Review (AZURE) that combines best practice guidelines and cyber testing. This assessment will contain the following areas that are assessed throughout the Cloud Assessment/Review (AZURE):', null, $defaultParagraphStyle );
 
     $methodologiesPage->addText(htmlspecialchars("Collect and centralise evidence such as logs, events, and alerts"), 0);
@@ -85,7 +84,7 @@
 
     $methodologiesPage->addText("We provide two post-incident reports:", $boldText, $defaultParagraphStyle);
 
-    $methodologiesPage->addText("Executive Document containing:", $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText("Executive Document containing:", $boldText);
 
     $methodologiesPage->addListItem("High-level summary of the incident", 0, null, $numberStyleList);
     $methodologiesPage->addListItem("Purchasing suggestions ", 0, null, $numberStyleList);
@@ -93,7 +92,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText("Technical Document with", $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText("Technical Document with", $boldText);
     $methodologiesPage->addListItem("A deep technical write-up of the incident", 0, $numberStyleList);
     $methodologiesPage->addListItem("Exploitation path", 0, $numberStyleList);
     $methodologiesPage->addListItem("Attack vectors", 0, $numberStyleList);

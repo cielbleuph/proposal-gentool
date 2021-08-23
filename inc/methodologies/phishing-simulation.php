@@ -18,40 +18,48 @@
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('The following areas are assessed throughout the Phishing Assessment:', null, $defaultParagraphStyle);
 
+    $methodologiesPage->addListItem("Susceptibility of employees", 0);
+    $methodologiesPage->addListItem("Number of credentials/malicious documents opened", 0);
+    $methodologiesPage->addListItem("Number of links clicked/documents downloaded", 0);
+    $methodologiesPage->addListItem("Number of e-mails open", 0);
+    $methodologiesPage->addListItem("Number of replies to the malicious e-mail", 0);
+    $methodologiesPage->addListItem("Reporting processes in place.", 0);
 
-    $methodologyPhishingSimulationTable = $methodologiesPage->addTable(
-        array(
-            'width' => 5000,
-            'unit' => 'pct',
-            'borderColor' => 'FFFFFF',
-            'cellSpacing' => 5,
-            'borderSize'=>1,
-            'cellMargin' => 20
-        )
-    );
+
+
+    // $methodologyPhishingSimulationTable = $methodologiesPage->addTable(
+    //     array(
+    //         'width' => 5000,
+    //         'unit' => 'pct',
+    //         'borderColor' => 'FFFFFF',
+    //         'cellSpacing' => 5,
+    //         'borderSize'=>1,
+    //         'cellMargin' => 20
+    //     )
+    // );
     
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center') );
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Susceptibility of employees', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center') );
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Susceptibility of employees', null, array('indent'=>0.5));
 
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of credentials/malicious documents opened', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of credentials/malicious documents opened', null, array('indent'=>0.5));
 
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of links clicked/documents downloaded', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of links clicked/documents downloaded', null, array('indent'=>0.5));
 
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of e-mails open', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of e-mails open', null, array('indent'=>0.5));
 
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of replies to the malicious e-mail', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Number of replies to the malicious e-mail', null, array('indent'=>0.5));
 
-    $methodologyPhishingSimulationTable->addRow();
-    $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Reporting processes in place.', null, array('indent'=>0.5));
+    // $methodologyPhishingSimulationTable->addRow();
+    // $methodologyPhishingSimulationTable->addCell(400, $DarkRedCellStyle)->addText('-', array('color'=>'FFFFFF'), array('alignment'=>'center'));
+    // $methodologyPhishingSimulationTable->addCell(null, $lightRedCellStyle)->addText('Reporting processes in place.', null, array('indent'=>0.5));
 
     $methodologiesPage->addPageBreak();

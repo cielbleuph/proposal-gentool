@@ -500,16 +500,16 @@
     $companyfillUpFormTable->addCell(5000, array('gridSpan'=> 2, 'bgColor'=>'CE4E4E'))->addText($companyName, array('color'=>'FFFFFF', 'bold'=>true) , array('align'=>'center') );
     
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
-    $companyfillUpFormTable->addCell(4000)->addText($clientContactName);
+    $companyfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Contact Name:');
+    $companyfillUpFormTable->addCell(3500)->addText($clientContactName);
     
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Number:');
-    $companyfillUpFormTable->addCell(4000)->addText($clientContactNumber);
+    $companyfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Number:');
+    $companyfillUpFormTable->addCell(3500)->addText($clientContactNumber);
 
     $companyfillUpFormTable->addRow();
-    $companyfillUpFormTable->addCell(1000, array('bgColor'=>'F5B7A6'))->addText('Email:');
-    $companyfillUpFormTable->addCell(4000)->addText($clientContactEmail);
+    $companyfillUpFormTable->addCell(1500, array('bgColor'=>'F5B7A6'))->addText('Email:');
+    $companyfillUpFormTable->addCell(3500)->addText($clientContactEmail);
 
     $proposalDetailsPage->addTextBreak();
 
@@ -584,9 +584,9 @@
 
     $ourApproachPage->addListItem('Red Team Partners would like to propose a date of '. $startDate .' to start conducting test, this date has been discussed with '.$clientContactName .'.', 0, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('After testing has been conducted our world-class team will independently verify the report and provide security risks including:', 0, null, null, $defaultParagraphStyle );
-    $ourApproachPage->addListItem('That '.$companyName.' security posture is being met through policies, procedure and design ', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('That '.$companyName.' security posture is being met through policies, procedure and design. ', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('Vulnerabilities facing '.$companyName.' are highlighted to understand the risk rating and measured to show the key areas to focus on with the organisation.', 1, null, null, $defaultParagraphStyle );
-    $ourApproachPage->addListItem('Guidance on best practices for regulation', 1, null, null, $defaultParagraphStyle );
+    $ourApproachPage->addListItem('Guidance on best practices for regulation.', 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem(htmlspecialchars("Exploitation of threats that could be exploited by a bad actor compromising ".$companyName."'s systems and data."), 1, null, null, $defaultParagraphStyle );
     $ourApproachPage->addListItem('Red Team Partners will focus on key weaknesses to evaluate the probability of an exploitation of each security vulnerability, then creating an action plan to reduce the risk and mitigate the vulnerability. ', 1, null, null, $defaultParagraphStyle );
 
@@ -642,8 +642,7 @@
     $whatMakesUsDifferentPage->addTextBreak();
 
     $whatMakesUsDifferentPage->addText('Next Steps', array('size'=>16, 'bold'=>true));
-    $whatMakesUsDifferentPage->addText('When you are ready to ahead, please inform your account manager '. $accountManagerName .' using the details below. You will be introduced to our delivery 
-    team who will confirm the start date of the test and statement of works.');
+    $whatMakesUsDifferentPage->addText('When you are ready to ahead, please inform your account manager '. $accountManagerName .' using the details below. You will be introduced to our delivery team who will confirm the start date of the test and statement of works.');
     $whatMakesUsDifferentPage->addText('Thank you for your business, we look forward to working with you.');
 
     $nextStepsTable = $whatMakesUsDifferentPage->addTable(array(
@@ -774,9 +773,9 @@
     $preTestListItemRunFive->addText('Point of Contact', array('bold' => true), null, $defaultParagraphStyle);
     $preTestListItemRunFive->addText(' - Point of contact – A designated point of contact will be required to deal with any issues that arise. Your project manager will be your point of contact for Red Team Partners.', null, $defaultParagraphStyle);
 
+    $statementOfWorksPage->addTextBreak();
 
     $statementOfWorksPage->addTitle('Assessment', 2);
-    // $statementOfWorksPage->addPageBreak();
 
     $assessmentListItemRunOne = $statementOfWorksPage->addListItemRun();
     $assessmentListItemRunOne->addText('Test Environment', array('bold'=>true), null, $defaultParagraphStyle);
@@ -794,6 +793,7 @@
     $assessmentListItemRunFour->addText('Data Handling', array('bold'=>true), null, $defaultParagraphStyle);
     $assessmentListItemRunFour->addText(' – All testing is performed in a secure laboratory adhering to ISO27001 requirements, only our testing personnel will have access to critical information.', null, $defaultParagraphStyle);
 
+    $statementOfWorksPage->addTextBreak();
 
     $statementOfWorksPage->addTitle('Post-Test', 2);
 
@@ -862,7 +862,7 @@
     ));
 
     $costingPageTable->addRow();
-    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase 1', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
+    $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E', 'valign'=>'center'))->addText('Phase', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center'));
     $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'CE4E4E'))->addText('Service(s)', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
     $costingPageTable->addCell(null, array('bgColor'=>'CE4E4E'))->addText('Days', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));
     $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'CE4E4E'))->addText('Price', array('color'=>'FFFFFF', 'bold'=>true), array('alignment'=>'center', 'bold'=>true));

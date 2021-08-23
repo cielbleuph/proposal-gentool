@@ -17,7 +17,7 @@
     $methodologiesPage->addText('Describes the methodology for Fraud Investigation', null, $defaultParagraphStyle);
     
 
-    $methodologiesPage->addText(htmlspecialchars('"Next Energy Capital" next steps'), null, $defaultParagraphStyle);
+    $methodologiesPage->addText(htmlspecialchars($companyName . ' next steps'), null, $defaultParagraphStyle);
     $methodologiesPage->addListItem("Research personal email in public breaches", 0);
     $methodologiesPage->addListItem("Research personal email in dark web sales", 0);
     $methodologiesPage->addListItem("OSINT for any related information to this case", 0);
@@ -143,7 +143,7 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText("Security testing services", $boldText, $defaultParagraphStyle);
-    $methodologiesPage->addText("In some incidents, there will be a need for specialized technical testing and review. In such instances, the Incident Response team are also able to call upon a highly experienced Penetration Testing team who provide services including:", $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText("In some incidents, there will be a need for specialized technical testing and review. In such instances, the Incident Response team are also able to call upon a highly experienced Penetration Testing team who provide services including:", null, $defaultParagraphStyle);
     $methodologiesPage->addListItem("Infrastructure Testing", 0);
     $methodologiesPage->addListItem("Web Application Testing", 0);
     $methodologiesPage->addListItem("Mobile Application Testing", 0);
@@ -165,17 +165,17 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('ISO 27001 Consultancy Proposal', $boldText, $paragraphHeadingPStyle);
-    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addText("   1. ISO 27001 Assessment (5 days)", $boldText);
     $methodologiesPage->addListItem("Review current operational and IT processes", 1);
     $methodologiesPage->addListItem("Review of existing documentation and interviews with team", 1);
     $methodologiesPage->addListItem("Review against ISO27001 criteria", 1);
 
-    $methodologiesPage->addListItem("ISO 27001 Assessment (5 days)", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addText("   2. ISO 27001 Assessment (5 days)", $boldText);
     $methodologiesPage->addListItem("High-level plan and outline of the path to Certification", 1);
     $methodologiesPage->addListItem("Agree on approach for Critical areas.", 1);
     $methodologiesPage->addListItem("Initial review and discussion with Team", 1);
 
-    $methodologiesPage->addListItem("ISO27001 Remediation (3 days)", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addListItem("   3. ISO27001 Remediation (3 days)", $boldText);
     $methodologiesPage->addListItem("Initial Remediation Steps -e.g., creation of policies", 1);
     $methodologiesPage->addListItem("Detailed Plan of ISO Controls to address and timeline.", 1);
     

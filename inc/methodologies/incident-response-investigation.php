@@ -62,13 +62,13 @@
     $methodologiesPage->addListItem("Areas where the CIRT teams were effective.", 0);
     $methodologiesPage->addListItem("Areas that need improvement", 0);
 
-    $methodologiesPage->addTextBreak();
+    // $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText("Results", $boldText, $defaultParagraphStyle); 
+    // $methodologiesPage->addText("Results", $boldText, $defaultParagraphStyle); 
 
-    $methodologiesPage->addText("Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment. From the report provided, you will be able to understand any weaknesses that can be exploited and if your system meets expectations for functionality and security. Red Team Partners will also include remediation/comments and suggestions on how to resolve any vulnerabilities/risks found.", null, $defaultParagraphStyle);
+    // $methodologiesPage->addText("Red Team Partners will provide a detailed report at the end of the engagement, our reports are quality controlled by certified testers. Using the traffic light system (Red=High, Yellow=Medium, Green=Low) your report will highlight any vulnerabilities/risks from this assessment. From the report provided, you will be able to understand any weaknesses that can be exploited and if your system meets expectations for functionality and security. Red Team Partners will also include remediation/comments and suggestions on how to resolve any vulnerabilities/risks found.", null, $defaultParagraphStyle);
 
-    $methodologiesPage->addText("Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.", null, $defaultParagraphStyle);
+    // $methodologiesPage->addText("Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.", null, $defaultParagraphStyle);
 
     $methodologiesPage->addPageBreak();
 

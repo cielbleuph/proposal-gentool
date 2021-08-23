@@ -27,7 +27,7 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('Goals of Stress Testing', $boldText, $defaultParagraphStyle);
-    $methodologiesPage->addText("Our goal of stress testing is to analyse the behavior of the system after a failure. For stress testing to be successful, the tested system should display an appropriate error message while it is under extreme conditions.", null, $defaultParagraphStyle );
+    $methodologiesPage->addText("Our goal of stress testing is to analyse the behaviour of the system after a failure. For stress testing to be successful, the tested system should display an appropriate error message while it is under extreme conditions.", null, $defaultParagraphStyle );
 
     $methodologiesPage->addText("To conduct Stress Testing, sometimes, massive data sets may be used which may get lost during Stress Testing. Our Testers look into a parameter that they do not lose security-related data while doing stress testing.", null, $defaultParagraphStyle);
 
@@ -166,7 +166,7 @@
     $performanceTwo->addText(" - Jmeter is an Open-Source testing tool. It is a pure Java application for stress and Performance Testing. Jmeter is intended to cover types of tests like load, functional, stress, etc. It needs JDK 5 or higher to function.");
 
     $performanceThree = $methodologiesPage->addListItemRun();
-    $performanceThree->addText("Stress Tester ", $boldText);
+    $performanceThree->addText("Stress Tester", $boldText);
     $performanceThree->addText(" - This tool provides an extensive analysis of the web application performance, provides results in graphical format, and it is extremely easy to use. No high-level scripting is required, and it gives a good return on investment. ");
 
     $performanceFour = $methodologiesPage->addListItemRun();
@@ -195,6 +195,14 @@
     $methodologiesPage->addListItem("Page Time: Time is taken to retrieve all the information on a page.", 1);
 
     $methodologiesPage->addListItem("Application Response", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addListItem("Hit time: Average time to retrieve an image or a page.", 1);
+    $methodologiesPage->addListItem("Time to the first byte: Time is taken to return the first byte of data or information.", 1);
+    $methodologiesPage->addListItem("Page Time: Time is taken to retrieve all the information on a page.", 1);
+    
+    $methodologiesPage->addListItem("Failures", 0, $boldText, $numberStyleList);
+    $methodologiesPage->addListItem("Failed Connections: Number of failed connections refused by the client (Weak Signal).", 1);
+    $methodologiesPage->addListItem("Failed Rounds: Number of rounds it gets failed.", 1);
+    $methodologiesPage->addListItem("o	Failed Hits: Number of failed attempts done by the system (Broken links or unseen images).", 1);
     
 
 

@@ -16,7 +16,7 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText("The first area to be tested is the availability of the wireless network which is achieved with scanning tools. Consultants set their wireless cards into promiscuous mode to reveal any 802.11x wireless networks which may have their SSID’s hidden from public view. Many organisations believe hiding the SSID is the only security requirement for wireless networks andthis can sometimes lead to an easy route into the corporate network from an attacking standpoint.", null, $defaultParagraphStyle);
+    $methodologiesPage->addText("The first area to be tested is the availability of the wireless network which is achieved with scanning tools. Consultants set their wireless cards into promiscuous mode to reveal any 802.11x wireless networks which may have their SSID’s hidden from public view. Many organisations believe hiding the SSID is the only security requirement for wireless networks and this can sometimes lead to an easy route into the corporate network from an attacking standpoint.", null, $defaultParagraphStyle);
 
     $methodologiesPage->addText("Once this has been tested, the following areas are assessed:", null, $defaultParagraphStyle);
     
