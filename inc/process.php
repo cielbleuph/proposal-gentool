@@ -694,7 +694,7 @@
     //############################### SUB SECTIONS OF STATEMENT OF WORKS PAGE ###############################
 
     $statementOfWorksPage->addTitle('Scope', 2);
-    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their company. Red Team Partners and '.$companyName.' have identified the need the following services: ' . $serviceDescription . '. These services have been based on the discussion conducted with ' .$clientContactName, null, $defaultParagraphStyle);
+    $statementOfWorksPage->addText( $companyName. ' has requested Red Team Partners to conduct cyber security assessment for their company. Red Team Partners and '.$companyName.' have identified the need the following services: ' . $serviceDescription . '. These services have been based on the discussion conducted with ' .$clientContactName . '.', null, $defaultParagraphStyle);
     $statementOfWorksPage->addTextBreak();
     
     $statementOfWorksPage->addTitle('Details of Scope', 2);
@@ -885,6 +885,7 @@
     $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
 
     $costingPage->addTextBreak();
+    $costingPage->addText(htmlspecialchars("Cost includes retest on found vulnerabilities, this can be redeemed during or after the service."));
 
     // $costingPage->addText('Pricing Notes:', array('bold'=>true, ));
 
@@ -898,8 +899,8 @@
     // $costingPage->addTextBreak();
 
 
-    $costingPage->addText('Our Approach', array('bold'=> true));
-    $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
+    // $costingPage->addText('Our Approach', array('bold'=> true));
+    // $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
 
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -915,6 +916,8 @@
 
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
+
+    $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
 
     
     $methodologiesPage->addText('The process of how the mentioned assessment is(are) conducted and explained in the below methodology(ies).');
