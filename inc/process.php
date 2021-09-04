@@ -10,7 +10,7 @@
 
     include "prepend.php";
     include HELPER_DIR . 'helper.php';
-
+    include HELPER_DIR . 'logger.php';
     require_once VENDOR_DIR . 'autoload.php';
 
     $dateHelper = new Helper();

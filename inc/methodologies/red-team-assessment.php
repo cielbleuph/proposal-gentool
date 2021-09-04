@@ -38,7 +38,7 @@
 
     $redteamAssessmentListItemRunFive = $methodologiesPage->addListItemRun(0, 'multilevel');
     $redteamAssessmentListItemRunFive->addText('Redundancy', array('bold' => true), null, $defaultParagraphStyle);
-    $redteamAssessmentListItemRunFive->addText(' – If Phishing / Physical does not provide network access, organisation will install a network device to allow external access to the RedTeamPartners consultants to continue testing.', null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunFive->addText(' – If Phishing / Physical does not provide network access, organisation will install a network device to allow external access to the Red Team Partners consultants to continue testing.', null, $defaultParagraphStyle);
 
     $redteamAssessmentListItemRunSix = $methodologiesPage->addListItemRun(0, 'multilevel');
     $redteamAssessmentListItemRunSix->addText('Network Mapping', array('bold' => true), null, $defaultParagraphStyle);
