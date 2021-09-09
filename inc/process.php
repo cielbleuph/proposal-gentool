@@ -901,7 +901,7 @@
 
     // $costingPage->addText('Our Approach', array('bold'=> true));
     // $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
-    $costingPage->addText("THIS IS A TEST");
+    // $costingPage->addText("THIS IS A TEST");
 
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
@@ -920,7 +920,7 @@
     $methodologiesPage->addTitle('Methodologies', 1); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
 
-    $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
+    $methodologiesPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
     
     $methodologiesPage->addText('The process of how the mentioned assessment is(are) conducted and explained in the below methodology(ies).');
     $methodologiesPage->addTextBreak();
