@@ -901,10 +901,13 @@
 
     // $costingPage->addText('Our Approach', array('bold'=> true));
     // $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
+    $costingPagePage->addText("THIS IS A TEST");
 
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $costingPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));
+
+    
     
     //############################### END COSTING PAGE ###############################
 
