@@ -18,24 +18,24 @@
     
 
     $methodologiesPage->addText(htmlspecialchars($companyName . ' next steps'), null, $defaultParagraphStyle);
-    $methodologiesPage->addListItem("Research personal email in public breaches", 0);
-    $methodologiesPage->addListItem("Research personal email in dark web sales", 0);
-    $methodologiesPage->addListItem("OSINT for any related information to this case", 0);
-    $methodologiesPage->addListItem("Research for CC in dark web sales",0);
-    $methodologiesPage->addListItem("Research for any link from personal to the corporate area", 0);
-    $methodologiesPage->addListItem("Crack the hashes from public exploits", 0);
-    $methodologiesPage->addListItem("Build the report with the evidence and possible scenarios", 0);
-    $methodologiesPage->addListItem("Build the chain of Events, if possible", 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Research personal email in public breaches"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Research personal email in dark web sales"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("OSINT for any related information to this case"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Research for CC in dark web sales"),0);
+    $methodologiesPage->addListItem(htmlspecialchars("Research for any link from personal to the corporate area"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Crack the hashes from public exploits"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Build the report with the evidence and possible scenarios"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Build the chain of Events, if possible"), 0);
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText("Fraud Investigation Detailed", $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText("Every fraud incident is different, and the response and investigation methods will vary depending on the facts that are unique to each case.", null, $defaultParagraphStyle);
+    $methodologiesPage->addText(htmlspecialchars("Fraud Investigation Detailed"), $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $methodologiesPage->addText(htmlspecialchars("Every fraud incident is different, and the response and investigation methods will vary depending on the facts that are unique to each case."), null, $defaultParagraphStyle);
 
-    $methodologiesPage->addText("Our Team can provide the leadership and core capabilities in cybersecurity domains:", null, $defaultParagraphStyle);
-    $methodologiesPage->addListItem("Cyber Security Incident Response and Threat Hunting", 0);
-    $methodologiesPage->addListItem("Digital Forensics and Investigations", 0);
-    $methodologiesPage->addListItem("Security Assurance and Testing", 0);
+    $methodologiesPage->addText(htmlspecialchars("Our Team can provide the leadership and core capabilities in cybersecurity domains:"), null, $defaultParagraphStyle);
+    $methodologiesPage->addListItem(htmlspecialchars("Cyber Security Incident Response and Threat Hunting"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Digital Forensics and Investigations"), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Security Assurance and Testing"), 0);
 
     $methodologiesPage->addTextBreak();
 
@@ -157,33 +157,35 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText("Crisis Communications", $boldText, $defaultParagraphStyle);
-    $methodologiesPage->addText("The Incident Response team has access to professionals with crisis communications expertise in the event of a breach or attack. Consultancy can be in the form of:", null, $defaultParagraphStyle);
-    $methodologiesPage->addListItem("Ad-hoc assistance when required during an incident, including support to assist in managing external (including media) statements on the incident.", 0);
-    $methodologiesPage->addListItem("Communication and governance planning – developing a plan for a potential cybersecurity incident, to develop a whole-of-organization response that combines IT, communications, operations, and legal/regulatory teams to best effect.", 0);
+    $methodologiesPage->addText(htmlspecialchars("Crisis Communications"), $boldText, $defaultParagraphStyle);
+    $methodologiesPage->addText(htmlspecialchars("The Incident Response team has access to professionals with crisis communications expertise in the event of a breach or attack. Consultancy can be in the form of:"), null, $defaultParagraphStyle);
+    $methodologiesPage->addListItem(htmlspecialchars("Ad-hoc assistance when required during an incident, including support to assist in managing external (including media) statements on the incident."), 0);
+    $methodologiesPage->addListItem(htmlspecialchars("Communication and governance planning – developing a plan for a potential cybersecurity incident, to develop a whole-of-organization response that combines IT, communications, operations, and legal/regulatory teams to best effect."), 0);
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText('ISO 27001 Consultancy Proposal', $boldText, $paragraphHeadingPStyle);
-    $methodologiesPage->addText("   1. ISO 27001 Assessment (5 days)", $boldText);
-    $methodologiesPage->addListItem("Review current operational and IT processes", 1);
-    $methodologiesPage->addListItem("Review of existing documentation and interviews with team", 1);
-    $methodologiesPage->addListItem("Review against ISO27001 criteria", 1);
+    $methodologiesPage->addText(htmlspecialchars("ISO 27001 Consultancy Proposal"), $boldText, $paragraphHeadingPStyle);
+    $methodologiesPage->addText(htmlspecialchars("   1. ISO 27001 Assessment (5 days)"), $boldText);
+    $methodologiesPage->addListItem(htmlspecialchars("Review current operational and IT processes"), 1);
+    $methodologiesPage->addListItem(htmlspecialchars("Review of existing documentation and interviews with team"), 1);
+    $methodologiesPage->addListItem(htmlspecialchars("Review against ISO27001 criteria"), 1);
 
-    $methodologiesPage->addText("   2. ISO 27001 Assessment (5 days)", $boldText);
-    $methodologiesPage->addListItem("High-level plan and outline of the path to Certification", 1);
-    $methodologiesPage->addListItem("Agree on approach for Critical areas.", 1);
-    $methodologiesPage->addListItem("Initial review and discussion with Team", 1);
+    $methodologiesPage->addText(htmlspecialchars("   2. ISO 27001 Assessment (5 days)"), $boldText);
+    $methodologiesPage->addListItem(htmlspecialchars("High-level plan and outline of the path to Certification"), 1);
+    $methodologiesPage->addListItem(htmlspecialchars("Agree on approach for Critical areas."), 1);
+    $methodologiesPage->addListItem(htmlspecialchars("Initial review and discussion with Team"), 1);
+    
 
-    $methodologiesPage->addListItem("   3. ISO27001 Remediation (3 days)", $boldText);
-    $methodologiesPage->addListItem("Initial Remediation Steps -e.g., creation of policies", 1);
-    $methodologiesPage->addListItem("Detailed Plan of ISO Controls to address and timeline.", 1);
+    // $methodologiesPage->addListItem(htmlspecialchars("3. ISO27001 Remediation (3 days)"), $boldText);
+    $methodologiesPage->addText(htmlspecialchars("   3. ISO 27001 Remediation (3 days)"), $boldText);
+    $methodologiesPage->addListItem(htmlspecialchars("Initial Remediation Steps -e.g., creation of policies"), 1);
+    $methodologiesPage->addListItem(htmlspecialchars("Detailed Plan of ISO Controls to address and timeline."), 1);
     
 
         
-    // $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    // $methodologiesPage->addText('Red Team Partners firewall configuration assessment compromises of the following checks:', null, $defaultParagraphStyle);
-    // $methodologiesPage->addTextBreak();
+    $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $methodologiesPage->addText('Red Team Partners firewall configuration assessment compromises of the following checks:', null, $defaultParagraphStyle);
+    $methodologiesPage->addTextBreak();
 
 
     

@@ -918,7 +918,6 @@
     $methodologiesPage->addTextBreak();
 
     $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
-
     
     $methodologiesPage->addText('The process of how the mentioned assessment is(are) conducted and explained in the below methodology(ies).');
     $methodologiesPage->addTextBreak();
