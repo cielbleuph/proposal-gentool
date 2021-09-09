@@ -901,7 +901,7 @@
 
     // $costingPage->addText('Our Approach', array('bold'=> true));
     // $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
-    $costingPagePage->addText("THIS IS A TEST");
+    $costingPage->addText("THIS IS A TEST");
 
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
