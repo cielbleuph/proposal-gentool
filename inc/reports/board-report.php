@@ -157,6 +157,10 @@
     // ########## SLIDE 6 ###########
     
     include('slides/slide06.php');
+
+    // ########## SLIDE 6a ##########
+
+    include('slides/slide06a.php');
     
     // ########## SLIDE 7 ###########
 
