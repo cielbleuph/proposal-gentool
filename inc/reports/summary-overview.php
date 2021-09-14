@@ -85,6 +85,10 @@
         if ( isset( $_POST['total-findings'] ) && $_POST['total-findings'] != "" ) {
             $totalFindings = $_POST["total-findings"];
         }
+
+        if( isset($_POST['rtp-recommendations']) && $_POST['rtp-recommendations'] != '' ) {
+            $rtpRecommendations = $_POST['rtp-recommendations'];
+        }
     }
     else{
         exit('Oh noes! There\'s an issue! We apologized for this. Do not worry, we already notified the bug catchers. Check back again later.');
@@ -483,6 +487,11 @@
             $technicalSummaryPage->addListItem( htmlspecialchars( $mediumTermGoal ), 0 );
         }
     }
+
+    $technicalSummaryPage->addTextBreak();
+
+    $technicalSummaryPage->addText(htmlspecialchars("Red Team Partners Recommendation:") );
+    $technicalSummaryPage->addListItem(htmlspecialchars( $rtpRecommendations ), 0 );
 
     $technicalSummaryPage->addTextBreak();
 

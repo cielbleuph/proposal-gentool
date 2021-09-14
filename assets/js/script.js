@@ -6,43 +6,44 @@ $(document).ready(function(){
 
   // ***** TEST DATA - prefilled data for testing ***** //
 
-  $('#company-name').val('COMPANY XYZ');
-  $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
-  $('#client-name').val('JOHN DOE');
-  $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
-  $('#client-contact').val('1234567890');
-  $('#account-manager').val('ALAIN PEDRONIO');
-  $('#account-manager-contact').val('0987654321');
-  $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
-  $('#test-date').val('04/30/2021');
-  $('#number-of-days').val('10');
+  // $('#company-name').val('COMPANY XYZ');
+  // $('#company-description').val('SOME DESCRIPTION ABOUT THE COMPANY STATED HERE');
+  // $('#client-name').val('JOHN DOE');
+  // $('#client-email').val('JOHNDOE@TESTLOCAL.COM');
+  // $('#client-contact').val('1234567890');
+  // $('#account-manager').val('ALAIN PEDRONIO');
+  // $('#account-manager-contact').val('0987654321');
+  // $('#account-manager-email').val('ALAIN@REDTEAMPARTNERS.CO.UK');
+  // $('#test-date').val('04/30/2021');
+  // $('#number-of-days').val('10');
 
-  $('#delivery-manager-name').val('John Doe');
-  $('#delivery-manager-email').val('johndoe@testlocal.co');
-  $('#client-name').val('Jane Doe');
-  $('#client-company-name').val('Company & ACME');
-  $('#poc-name').val('Ruben Reyes');
-  $('#poc-mobile-number').val('1234567890');
-  $('#poc-email-address').val('rubenpoc@test.local');
-  $('#tester-name').val('Philip Tester');
-  $('#tester-email').val('philiptester@local.co');
-  $('#generated-date').val('7/01/2021');
-  $('#estimated-delivery-date').val('07/31/2021');
-  $('#test-start-date').val('07/23/2021');
+  // $('#delivery-manager-name').val('John Doe');
+  // $('#delivery-manager-email').val('johndoe@testlocal.co');
+  // $('#client-name').val('Jane Doe');
+  // $('#client-company-name').val('Company & ACME');
+  // $('#poc-name').val('Ruben Reyes');
+  // $('#poc-mobile-number').val('1234567890');
+  // $('#poc-email-address').val('rubenpoc@test.local');
+  // $('#tester-name').val('Philip Tester');
+  // $('#tester-email').val('philiptester@local.co');
+  // $('#generated-date').val('7/01/2021');
+  // $('#estimated-delivery-date').val('07/31/2021');
+  // $('#test-start-date').val('07/23/2021');
 
-  $('.critical').val('1');
-  $('.high').val('2');
-  $('.medium').val('3');
-  $('.low').val('4');
-  $('.informational').val('5');
-  $('.service-name').val('This is a Test Service Name');
-  $('.version').val('1.0');
-  $('.date-generated').val('06/30/2021');
-  $('.test-duration-from').val('06/30/2021');
-  $('.test-duration-to').val('07/30/2021');
-  $('.overall-security').val('This is something about overall security.');
+  // $('.critical').val('1');
+  // $('.high').val('2');
+  // $('.medium').val('3');
+  // $('.low').val('4');
+  // $('.informational').val('5');
+  // $('.service-name').val('This is a Test Service Name');
+  // $('.version').val('1.0');
+  // $('.date-generated').val('06/30/2021');
+  // $('.test-duration-from').val('06/30/2021');
+  // $('.test-duration-to').val('07/30/2021');
+  // $('.overall-security').val('This is something about overall security.');
+  // $('.rtp-recommendations').val('Some recommendations are added here.');
 
-  var ctr=6;
+  // var ctr=6;
 
   // for(let i = 1; i < ctr; i++) {
   //   $(".keyfindings-listgroup").append('<li class="list-group-item" id="listing-item"><span class="entry-value">Key Findings 0'+ i +'</span><span class="del-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> delete</span><input type="hidden" value="Key Findings 0'+ i +'" name="keyfindings-hidden[]"</li>');
@@ -360,11 +361,23 @@ $(document).ready(function(){
     submitHandler: function(form) {
       // do other things for a valid form
 
-      $('.lds-facebook').css('visibility', 'initial');
-      $('button[type="submit"]').prop("disabled", true);
-
+      
       var companyName = $('#company-name').val();
       // var formData = $(this).serialize();
+
+      if($('.report-output:checkbox:checked').length == 0){
+        console.log("no check!");
+        return false;
+
+      }
+      else {
+        // at least one checkbox checked...
+        console.log("checked!");
+        $('.lds-facebook').css('visibility', 'initial');
+        $('button[type="submit"]').prop("disabled", true);
+
+      }
+        
 
       if ( $( "#summary-overview-check" ).prop( "checked" ) ) {
         $.ajax({
@@ -503,6 +516,22 @@ $(document).ready(function(){
 
     },
     
+  });
+
+  $('form#reports-generator-form button[type="submit"]').prop("disabled", true);
+
+  $('.report-output:checkbox').on("change", function(e) {
+
+    if( $('.report-output:checkbox:checked').length > 0) {
+        //Do stuffs
+        console.log($(".report-output:checkbox:checked").length);
+        $('form#reports-generator-form button[type="submit"]').prop("disabled", false);
+        
+    }
+    else{
+      console.log("empty checkbox!");
+      $('form#reports-generator-form button[type="submit"]').prop("disabled", true);
+    }
   });
       
     

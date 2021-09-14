@@ -50,11 +50,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="overall-security" class="control-label f-700">Overall Security <span class="required">*</span></label>
-                                <textarea name="overall-security" id="overall-security" cols="30" rows="3" class="form-control overall-security" aria-label="Overall Security" aria-describedby="overall-security" required></textarea>
+                                <textarea name="overall-security" id="overall-security" cols="30" rows="5" class="form-control overall-security" aria-label="Overall Security" aria-describedby="overall-security" required></textarea>
                             </div>
+                            
                         </div>
                     </div>
                     <br />
+                    
                     <div class="card">
                         <div class="card-header palette-Red-300">
                             <h2 class="c-white"><i data-feather="tool"></i> Key Findings <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help"><i data-feather="help-circle"></i></span></a></h2>
@@ -214,6 +216,20 @@
                             </div>
                         </div>
                     </div>
+                    <br />
+
+                    <div class="card">
+                        <div class="card-header palette-Red-300">
+                            <h2 class="c-white"><i data-feather="star"></i> Red Team Partners Recommendation <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help"><i data-feather="help-circle"></i></span></a></h2>
+                        </div>
+                        <div class="card-body form-padding">
+                            <div class="form-group">
+                                <label for="rtp-recommendations" class="control-label f-700">Add Recommendation <span class="required">*</span></label>
+                                <textarea name="rtp-recommendations" cols="30" rows="5" class="form-control rtp-recommendations" id="rtp-recommendations" aria-label="Red Team Partners Recommendations" aria-describeby="rtp-recommendations" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
                 </div>
 
                 
@@ -277,15 +293,15 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="summary-overview-check" name="summary-overview-check" class="summary-overview-check output-group">
+                                <input class="report-output form-check-input summary-overview-check output-group" type="checkbox" id="summary-overview-check" name="summary-overview-check">
                                 <label class="form-check-label" for="summary-overview-check">Summary Overview</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="audit-checklist-check" name="audit-checklist-check" class="audit-checklist-check output-group">
+                                <input class="report-output form-check-input audit-checklist-check output-group" type="checkbox" id="audit-checklist-check" name="audit-checklist-check">
                                 <label class="form-check-label" for="audit-checklist-check">Audit Checklist</label>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="board-report-check" name="board-report-check" class="board-report-check output-group">
+                                <input class="report-output form-check-input board-report-check output-group" type="checkbox" id="board-report-check" name="board-report-check">
                                 <label class="form-check-label" for="board-report-check">Board Report</label>
                             </div>
                         </div>
