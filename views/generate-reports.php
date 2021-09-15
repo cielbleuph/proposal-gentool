@@ -16,13 +16,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="company-name" class="control-label f-700">Company Name <span class="required">*</span></label>
-                                        <input type="text" class="form-control company-name" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name" placeholder="" required>
+                                        <input type="text" class="form-control company-name" name="company-name" id="company-name" aria-label="Company Name" aria-describedby="company-name" placeholder="Enter company name" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="service-name" class="control-label f-700">Service Name <span class="required">*</span></label>
-                                        <input type="text" class="form-control service-name" name="service-name" id="service-name" aria-label="Service Name" aria-describedby="service-name" placeholder="" required>
+                                        <input type="text" class="form-control service-name" name="service-name" id="service-name" aria-label="Service Name" aria-describedby="service-name" placeholder="Enter service name" required>
                                     </div>
                                 </div>
                             </div>
@@ -30,13 +30,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="version" class="control-label f-700">Version <span class="required">*</span></label>
-                                        <input type="text" class="form-control version" name="version" id="version" aria-label="Version" aria-describedby="version" placeholder="" required>
+                                        <input type="text" class="form-control version" name="version" id="version" aria-label="Version" aria-describedby="version" placeholder="Enter version number" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="date-generated" class="control-label f-700">Date Generated <span class="required">*</span></label>
-                                        <input type="text" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="" required>
+                                        <input type="text" class="form-control date-generated" name="date-generated" id="date-generated" aria-label="Date Generated" aria-describedby="date-generated" placeholder="Enter date generated" required>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
 
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="star"></i> Red Team Partners Recommendation <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help"><i data-feather="help-circle"></i></span></a></h2>
+                            <h2 class="c-white"><i data-feather="star"></i> Red Team Partners Recommendation <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon rtp-recommendations-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-group">
