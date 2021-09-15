@@ -42,10 +42,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="test-duration" class="control-label f-700">Test Duration <span class="required">*</span></label>
-                                <div class="date-generated-wrapper">
-                                    <input type="text" class="form-control test-duration-from" name="test-duration-from" id="test-duration-from" aria-label="Date Generated From" aria-describedby="date-generated-from" placeholder="" required>
-                                    <span>to</span>
-                                    <input type="text" class="form-control test-duration-to" name="test-duration-to" id="test-duration-to" aria-label="Test Duration To" aria-describedby="test-duration-to" placeholder="" required>
+                                <div class="date-generated-wrapper row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control test-duration-from" name="test-duration-from" id="test-duration-from" aria-label="Date Generated From" aria-describedby="date-generated-from" placeholder="From Date" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control test-duration-to" name="test-duration-to" id="test-duration-to" aria-label="Test Duration To" aria-describedby="test-duration-to" placeholder="To Date" required>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
