@@ -32,7 +32,7 @@
         }
 
         if ( isset($_POST['company-description']) && $_POST['company-description'] != '' ){
-            $companyDescription = $_POST['company-description'];
+            $companyDescription = htmlspecialchars($_POST['company-description']);
         }
 
         if ( isset($_POST['test-reason']) && $_POST['test-reason'] != '' ){
@@ -78,7 +78,6 @@
         if( isset($_POST['totalDays']) && $_POST['totalDays'] != '' ) {
             $totalDays = $_POST['totalDays'];
         }
-
     }
 
     else{
