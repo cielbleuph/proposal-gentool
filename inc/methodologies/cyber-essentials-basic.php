@@ -14,7 +14,6 @@
     $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber-attacks. Even a simple virus or piece of malware could result in loss of company and client data, disrupt your cash flow, and take up staff time. An attack could also dissatisfy your customers, stop you from trading and damaging your hard-earned reputation. It could also be reported in the local media. Loss of data could breach the Data Protection Act and lead to fines or prosecution."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addText(htmlspecialchars("Having a Cyber Essentials badge will:"), null, $defaultParagraphStyle);
-
     $methodologiesPage->addLineItem( htmlspecialchars("Protect your organisation against common cyber threats"), 0);
     $methodologiesPage->addLineItem( htmlspecialchars("Show your customers this issue matters to you"), 0);
     $methodologiesPage->addLineItem( htmlspecialchars("Enable you to bid for Government contracts"), 0);
@@ -45,8 +44,5 @@
     $methodologiesPage->addText('Results', $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
     $methodologiesPage->addText( htmlspecialchars("It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support are available upon request."), null, $defaultParagraphStyle);
-
-
-    // $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber- Data security. It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support is available upon request."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addPageBreak();

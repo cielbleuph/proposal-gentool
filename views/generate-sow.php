@@ -14,30 +14,67 @@
                         <div class="card-body form-padding">
                             <div class="form-group">
                                 <label for="service-type" class="control-label f-700">Select Service Type <span class="required">*</span></label>
-                                    <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help" required>
+                                    <!-- <select class="form-control service-type" id="service-type" name="service-type[]" aria-label="Type of Service" aria-describedby="service-type-help" required> -->
+
+                                    <select class="form-control service-type" id="service-type" name="service-type[]" multiple="multiple" aria-label="Type of Service" aria-describedby="service-type-help"  required>
                                         <option></option>
                                         <?php 
+                                            // $services = array(
+                                            //     'API Penetration Test',
+                                            //     'Web Application Penetration Test',
+                                            //     'Build Review Assessment',
+                                            //     'AWS Cloud Assessment',
+                                            //     'Cloud Based Configuration Review',
+                                            //     'Cyber Threat Intelligence',
+                                            //     'Documentation Review',
+                                            //     'Firewall Configuration Assessment',
+                                            //     'Infrastructure Penetration Test',
+                                            //     'Phishing Simulation',
+                                            //     'Physical Assessment',
+                                            //     'Red Team Assessment',
+                                            //     'Virtualisation Configuration Review',
+                                            //     'VPN Assessment',
+                                            //     'Vulnerability Assessment',
+                                            //     'Wireless Network Assessment',
+                                            //     'Mobile Application Penetration Test',
+                                            //     'Secure Code Review',
+                                            //     'O365 Penetration Test',
+                                            //     'Azure Cloud Review',
+                                            // );
+
                                             $services = array(
                                                 'API Penetration Test',
-                                                'Web Application Penetration Test',
                                                 'Build Review Assessment',
-                                                'AWS Cloud Assessment',
-                                                'Cloud Based Configuration Review',
-                                                'Cyber Threat Intelligence',
-                                                'Documentation Review',
+                                                // 'Cloud Based Configuration Review',
+                                                // 'Cyber Security Training',
+                                                // 'Dark Web Cyber Intelligence Monitoring',
+                                                'Documentation/Architecture Review',
                                                 'Firewall Configuration Assessment',
+                                                'Cyber Forensics and Investigations',
                                                 'Infrastructure Penetration Test',
+                                                'IoT Penetration Testing',
+                                                'Mobile Application Penetration Test',
+                                                // 'PCI DSS Compliance Audit',
+                                                // 'Performance Stress Testing/Load Testing',
                                                 'Phishing Simulation',
-                                                'Physical Assessment',
                                                 'Red Team Assessment',
+                                                'Secure Code Review',
+                                                'Vulnerability Assessment',
+                                                'Web Application Penetration Test',
+                                                'Wireless Network Assessment',
+                                                'Dark Web Cyber Threat Intelligence',
+                                                'O365 Penetration Test',
+                                                'Cloud Assessment/Review (AWS)',
+                                                'Cloud Assessment/Review (Azure)',
+                                                'Cyber Essentials Basic',
+                                                'Cyber Essentials Plus',
+                                                'Fraud Investigation',
+                                                'OWASP for Developers',
+                                                'Physical Assessment',
                                                 'Virtualisation Configuration Review',
                                                 'VPN Assessment',
-                                                'Vulnerability Assessment',
-                                                'Wireless Network Assessment',
-                                                'Mobile Application Penetration Test',
-                                                'Secure Code Review',
-                                                'O365 Penetration Test',
-                                                'Azure Cloud Review',
+                                                'Incident Response and Investigation',
+                                                'Performance Stress/Load testing',
                                             );
 
                                             sort($services);
