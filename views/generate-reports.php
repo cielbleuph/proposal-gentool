@@ -81,7 +81,8 @@
                             <div class="collapse form-group" id="keyfindings-help-content">
                                 <br />
                                 <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    <p>You can find <span class="strong">Key Findings</span> under section <span class="strong">5.1</span> right after <span class="italic underline">Summary of Findings</span> section and before <span class="italic underline">Recommended Next Steps</span>.</p>
+                                    <img src="assets/images/key-findings-hint.png" alt="Key Findings Hint">
                                 </div>
                             </div>
 
@@ -136,7 +137,8 @@
                             <div class="collapse form-group" id="shortterm-help-content">
                                 <br />
                                 <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    <p>You can find <span class="strong">Short Term Goals</span> under section <span class="strong">5.2 Recommended Steps</span> right after <span class="italic underline">5.1 Key Findings</span> section and before <span class="italic underline">6. Vulnerability Findings & Technical Details</span>.</p>
+                                    <img src="assets/images/recommended-steps.png" alt="Short Term Goals Hint">
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#shortterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
@@ -188,7 +190,8 @@
                             <div class="collapse form-group" id="mediumterm-help-content">
                                 <br>                            
                                 <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    <p>You can find <span class="strong">Medium Term Goals</span> under section <span class="strong">5.2 Recommended Steps</span> right after <span class="italic underline">5.1 Key Findings</span> section and before <span class="italic underline">6. Vulnerability Findings & Technical Details</span>.</p>
+                                    <img src="assets/images/recommended-steps.png" alt="Short Term Goals Hint">
                                 </div>
                             </div>
                             <small class="form-text text-muted"><a data-toggle="collapse" href="#mediumterm-bulk-wrapper" role="button" aria-expanded="true">Upload in Bulk</a></small>
@@ -202,14 +205,11 @@
                                         </div>
                                         <div class="form-group">
                                             <textarea class="form-control bulk-upload-textarea" id="mediumterm-bulk-upload" rows="10"></textarea>
-                                        </div>
-                                        
-                                    
+                                        </div>    
                                     </div>
                                     <div class="card-footer">
                                         <button class="align-center btn btn-secondary" id="mediumterm-bulk-btn"><i data-feather="plus"></i> Add Entries</button>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div class="form-group mediumterm-listgroup-wrapper">
@@ -223,19 +223,27 @@
 
                     <div class="card">
                         <div class="card-header palette-Red-300">
-                            <h2 class="c-white"><i data-feather="star"></i> Red Team Partners Recommendation <a data-toggle="collapse" href="#keyfindings-help-content" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon rtp-recommendations-help"><i data-feather="help-circle"></i></span></a></h2>
+                            <h2 class="c-white"><i data-feather="star"></i> Red Team Partners Recommendation <a data-toggle="collapse" href="#rtp-recommendations-help" role="button" aria-expanded="true"><span data-placement="bottom" data-toggle="tooltip" title="Where can I find this?" class="help-icon rtp-recommendations-help"><i data-feather="help-circle"></i></span></a></h2>
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-group">
+                                <div class="collapse form-group" id="rtp-recommendations-help">
+                                    <br>                            
+                                    <div class="card card-body">
+                                        <p>You can find <span class="strong">Red Team Partners Recommendation</span> under section <span class="strong">5.2 Recommended Steps</span> right after <span class="italic underline">5.1 Key Findings</span> section and before <span class="italic underline">6. Vulnerability Findings & Technical Details</span>.</p>
+                                        <img src="assets/images/recommended-steps.png" alt="Short Term Goals Hint">
+                                    </div>
+                                </div>
                                 <label for="rtp-recommendations" class="control-label f-700">Add Recommendation <span class="required">*</span></label>
                                 <textarea name="rtp-recommendations" cols="30" rows="5" class="form-control rtp-recommendations" id="rtp-recommendations" aria-label="Red Team Partners Recommendations" aria-describeby="rtp-recommendations" required></textarea>
                             </div>
                         </div>
                     </div>
                     <br />
-                </div>
-
+                </div>    
                 
+                
+                <!-- RIGHT COLUMN STARTS HERE -->
 
                 <div class="col-md-4">
                     <div class="card">
