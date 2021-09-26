@@ -528,8 +528,8 @@
         }
 
         if ($service === 'Wireless Network Assessment') {
-            include(INC_SOW . 'wireless-network-assessment.php');
-    //     }
+            include(INC_SOW . 'build-review.php');
+        }
     }
 
     // switch ($service) {
