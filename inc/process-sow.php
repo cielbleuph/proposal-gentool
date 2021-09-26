@@ -338,7 +338,7 @@
     $clientDetailsPage->addLine($lineStyle);
     // $clientDetailsPage->addText('', [], );
 
-    $clientDetailsPage->addText("Red Team Partners will begin the Test on ".$testStartDate." for ".htmlentities( $clientCompanyName ).". For any changes to the project including dates, please ensure you provide us with at least 2 weeks’ notice to review and agree on any proposed changes.");
+    $clientDetailsPage->addText( htmlspecialchars("Red Team Partners will begin the Test on ".$testStartDate." for ".htmlentities( $clientCompanyName ).". For any changes to the project including dates, please ensure you provide us with at least 2 weeks’ notice to review and agree on any proposed changes."));
 
     $clientDetailsPage->addText('In this document you will find the details of the work, including dates, the consultant and their details if you wish to contact them during the engagement. The engagement will begin at 9:00 am on the day of testing unless otherwise agreed with you.');
 
@@ -419,93 +419,204 @@
         'pageSizeH' => $paper->getHeight(),
     ));
 
-    $service = $typeOfService[0];
+    // $service = $typeOfService[0];
 
-    switch ($service) {
-        case 'API Penetration Test':
+    foreach($typeOfService as $service) {
+
+        if ($service === 'API Penetration Test') {
             include(INC_SOW . 'api-testing.php');
-            break;
-        
-        case 'Web Application Penetration Test':
-            include(INC_SOW . 'app-pentest.php');
-            break;
-        
-        case 'Build Review Assessment':
+        }
+
+        if ($service === 'Build Review Assessment') {
             include(INC_SOW . 'build-review.php');
-            break;
-        
-        case 'AWS Cloud Assessment':
+        }
+
+        if ($service === 'Cloud Assessment/Review (AWS)') {
             include(INC_SOW . 'cloud-assessment-aws.php');
-            break;
-        
-        case 'Cloud Based Configuration Review':
-            include(INC_SOW . 'cloud-based-config.php');
-            break;        
-        
-        case 'Cyber Threat Intelligence':
-            include(INC_SOW . 'cyber-threat-intelligence.php');
-            break;             
+        }
 
-        case 'Documentation Review':
-            include(INC_SOW . 'document-review.php');
-            break;    
-            
-        case 'Firewall Configuration Assessment':
-            include(INC_SOW . 'firewall.php');
-            break;
+        if ($service === 'Cloud Assessment/Review (Azure)') {
+            include(INC_SOW . 'cloud-assessment-azure.php');
+        }
 
-        case 'Infrastructure Penetration Test':
-            include(INC_SOW . 'infrastructure-penetration.php');
-            break;
-        
-        case 'Phishing Simulation':
-            include(INC_SOW . 'phishing-simulation.php');
-            break;
-        
-        case 'Physical Assessment':
-            include(INC_SOW . 'physical-assessment.php');
-            break;
-        
-        case 'Red Team Assessment':
-            include(INC_SOW . 'red-team-assessment.php');
-            break;
-        
-        case 'Virtualisation Configuration Review':
-            include(INC_SOW . 'virtualisation-config.php');
-            break;        
-        
-        case 'VPN Assessment':
-            include(INC_SOW . 'vpn-assessment.php');
-            break;             
+        if ($service === 'Cyber Essentials Basic') {
+            include(INC_SOW . 'cyber-essentials-basic.php');
+        }
 
-        case 'Vulnerability Scan':
-            include(INC_SOW . 'vulnerability-scan.php');
-            break;    
-            
-        case 'Wireless Network Assessment':
-            include(INC_SOW . 'wireless-network-assessment.php');
-            break;
-        
-        case 'Mobile Application Penetration Test':
+        if ($service === 'Cyber Essentials Plus') {
+            include(INC_SOW . 'cyber-essentials-plus.php');
+        }
+
+        if ($service === 'Cyber Forensics and Investigations') {
+            include(INC_SOW . 'cyber-forensics-investigations.php');
+        }
+
+        if ($service === 'Dark Web Cyber Threat Intelligence') {
+            include(INC_SOW . 'dark-web-cyber-threat-intelligence.php');
+        }
+
+        if ($service === 'Documentation/Architecture Review') {
+            include(INC_SOW . 'documentation-architecture-review.php');
+        }
+
+        if ($service === 'Firewall Configuration Assessment') {
+            include(INC_SOW . 'firewall-configuration-assessment.php');
+        }
+
+        if ($service === 'Fraud Investigation') {
+            include(INC_SOW . 'fraud-investigation.php');
+        }
+
+        if ($service === 'Incident Response and Investigation') {
+            include(INC_SOW . 'incident-response-investigation.php');
+        }
+
+        if ($service === 'Infrastructure Penetration Test') {
+            include(INC_SOW . 'infrastructure-penetration-test.php');
+        }
+
+        if ($service === 'IoT Penetration Test') {
+            include(INC_SOW . 'iot-penetration-test.php');
+        }
+
+        if ($service === 'Mobile Application Penetration Test') {
             include(INC_SOW . 'mobile-application-penetration-test.php');
-            break;
+        }
 
-        case 'Secure Code Review':
+        if ($service === 'O365 Penetration Test') {
+            include(INC_SOW . 'o365-penetration-test.php');
+        }
+
+        if ($service === 'OWASP for Developers') {
+            include(INC_SOW . 'owasp-developers.php');
+        }
+
+        if ($service === 'Performance Stress/Load Test') {
+            include(INC_SOW . 'performance-stress-load-test.php');
+        }
+
+        if ($service === 'Phishing Simulation') {
+            include(INC_SOW . 'phishing-simulation.php');
+        }
+
+        if ($service === 'Physical Assessment') {
+            include(INC_SOW . 'physical-assessment.php');
+        }
+
+        if ($service === 'Red Team Assessment') {
+            include(INC_SOW . 'red-team-assessment.php');
+        }
+
+        if ($service === 'Secure Code Review') {
             include(INC_SOW . 'secure-code-review.php');
-            break;
-            
-        case 'O365 Penetration Test':
-            include(INC_SOW . 'O365-penetration-test.php');
-            break;            
-        
-        case 'Azure Cloud Review':
-            include(INC_SOW . 'azure-cloud-review.php');
-            break;      
-        
-        default:
-            # code...
-            break;
+        }
+
+        if ($service === 'VPN Assessment') {
+            include(INC_SOW . 'vpn-assessment.php');
+        }
+
+        if ($service === 'Virtualisation Configuration Review') {
+            include(INC_SOW . 'virtualisation-configuration-review.php');
+        }
+
+        if ($service === 'Vulnerability Assessment') {
+            include(INC_SOW . 'vulnerability-assessment.php');
+        }
+
+        if ($service === 'Web Application Penetration Test') {
+            include(INC_SOW . 'web-application-penetration-test.php');
+        }
+
+        if ($service === 'Wireless Network Assessment') {
+            include(INC_SOW . 'wireless-network-assessment.php');
+    //     }
     }
+
+    // switch ($service) {
+    //     case 'API Penetration Test':
+    //         include(INC_SOW . 'api-testing.php');
+    //         break;
+        
+    //     case 'Web Application Penetration Test':
+    //         include(INC_SOW . 'app-pentest.php');
+    //         break;
+        
+    //     case 'Build Review Assessment':
+    //         include(INC_SOW . 'build-review.php');
+    //         break;
+        
+    //     case 'AWS Cloud Assessment':
+    //         include(INC_SOW . 'cloud-assessment-aws.php');
+    //         break;
+        
+    //     case 'Cloud Based Configuration Review':
+    //         include(INC_SOW . 'cloud-based-config.php');
+    //         break;        
+        
+    //     case 'Cyber Threat Intelligence':
+    //         include(INC_SOW . 'cyber-threat-intelligence.php');
+    //         break;             
+
+    //     case 'Documentation Review':
+    //         include(INC_SOW . 'document-review.php');
+    //         break;    
+            
+    //     case 'Firewall Configuration Assessment':
+    //         include(INC_SOW . 'firewall.php');
+    //         break;
+
+    //     case 'Infrastructure Penetration Test':
+    //         include(INC_SOW . 'infrastructure-penetration.php');
+    //         break;
+        
+    //     case 'Phishing Simulation':
+    //         include(INC_SOW . 'phishing-simulation.php');
+    //         break;
+        
+    //     case 'Physical Assessment':
+    //         include(INC_SOW . 'physical-assessment.php');
+    //         break;
+        
+    //     case 'Red Team Assessment':
+    //         include(INC_SOW . 'red-team-assessment.php');
+    //         break;
+        
+    //     case 'Virtualisation Configuration Review':
+    //         include(INC_SOW . 'virtualisation-config.php');
+    //         break;        
+        
+    //     case 'VPN Assessment':
+    //         include(INC_SOW . 'vpn-assessment.php');
+    //         break;             
+
+    //     case 'Vulnerability Scan':
+    //         include(INC_SOW . 'vulnerability-scan.php');
+    //         break;    
+            
+    //     case 'Wireless Network Assessment':
+    //         include(INC_SOW . 'wireless-network-assessment.php');
+    //         break;
+        
+    //     case 'Mobile Application Penetration Test':
+    //         include(INC_SOW . 'mobile-application-penetration-test.php');
+    //         break;
+
+    //     case 'Secure Code Review':
+    //         include(INC_SOW . 'secure-code-review.php');
+    //         break;
+            
+    //     case 'O365 Penetration Test':
+    //         include(INC_SOW . 'O365-penetration-test.php');
+    //         break;            
+        
+    //     case 'Azure Cloud Review':
+    //         include(INC_SOW . 'azure-cloud-review.php');
+    //         break;      
+        
+    //     default:
+    //         # code...
+    //         break;
+    // }
     //############################### END PROJECT DESCRIPTION PAGE ###############################
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
