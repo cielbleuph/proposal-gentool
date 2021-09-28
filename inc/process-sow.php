@@ -538,6 +538,7 @@
         if ($service === 'Wireless Network Assessment') {
             include(INC_SOW . 'build-review.php');
         }
+
     }
 
     // switch ($service) {
@@ -634,19 +635,14 @@
         'pageSizeH' => $paper->getHeight()
     ));
 
-    $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1); // TOC Bookmark
+    $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1 ); // TOC Bookmark
     $projectPrereqPage->addLine($lineStyle);
 
+    include( INC_SOW . 'prerequisites.php' );
 
-    // if (isset($prerequisite) && $prerequisite != "" ) {
-    //     $projectPrereqPage->addText( $prerequisite[0] );
-    // }
+    $projectPrereqPage->addTextBreak();
 
-    include(INC_SOW . 'prerequisites.php');
-
-    $projectPrereqPage->addTextBreak();    
-
-    $projectPrereqPage->addText('Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.');
+    $projectPrereqPage->addText( 'Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.' );
 
     //############################### END PROJECT PRE-REQUISITES REQUIREMENTS SCOPE PAGE ###############################   
 
@@ -658,6 +654,7 @@
         "Mobile Application Penetration Test",
         "Web Application Penetration Test"
     );
+
     $disclaimerTypeTwo = array(
         "Infrastructure Penetration Test",
         "O365 Penetration Test",

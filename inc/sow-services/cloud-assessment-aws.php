@@ -1,6 +1,6 @@
 <?php 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
+    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AWS)', 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 

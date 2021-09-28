@@ -9,7 +9,7 @@
         'bgColor' => $lightRed
     );
 
-    $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION") , 1); // TOC Bookmark 
+    $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AZURE)") , 1); // TOC Bookmark 
     $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
