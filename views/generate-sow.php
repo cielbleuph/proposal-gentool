@@ -159,6 +159,57 @@
                             </div>
                         </div>
                     </div>
+
+                    <br />
+
+                    <!-- <div class="card">
+                        <div class="card-header palette-Light-Blue-800">
+                            <h2 class="c-white"><i data-feather="tool"></i> Project Pre-Requisites</h2>
+                        </div>
+                        <div class="card-body form-padding">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="prerequisite" id="prerequisite_a" checked required>
+                                <label class="form-check-label" for="prerequisite_a">
+                                    Pre-Requisite A
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="prerequisite" id="prerequisite_b" required>
+                                <label class="form-check-label" for="prerequisite_b">
+                                    Pre-Requisite B
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div> -->
+
+                    <br />
+
+                    <div class="card">
+                        <div class="card-header palette-Light-Blue-800">
+                            <h2 class="c-white"><i data-feather="tool"></i> Project Disclaimers</h2>
+                        </div>
+                        <div class="card-body form-padding">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_a" checked required>
+                                <label class="form-check-label" for="disclaimer_a">
+                                    Disclaimer A
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_b" required>
+                                <label class="form-check-label" for="disclaimer_b">
+                                    Disclaimer B
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_c" required>
+                                <label class="form-check-label" for="disclaimer_c">
+                                    Disclaimer C
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr />

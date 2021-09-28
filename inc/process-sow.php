@@ -69,6 +69,14 @@
             $testerEmail = $_POST['tester-email'];
         }
 
+        if( isset($_POST['disclaimer']) && $_POST['disclaimer'] != '' ) {
+            $disclaimer = $_POST['disclaimer'];
+        }
+
+        if( isset($_POST['prerequisite']) && $_POST['prerequisite'] != '' ) {
+            $prerequisite = $_POST['prerequisite'];
+        }
+
     }
 
     else{
@@ -424,7 +432,7 @@
     foreach($typeOfService as $service) {
 
         if ($service === 'API Penetration Test') {
-            include(INC_SOW . 'api-testing.php');
+            include(INC_SOW . 'api-penetration-test.php');
         }
 
         if ($service === 'Build Review Assessment') {
@@ -628,13 +636,15 @@
 
     $projectPrereqPage->addTitle( 'PROJECT PRE-REQUISITES REQUIREMENTS', 1); // TOC Bookmark
     $projectPrereqPage->addLine($lineStyle);
-   
-    if ( $typeOfService[0] == 'API Penetration Test' ) {
-        $projectPrereqPage->addListItem('Application which is consuming the API', 0);
-        $projectPrereqPage->addListItem('Accounts created for each user role', 0);
-        $projectPrereqPage->addListItem('API documentation', 0);
-        $projectPrereqPage->addListItem('Exported API list such as SWAGGER file, YAML or WSDL', 0);
-    }
+
+
+    // if (isset($prerequisite) && $prerequisite != "" ) {
+    //     $projectPrereqPage->addText( $prerequisite[0] );
+    // }
+
+    include(INC_SOW . 'prerequisites.php');
+
+    $projectPrereqPage->addTextBreak();    
 
     $projectPrereqPage->addText('Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.');
 
