@@ -1,8 +1,5 @@
 <?php 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
-
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
 
     $projectDescriptionPage->addText( htmlspecialchars( "Red Team Partners will provide <b>CLIENT</b> with a bespoke managed Cyber Threat Intelligence (CTI) service; this service includes a Mixture of human source intelligence and open source technology. Using this approach provides CLIENT with a solution that uses the latest technology tools and manual expertise to conduct a fully rounded intelligence service. A monthly report will be provided to CLIENT that includes any new and updated intelligence found through the approach’s mentioned below, these risks are highlighted by severity within the report." ) );

@@ -1,7 +1,7 @@
 <?php 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AWS)', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AWS)', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners offers a Cloud Assessment (AWS). Red Team Partners provides a readiness assessment and determine if the resources and IT environment is capable of migrating to the cloud.' );

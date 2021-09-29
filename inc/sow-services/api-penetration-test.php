@@ -1,7 +1,7 @@
 <?php 
     
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR API PENETRATION TEST', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR API PENETRATION TEST', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2, array('color'=>'DE5C5C')); // TOC Bookmark 
     $projectDescriptionPage->addText(' Red Team Partners will conduct a full security assessment on your API’s, this assessment can be provided as an onsite or remote service. The purpose of this assessment is to highlight any vulnerabilities which can exploit the API, this includes SQL Injections, Cross-site Scripting, Denial of Service, Predictable Resource Location, Unintentional Information Disclosure and Brute Force Attack. Performing these mock attacks will exploit the availability, integrity and confidentially of the service(s) and any data contained within.' );

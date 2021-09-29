@@ -1,15 +1,11 @@
 <?php 
 
-
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
-
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'A poorly configured firewall can allow for trivial network compromise by malicious actors. Red Team Partners firewall assessment will test the integrity of your current firewall rules and implementations to ensure nothing has been overlooked.' );
+    $projectDescriptionPage->addText( 'Red Team Partners offers a Cloud Based Configuration Review. Many organisations today make use of cloud-based tools for the provision of email and productivity tools. Red Team Partners provided a service to ensure that the correct security controls have been configured. Cloud security and configuration assessments provide a comprehensive overview of both the security and availability of the cloud- based tenant.' );
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addText( 'Since a firewall is only as secure as the rules that have been set, it is imperative that rulesets are reviewed and audited by a separate party to the original implementer.' );
+    $projectDescriptionPage->addText( 'If a successful venue of attack is identified, Red Team Partners will work with you to conduct safe exploitation (where possible) and verification of the issue whilst ensuring there are no disruptions to the daily running of your organisation. All exploitation is conducted under the agreed rules of the engagement.' );
 
     $projectDescriptionPage->addTextBreak();
 
@@ -24,17 +20,19 @@
     $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addTitle( 'METHOD', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'Red Team Partners firewall configuration assessment compromises of the following checks:' );
-    $projectDescriptionPage->addListItem('Ensure bidirectional filtering is in place (ingress and egress)', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Ensure no inappropriate rules have been implanted, such as to allow a specific employee to insecurely work from home', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Ensure that routing has been correctly implemented to prevent attacks such as VLAN hopping', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Ensure VPN configuration has been correctly implemented', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Ensure adequate logging has been enabled for the device', 0, $aParagraphStyles);
-
+    $projectDescriptionPage->addText( 'Red Team Partners offers a Cloud Based Configuration that combines best practice guidelines and cyber testing.' );
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addText( 'The firewall configuration review is based on security best practice guidelines.' );
+    $projectDescriptionPage->addText( 'Red Team Partners Cloud Based Configuration Review compromises of the following checks:' );
+    $projectDescriptionPage->addTextBreak();
 
+
+
+    $projectDescriptionPage->addListItem( 'Ensure access controls are in place for individual users.  ', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Ensure that logging features have been enabled.', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Ensure password strength factors are implemented with sane settings.', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Ensure that multi factor authentication is offered.', 0, null, null, $aParagraphStyles );
+    $projectDescriptionPage->addListItem( 'Best practise review of specific implementations such as OFS, Intune, AWS, etc. etc.', 0, null, null, $aParagraphStyles );
     $projectDescriptionPage->addTextBreak();
 
     $projectDescriptionPage->addTitle( 'FALLBACKS', 2); // TOC Bookmark 
@@ -44,6 +42,7 @@
     $projectDescriptionPage->addText( 'Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.' );
     
     $projectDescriptionPage->addPageBreak();
+
 
 
 

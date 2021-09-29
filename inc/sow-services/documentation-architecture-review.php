@@ -1,8 +1,5 @@
 <?php 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
-
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners will conduct a document review to ensure that Xoserve’s implementation is being completed to specification and with a secure build out in mind.' );
 

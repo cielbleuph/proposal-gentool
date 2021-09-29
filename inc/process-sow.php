@@ -431,6 +431,9 @@
 
     foreach($typeOfService as $service) {
 
+        $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION FOR ' . strtoupper($service), 1); // TOC Bookmark 
+        $projectDescriptionPage->addLine($lineStyle);
+
         if ($service === 'API Penetration Test') {
             include(INC_SOW . 'api-penetration-test.php');
         }
@@ -492,7 +495,7 @@
         }
 
         if ($service === 'O365 Penetration Test') {
-            include(INC_SOW . 'o365-penetration-test.php');
+            include(INC_SOW . 'O365-penetration-test.php');
         }
 
         if ($service === 'OWASP for Developers') {
@@ -536,7 +539,7 @@
         }
 
         if ($service === 'Wireless Network Assessment') {
-            include(INC_SOW . 'build-review.php');
+            include(INC_SOW . 'wireless-network-assessment.php');
         }
 
     }
@@ -738,9 +741,10 @@
     }
 
 
-
-
     //############################### END PROJECT DISCLAIMER PAGE ###############################   
+
+
+
 
     // // Saving the document as OOXML file...
     // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');

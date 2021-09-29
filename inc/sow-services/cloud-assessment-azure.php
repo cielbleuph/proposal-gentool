@@ -9,8 +9,8 @@
         'bgColor' => $lightRed
     );
 
-    $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AZURE)") , 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION FOR CLOUD ASSESSMENT (AZURE)") , 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
     $projectDescriptionPage->addText( htmlspecialchars("Red Team Partners offers Cloud Based Configuration Review, specifically, Azure Review. Many organisations today make use of cloud-based tools for the provision of email and productivity tools. Red Team Partners provided a service to ensure that the correct security controls have been configured.") );

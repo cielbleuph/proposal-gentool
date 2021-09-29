@@ -1,7 +1,7 @@
 <?php 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners offers a Build Review Assessment, the aim of the assessment is to highlight any vulnerabilities and misconfigurations within the company’s infrastructure. Any vulnerabilities through misconfigured servers or workstations can provide a weakness within the company’s infrastructure. These misconfigured vulnerabilities can allow an external threat or attacker to easily access the company’s domain administrator and fully compromise a corporate network.' );
