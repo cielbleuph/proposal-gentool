@@ -64,17 +64,20 @@
 
     $methodologiesPage->addText('Methodology', $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $methodologiesPage->addList("Red Team Partners will use open-source intelligence tools to collect and identify a target profile of your organisation.", 0);
+    $methodologiesPage->addListItem("Red Team Partners will use open-source intelligence tools to collect and identify a target profile of your organisation.", 0);
 
-    $methodologiesPage->addList("We will conduct social engineering attacks against your employees to elicit further targeting information including company credentials.", 0);
+    $methodologiesPage->addListItem("We will conduct social engineering attacks against your employees to elicit further targeting information including company credentials.", 0);
 
-    $methodologiesPage->addList("Based on available threat intelligence gathered, Red Team Partners will devise a series of attack scenarios against the critical functions and key data to simulate real-world threats to your organisation", 0);
+    $methodologiesPage->addListItem("Based on available threat intelligence gathered, Red Team Partners will devise a series of attack scenarios against the critical functions and key data to simulate real-world threats to your organisation", 0);
 
-    $methodologiesPage->addList("Red Team Partners will conduct an offensive campaign against the identified critical functions of your organisation to gain a foothold within the organisation.", 0);
+    $methodologiesPage->addListItem("Red Team Partners will conduct an offensive campaign against the identified critical functions of your organisation to gain a foothold within the organisation.", 0);
 
-    $methodologiesPage->addList("We will be continuing to focus attacks on critical functions to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", 0);
+    $methodologiesPage->addListItem("We will be continuing to focus attacks on critical functions to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", 0);
 
     $methodologiesPage->addTextBreak();
+
+
+
 
     $methodologiesPage->addText("These exercises proved a valuable insight into improving the visibility and capability of your network defenders.  At the end of each adversary emulation, our team will work with yours to ensure that all attack techniques leveraged against your organization are clearly explained, evidence that may have been left behind is identified, and suggestions for improving controls to prevent or detect similar attacks in the future are provided.", null, $defaultParagraphStyle);
 

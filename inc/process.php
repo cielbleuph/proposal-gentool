@@ -882,6 +882,7 @@
     $costingPageTable->addCell($converter->pixelToTwip(300), array('bgColor'=>'F5B7A6'));
     $costingPageTable->addCell(null, array('bgColor'=>'F5B7A6'))->addText($totalDays, null, array( 'align' => 'center'));
     $costingPageTable->addCell($converter->pixelToTwip(100), array('bgColor'=>'F5B7A6'));
+    $costingPage->addText(htmlspecialchars(("*Price includes VAT")));
 
     $costingPage->addTextBreak();
     $costingPage->addText(htmlspecialchars("Cost includes retest on found vulnerabilities, this can be redeemed during or after the service."));

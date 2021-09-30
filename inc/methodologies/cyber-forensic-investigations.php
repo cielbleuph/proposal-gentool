@@ -41,7 +41,7 @@
 
     $methodologiesPage->addTextBreak();
 
-    $methodologiesPage->addText(htmlspecialchars("Remediation and incident Response Services"), $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $methodologiesPage->addText(htmlspecialchars("Remediation and Incident Response Services"), $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
     $txtRun1 = $methodologiesPage->addTextRun();
     $txtRun1->addText("Organisation-wide:", $boldText);
@@ -82,13 +82,15 @@
 
     $methodologiesPage->addText("Contemporarily, cybercriminals launch non-stop attacks on all types and scale of organisations. That is why various cyber incidents exist and sometimes managing them can be stressful and chaotic. Meanwhile, addressing and managing the damage brought by cyber breaches and threats need a systematic solution to identify, contain, and eradicate the attacks.", null, $defaultParagraphStyle);
 
+    $methodologiesPage->addTextBreak();
+
     $methodologiesPage->addText("We provide two post-incident reports:", $boldText, $defaultParagraphStyle);
 
     $methodologiesPage->addText("Executive Document containing:", $boldText);
 
-    $methodologiesPage->addListItem("High-level summary of the incident", 0, null, $numberStyleList);
-    $methodologiesPage->addListItem("Purchasing suggestions ", 0, null, $numberStyleList);
-    $methodologiesPage->addListItem("Impact on the organisation", 0, null, $numberStyleList);
+    $methodologiesPage->addText("    1.    High-level summary of the incident");
+    $methodologiesPage->addText("    2.    Purchasing suggestions ");
+    $methodologiesPage->addText("    3.    Impact on the organisation");
 
     $methodologiesPage->addTextBreak();
 

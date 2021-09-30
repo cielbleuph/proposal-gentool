@@ -74,8 +74,6 @@
 
 
     $methodologiesPage->addListItem(htmlspecialchars("Patch levels, both Operating System and Third-Party Management Services"), 0);
-    $methodologiesPage->addListItem(htmlspecialchars(""), 0);
-
     $methodologiesPage->addListItem(htmlspecialchars("Trust relationships"), 0);
     $methodologiesPage->addListItem(htmlspecialchars("Network shares and permissions"), 0);
     $methodologiesPage->addListItem(htmlspecialchars("Local shares and permissions"), 0);

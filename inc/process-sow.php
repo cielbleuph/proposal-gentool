@@ -544,91 +544,7 @@
 
     }
 
-    // switch ($service) {
-    //     case 'API Penetration Test':
-    //         include(INC_SOW . 'api-testing.php');
-    //         break;
-        
-    //     case 'Web Application Penetration Test':
-    //         include(INC_SOW . 'app-pentest.php');
-    //         break;
-        
-    //     case 'Build Review Assessment':
-    //         include(INC_SOW . 'build-review.php');
-    //         break;
-        
-    //     case 'AWS Cloud Assessment':
-    //         include(INC_SOW . 'cloud-assessment-aws.php');
-    //         break;
-        
-    //     case 'Cloud Based Configuration Review':
-    //         include(INC_SOW . 'cloud-based-config.php');
-    //         break;        
-        
-    //     case 'Cyber Threat Intelligence':
-    //         include(INC_SOW . 'cyber-threat-intelligence.php');
-    //         break;             
-
-    //     case 'Documentation Review':
-    //         include(INC_SOW . 'document-review.php');
-    //         break;    
-            
-    //     case 'Firewall Configuration Assessment':
-    //         include(INC_SOW . 'firewall.php');
-    //         break;
-
-    //     case 'Infrastructure Penetration Test':
-    //         include(INC_SOW . 'infrastructure-penetration.php');
-    //         break;
-        
-    //     case 'Phishing Simulation':
-    //         include(INC_SOW . 'phishing-simulation.php');
-    //         break;
-        
-    //     case 'Physical Assessment':
-    //         include(INC_SOW . 'physical-assessment.php');
-    //         break;
-        
-    //     case 'Red Team Assessment':
-    //         include(INC_SOW . 'red-team-assessment.php');
-    //         break;
-        
-    //     case 'Virtualisation Configuration Review':
-    //         include(INC_SOW . 'virtualisation-config.php');
-    //         break;        
-        
-    //     case 'VPN Assessment':
-    //         include(INC_SOW . 'vpn-assessment.php');
-    //         break;             
-
-    //     case 'Vulnerability Scan':
-    //         include(INC_SOW . 'vulnerability-scan.php');
-    //         break;    
-            
-    //     case 'Wireless Network Assessment':
-    //         include(INC_SOW . 'wireless-network-assessment.php');
-    //         break;
-        
-    //     case 'Mobile Application Penetration Test':
-    //         include(INC_SOW . 'mobile-application-penetration-test.php');
-    //         break;
-
-    //     case 'Secure Code Review':
-    //         include(INC_SOW . 'secure-code-review.php');
-    //         break;
-            
-    //     case 'O365 Penetration Test':
-    //         include(INC_SOW . 'O365-penetration-test.php');
-    //         break;            
-        
-    //     case 'Azure Cloud Review':
-    //         include(INC_SOW . 'azure-cloud-review.php');
-    //         break;      
-        
-    //     default:
-    //         # code...
-    //         break;
-    // }
+    
     //############################### END PROJECT DESCRIPTION PAGE ###############################
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
@@ -649,6 +565,8 @@
 
     //############################### END PROJECT PRE-REQUISITES REQUIREMENTS SCOPE PAGE ###############################   
 
+
+    
     //############################### PROJECT DISCLAIMER PAGE ###############################    
 
 
