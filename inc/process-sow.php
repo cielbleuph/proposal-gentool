@@ -574,8 +574,7 @@
         'pageSizeH' => $paper->getHeight()
     ));
 
-    $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
-    $projectDisclaimerPage->addLine($lineStyle);
+    
 
 
     $disclaimerTypeOne = array(
@@ -595,45 +594,40 @@
         "Vulnerability Assessment"
     );
 
-    var_dump(array_diff($typeOfService, $disclaimerTypeOne ));
-    die();
+    // foreach( $typeOfService as $service) {
+
+    // }
 
 
-    if ( array_diff($typeOfService, $disclaimerTypeOne ) ) {
-        include(INC_SOW . "disclaimers/one.php");
+    switch ($disclaimer) {
+        case 'disclaimer_a':
+            $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
+            $projectDisclaimerPage->addLine($lineStyle);
+            include(INC_SOW . "disclaimers/one.php");
+            break;
+
+        case 'disclaimer_b':
+            $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
+            $projectDisclaimerPage->addLine($lineStyle);
+            include(INC_SOW . "disclaimers/two.php");
+            break;            
+
+        case 'disclaimer_c':
+            $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
+            $projectDisclaimerPage->addLine($lineStyle);
+            include(INC_SOW . "disclaimers/three.php");
+            break;
+
+        default:
+            // include(INC_SOW . "disclaimers/one.php");
+            break;
     }
 
 
 
 
-    else if( in_array( $typeOfService[0],  $disclaimerTypeTwo ) !== false ) {
 
-        $projectDisclaimerPage = $phpWord->addSection(array(
-            'pageSizeW' => $paper->getWidth(),
-            'pageSizeH' => $paper->getHeight()
-        ));
-
-        $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
-        $projectDisclaimerPage->addLine($lineStyle);
-
-        $projectDisclaimerPage->addText( htmlspecialchars("Any security testing which is conducted on the production environment needs to consider this disclaimer.") );
-
-        $projectDisclaimerPage->addText( htmlspecialchars("Red Team Partners security team will utilize a large proportion of manual testing and part of the pen test will be conducted with the help of automated tools. The tools that are in addition to the manual verification scenarios will be included in the final report.") );
-
-        $projectDisclaimerPage->addTextBreak();
-
-        $projectDisclaimerPage->addText( htmlspecialchars("Disclaimer:"), array_merge( $boldText, $italicText ));
-
-        $projectDisclaimerPage->addText( htmlspecialchars("Even though the security team will do all the security testing only with safe checks, it might be possible that a certain command that can be considered usually as a “safe-check” the back-end can interpret it in a way that can affect the whole application/infrastructure, through Denial of Service, data deletion or integrity loss or bad existing user experience.") );
-
-        $projectDisclaimerPage->addText( htmlspecialchars("During the security testing, if there will be certain functionalities that are uncertain in terms of the testing, the pen tester will notify the owner of the application and ask for approval, without conducting the specific tests.") );
-
-        $projectDisclaimerPage->addTextBreak();
-
-        $projectDisclaimerPage->addText( htmlspecialchars("Backup your data:"), array_merge( $boldText, $italicText ));
-        $projectDisclaimerPage->addText( htmlspecialchars("It is always a good practice for the client’s IT team to make a backup of all configurations, data, and codes before the test begins. Having a back-up will ensure that data can be restored to pre-test configurations in the event that the test may cause a system to crash or data to be lost. The Security Team recommends that the client’s internal IT or support team be readily available to resolve technical issues with the testing company during the testing phase.") );
-    }
-
+   
 
     //############################### END PROJECT DISCLAIMER PAGE ###############################   
 

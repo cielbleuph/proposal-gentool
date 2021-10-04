@@ -1,5 +1,11 @@
 <?php 
 
+    // $projectDisclaimerPage->addText("One!");
+
+    $projectDisclaimerTextRunOne = $projectDisclaimerPage->addTextRun();
+    $projectDisclaimerTextRunOne->addText("Any security testing which is conducted ");
+    $projectDisclaimerTextRunOne->addText("on the production environment ", $boldText);
+    $projectDisclaimerTextRunOne->addText("needs to consider this disclaimer.");
     
     $projectDisclaimerPage->addText( htmlspecialchars("Red Team Partners security team will utilize a large proportion of manual testing and part of the pen test will be conducted with the help of automated tools. The tools that are in addition to the manual verification scenarios will be included in the final report.") );
 
@@ -28,9 +34,11 @@
     $projectDisclaimerPage->addTextBreak();
     $projectDisclaimerPage->addText( htmlspecialchars("Disclaimer:"), array_merge( $boldText, $italicText ));
 
-    $projectDisclaimerPage->addText( htmlspecialchars("Even though the security team will do all the security testing only with safe checks, it might be possible that a certain command that can be considered usually as a “safe-check” the back-end can interpret it in a way that can affect the whole application, through Denial of Service, data deletion or integrity loss or bad existing user experience.") );
+    $projectDisclaimerPage->addText( htmlspecialchars("Even though the security team will do all the security testing only with safe checks, it might be possible that a certain command that can be considered usually as a “safe-check” the back-end can interpret it in a way that can affect the whole application/infrastructure, through Denial of Service, data deletion or integrity loss or bad existing user experience.") );
 
     $projectDisclaimerPage->addText( htmlspecialchars("Another risk that should be taken into consideration is that having the testing done on production and only with certain specific tests (not going in-depth) at the pen tester’s disposal, the security team might not identify all of the vulnerabilities within the application.") );
+
+
 
 
 

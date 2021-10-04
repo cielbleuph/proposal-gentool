@@ -53,8 +53,8 @@
     
     // $textRun = $shape->createParagraph()
     //     ->createTextRun(implode("\n", $block_data));
-    $textRun = $shape->createParagraph()
-            ->createTextRun("Test test test");
+    // $textRun = $shape->createParagraph()
+    //         // ->createTextRun("Test test test");
 
     
     $shape->getActiveParagraph()

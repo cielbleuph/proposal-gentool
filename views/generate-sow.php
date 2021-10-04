@@ -191,21 +191,27 @@
                         </div>
                         <div class="card-body form-padding">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_a" checked required>
+                                <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_a" id="disclaimer_a" checked required>
                                 <label class="form-check-label" for="disclaimer_a">
                                     Disclaimer A
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_b" required>
+                                <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_b" id="disclaimer_b" required>
                                 <label class="form-check-label" for="disclaimer_b">
                                     Disclaimer B
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="disclaimer" id="disclaimer_c" required>
+                                <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_c" id="disclaimer_c" required>
                                 <label class="form-check-label" for="disclaimer_c">
                                     Disclaimer C
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_none" id="disclaimer_c" required>
+                                <label class="form-check-label" for="disclaimer_c">
+                                    Not Applicable
                                 </label>
                             </div>
                         </div>
