@@ -559,7 +559,7 @@
 
     include( INC_SOW . 'prerequisites.php' );
 
-    $projectPrereqPage->addTextBreak();
+    // $projectPrereqPage->addTextBreak();
 
     $projectPrereqPage->addText( 'Other project pre-requisites will be discussed on the Slack channel that will be opened before the test/s will be conducted.' );
 
