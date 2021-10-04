@@ -99,7 +99,7 @@
             $projectPrereqPage->addListItem("VPN access (if there’s an internal network in the scope)", 0);
         }
 
-        if ( $serviceName === 'Web Application Penetration Testing') {
+        if ( $serviceName === 'Web Application Penetration Test') {
             $projectPrereqPage->addTitle("Web Application Penetration Testing", 2);
 
             $projectPrereqPage->addListItem("Two types of credentials for each role within the application (if applicable)", 0);
