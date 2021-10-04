@@ -52,9 +52,9 @@
     
     
     // $textRun = $shape->createParagraph()
-    //     ->createTextRun(implode("\n", $block_data));
-    // $textRun = $shape->createParagraph()
-    //         // ->createTextRun("Test test test");
+        // ->createTextRun(implode("\n", $block_data));
+    $textRun = $shape->createParagraph()
+            ->createTextRun($rtpRecommendations);
 
     
     $shape->getActiveParagraph()

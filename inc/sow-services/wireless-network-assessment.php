@@ -1,8 +1,8 @@
 <?php 
 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Many organisations in the current day and age offer an employee wireless network, often connected to the corporate network. As such, it is imperative that the wireless network has been correctly configured and has had both strong authentication and encryption implemented.' );

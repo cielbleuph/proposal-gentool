@@ -99,6 +99,10 @@
             $totalFindings = $_POST["total-findings"];
         }
 
+        if ( isset( $_POST['rtp-recommendations'] ) && $_POST['rtp-recommendations'] != "" ) {
+            $rtpRecommendations = $_POST["rtp-recommendations"];
+        }
+
         $totalVulnerabilities = intval($critical) + intval($high) + intval($medium) + intval($low) + intval($informational);
 
         $highNum = intval($critical) + intval($high) + intval($medium);

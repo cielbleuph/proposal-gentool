@@ -1,9 +1,5 @@
 <?php 
 
-
-    $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION") , 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
-
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
     $projectDescriptionPage->addText( htmlspecialchars("Red Team Partners provides Mobile Application Penetration Testing, that focuses directly on the mobile app. The Mobile Application Penetration Testing is dynamic; therefore, the assessment is conducted while the application is running and as well static, meaning that the source code can be made available (e.g. through reverse engineering) for testing to assist with vulnerability and security issue identification.") );
 
