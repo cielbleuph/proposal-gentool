@@ -1,8 +1,8 @@
 <?php 
 
 
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Red Team Partners offers Infrastructure Penetration Testing, the test asses for vulnerabilities and weaknesses within the organisations network configuration.' );

@@ -1,9 +1,5 @@
 <?php 
 
-
-    $projectDescriptionPage->addTitle( htmlspecialchars("PROJECT DESCRIPTION") , 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
-
     $projectDescriptionPage->addTitle( htmlspecialchars("FUNDAMENTALS"), 2); // TOC Bookmark 
     $projectDescriptionPage->addText( htmlspecialchars("Office 365 services are accessible from the internet (by default, use Conditional Access to restrict access) which makes them attractive to attackers. Attackers leverage several attack methods against Azure AD & Office 365.") );
 

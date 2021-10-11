@@ -613,7 +613,7 @@
             break;            
 
         case 'disclaimer_c':
-            $projectDisclaimerPage->addTitle( 'PROJECT PENTEST DISCLAIMER', 1); // TOC Bookmark
+            $projectDisclaimerPage->addTitle( 'PROJECT VULNERABILITY ASSESSMENT DISCLAIMER', 1); // TOC Bookmark
             $projectDisclaimerPage->addLine($lineStyle);
             include(INC_SOW . "disclaimers/three.php");
             break;

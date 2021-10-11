@@ -1,6 +1,6 @@
 <?php
-    $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    $projectDescriptionPage->addLine($lineStyle);
+    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
+    // $projectDescriptionPage->addLine($lineStyle);
 
     $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
     $projectDescriptionPage->addText( 'Phishing is one of the most common paths to compromise utilised by attackers in real-world attacks. A phishing assessment aims to highlight weak security controls and susceptible employees to target for further in-depth phishing awareness training. ' );
