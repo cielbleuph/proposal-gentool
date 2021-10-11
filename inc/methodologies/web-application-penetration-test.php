@@ -8,7 +8,7 @@
         'bgColor' => $lightRed
     );
 
-    $methodologiesPage->addTitle('Web Application Penetration Testing', 2); // TOC Bookmark 
+    $methodologiesPage->addTitle('Web Application Penetration Test', 2); // TOC Bookmark 
     $methodologiesPage->addTextBreak();
     $methodologiesPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners provides Web Application Penetration Testing that can be performed either remotely or on-site. The assessment’s goal is to uncover any vulnerabilities and weaknesses which could be leveraged by a malicious attacker to gain access to sensitive data held by the application. Throughout the assessment, Red Team Partners will utilise best practice testing combined with proven methodologies to ensure an in-depth assessment of the application. This is a mixture of non-invasive testing and experienced testing techniques.', null, $defaultParagraphStyle);

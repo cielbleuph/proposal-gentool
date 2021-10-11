@@ -1035,6 +1035,12 @@
         if ($service === 'Performance Stress/Load testing' ) {
             include(INC_METHODOLOGIES . 'performance-stress-load-testing.php');
         }
+
+        if ($service === 'ISO 27001 Consultancy' ) {
+            include(INC_METHODOLOGIES . 'iso-27001.php');
+        }
+
+        
     }
 
     $methodologiesPageFooter = $methodologiesPage->addFooter();
