@@ -193,25 +193,25 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_a" id="disclaimer_a" checked required>
                                 <label class="form-check-label" for="disclaimer_a">
-                                    Disclaimer A
+                                    Disclaimer A <span data-placement="right" data-toggle="tooltip" title="<p>Use this version if the project includes either of the following services: <ul><li>API PENETRATION TEST</li><li>MOBILE APPLICATION PENETRATION TEST</li><li>WEB APPLICATION PENETRATION TEST</li></ul></p><p>If client bought web/mobile application pentest & infrastructure pentest, this means that the infrastructure in scope is related to the web app or mobile app being tested. In this case, use this version of the disclaimer.</p>" data-html="true" class="help-icon"><i data-feather="help-circle" class="helper-tooltip radio-a"></i></span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_b" id="disclaimer_b" required>
                                 <label class="form-check-label" for="disclaimer_b">
-                                    Disclaimer B
+                                    Disclaimer B <span data-placement="right" data-html="true" data-toggle="tooltip" title="<p>Use this version if the project includes either of the following services: <ul><li>INFRASTRUCTURE PENETRATION TEST (INTERNAL/EXTERNAL NETWORK) Only</li><li>O365 PENETRATION TEST</li><li>RED TEAM ASSESSMENT</li><li>VPN ASSESSMENT</li></ul></p>" class="help-icon"><i data-feather="help-circle" class="helper-tooltip radio-b"></i></span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_c" id="disclaimer_c" required>
                                 <label class="form-check-label" for="disclaimer_c">
-                                    Disclaimer C
+                                    Disclaimer C <span data-placement="right" data-html="true"data-toggle="tooltip" title="<p>Use this version if the project is only a: <ul><li>VULNERABILITY ASSESSMENT</li></ul></p>" class="help-icon"><i data-feather="help-circle" class="helper-tooltip radio-c"></i></span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="disclaimer" value="disclaimer_none" id="disclaimer_c" required>
                                 <label class="form-check-label" for="disclaimer_c">
-                                    Not Applicable
+                                    Not Applicable 
                                 </label>
                             </div>
                         </div>

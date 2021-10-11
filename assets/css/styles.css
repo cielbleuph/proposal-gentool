@@ -327,6 +327,7 @@ span.del-item{
   display: block;
   float: right;
   cursor: pointer;
+  margin-left: 0.25em;
 }
 
 .card-header > h2 > a{
@@ -359,4 +360,10 @@ button.ui-dialog-titlebar-close{
 .align-center{
   text-align: center;
   float: right;
+}
+
+.helper-tooltip{
+  width: 14px !important;
+  height: 18px !important;
+  cursor: pointer;
 }
