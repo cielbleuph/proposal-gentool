@@ -156,6 +156,7 @@
                                             'VPN Assessment',
                                             'Incident Response and Investigation',
                                             'Performance Stress/Load testing',
+                                            'ISO 27001 Consultancy'
                                         );
 
                                         sort($services);
