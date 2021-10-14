@@ -1,43 +1,88 @@
-<?php 
+<?php
+    $DarkRedCellStyle = array(
+        'bgColor' => $darkRed,
+        'valign'=> 'center',
+    );
 
-    // $projectDescriptionPage->addTitle( 'PROJECT DESCRIPTION', 1); // TOC Bookmark 
-    // $projectDescriptionPage->addLine($lineStyle);
+    $lightRedCellStyle = array(
+        'bgColor' => $lightRed
+    );
 
-    $projectDescriptionPage->addTitle( 'FUNDAMENTALS', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'The role of the Red Team is to provide an attacker-like approach to the organisation, this approach consists of network detection, system vulnerabilities and a physical assessment. The overall aim of the red team is to gain system/network/data access. Organisations wanting to increase their security strategy throughout the year can view the Red Team as a specialist extension of their own IT team.' );
+    // $projectDescriptionPage->addTitle('Red Team Assessment', 2); // TOC Bookmark 
+    // $projectDescriptionPage->addTextBreak();
+    $projectDescriptionPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $projectDescriptionPage->addText('The role of the Red Team is to provide an attacker-like approach to the organisation, this approach consists of network detection and system vulnerabilities. The overall aim of the red team is to gain system/network/data access. Organisations wanting to increase their security strategy throughout the year can view the Red Team as a specialist extension of their own IT team.', null, $defaultParagraphStyle);
+    
+    $projectDescriptionPage->addText("During red team exercises, our security experts will launch a realistic attempt to exploit your environment to gain access to systems that would enable us to impact the critical functions necessary for your operations.  This simulated attack is carried out in a controlled manner to ensure that your operations are not adversely affected, while still providing valuable information regarding gaps in your preventive or detective controls that could allow an adversary to harm your organization.  The attacks utilize real-world adversary tactics, techniques, and procedures (TTPs) that represent a genuine threat to the critical functions of your organization.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("The attack scenarios will recognize that a dedicated adversary would leverage a broad targeting profile to gain a foothold within the organization.  From this broad attack surface, additional focused attacks on critical functions will be launched in accordance with predefined rules of engagement.  The goal of each attack scenario will be to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $projectDescriptionPage->addText('Virtual Assessment:', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunOne = $projectDescriptionPage->addListItemRun(0, 'multilevel' );
+    $redteamAssessmentListItemRunOne->addText('Reconnaissance/OSINT', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunOne->addText(' – Crawling of online sources to locate employee names, e-mail format and compile a list of employees for further targeting. – organisation will be providing a list of e-mail addresses here.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunTwo = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunTwo->addText('Enumeration', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunTwo->addText(' – Identification of externally facing assets and basic web application tests such as default password checks.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunThree = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunThree->addText('Phishing', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunThree->addText(' – Targeted Phishing campaigns if access has not already been gained.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunFour = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunFour->addText('Password Spraying', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunFour->addText(' – A brute-force style attack against all identified e-mail addresses to attempt to access e-mail and other sensitive applications.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunFive = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunFive->addText('Redundancy', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunFive->addText(' – If Phishing / Physical does not provide network access, organisation will install a network device to allow external access to the Red Team Partners consultants to continue testing.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunSix = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunSix->addText('Network Mapping', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunSix->addText(' – Mapping of organisations internal network to identify key assets and for use in further attacks.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunSeven = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunSeven->addText('Persistence', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunSeven->addText(' – Achieve persistence on the organisations network to access it externally.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunEight = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunEight->addText('Lateral Movement', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunEight->addText(' – Silently move around the organisations network, further identifying key assets and employees.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunNine = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunNine->addText('Escalation of Privileges', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunNine->addText(' – Achieve Domain Administrator permissions within the domain.', null, $defaultParagraphStyle);
+
+    $redteamAssessmentListItemRunTen = $projectDescriptionPage->addListItemRun(0, 'multilevel');
+    $redteamAssessmentListItemRunTen->addText('Completion of Goals', array('bold' => true), null, $defaultParagraphStyle);
+    $redteamAssessmentListItemRunTen->addText(' – Achieve pre-set goals, such as; access to customer PII information, access to source code.', null, $defaultParagraphStyle);
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addTitle( 'BRIEF', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'Throughout the assessment, consultants utilise proven methodologies to ensure the application gets a thorough test. This is a mixture of non-invasive testing and more hands testing techniques when required.' );
+    $projectDescriptionPage->addText('Methodology', $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $projectDescriptionPage->addText( 'This test can be divided into three stages:' );
-    $projectDescriptionPage->addListItem( 'Discovery', 0, array('italic'=>true), null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Assessment', 0, array('italic'=>true), null, $aParagraphStyles );
-    $projectDescriptionPage->addListItem( 'Exploitation', 0, array('italic'=>true), null, $aParagraphStyles );
-    $projectDescriptionPage->addTextBreak();
+    $projectDescriptionPage->addListItem("Red Team Partners will use open-source intelligence tools to collect and identify a target profile of your organisation.", 0);
 
-    $projectDescriptionPage->addTitle( 'METHOD', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'Virtual Assessment:' );
-    $projectDescriptionPage->addListItem('Reconnaissance/OSINT – Crawling of online sources to locate employee names, e-mail format and compile a list of employees for further targeting. – organisation will be providing a list of e-mail addresses here.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Enumeration – Identification of externally facing assets and basic web application tests such as default password checks.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Phishing – Targeted Phishing campaigns if access has not already been gained.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Password Spraying - A brute-force style attack against all identified e-mail addresses to attempt to access e-mail and other sensitive applications', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Redundancy – If Phishing / Physical does not provide network access, organisation will install a network device to allow external access to the Red Team Partners consultants to continue testing.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Network Mapping – Mapping of organisations internal network to identify key assets and for use in further attacks.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Persistence – Achieve persistence on the organisations network to access it externally.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Lateral Movement – Silently move around the organisations network, further identifying key assets and employees.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Escalation of Privileges – Achieve Domain Administrator permissions within the domain.', 0, $aParagraphStyles);
-    $projectDescriptionPage->addListItem('Completion of goals – Achieve pre-set goals, such as; access to customer PII information, access to source code.
+    $projectDescriptionPage->addListItem("We will conduct social engineering attacks against your employees to elicit further targeting information including company credentials.", 0);
 
-    ', 0, $aParagraphStyles);
+    $projectDescriptionPage->addListItem("Based on available threat intelligence gathered, Red Team Partners will devise a series of attack scenarios against the critical functions and key data to simulate real-world threats to your organisation", 0);
+
+    $projectDescriptionPage->addListItem("Red Team Partners will conduct an offensive campaign against the identified critical functions of your organisation to gain a foothold within the organisation.", 0);
+
+    $projectDescriptionPage->addListItem("We will be continuing to focus attacks on critical functions to achieve a level of compromise that could then be leveraged by an attacker to impact the associated critical function.", 0);
 
     $projectDescriptionPage->addTextBreak();
 
-    $projectDescriptionPage->addTitle( 'FALLBACKS', 2); // TOC Bookmark 
-    $projectDescriptionPage->addText( 'If Phishing Attacks are not successful as a point of entry, we would ask the organisation to install a device (Raspberry Pi) at any network port. Red Team Partners will continue working from the pretext that a successful breach has been made. This will allow Red Team Partners to continue the service without wasting time on phishing campaigns.' );
-    $projectDescriptionPage->addText( 'Should exploitation successfully permit, Red Team Partners will aim to escalate to the highest of privileges and, with your agreement, continue to leverage this access to penetrate as deep as possible in your network to help portray a realistic attack scenario.' );
-    $projectDescriptionPage->addTextBreak();
 
 
 
+    $projectDescriptionPage->addText("These exercises proved a valuable insight into improving the visibility and capability of your network defenders.  At the end of each adversary emulation, our team will work with yours to ensure that all attack techniques leveraged against your organization are clearly explained, evidence that may have been left behind is identified, and suggestions for improving controls to prevent or detect similar attacks in the future are provided.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("Critical functions include the people, process, and technology underpinning the ongoing successful operation of your organization, and threats to any of these functions could negatively impact your operations.  Based on available threat intelligence, our team will devise a series of attack scenarios against your critical functions.  Since a real-world adversary could employ illegal or unethical methods not available to our team, and since the time and effort allocated to this phase of the test will be fixed, this portion of the assessment is conducted in a gray box manner to ensure the completeness of the results.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("The attacks will be conducted without detailed coordination with your network defenders to ensure that an accurate picture of your organization’s ability to prevent or detect targeted attacks is achieved.  To minimize disruption to your operations, senior management members of your organization will be notified of the details of the attacks, including the timing of the attacks, in accordance with a predefined risk management plan.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addPageBreak();

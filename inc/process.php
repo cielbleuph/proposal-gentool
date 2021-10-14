@@ -887,22 +887,6 @@
     $costingPage->addTextBreak();
     $costingPage->addText(htmlspecialchars("Cost includes retest on found vulnerabilities, this can be redeemed during or after the service."));
 
-    // $costingPage->addText('Pricing Notes:', array('bold'=>true, ));
-
-    
-    // $costingPage->addListItem('Red Team Partners retains the right to charge for lost income in the event of postponed or cancelled work as mentioned in our Terms and Conditions.', 0);
-    // $costingPage->addListItem('100% of contract will be invoiced upon commencement of work.', 0, null, null, $defaultParagraphStyle );
-    // $costingPage->addListItem('Please send your Purchase Order (PO) to your account manager.', 0, null, null, $defaultParagraphStyle );
-    // $costingPage->addListItem('If the scope of this project chances, changed request and updated purchase order will be required.', 0, null, null, $defaultParagraphStyle );
-    // $costingPage->addListItem('All services are based remotely unless stated otherwise.', 0, null, null, $defaultParagraphStyle );
-    // $costingPage->addListItem('All testing will be undertaken during normal office hours, Monday to Friday (9am-6pm). Testing can be conducted out of hours and it will incur additional charges at 2x the day rate for evening, weekends and public holidays.',0, null, null, $defaultParagraphStyle );
-    // $costingPage->addTextBreak();
-
-
-    // $costingPage->addText('Our Approach', array('bold'=> true));
-    // $costingPage->addText('Red Team Partners conduct the following methodologies when conducting delivery of services.');
-    // $costingPage->addText("THIS IS A TEST");
-
     $costingPageFooter = $costingPage->addFooter();
     $costingPageFooter->addTextRun()->addText($footerText, $footerTextStyle);
     $costingPageFooter->addPreserveText('{PAGE}', null, array('alignment' => 'center'));

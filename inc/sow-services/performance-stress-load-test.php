@@ -1,0 +1,213 @@
+<?php
+    $DarkRedCellStyle = array(
+        'bgColor' => $darkRed,
+        'valign'=> 'center',
+    );
+
+    $lightRedCellStyle = array(
+        'bgColor' => $lightRed
+    );
+
+    // $projectDescriptionPage->addTitle('Performance Stress / Load Testing', 2); // TOC Bookmark 
+    // $projectDescriptionPage->addTextBreak();
+    $projectDescriptionPage->addText('Fundamentals', $paragraphHeadingStyle, $paragraphHeadingPStyle);
+    $projectDescriptionPage->addText( htmlspecialchars("Red Team Partners offers a Stress Testing service to help clients verify the stability & reliability of the system. Our research-led approach differentiates us from the traditional Pen Test approach with an object that determines the system on its robustness and error handling under extremely heavy load conditions."), null, $defaultParagraphStyle);
+    
+    $projectDescriptionPage->addText("We even test beyond the normal operating point and evaluates how the system works under those extreme conditions. Our approach is done to make sure that the system would not crash under crunch situations. ", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("Under Stress Testing (also known as Endurance Testing) as per our approach, AUT is stressed for a short period to know its withstanding capacity. Our core focus is to determine the limit, to which the system or software, or hardware breaks. It is also meant to checks whether the system demonstrates effective error management under extreme conditions.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText('Focus during Stress Testing:', $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addListItem("To accommodate such abnormal traffic spikes", 0);
+    $projectDescriptionPage->addListItem("To check whether the system works under abnormal conditions.", 0);
+    $projectDescriptionPage->addListItem("Displaying appropriate error messages when the system is under stress.", 0);
+    $projectDescriptionPage->addListItem("System failure under extreme conditions ", 0);
+    $projectDescriptionPage->addListItem("It is better to be prepared for extreme conditions by executing Stress Testing.", 0);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText('Goals of Stress Testing', $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("Our goal of stress testing is to analyse the behaviour of the system after a failure. For stress testing to be successful, the tested system should display an appropriate error message while it is under extreme conditions.", null, $defaultParagraphStyle );
+
+    $projectDescriptionPage->addText("To conduct Stress Testing, sometimes, massive data sets may be used which may get lost during Stress Testing. Our Testers look into a parameter that they do not lose security-related data while doing stress testing.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("The main purpose of stress testing is to make sure how fast the system recovers after failure.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'methodologies/stress-load-testing.jpg', 
+        array(
+            'width'         => 300,
+            'marginTop'     => 2,
+            'marginLeft'    => -100,
+            'wrappingStyle' => 'inline',
+            'alignment' => 'center',
+            'wrapDistanceLeft' => 100
+        )
+    );
+
+    $projectDescriptionPage->addTextBreak();
+
+    $performanceTable = $projectDescriptionPage->addTable(
+        array(
+            'width' => 5000,
+            'unit' => 'pct',
+            'borderColor' => 'CE4E4E',
+            'cellSpacing' => 0,
+            'borderSize'=>1,
+            'cellMargin' => 150
+        )
+    );
+    
+    $performanceTable->addRow();
+    $performanceTable->addCell(null, $DarkRedCellStyle)->addText('Load Testing', array('color'=>'FFFFFF', "bold"=>true), array("alignment" => "center"));
+    $performanceTable->addCell(null, $DarkRedCellStyle)->addText('Stress Testing', array('color'=>'FFFFFF', "bold"=>true), array("alignment" => "center"));
+
+    $performanceTable->addRow();
+    $performanceTable->addCell()->addText('Load Testing is to test the system behaviour under normal workload conditions, and it is just testing or simulating with the actual workload.');
+    $performanceTable->addCell()->addText('Stress Testing is to test the system behaviour under extreme conditions and is carried out till the system failure.');
+
+    $performanceTable->addRow();
+    $performanceTable->addCell()->addText('Load Testing does not break the system.');
+    $performanceTable->addCell()->addText('Stress Testing tries to break the system by testing with overwhelming data or resources.');
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText('Test Patterns', $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("Red Team Partners follows a different approach while performing a Stress test depending on the goal to be achieved, time, and effort. The client is interested to invest during the commencement of the project.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Distributed Stress Testing:", $boldText, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addImage(ASSETS_IMG_DIR . 'methodologies/stress-load-testing-02.png', 
+        array(
+            'width'         => 300,
+            'marginTop'     => 2,
+            'marginLeft'    => -100,
+            'wrappingStyle' => 'inline',
+            'alignment' => 'center',
+            'wrapDistanceLeft' => 100
+        )
+    );
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("In distributed client-server systems, testing is done across all clients from the server. The role of the stress server is to distribute a set of stress tests to all stress clients and track the status of the client. After the client contacts the server, the server adds the name of the client and starts sending data for testing.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText(htmlspecialchars("Meanwhile, client machines send signal or heartbeat that it relates to the server. If the server does not receive any signals from the client machine, it needs to be investigated further for debugging. From the figure, a server can connect with the 2 clients (Client1 and Client2), but it cannot send or receive a signal from Client 3 & 4."), null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("Night run is one of the options performed, to run these stress testing scenarios. Large server farms need a more efficient method for determining which computers have had stress failures that need to be investigated.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Application Stress Testing:", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("During this testing, we concentrate on finding defects related to data locking and blocking, network issues, and performance bottlenecks in an application.", null, $defaultParagraphStyle);
+
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Transactional Stress Testing:", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText(htmlspecialchars("It does stress testing on one or more transactions between two or more applications. It is used for fine-tuning & optimizing the system."), null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Systemic Stress Testing:", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("This methodology is deployed for integrated stress testing which can be tested across multiple systems running on the same server. It is used to find defects where one application data blocks another application. ", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Performance Modelling and Full-Scale Network Performance Testing", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("Performance Modelling and performance testing on scaled environments are very useful and provide a very good analysis of potential performance issues.  However, network testing to actual volumes provides the highest level of risk mitigation when verifying the capacity and performance requirements of a system.
+    The most reliable and risk-averse approach is to load tests to the most realistic concurrent volumes.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText("Exploratory Stress Testing: ", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("This is one of the test scenarios which is used to test the system with unusual parameters or conditions that are unlikely to occur in a real scenario. It is used to find defects in unexpected scenarios like");
+    
+    $projectDescriptionPage->addListItem("A large number of users logged in at the same time.", 0);
+    $projectDescriptionPage->addListItem("If a virus scanner started in all machines simultaneously", 0);
+    $projectDescriptionPage->addListItem("If Database has gone offline when it is accessed from a website,", 0);
+    $projectDescriptionPage->addListItem("When a large volume of data is inserted into the database simultaneously", 0);
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPageTwo = $phpWord->addSection();
+
+    $projectDescriptionPage->addText("How we do Stress Testing?", $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("The Stress Testing process can be done in 5 major steps:", null, $defaultParagraphStyle);
+    $projectDescriptionPage->addListItem("Planning the Stress Test. Here you gather the system data, analyze the system, define the stress test goals.", 0, null, $numberStyleList);
+    $projectDescriptionPage->addListItem("Create Automation Scripts: In this phase, you create the Stress testing automation scripts, generate the test data for the stress scenarios.", 0, null, $numberStyleList);
+    $projectDescriptionPage->addListItem("Script Execution: In this stage, you run the Stress testing automation scripts and store the stress results.", 0, null, $numberStyleList);
+    $projectDescriptionPage->addListItem("Results Analysis: In this stage, you analyze the Stress Test results and identify bottlenecks.", 0, null, $numberStyleList);
+    $projectDescriptionPage->addListItem("Tweaking and Optimization: In this stage, you fine-tune the system, change configurations, optimise the code to meet the desired benchmark.", 0, null, $numberStyleList);
+
+    $projectDescriptionPage->addTextBreak();
+    $projectDescriptionPage->addText("Lastly, you again run the entire cycle to determine that the tweaks have produced the desired results. For example, it's not unusual to have 3 to 4 cycles of the Stress Testing process to achieve the performance goals.", null, $defaultParagraphStyle);
+
+
+    $projectDescriptionPage->addTextBreak();
+
+    $projectDescriptionPage->addText('Load Testing Networks', $boldText, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("Where a system can support testing to actual volumes, we have a performance testing service to meet your requirements.", null, $defaultParagraphStyle);
+    $projectDescriptionPage->addText("This service also offers a comprehensive security validation by testing your system while it is experiencing peak load and while some of that load is attacking traffic.", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText("Tools we use during Stress Testing:", $boldText, $defaultParagraphStyle);
+
+    $performanceOne = $projectDescriptionPage->addListItemRun();
+    $performanceOne->addText("LoadRunner", $boldText);
+    $performanceOne->addText(" - LoadRunner from HP is a widely used Load Testing tool. Load Test Results shaped by Loadrunner are considered as a benchmark.");
+
+    $performanceTwo = $projectDescriptionPage->addListItemRun();
+    $performanceTwo->addText("Jmeter", $boldText);
+    $performanceTwo->addText(" - Jmeter is an Open-Source testing tool. It is a pure Java application for stress and Performance Testing. Jmeter is intended to cover types of tests like load, functional, stress, etc. It needs JDK 5 or higher to function.");
+
+    $performanceThree = $projectDescriptionPage->addListItemRun();
+    $performanceThree->addText("Stress Tester", $boldText);
+    $performanceThree->addText(" - This tool provides an extensive analysis of the web application performance, provides results in graphical format, and it is extremely easy to use. No high-level scripting is required, and it gives a good return on investment. ");
+
+    $performanceFour = $projectDescriptionPage->addListItemRun();
+    $performanceFour->addText("Neo load", $boldText);
+    $performanceFour->addText(" - This is a popular tool available in the market to test web and mobile applications. This tool can simulate thousands of users to evaluate the application performance under load and analyse the response times. It also supports Cloud-integrated performance, load, and stress testing. It is easy to use, cost-effective and provides good scalability.");
+
+    $projectDescriptionPage->addListItem("WAN Killer Network Traffic Generator", 0);
+    $projectDescriptionPage->addListItem("Ostinato Packet Generator", 0);
+    $projectDescriptionPage->addListItem("Packet Sender", 0);
+    $projectDescriptionPage->addListItem("Nping from Nmap", 0);
+    $projectDescriptionPage->addListItem("Cisco’s TRex", 0);
+    $projectDescriptionPage->addListItem("Packet Generator from NetScanTools", 0);
+    $projectDescriptionPage->addListItem("NTGM from PBSoftware", 0);
+
+    $projectDescriptionPage->addText("Metrics for Stress Testing", $boldText);
+    $projectDescriptionPage->addText("Metrics help in evaluating a System's performance and generally studied at the end of Stress Test. Commonly used metrics are:", null, $defaultParagraphStyle);
+
+    $projectDescriptionPage->addText(htmlspecialchars("    1.     Measuring Scalability & Performance"));
+    $projectDescriptionPage->addListItem("Pages per Second: Measures how many pages have been requested / Second.", 1);
+    $projectDescriptionPage->addListItem("Throughput: Basic Metric - Response data size/Second", 1);
+    $projectDescriptionPage->addListItem("Rounds: Number of times test scenarios have been planned Versus Number of times a client has executed", 1);
+
+    $projectDescriptionPage->addText("    2.     Application Response");
+    $projectDescriptionPage->addListItem("Hit time: Average time to retrieve an image or a page.", 1);
+    $projectDescriptionPage->addListItem("Time to the first byte: Time is taken to return the first byte of data or information.", 1);
+    $projectDescriptionPage->addListItem("Page Time: Time is taken to retrieve all the information on a page.", 1);
+
+    $projectDescriptionPage->addText("    3.     Application Response");
+    $projectDescriptionPage->addListItem("Hit time: Average time to retrieve an image or a page.", 1);
+    $projectDescriptionPage->addListItem("Time to the first byte: Time is taken to return the first byte of data or information.", 1);
+    $projectDescriptionPage->addListItem("Page Time: Time is taken to retrieve all the information on a page.", 1);
+    
+    $projectDescriptionPage->addText("    4.     Failures");
+    $projectDescriptionPage->addListItem("Failed Connections: Number of failed connections refused by the client (Weak Signal).", 1);
+    $projectDescriptionPage->addListItem("Failed Rounds: Number of rounds it gets failed.", 1);
+    $projectDescriptionPage->addListItem("o	Failed Hits: Number of failed attempts done by the system (Broken links or unseen images).", 1);
+    
+
+
+
+
+    $projectDescriptionPage->addPageBreak();
+
+    

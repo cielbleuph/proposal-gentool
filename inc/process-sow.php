@@ -255,7 +255,14 @@
     );
 
     $coverPage->addTextBreak(4);
-    $coverPage->addText(htmlspecialchars($typeOfService[0]), array('color'=>'FFFFFF', 'name'=>'Proxima Nova Rg', 'size'=>30, 'bold'=> true), array('alignment'=>'start'));
+
+    foreach($typeOfService as $service) {
+        $str = implode(",", $typeOfService);
+    }
+
+    $coverPage->addText(htmlspecialchars($str), array('color'=>'FFFFFF', 'name'=>'Proxima Nova Rg', 'size'=>30, 'bold'=> true), array('alignment'=>'start'));
+
+
     $coverPage->addTextBreak(2);
     $coverPageSOWTextRun = $coverPage->addTextRun(array('alignment'=>'start'));
     $coverPageSOWTextRun->addText(htmlspecialchars("\t\t\t\t\t\t\t\t\t STATEMENT OF WORKS"), array('size'=>16, 'bold'=>true));
@@ -400,8 +407,6 @@
     //############################### END CLIENT DETAILS PAGE ###############################    
 
 
-
-
     //############################### PROJECT SCOPE PAGE ###############################    
 
     $projectScopePage = $phpWord->addSection(array(
@@ -543,8 +548,6 @@
         }
 
     }
-
-    
     //############################### END PROJECT DESCRIPTION PAGE ###############################
 
     //############################### PROJECT PRE-REQUISITES REQUIREMENTS PAGE ###############################    
@@ -574,9 +577,6 @@
         'pageSizeH' => $paper->getHeight()
     ));
 
-    
-
-
     $disclaimerTypeOne = array(
         "API Penetration Test", 
         "Mobile Application Penetration Test",
@@ -593,11 +593,6 @@
     $disclaimerTypeThree = array(
         "Vulnerability Assessment"
     );
-
-    // foreach( $typeOfService as $service) {
-
-    // }
-
 
     switch ($disclaimer) {
         case 'disclaimer_a':

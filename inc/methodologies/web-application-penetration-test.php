@@ -21,20 +21,6 @@
 
     $methodologiesPage->addTextBreak();
 
-    // $methodologiesPage->addImage(
-    //     ASSETS_IMG_DIR . 'methodologies/web-application-penetration-testing.png',
-    //     array(
-    //         'width'         => 450,
-    //         // 'height'        => 52,
-    //         'marginTop'     => 2,
-    //         'marginLeft'    => -1,
-    //         'wrappingStyle' => 'behind',
-    //         'alignment' => 'center',
-    //     )
-    // );
-
-    // $methodologiesPage->addPageBreak();
-
     $methodologiesPage->addText('Test Areas', $paragraphHeadingStyle, $paragraphHeadingPStyle);
     $methodologiesPage->addText('Red Team Partners utilise a wide range of tools to scan and map out the web application(s). A mixture of the latest automated and manual tools is incorporated into testing by our consultants.', null, $defaultParagraphStyle);
 
@@ -56,60 +42,6 @@
     $methodologiesPage->addListItem("Cross-Site Request Forgery (CSRF)", 0);
     $methodologiesPage->addListItem("Utilising Known Vulnerable Components", 0);
     $methodologiesPage->addListItem("Unvalidated Redirects and Forwards", 0);
-
-
-
-    // $methodologyWebApplicationTable = $methodologiesPage->addTable(
-    //     array(
-    //         'width' => 5000,
-    //         'unit' => 'pct',
-    //         'borderColor' => 'FFFFFF',
-    //         'cellSpacing' => 5,
-    //         'borderSize'=>1,
-    //         'cellMargin' => 20
-    //     )
-    // );
-    
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A1', array('color'=>'FFFFFF'), array('alignment'=>'center') );
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Injection', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A2', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Broken Authentication and Session Management', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A3', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Cross-Site Scripting (XSS)', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A4', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Insecure Direct Object References', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A5', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Security Misconfiguration', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A6', array('color'=>'FFFFFF'), array('alignment'=>'center') );
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Sensitive Data Exposed', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A7', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Missing Function Level Access Control', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A8', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Cross-Site Request Forgery (CSRF)', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A9', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Utilising Known Vulnerable Components', null, array('indent'=>0.5));
-
-    // $methodologyWebApplicationTable->addRow();
-    // $methodologyWebApplicationTable->addCell(450, $DarkRedCellStyle)->addText('A10', array('color'=>'FFFFFF'), array('alignment'=>'center'));
-    // $methodologyWebApplicationTable->addCell(null, $lightRedCellStyle)->addText('Unvalidated Redirects and Forwards', null, array('indent'=>0.5));
-
 
     $methodologiesPage->addTextBreak();
 
@@ -297,11 +229,3 @@
     $methodologiesPage = $phpWord->addSection($styleSingleColumn);
 
     $methodologiesPage->addPageBreak();
-
-    // $methodologiesPage->addText("", $boldText);
-    // $methodologiesPage->addListItem("", 0);
-
-    // $methodologiesPage->addTextBreak();
-
-    // $methodologiesPage->addText("", $boldText);
-    // $methodologiesPage->addListItem("", 0);
