@@ -54,7 +54,7 @@
                             <div class="form-group">
                                 <label for="overall-security" class="control-label f-700">Overall Security <span class="required">*</span> 
                                     <a data-toggle="collapse" href="#overallfinding-help-content" role="button" aria-expanded="true">
-                                        <span data-placement="right" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help">
+                                        <span data-placement="right" data-toggle="tooltip" title="Where can I find this?" class="help-icon overall-security-help">
                                             <i data-feather="help-circle"></i>
                                         </span>
                                     </a>

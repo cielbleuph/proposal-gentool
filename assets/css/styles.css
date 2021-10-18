@@ -371,3 +371,7 @@ button.ui-dialog-titlebar-close{
 .tooltip-text{
   font-size: 10px;
 }
+
+.overall-security-help{
+  color: #000;
+}
