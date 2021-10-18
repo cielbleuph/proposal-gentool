@@ -50,10 +50,17 @@
         if ( $serviceName === 'Infrastructure Penetration Test') {
             $projectPrereqPage->addTitle("Infrastructure Penetration Test", 2);
             
-            $projectPrereqPage->addListItem("VPN access", 0);
-            $projectPrereqPage->addListItem("IP addresses or CIDR range that are in scope", 0);
-            $projectPrereqPage->addListItem("AD credentials (optional)", 0);
-            $projectPrereqPage->addListItem("Whitelisting our IP address in firewall", 0);
+            $projectPrereqPage->addListItem("Internal", 0);
+            $projectPrereqPage->addListItem("VPN access", 1);
+            $projectPrereqPage->addListItem("IP addresses or CIDR range that are in scope", 1);
+            $projectPrereqPage->addListItem("AD credentials (optional)", 1);
+            $projectPrereqPage->addListItem("Whitelisting our IP address in firewall", 1);
+
+            $projectPrereqPage->addTextBreak();
+
+            $projectPrereqPage->addListItem("External", 0);
+            $projectPrereqPage->addListItem("External IP addresses", 1);
+            $projectPrereqPage->addListItem("Domains/Subdomains that are in scope", 1);
         }
 
         if ( $serviceName === 'External Penetration Test') {
