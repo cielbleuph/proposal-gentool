@@ -62,7 +62,7 @@
                                 <div class="collapse form-group" id="overallfinding-help-content">
                                     <br />
                                     <div class="card card-body">
-                                        <p>You can find <span class="strong">Overall Security statement</span> under <span class="strong">Management Summary</span> it usually is the concluding statement by Red Team Partners overall assessment found on the couple of last paragraphs of the section.</p>
+                                        <p>You can find <span class="strong">Overall Security statement</span> under <span class="strong">Management Summary</span> it usually is the concluding statement by Red Team Partners overall assessment found on the latter half of the section.</p>
                                         <img src="assets/images/overall-security.png" alt="Overall Security Hint">
                                     </div>
                                 </div>
