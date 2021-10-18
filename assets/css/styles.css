@@ -367,3 +367,7 @@ button.ui-dialog-titlebar-close{
   height: 18px !important;
   cursor: pointer;
 }
+
+.tooltip-text{
+  font-size: 10px;
+}

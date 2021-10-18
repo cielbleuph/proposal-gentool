@@ -52,7 +52,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="overall-security" class="control-label f-700">Overall Security <span class="required">*</span></label>
+                                <label for="overall-security" class="control-label f-700">Overall Security <span class="required">*</span> 
+                                    <a data-toggle="collapse" href="#overallfinding-help-content" role="button" aria-expanded="true">
+                                        <span data-placement="right" data-toggle="tooltip" title="Where can I find this?" class="help-icon keyfindings-help">
+                                            <i data-feather="help-circle"></i>
+                                        </span>
+                                    </a>
+                                </label>
+                                <div class="collapse form-group" id="overallfinding-help-content">
+                                    <br />
+                                    <div class="card card-body">
+                                        <p>You can find <span class="strong">Overall Security statement</span> under <span class="strong">Management Summary</span> it usually is the concluding statement by Red Team Partners overall assessment found on the couple of last paragraphs of the section.</p>
+                                        <img src="assets/images/overall-security.png" alt="Overall Security Hint">
+                                    </div>
+                                </div>
                                 <textarea name="overall-security" id="overall-security" cols="30" rows="5" class="form-control overall-security" aria-label="Overall Security" aria-describedby="overall-security" required></textarea>
                             </div>
                             
