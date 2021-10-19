@@ -14,9 +14,9 @@
     $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber-attacks. Even a simple virus or piece of malware could result in loss of company and client data, disrupt your cash flow, and take up staff time. An attack could also dissatisfy your customers, stop you from trading and damaging your hard-earned reputation. It could also be reported in the local media. Loss of data could breach the Data Protection Act and lead to fines or prosecution."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addText(htmlspecialchars("Having a Cyber Essentials badge will:"), null, $defaultParagraphStyle);
-    $methodologiesPage->addLineItem( htmlspecialchars("Protect your organisation against common cyber threats"), 0);
-    $methodologiesPage->addLineItem( htmlspecialchars("Show your customers this issue matters to you"), 0);
-    $methodologiesPage->addLineItem( htmlspecialchars("Enable you to bid for Government contracts"), 0);
+    $methodologiesPage->addListItem( htmlspecialchars("Protect your organisation against common cyber threats"), 0);
+    $methodologiesPage->addListItem( htmlspecialchars("Show your customers this issue matters to you"), 0);
+    $methodologiesPage->addListItem( htmlspecialchars("Enable you to bid for Government contracts"), 0);
 
     $methodologiesPage->addTextBreak();
     
@@ -37,12 +37,12 @@
 
     $methodologiesPage->addText( htmlspecialchars("Step 3: We Certify"), array("bold"=>true, "size"=>14) );
 
-    $methodologiesPage->addText( htmlspecialchars("Being secure is only one side of the coin. It is equally important to demonstrate to clients, suppliers and partners, that data protection is a serious matter and they are in safe hands. It can result in instilling trust and limit liability in case of a breach. You also receive an official Cyber Essentials badge to use online and a physical certificate."), null, $defaultParagraphStyle);
+    $methodologiesPage->addText( htmlspecialchars("Being secure is only one side of the coin. It is equally important to demonstrate to clients, suppliers and partners, that data protection is a serious matter, and they are in safe hands. It can result in instilling trust and limit liability in case of a breach. You also receive an official Cyber Essentials badge to use online and a physical certificate."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText('Results', $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $methodologiesPage->addText( htmlspecialchars("It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support are available upon request."), null, $defaultParagraphStyle);
+    $methodologiesPage->addText( htmlspecialchars("Cyber Essentials helps prevent the vast majority of cyber-data threats. It is not a one-off exercise but an on-going process. Security standards threats change continuously; for that reason, the software is ideally kept passively running in the background, which allows us to provide you with real-time threat information and security updates. All our offers include one year of on-going support, £25K of free cyber security insurance, and an online support chat. Additional protection and proactive personal support are available upon request."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addPageBreak();

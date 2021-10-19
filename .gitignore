@@ -47,3 +47,6 @@ _ReSharper*/
 
 #Server Logs
 error_log
+
+composer.lock
+.vscode/

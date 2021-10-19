@@ -16,13 +16,13 @@
     $methodologiesPage->addTextBreak();
 
     $methodologiesPage->addText( htmlspecialchars("Fundamentals"), $paragraphHeadingStyle, $paragraphHeadingPStyle);
-    $methodologiesPage->addText( htmlspecialchars("Cyber Essentials Plus requires an independent assessment of your security controls. This can be provided remotely, the assessment involves a vulnerability scan, which will identify unpatched, or unsupported software, open ports, incorrect firewall configuration. Obtaining Cyber Essentials Plus will verify your company has the correct security controls in place, this certification can only be achieved through the correct preparation and assessments. Cyber Essentials Plus has become a highly regarded certification due its results in improving security controls. "), null, $defaultParagraphStyle);
+    $methodologiesPage->addText( htmlspecialchars("Cyber Essentials Plus requires an independent assessment of your security controls. This can be provided remotely, the assessment involves a vulnerability scan, which will identify unpatched, or unsupported software, open ports, incorrect firewall configuration. Obtaining Cyber Essentials Plus will verify your company has the correct security controls in place, this certification can only be achieved through the correct preparation and assessments. Cyber Essentials Plus has become a highly regarded certification due its results in improving security controls."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addTextBreak();
     
     $methodologiesPage->addText( htmlspecialchars("How we can help:"), $paragraphHeadingStyle, $paragraphHeadingPStyle);
 
-    $methodologiesPage->addText( htmlspecialchars("Red Team Partners helps companies become Cyber Essentials Plus certified. We provide a pre-audit checklist that contains the correct measures to be taken in order to obtain the Cyber Essentials Plus certification. Once you have completed your pre-audit checklist Red Team Partners certified internal experts will provide any feedback to confirm if any other changes are needed before the audit date. "), null, $defaultParagraphStyle);
+    $methodologiesPage->addText( htmlspecialchars("Red Team Partners helps companies become Cyber Essentials Plus certified. We provide a pre-audit checklist that contains the correct measures to be taken in order to obtain the Cyber Essentials Plus certification. Once you have completed your pre-audit checklist Red Team Partners certified internal experts will provide any feedback to confirm if any other changes are needed before the audit date."), null, $defaultParagraphStyle);
 
     $methodologiesPage->addTextBreak();
 
